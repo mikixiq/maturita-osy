@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maturita OSY a PSI</title>
+  <meta name="description" content="Procvičování k ústní maturitě z operačních systémů a počítačových sítí podle prezentací z výuky.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#" data-nav="home">Maturita OSY</a>
+      <nav class="tabs" aria-label="Hlavní navigace">
+        <button type="button" class="tab" data-nav="home">Procvičování</button>
+        <!-- NOVÉ: sekce Výuka -->
+        <button type="button" class="tab" data-nav="learn">Výuka</button>
+        <button type="button" class="tab" data-nav="overview">Přehled</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="app">
+    <div id="loading" class="card">Načítám otázky…</div>
+
+    <!-- Úvod: výběr maturitních otázek a režimu -->
+    <section id="view-home" class="view" hidden>
+      <div class="stats-row" id="home-stats"></div>
+
+      <section class="card" aria-labelledby="mo-title">
+        <div class="card-head">
+          <h2 id="mo-title">Maturitní otázky</h2>
+          <div class="btn-group">
+            <button type="button" class="btn btn-small" id="btn-all">Vybrat vše</button>
+            <button type="button" class="btn btn-small btn-ghost" id="btn-none">Zrušit výběr</button>
+          </div>
+        </div>
+        <!-- ZMĚNA: počet vybraných a záložky „Moje otázky“ / „Další otázky“ -->
+        <p class="selected-count" id="mo-count" role="status" aria-live="polite"></p>
+        <div class="subtabs" role="tablist" aria-label="Skupiny maturitních otázek">
+          <button type="button" class="subtab" role="tab" id="tab-mine" aria-controls="mo-list" data-group="mine">Moje otázky</button>
+          <button type="button" class="subtab" role="tab" id="tab-more" aria-controls="mo-list" data-group="more">Další otázky</button>
+        </div>
+        <p class="notice" id="mo-notice"></p>
+        <ul class="mo-list" id="mo-list" role="tabpanel"></ul>
+      </section>
+
+      <section class="card review-card" id="review-card"></section>
+
+      <form class="card" id="setup-form">
+        <h2>Režim</h2>
+        <fieldset>
+          <legend class="sr-only">Režim</legend>
+          <div class="mode-grid" id="mode-grid"></div>
+        </fieldset>
+
+        <div class="field-grid" id="settings">
+          <label class="field">
+            <span>Čas na otázku</span>
+            <select id="sel-cas">
+              <option value="0">Bez limitu</option>
+              <option value="15">15 s</option>
+              <option value="30">30 s</option>
+              <option value="60">60 s</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Počet otázek</span>
+            <select id="sel-delka"></select>
+          </label>
+        </div>
+
+        <p class="hint" id="pool-info"></p>
+        <button type="submit" class="btn btn-primary btn-block" id="btn-start">Spustit</button>
+      </form>
+    </section>
+
+    <!-- Probíhající test -->
+    <section id="view-quiz" class="view" hidden>
+      <div class="quiz-head">
+        <span id="quiz-progress"></span>
+        <button type="button" class="btn btn-ghost btn-small" id="btn-quit">Ukončit</button>
+      </div>
+      <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+      <div class="timer" id="timer" hidden>
+        <div class="timer-bar" id="timer-bar"></div>
+        <span class="timer-text" id="timer-text"></span>
+      </div>
+      <article class="card question" id="question"></article>
+    </section>
+
+    <!-- Výsledek testu -->
+    <section id="view-result" class="view" hidden></section>
+
+    <!-- Losování k projevu -->
+    <section id="view-speech" class="view" hidden></section>
+
+    <!-- NOVÉ: Výuka – seznam otázek a krokovaný výklad -->
+    <section id="view-learn" class="view" hidden></section>
+
+    <!-- Přehled statistik -->
+    <section id="view-overview" class="view" hidden></section>
+  </main>
+
+  <footer class="wrap footer">
+    Otázky vycházejí pouze z prezentací z výuky; sekce „Něco navíc“ je nad jejich rámec. Statistiky se ukládají jen v tomto prohlížeči.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
