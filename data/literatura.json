@@ -43,27 +43,39 @@
       "postavy": [
         {
           "jmeno": "Romeo",
-          "role": "syn Montekův, mladý milenec"
+          "role": "syn Montekův, mladý milenec",
+          "charakteristika": "Syn hlavy rodu Monteků. Na plese u Kapuletů se na první pohled zamiluje do Julie a druhý den se s ní tajně ožení. Po smrti přítele Merkucia v hněvu zabije Tybalta a je vyhnán do Mantovy. Z kurtoazního, zasněného milence dozrává ve vášnivého a odhodlaného muže, jeho unáhlenost ale vede k tragédii.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
         },
         {
           "jmeno": "Julie",
-          "role": "třináctiletá dcera Kapuletova"
+          "role": "třináctiletá dcera Kapuletova",
+          "charakteristika": "Třináctiletá dcera Kapuletových, zpočátku naivní dívka, která propadne romantickým představám o lásce. Bláznivě se zamiluje do Romea z nepřátelského rodu a tajně si ho vezme. Postaví se otci, který ji chce provdat za Parise, a vypije uspávací nápoj. Když se v hrobce probudí vedle mrtvého Romea, probodne se jeho dýkou.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
         },
         {
           "jmeno": "otec Vavřinec",
-          "role": "františkán, tajně oddá milence a chce usmířit rody"
+          "role": "františkán, tajně oddá milence a chce usmířit rody",
+          "charakteristika": "Františkánský mnich, který mladé milence tajně oddá. Doufá, že jejich sňatek usmíří znepřátelené rody, a s milenci soucítí. Vymyslí plán s uspávacím nápojem, který ale selže, protože posel k Romeovi nedorazí. Postupně se z něj stává renesanční člověk, který se staví proti nesmyslnosti řádů.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
         },
         {
           "jmeno": "Merkucio",
-          "role": "Romeův přítel, příbuzný vévody"
+          "role": "Romeův přítel, příbuzný vévody",
+          "charakteristika": "Příbuzný vévody a Romeův věrný přítel. Spolu s Benvoliem doprovodí Romea na ples Kapuletů. Když Romeo odmítne bojovat s Tybaltem, přijme výzvu místo něj a v souboji zemře. Jeho smrt je zlomem hry – Romeo ji pomstí a je vyhnán.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
         },
         {
           "jmeno": "Tybalt",
-          "role": "Juliin bratranec, nenávidí Romea"
+          "role": "Juliin bratranec, nenávidí Romea",
+          "charakteristika": "Synovec paní Kapuletové a Juliin bratranec, který nenávidí Monteky. Na plese Romea pozná a chce vyvolat bitku, starý Kapulet ho ale zastaví. V den svatby zabije Merkucia a sám padne Romeovou rukou. Ztělesňuje slepou nenávist mezi oběma rody.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
         },
         {
           "jmeno": "chůva",
-          "role": "Juliina důvěrnice"
+          "role": "Juliina důvěrnice",
+          "charakteristika": "Juliina chůva a důvěrnice. Představuje mateřskou lásku k Julii, i když není její matkou. Pomáhá milencům a s jejím přispěním Julie požádá o pomoc otce Vavřince. Její péče stojí v kontrastu s přísností Juliiných rodičů.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
         }
       ],
       "obsah": "Ve Veroně se dlouhá léta svářejí dva mocné rody, Monteky a Kapuleti. Romeo z rodu Monteků se na maškarním plese u Kapuletů zamiluje do Julie, dcery nepřátelského rodu. Mladí milenci se tajně vezmou s pomocí otce Vavřince. Hra ukazuje, jak nenávist dospělých ničí lásku mladých.",
@@ -80,6 +92,29 @@
       ],
       "k_overeni": [
         "Období: hra vznikla v 16. století; v seznamu je zařazena do období „do konce 18. století“."
+      ],
+      "motivy": [
+        "láska",
+        "rodina",
+        "osud",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj01-z1",
+          "otazka": "Co v Romeovi a Julii vede k tragickému konci?",
+          "body_odpovedi": [
+            "dávný spor rodů Monteků a Kapuletů",
+            "Tybalt zabije Merkucia, Romeo zabije Tybalta a je vyhnán do Mantovy",
+            "otec chce Julii provdat za Parise",
+            "plán otce Vavřince s uspávacím nápojem selže – posel k Romeovi nedorazí kvůli moru",
+            "Romeo vypije jed, Julie se probodne jeho dýkou",
+            "smrt dětí rody usmíří"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
+        }
       ]
     },
     {
@@ -104,27 +139,39 @@
       "postavy": [
         {
           "jmeno": "Harpagon",
-          "role": "bohatý lakomý vdovec a lichvář"
+          "role": "bohatý lakomý vdovec a lichvář",
+          "charakteristika": "Šedesátiletý bohatý vdovec a lichvář, který žije ve stálém strachu o zakopanou truhlici s penězi. Podezírá všechny včetně vlastních dětí a o jejich sňatcích rozhoduje podle peněz. Sám se chce oženit s mladou Marianou, kterou miluje jeho syn. Ztráta pokladu pro něj znamená ztrátu rozumu; na konci zůstává sám, ale spokojený se svými penězi.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
         },
         {
           "jmeno": "Kleantes",
-          "role": "Harpagonův syn, miluje Marianu"
+          "role": "Harpagonův syn, miluje Marianu",
+          "charakteristika": "Harpagonův syn, který miluje chudou Marianu. Aby si ji mohl vzít, potřebuje peníze, a zjistí, že lichvářem nabízejícím půjčku je jeho vlastní otec. S otcem se otevřeně střetne, otec ho proklíná. Díky ukradené truhlici nakonec otce přiměje svolit ke sňatku.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
         },
         {
           "jmeno": "Eliška",
-          "role": "Harpagonova dcera, miluje Valéra"
+          "role": "Harpagonova dcera, miluje Valéra",
+          "charakteristika": "Harpagonova dcera, zamilovaná do správce Valéra. Otec ji chce provdat za starého boháče Anselma, protože ten nepožaduje věno. Ona to rozhodně odmítá. Na konci si smí vzít Valéra.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
         },
         {
           "jmeno": "Valér",
-          "role": "Harpagonův správce, miluje Elišku"
+          "role": "Harpagonův správce, miluje Elišku",
+          "charakteristika": "Harpagonův správce, který Harpagonovi podlézá, aby se mohl oženit s Eliškou. Při vyšetřování krádeže je obviněn a myslí si, že vyšel najevo jeho vztah k Elišce. Ukáže se, že je ztraceným synem Anselma. Jeho přetvářka komicky zrcadlí Harpagonovu lakotu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
         },
         {
           "jmeno": "Mariana",
-          "role": "chudá dívka, o kterou se uchází otec i syn"
+          "role": "chudá dívka, o kterou se uchází otec i syn",
+          "charakteristika": "Chudá dívka, která se stará o nemocnou matku. Miluje Kleanta pro jeho povahu, ne pro peníze, a Harpagon se jí nelíbí. Nakonec se ukáže, že je dcerou Anselma. Smí si vzít Kleanta.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
         },
         {
           "jmeno": "Čipera",
-          "role": "Kleantův sluha, ukradne truhlici s penězi"
+          "role": "Kleantův sluha, ukradne truhlici s penězi",
+          "charakteristika": "Kleantův mazaný sluha a přítel. Domlouvá pro Kleanta lichvářskou půjčku. Najde na zahradě Harpagonovu zakopanou truhlici a ukradne ji, aby pánovi pomohl. Krádež rozpoutá vyvrcholení komedie.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
         }
       ],
       "obsah": "Komedie se odehrává v Paříži v domě bohatého vdovce Harpagona, který žije v neustálém strachu o své peníze. Kvůli penězům chce rozhodovat o sňatcích svých dětí, Kleanta a Elišky, a sám se chce oženit s mladou Marianou. Jeho lakota vede k řadě komických situací. Hra ukazuje, jak peníze deformují charakter a vztahy v rodině.",
@@ -141,6 +188,29 @@
       ],
       "k_overeni": [
         "Období: hra vznikla v 17. století; v seznamu je zařazena do období „do konce 18. století“."
+      ],
+      "motivy": [
+        "peníze a majetek",
+        "rodina",
+        "láska",
+        "satira společnosti"
+      ],
+      "zkouska": [
+        {
+          "id": "cj02-z1",
+          "otazka": "Jak Molière zobrazuje lakotu na postavě Harpagona?",
+          "body_odpovedi": [
+            "Harpagon – vdovec a lichvář, který se neustále bojí o zakopanou truhlici",
+            "pro peníze obětuje rodinu i lásku – chce si vzít Marianu, kterou miluje jeho syn",
+            "lichvářem, od kterého si chce půjčit Kleantes, je jeho vlastní otec",
+            "ztráta pokladu pro něj znamená ztrátu smyslu bytí",
+            "na konci zůstává sám, ale spokojený se svými penězi",
+            "jméno harpagon se vžilo jako označení lakomce"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        }
       ]
     },
     {
@@ -165,23 +235,33 @@
       "postavy": [
         {
           "jmeno": "Kateřina",
-          "role": "starší, hádavá dcera kupce Baptisty"
+          "role": "starší, hádavá dcera kupce Baptisty",
+          "charakteristika": "Starší dcera kupce Baptisty, hádavá a neústupná, které se všichni bojí. Je opakem své sestry Biancy a stojí proti konvencím. Touží po skutečné lásce, ne jen po milostném vzdychání. Petruchio ji „zkrotí“ a v závěrečné sázce jako jediná přijde na manželovo zavolání.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy"
         },
         {
           "jmeno": "Petruchio",
-          "role": "veronský šlechtic, chce Kateřinu „zkrotit“"
+          "role": "veronský šlechtic, chce Kateřinu „zkrotit“",
+          "charakteristika": "Veronský šlechtic, který se rozhodne vzít si Kateřinu a udělat z ní pokornou choť. Chová se okatě hulvátsky a schválně jí dělá ze života peklo. Ženy pro něj přesto nejsou jen potěšením. Vyhraje sázku o nejposlušnější ženu a od Baptisty dostane 20 000 zlatých.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy"
         },
         {
           "jmeno": "Bianca",
-          "role": "mladší, něžná sestra Kateřiny"
+          "role": "mladší, něžná sestra Kateřiny",
+          "charakteristika": "Mladší dcera Baptisty, něžná, romanticky zasněná dívka. Uchází se o ni tři nápadníci – Gremio, Hortensio a Lucentio. Vdát se smí až po starší sestře. Nakonec si vezme Lucentia, v závěrečné sázce ale na zavolání nepřijde.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy"
         },
         {
           "jmeno": "Baptista Minola",
-          "role": "bohatý padovský kupec, otec obou dcer"
+          "role": "bohatý padovský kupec, otec obou dcer",
+          "charakteristika": "Bohatý padovský kupec, otec Kateřiny a Biancy. Rozhodne, že mladší dcera se vdá až po starší. Proto vítá Petruchia jako ženicha pro Kateřinu. Za její „zkrocení“ mu dá 20 000 zlatých.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy"
         },
         {
           "jmeno": "Lucentio",
-          "role": "syn pisanského šlechtice, uchází se o Biancu"
+          "role": "syn pisanského šlechtice, uchází se o Biancu",
+          "charakteristika": "Syn bohatého pisanského šlechtice Vincentia. Po příjezdu do Padovy se zamiluje do Biancy. Přikáže sluhovi Traniovi, aby vystupoval za něj, a sám se k Biancě dostane jako profesor filozofie. Získá Biancu za ženu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy"
         }
       ],
       "obsah": "Bohatý padovský kupec Baptista má dvě dcery: hádavou Kateřinu a něžnou Biancu. Mladší Bianca se smí vdát až po starší sestře, o kterou ale nikdo nestojí. Do Padovy přijíždí veronský šlechtic Petruchio a rozhodne se, že si Kateřinu vezme a udělá z ní poslušnou ženu. Komedie stojí na hádkách, převlecích a slovních hříčkách.",
@@ -198,6 +278,28 @@
       ],
       "k_overeni": [
         "Období: hra vznikla v 16. století; v seznamu je zařazena do období „do konce 18. století“."
+      ],
+      "motivy": [
+        "láska",
+        "postavení ženy",
+        "rodina"
+      ],
+      "zkouska": [
+        {
+          "id": "cj03-z1",
+          "otazka": "Jak se v komedii Zkrocení zlé ženy proměňuje Kateřina a jak hra pojímá vztah muže a ženy?",
+          "body_odpovedi": [
+            "Kateřina je na začátku hádavá a neústupná, opak něžné Biancy",
+            "Petruchio si ji vezme a schválně jí dělá ze života peklo",
+            "Kateřina pochopí, že se musí zklidnit",
+            "v závěrečné sázce na zavolání přijde jen ona",
+            "hra ukazuje renesanční pohled, v němž ženy získávají více prostoru",
+            "otázka, zda je hra misogynní, je dodnes sporná"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy"
+        }
       ]
     },
     {
@@ -222,27 +324,39 @@
       "postavy": [
         {
           "jmeno": "Švanda",
-          "role": "chudý dudák ze Strakonic"
+          "role": "chudý dudák ze Strakonic",
+          "charakteristika": "Chudý dudák bez rodičů, který miluje Dorotku. Odchází do světa vydělat na svatbu a díky začarovaným dudám má velký úspěch. Sláva ho svede – zapomene na Dorotku a nechá se šidit Vocilkou. Po uvěznění a záchraně z reje divých žen pochopí svou chybu a slíbí, že se změní.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen"
         },
         {
           "jmeno": "Dorotka",
-          "role": "Švandova milá, dcera Trnky"
+          "role": "Švandova milá, dcera Trnky",
+          "charakteristika": "Dcera sedláka Trnky, Švandova milá. Když se Švanda dlouho nevrací, vydá se ho s Kalafunou hledat. Švanda se jí na hradě nezastane, a tak o něm pak nechce slyšet. Nakonec ho přesto zachrání z reje divých žen.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen"
         },
         {
           "jmeno": "Kalafuna",
-          "role": "Švandův věrný přítel, muzikant"
+          "role": "Švandův věrný přítel, muzikant",
+          "charakteristika": "Muzikant a Švandův věrný přítel, který ho zrazuje od cesty do světa. Doprovází Dorotku při hledání Švandy. Ztělesňuje poctivost a věrnost. Je protipólem podvodníka Vocilky.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen"
         },
         {
           "jmeno": "Vocilka",
-          "role": "vychytralý podvodník, Švandův „sekretář“"
+          "role": "vychytralý podvodník, Švandův „sekretář“",
+          "charakteristika": "Vychytralý podvodník, který se v cizině stane Švandovým sekretářem a neustále ho šidí. Chce zneužít Švandovo umění a obohatit se. Nakonec vláká Švandu o půlnoci do lesa, aby mu ukradl kouzelné dudy. Představuje špatný vliv, mezi kterým a věrným Kalafunou Švanda kolísá.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen"
         },
         {
           "jmeno": "Rosava",
-          "role": "víla, Švandova matka"
+          "role": "víla, Švandova matka",
+          "charakteristika": "Víla a Švandova matka. Přimluví se, aby Švandovým dudám bylo vdechnuto kouzlo, a smí ho doprovázet, jen když se nedozví, kdo je. Když mu ve vězení prozradí pravdu, je uvržena mezi divé ženy. Královna víl jí nakonec odpustí, dojata její mateřskou láskou.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen"
         },
         {
           "jmeno": "Zulika",
-          "role": "smutná princezna v cizině"
+          "role": "smutná princezna v cizině",
+          "charakteristika": "Smutná princezna, kterou Švanda rozesměje hrou na dudy. Za to si ho chce vzít, ačkoli je zasnoubená s princem Alamirem. Svatba s ní Švandu odvádí od Dorotky. Po návratu Alamira je Švanda uvězněn.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen"
         }
       ],
       "obsah": "Chudý dudák Švanda miluje Dorotku, ale její otec Trnka ho jako ženicha odmítá. Švanda se proto vydá do světa vydělat peníze. Jeho matka, víla Rosava, mu očaruje dudy, takže všechny okouzlí. Hra spojuje českou vesnici se světem pohádkových bytostí.",
@@ -257,7 +371,30 @@
         "https://cs.wikipedia.org/wiki/Josef_Kajetán_Tyl",
         "https://cs.wikipedia.org/wiki/Romantismus_(literatura)"
       ],
-      "k_overeni": []
+      "k_overeni": [],
+      "motivy": [
+        "láska",
+        "peníze a majetek",
+        "lidová tradice",
+        "nadpřirozeno"
+      ],
+      "zkouska": [
+        {
+          "id": "cj04-z1",
+          "otazka": "Proč je Strakonický dudák dramatickou báchorkou a co v něm Tyl ukazuje?",
+          "body_odpovedi": [
+            "spojuje typickou českou vesnici se světem pohádkových bytostí (víly, divé ženy)",
+            "Švanda kolísá mezi věrným Kalafunou a podvodníkem Vocilkou",
+            "začarované dudy mu přinesou slávu, ale zapomene na Dorotku",
+            "hrdina chybuje a je napraven – zachrání ho Dorotka",
+            "šťastný konec – návrat domů a Švandův slib, že se změní",
+            "hra vznikla pro české obrozenecké divadlo a hraje se dodnes"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen"
+        }
+      ]
     },
     {
       "id": "cj05",
@@ -281,23 +418,33 @@
       "postavy": [
         {
           "jmeno": "matka (Poklad, Polednice)",
-          "role": "častá hlavní postava, provinění vůči dítěti"
+          "role": "častá hlavní postava, provinění vůči dítěti",
+          "charakteristika": "V Erbenových baladách hraje hlavní roli nejčastěji matka. V Pokladu kvůli zlatu zapomene v jeskyni dítě a dostane ho zpět až po roce pokání. V Polednici v hněvu přivolá na zlobivé dítě Polednici a dítě zemře. Ukazuje Erbenovo pojetí: nejzákladnější je pouto matky a dítěte a jeho porušení přináší trest.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
         },
         {
           "jmeno": "dívka (Svatební košile)",
-          "role": "čeká na milého, kterého vyvolá z mrtvých"
+          "role": "čeká na milého, kterého vyvolá z mrtvých",
+          "charakteristika": "Osiřelá dívka, která se modlí za návrat milého, a tím ho vyvolá z mrtvých. Mrtvý milý ji vede nocí ke hřbitovu. Zachrání se jen modlitbou a pokorou. Balada ukazuje, že vzpoura proti řádu světa se trestá.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
         },
         {
           "jmeno": "Vodník (Vodník)",
-          "role": "nadpřirozená bytost, unese dívku pod vodu"
+          "role": "nadpřirozená bytost, unese dívku pod vodu",
+          "charakteristika": "Nadpřirozená bytost, která stáhne pod vodu dívku, jež neposlechla matčino varování. Má s ní dítě. Když se dívka po návštěvě matky nevrátí, zabije jejich dítě. Je příkladem nadpřirozené síly, proti níž je člověk u Erbena bezmocný.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
         },
         {
           "jmeno": "Polednice (Polednice)",
-          "role": "nadpřirozená bytost, trestá matku"
+          "role": "nadpřirozená bytost, trestá matku",
+          "charakteristika": "Nadpřirozená bytost z lidové pověry, která přichází v poledne. Objeví se, když ji matka v hněvu přivolá na zlobivé dítě. Dítě nakonec zemře v matčině náruči. Představuje trest za porušení vztahu matky a dítěte.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
         },
         {
           "jmeno": "Dora a král (Zlatý kolovrat)",
-          "role": "pohádková dvojice, vina a vykoupení"
+          "role": "pohádková dvojice, vina a vykoupení",
+          "charakteristika": "Dora je chudá dívka, do které se zamiluje král. Macecha a nevlastní sestra ji zabijí a za nevěstu vydávají sestru. Kouzelný stařeček Doru oživí a zlatý kolovrat odhalí pravdu. Balada má pohádkový motiv viny, vykoupení a šťastného konce.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
         }
       ],
       "obsah": "Kytice je sbírka balad inspirovaných lidovými pověstmi a pohádkami. Hlavní roli v nich často hrají ženy, nejčastěji matky. Básně se zabývají lidskými vztahy, vinou a trestem a střetem člověka s nadpřirozenými silami. Prostředí je symbolické a neurčité: les, chalupa, jezero.",
@@ -314,7 +461,32 @@
       ],
       "k_overeni": [
         "Druh: balady jsou lyricko-epické; zařazení jen do „lyriky“ je zjednodušení podle zadaného seznamu.",
-        "Shrnutí děje: jednotlivé balady jsou shrnuty podle obecné znalosti díla, zdrojový článek je podrobně nepopisuje."
+        "Shrnutí děje: jednotlivé balady jsou shrnuty podle obecné znalosti díla, zdrojový článek je podrobně nepopisuje.",
+        "Charakteristiky postav: jednotlivé balady zdrojové heslo podrobně nepopisuje, charakteristiky jsou z obecné znalosti díla."
+      ],
+      "motivy": [
+        "vina a trest",
+        "rodina",
+        "nadpřirozeno",
+        "lidová tradice",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj05-z1",
+          "otazka": "Jak Erben v Kytici zpracovává vinu a trest?",
+          "body_odpovedi": [
+            "vinu nese vždy člověk, nikdy společnost",
+            "za každou vinu přichází trest, často nepřiměřený",
+            "nejzákladnějším vztahem je pouto matky a dítěte (Poklad, Polednice)",
+            "člověk je bezmocný proti nadpřirozeným silám (Vodník, Polednice)",
+            "hrdinové vinu přijímají s pokorou a nevzdorují",
+            "sbírka vychází z lidové slovesnosti – ohlasová poezie romantismu"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
+        }
       ]
     },
     {
@@ -339,23 +511,33 @@
       "postavy": [
         {
           "jmeno": "Maryša",
-          "role": "selská dívka, provdaná proti své vůli"
+          "role": "selská dívka, provdaná proti své vůli",
+          "charakteristika": "Citlivá dcera bohatého sedláka Lízala, která miluje chudého Francka. Na nátlak rodičů se provdá za mlynáře Vávru. V nešťastném manželství trpí, otci neodpustí, ale z hanby odmítne s Franckem utéct. Když se Vávra pokusí Francka zastřelit, otráví ho jedem v kávě.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Maryša"
         },
         {
           "jmeno": "Francek",
-          "role": "chudý chasník a rekrut, Maryšina láska"
+          "role": "chudý chasník a rekrut, Maryšina láska",
+          "charakteristika": "Chudý, odvážný, ale paličatý chasník, který miluje Maryšu. Odchází na vojnu do Brna a Lízal ho vyžene. Po třech letech se vrací a veřejně prohlásí, že bude za Maryšou chodit. Přemlouvá ji k útěku a Vávra se ho pokusí zastřelit.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Maryša"
         },
         {
           "jmeno": "Vávra",
-          "role": "bohatý mlynář, vdovec se třemi dětmi"
+          "role": "bohatý mlynář, vdovec se třemi dětmi",
+          "charakteristika": "Bohatý mlynář, vdovec se třemi dětmi. Bil už svou první ženu a Maryšu si bere, aby mu sloužila, ne z lásky. Tráví čas v hospodě, bije Maryšu a s Lízalem se soudí o věno. Jeho násilí přivede Maryšu k vraždě.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Maryša"
         },
         {
           "jmeno": "Lízal",
-          "role": "Maryšin otec, bohatý sedlák"
+          "role": "Maryšin otec, bohatý sedlák",
+          "charakteristika": "Maryšin otec, bohatý sedlák, kterému jde víc o peníze než o štěstí dcery. Francka vyžene a Maryšu přinutí ke sňatku s Vávrou. Později pochopí svou chybu a chce dceru vzít domů. Maryša mu ale neodpustí.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Maryša"
         },
         {
           "jmeno": "Lízalka",
-          "role": "Maryšina matka"
+          "role": "Maryšina matka",
+          "charakteristika": "Maryšina matka. Spolu s tetou vydatně pomáhá Lízalovi přinutit Maryšu ke sňatku a přesvědčuje ji, že se bude mít s Vávrou dobře. Ztělesňuje vesnickou představu o výhodném sňatku. Nese podíl viny na tragédii.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Maryša"
         }
       ],
       "obsah": "Drama se odehrává na moravské vesnici. Maryša, dcera bohatého sedláka Lízala, miluje chudého Francka, který odchází na vojnu. Rodiče ji kvůli majetku nutí provdat se za bohatého mlynáře Vávru. Hra ostře kritizuje majetkové poměry a postavení ženy na vesnici.",
@@ -371,7 +553,34 @@
         "https://cs.wikipedia.org/wiki/Vilém_Mrštík",
         "https://cs.wikipedia.org/wiki/Realismus_(literatura)"
       ],
-      "k_overeni": []
+      "k_overeni": [],
+      "motivy": [
+        "postavení ženy",
+        "peníze a majetek",
+        "láska",
+        "rodina",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj06-z1",
+          "otazka": "Proč Maryša otráví Vávru a kdo nese vinu na tragédii?",
+          "body_odpovedi": [
+            "rodiče ji kvůli majetku nutí ke sňatku s bohatým vdovcem Vávrou",
+            "Vávra pije, bije ji a s Lízalem se soudí o věno",
+            "Lízal svou chybu pozná, ale Maryša mu neodpustí",
+            "z hanby odmítne s Franckem utéct",
+            "když se Vávra pokusí Francka zastřelit, otráví ho jedem v kávě",
+            "hra je kritikou majetkových poměrů a postavení ženy na vesnici"
+          ],
+          "citace_k_pouziti": [
+            "„takového lunta!“",
+            "„budeš sa s ním mět dobře!“"
+          ],
+          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Maryša"
+        }
+      ]
     },
     {
       "id": "cj07",
@@ -395,19 +604,27 @@
       "postavy": [
         {
           "jmeno": "vypravěč",
-          "role": "bezejmenný muž odsouzený inkvizicí k smrti"
+          "role": "bezejmenný muž odsouzený inkvizicí k smrti",
+          "charakteristika": "Bezejmenný muž odsouzený inkvizicí v Toledu k smrti za kacířství. Povídku vypráví sám a zachycuje své pocity v temné kobce. Střídavě propadá bláznění, zoufalství a střízlivé úvaze. Díky duchapřítomnosti se vysvobodí z pout pod kyvadlem a nakonec je zachráněn.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
         },
         {
           "jmeno": "inkvizitoři",
-          "role": "soudci a trýznitelé v Toledu"
+          "role": "soudci a trýznitelé v Toledu",
+          "charakteristika": "Soudci, kteří vypravěče odsoudí k smrti. Přímo téměř nevystupují, jejich moc se projevuje jen pastmi v kobce – jámou, kyvadlem a rozpálenými stěnami. Představují neviditelnou a krutou moc. Jejich vláda končí příchodem francouzské armády.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
         },
         {
           "jmeno": "krysy",
-          "role": "nechtěně pomohou vězni z pout"
+          "role": "nechtěně pomohou vězni z pout",
+          "charakteristika": "Zvířata, která se hemží v kobce kolem vězně. Vypravěč potře pouta zbytky jídla a ona je přehryžou. Díky tomu se vysvobodí právě včas, když kyvadlo začne přeřezávat jeho oděv. Nechtěně mu tak zachrání život.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
         },
         {
           "jmeno": "generál Lasalle",
-          "role": "velitel francouzské armády"
+          "role": "velitel francouzské armády",
+          "charakteristika": "Napoleonův generál, s nímž francouzská armáda vstoupí do Toleda. Na poslední chvíli zachytí ruku vypravěče padajícího do jámy. Jeho příchod znamená konec moci inkvizice. Skutečný Lasalle ale francouzskou okupaci Toleda nevedl.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
         }
       ],
       "obsah": "Povídka se odehrává ve španělském Toledu v době inkvizice. Vypravěč, jehož jméno se nedozvíme, je odsouzen k smrti za kacířství. Probudí se v temné kobce a snaží se zjistit, co ho v ní čeká. Poe mistrně líčí strach, beznaděj a pocity člověka na hranici smrti.",
@@ -421,7 +638,29 @@
         "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo",
         "https://cs.wikipedia.org/wiki/Edgar_Allan_Poe"
       ],
-      "k_overeni": []
+      "k_overeni": [],
+      "motivy": [
+        "smrt",
+        "strach a hrůza",
+        "moc"
+      ],
+      "zkouska": [
+        {
+          "id": "cj07-z1",
+          "otazka": "Jak Poe v Jámě a kyvadle buduje napětí a hrůzu?",
+          "body_odpovedi": [
+            "vypravěčem je bezejmenný odsouzenec, sledujeme jeho pocity",
+            "tma a nejistota v kobce – vězeň neví, co ho čeká",
+            "hrozby se stupňují: jáma, klesající kyvadlo, rozpálené stěny",
+            "vězeň střídavě propadá bláznění, zoufalství a střízlivosti",
+            "záchrana na poslední chvíli – generál Lasalle vstoupí do Toleda",
+            "Poe je považován za zakladatele hororového a detektivního žánru"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+        }
+      ]
     },
     {
       "id": "cj08",
@@ -445,27 +684,39 @@
       "postavy": [
         {
           "jmeno": "Chlestakov",
-          "role": "bezvýznamný úředník, kterého považují za revizora"
+          "role": "bezvýznamný úředník, kterého považují za revizora",
+          "charakteristika": "Mladý bezvýznamný úředník, který v kartách prohraje všechny peníze a nemá na útratu v hostinci. Úředníci ho mylně považují za revizora. Když omyl pochopí, plně ho využije – bere „půjčky“ a dary, svádí hejtmanovu ženu a nechá si nabídnout ruku jeho dcery. Při vychloubání se do role tak vžije, že jí téměř uvěří.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
           "jmeno": "Osip",
-          "role": "Chlestakovův sluha"
+          "role": "Chlestakovův sluha",
+          "charakteristika": "Sluha, se kterým Chlestakov přijel do městečka. Je střízlivější než jeho pán. Včas mu vysvětlí, že takový podvod se dlouho neudrží v tajnosti. Díky němu Chlestakov z města zmizí dřív, než je odhalen.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
           "jmeno": "hejtman",
-          "role": "představený města, úplatkář"
+          "role": "představený města, úplatkář",
+          "charakteristika": "Představený městečka, který s ostatními úředníky bere úplatky a nestará se o pořádek. Ze strachu z revize ubytuje Chlestakova ve svém domě a nabídne mu ruku své dcery. Sní o životě tchána významného muže. Po odhalení podvodu zuří a vzápětí se dozví o příjezdu skutečného revizora.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
           "jmeno": "Anna Andrejevna a Marja Antonovna",
-          "role": "hejtmanova žena a dcera"
+          "role": "hejtmanova žena a dcera",
+          "charakteristika": "Hejtmanova manželka a dcera. Chlestakov svádí hejtmanovu ženu a hejtman mu nabídne ruku dcery. Obě se nechají oslnit domnělým významným mužem z Petrohradu. Dokreslují satiru na maloměstskou společnost.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
           "jmeno": "Bobčinskij a Dobčinskij",
-          "role": "statkáři, šiřitelé klepů"
+          "role": "statkáři, šiřitelé klepů",
+          "charakteristika": "Dva statkáři, jejichž jedinou životní náplní je běhat po městě a šířit jakékoli zprávy. Právě oni prohlásí Chlestakova za revizora a rychle to rozšíří. Jsou spouštěčem celé komedie omylů. Představují maloměstské klepaření.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
           "jmeno": "poštmistr",
-          "role": "otevírá cizí dopisy"
+          "role": "otevírá cizí dopisy",
+          "charakteristika": "Městský úředník, který pro své rozptýlení otevírá cizí dopisy. Díky tomu se úředníci hned dozvědí o revizorovi. Na konci otevře i Chlestakovův dopis příteli. Tím odhalí celý podvod.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         }
       ],
       "obsah": "Hra se odehrává v malém ruském městečku, jehož úředníci kradou, berou úplatky a nestarají se o pořádek. Hejtman dostane zprávu, že do města inkognito přijede revizor. Úředníci propadnou panice a za revizora omylem považují mladého úředníka Chlestakova, který v hostinci prohrál všechny peníze. Gogol tím nastavuje zrcadlo úplatkářství a podlézavosti.",
@@ -483,6 +734,28 @@
       "k_overeni": [
         "Druh a období: v zadaném seznamu bylo „epika-próza“ a „20. a 21. století“, ale Revizor je divadelní hra z roku 1836 – opraveno na drama a 19. století.",
         "Zajímavost: česká Wikipedie u tvrzení o Puškinovi uvádí „[zdroj?]“, anglická jej uvádí jako údajné („allegedly“)."
+      ],
+      "motivy": [
+        "satira společnosti",
+        "moc",
+        "peníze a majetek"
+      ],
+      "zkouska": [
+        {
+          "id": "cj08-z1",
+          "otazka": "Jak Gogol v Revizorovi zesměšňuje úředníky?",
+          "body_odpovedi": [
+            "úředníci městečka kradou, berou úplatky a všude je nepořádek",
+            "ze strachu z revize považují za revizora bezvýznamného Chlestakova",
+            "podplácejí ho „půjčkami“ a dary, hejtman mu nabídne dceru",
+            "Chlestakov se do role vžije a vychloubá se",
+            "poštmistr otevře jeho dopis a podvod vyjde najevo",
+            "na konci přijede skutečný revizor"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
+        }
       ]
     },
     {
@@ -507,23 +780,33 @@
       "postavy": [
         {
           "jmeno": "Řehoř Samsa",
-          "role": "obchodní cestující, promění se v hmyz"
+          "role": "obchodní cestující, promění se v hmyz",
+          "charakteristika": "Obchodní cestující, který dosud sám živil rodiče i sestru. Jednoho rána se probudí jako obří hmyz a jeho první starostí je, jak půjde do práce. Uvažuje racionálně a rozumí lidské řeči, ale nemůže se domluvit. Rodina ho postupně zavrhne a on opuštěný umírá.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Proměna_(povídka)"
         },
         {
           "jmeno": "Markétka (Grete)",
-          "role": "Řehořova mladší sestra"
+          "role": "Řehořova mladší sestra",
+          "charakteristika": "Mladší sestra, která se o proměněného bratra zpočátku jako jediná stará. Po proměně prodává v obchodě a učí se francouzsky, ráda hraje na housle. Postupně dojde k názoru, že hmyz už není její bratr, a přesvědčuje rodiče, aby se ho zbavili. Její proměna od soucitu k odmítnutí ukazuje, jak postradatelný je jedinec i pro nejbližší.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Proměna_(povídka)"
         },
         {
           "jmeno": "otec",
-          "role": "po Řehořově proměně se vrací do práce"
+          "role": "po Řehořově proměně se vrací do práce",
+          "charakteristika": "Otec, který nepracoval, dokud rodinu živil syn. Po proměně se vrací do zaměstnání jako sluha. V hněvu po proměněném synovi hází jablka a jedno ho trvale zraní. Z psychoanalytického pohledu znovu zaujímá místo hlavy rodiny.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Proměna_(povídka)"
         },
         {
           "jmeno": "matka",
-          "role": "bojí se Řehoře vidět"
+          "role": "bojí se Řehoře vidět",
+          "charakteristika": "Matka, která se bojí proměněného syna vidět. Když ho spatří při vystěhovávání nábytku, omdlí. Obává se, že vystěhování pokoje by syn chápal jako zavržení. Přes soucit se se situací nevyrovná.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Proměna_(povídka)"
         },
         {
           "jmeno": "posluhovačka",
-          "role": "jediná se s situací smíří"
+          "role": "jediná se s situací smíří",
+          "charakteristika": "Otrlá žena, která jako jediná přijme proměnu a s hmyzem jedná rázně a bez okolků. Ráno najde Řehoře mrtvého. Sama jeho tělo odklidí. Její lhostejnost kontrastuje se strachem a utrpením rodiny.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Proměna_(povídka)"
         }
       ],
       "obsah": "Obchodní cestující Řehoř Samsa se jednoho rána probudí a zjistí, že se proměnil v obří hmyz. Jeho první starostí je, jak se dostane do práce. Rodina, kterou dosud živil, ho zavře v jeho pokoji. Povídka je plná absurdity, pocitu bezvýchodnosti i černého humoru.",
@@ -540,6 +823,32 @@
       ],
       "k_overeni": [
         "Literární směr: zdroj uvádí jen, že povídka poprvé vyšla v expresionistickém měsíčníku Die Weißen Blätter; zařazení k expresionismu ověř v učebnici."
+      ],
+      "motivy": [
+        "odcizení",
+        "osamělost",
+        "absurdita",
+        "rodina",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj09-z1",
+          "otazka": "Proč je Kafkova Proměna absurdní?",
+          "body_odpovedi": [
+            "proměna v hmyz není nijak vysvětlena – je sdělena hned v první větě",
+            "Řehoř ji přijímá klidně a racionálně, jeho první starostí je práce",
+            "komicko-tragické momenty: lezení po stropě, otec hází jablka",
+            "rodina místo pomoci Řehoře postupně zavrhne, i sestra Markétka",
+            "po jeho smrti se rodině uleví a jede na výlet",
+            "povídka bývá vykládána jako obraz osamělosti a postradatelnosti jedince"
+          ],
+          "citace_k_pouziti": [
+            "„proměnil v jakýsi odporný hmyz“"
+          ],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Proměna_(povídka)"
+        }
       ]
     },
     {
@@ -564,19 +873,27 @@
       "postavy": [
         {
           "jmeno": "Santiago",
-          "role": "starý kubánský rybář"
+          "role": "starý kubánský rybář",
+          "charakteristika": "Starý kubánský rybář, kterého 84 dní provází smůla. Je chudý, ale jeho oči mají stále jiskru veselosti. Vydá se daleko na moře, několik dní bojuje s obrovskou rybou a vnímá ji jako sobě rovnou. Přestože mu žraloci úlovek sežerou, nevzdá se až do konce.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Stařec_a_moře"
         },
         {
           "jmeno": "chlapec (Manolin)",
-          "role": "Santiagův mladý přítel"
+          "role": "Santiagův mladý přítel",
+          "charakteristika": "Mladý přítel, kterého stařec naučil rybařit. Rodiče mu kvůli starcově smůle nařídili jezdit na úspěšnější lodi, přesto starci dál pomáhá a nosí mu jídlo. Po návratu se o vyčerpaného Santiaga stará a pláče nad jeho příběhem. Představuje přátelství a naději.",
+          "zdroj": "https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea"
         },
         {
           "jmeno": "marlín",
-          "role": "obrovská ryba, se kterou Santiago bojuje"
+          "role": "obrovská ryba, se kterou Santiago bojuje",
+          "charakteristika": "Obrovská ryba, největší, jakou stařec kdy chytil. Celé dny táhne loďku od pobřeží, až ji stařec harpunou zabije. Santiago ji obdivuje a vnímá jako sobě rovnou. Žraloci z ní nechají jen kostru, kterou na pláži obdivují lidé.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Stařec_a_moře"
         },
         {
           "jmeno": "žraloci",
-          "role": "připraví Santiaga o úlovek"
+          "role": "připraví Santiaga o úlovek",
+          "charakteristika": "Dravci přilákaní krví, kteří zaútočí na úlovek přivázaný k loďce. Santiago je zabíjí harpunou, nožem i kyjem, ale přicházejí další. Nakonec z ryby sežerou všechno maso. Ztělesňují přírodní sílu, proti které je i odhodlaný člověk bezmocný.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Stařec_a_moře"
         }
       ],
       "obsah": "Starý kubánský rybář Santiago už 84 dní nechytil žádnou rybu. Chlapec, který s ním jezdil, musel na přání otce přejít k úspěšnějším rybářům. Santiago se jednoho dne vydá daleko na moře, aby smolné období prolomil. Novela je příběhem vytrvalosti a vztahu člověka a přírody.",
@@ -588,10 +905,32 @@
       },
       "zdroje": [
         "https://cs.wikipedia.org/wiki/Stařec_a_moře",
-        "https://cs.wikipedia.org/wiki/Ernest_Hemingway"
+        "https://cs.wikipedia.org/wiki/Ernest_Hemingway",
+        "https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea"
       ],
-      "k_overeni": [
-        "Jméno chlapce (Manolin) české heslo neuvádí, je z obecné znalosti díla."
+      "k_overeni": [],
+      "motivy": [
+        "příroda",
+        "vytrvalost",
+        "přátelství",
+        "osamělost"
+      ],
+      "zkouska": [
+        {
+          "id": "cj10-z1",
+          "otazka": "Co vyjadřuje Santiagův souboj s rybou ve Starci a moři?",
+          "body_odpovedi": [
+            "Santiago 84 dní nechytil rybu, přesto vyrazí daleko na moře",
+            "rybu vnímá jako sobě rovnou – splynutí člověka s přírodou",
+            "vytrvalost: bojuje i ve chvíli, kdy upadá do mdlob",
+            "žraloci rybu sežerou, domů přiveze jen kostru",
+            "navenek prohra, ale ukázka lidské odhodlanosti",
+            "chlapec Manolin – přátelství a naděje"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Stařec_a_moře"
+        }
       ]
     },
     {
@@ -616,27 +955,39 @@
       "postavy": [
         {
           "jmeno": "George Milton",
-          "role": "drobný a bystrý, stará se o Lennieho"
+          "role": "drobný a bystrý, stará se o Lennieho",
+          "charakteristika": "Drobný a bystrý dělník, který se stará o mentálně postiženého Lennieho, protože ho o to požádala Lennieho teta Klára. Je obětavý, i když Lenniemu občas vyčítá, že kvůli němu nemá vlastní život. Sní o vlastním domku s hospodářstvím. Na konci Lennieho s těžkým srdcem zastřelí, aby ho ušetřil lynčování.",
+          "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
         },
         {
           "jmeno": "Lennie Small",
-          "role": "silný, mentálně postižený hromotluk"
+          "role": "silný, mentálně postižený hromotluk",
+          "charakteristika": "Velký a silný hromotluk s mentálním postižením, který ve všem věří Georgeovi. Rád hladí hebké věci, ale neuvědomuje si svou sílu a zvířátka nechtěně rozmačká. Těší se, že se na vlastní farmě bude starat o králíky. Když nechtěně zabije Curleyho ženu, uteče na smluvené místo.",
+          "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
         },
         {
           "jmeno": "Candy",
-          "role": "starý dělník bez ruky"
+          "role": "starý dělník bez ruky",
+          "charakteristika": "Starý dělník, který na ranči přišel o ruku. Nechal se přemluvit, aby jeho starého trpícího psa zastřelili. Nabídne své úspory, aby se mohl přidat ke snu George a Lennieho. Díky jeho penězům se sen o farmě poprvé zdá dosažitelný.",
+          "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
         },
         {
           "jmeno": "Curley",
-          "role": "agresivní syn majitele ranče"
+          "role": "agresivní syn majitele ranče",
+          "charakteristika": "Syn majitele ranče, malý a agresivní člověk, který neustále vyvolává konflikty. Žárlivě hlídá svou ženu a každého podezírá. Vyprovokuje Lennieho k rvačce a ten mu zlomí ruku. Ztělesňuje moc a násilí na ranči.",
+          "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
         },
         {
           "jmeno": "Curleyho žena",
-          "role": "osamělá, koketuje s dělníky"
+          "role": "osamělá, koketuje s dělníky",
+          "charakteristika": "Půvabná, vyzývavá žena, která toužila stát se herečkou, ale žije s manželem, kterého nemiluje. Je osamělá, proto koketuje s dělníky. Vnucuje se Lenniemu a nechá ho hladit své vlasy. Když začne křičet, Lennie jí nechtěně zlomí vaz.",
+          "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
         },
         {
           "jmeno": "Slim",
-          "role": "respektovaný dělník"
+          "role": "respektovaný dělník",
+          "charakteristika": "Velmi respektovaný dělník, který zvládne ukočírovat velké spřežení. Má rozumné názory, na které každý dá. Lenniemu a Candymu dá štěňata ze svého vrhu. Představuje klidnou autoritu na ranči.",
+          "zdroj": "https://en.wikipedia.org/wiki/Of_Mice_and_Men"
         }
       ],
       "obsah": "Děj se odehrává ve 30. letech 20. století na kalifornském ranči. Kamarádi George a Lennie putují za prací od ranče k ranči. Sní o tom, že si jednou koupí vlastní domek s hospodářstvím, kde bude Lennie chovat králíky. Kniha ukazuje osamělost, chudobu a krutost doby hospodářské krize.",
@@ -654,6 +1005,29 @@
       "k_overeni": [
         "Druh: v zadaném seznamu bylo „drama“; kniha je novela (Steinbeck podle ní napsal i divadelní verzi), proto je uvedena epika.",
         "Literární směr: zařazení k realismu ověř v učebnici."
+      ],
+      "motivy": [
+        "přátelství",
+        "sen a touha",
+        "osamělost",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj11-z1",
+          "otazka": "Jakou roli hraje v novele O myších a lidech sen o vlastní farmě?",
+          "body_odpovedi": [
+            "George a Lennie sní o domku s hospodářstvím, kde bude Lennie chovat králíky",
+            "Candy nabídne úspory a sen se zdá poprvé reálný",
+            "na ranči vládne osamělost a krize 30. let",
+            "Lennie si neuvědomuje svou sílu a nechtěně zabije Curleyho ženu",
+            "George Lennieho zastřelí, aby ho ušetřil lynčování – sen končí",
+            "název odkazuje na báseň Roberta Burnse"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
+          "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
+        }
       ]
     },
     {
@@ -678,27 +1052,39 @@
       "postavy": [
         {
           "jmeno": "Harry Domin",
-          "role": "centrální ředitel továrny R.U.R."
+          "role": "centrální ředitel továrny R.U.R.",
+          "charakteristika": "Centrální ředitel továrny Rossumovi univerzální roboti. Ožení se s Helenou Gloryovou. Věří, že roboti vytvoří pro člověka ráj na zemi a lidé už nebudou trpět hladem. Jeho víra v pokrok se obrátí proti lidstvu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
         },
         {
           "jmeno": "Helena Gloryová",
-          "role": "dcera prezidenta, chce roboty zrovnoprávnit"
+          "role": "dcera prezidenta, chce roboty zrovnoprávnit",
+          "charakteristika": "Pěkná dcera prezidenta, která připluje na ostrov s cílem roboty zrovnoprávnit. Všichni se do ní zamilují a ona si vezme ředitele Domina. Ze soucitu přiměje Dr. Galla, aby experimentoval s „duší“ robotů. Před smrtí spálí Rossumův výrobní postup.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
         },
         {
           "jmeno": "stavitel Alquist",
-          "role": "šéf staveb, pracuje rukama, přežije"
+          "role": "šéf staveb, pracuje rukama, přežije",
+          "charakteristika": "Šéf staveb R.U.R., který stále pracuje rukama, protože věří, že práce je smyslem života. Roboti ho jako jediného člověka ušetří. Marně se snaží znovu objevit výrobní postup. Na konci pozná lásku mezi dvěma roboty a pošle je do světa jako nové Adama a Evu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
         },
         {
           "jmeno": "Dr. Gall",
-          "role": "vědec, experimentuje s „duší“ robotů"
+          "role": "vědec, experimentuje s „duší“ robotů",
+          "charakteristika": "Přednosta fyziologického a výzkumného oddělení R.U.R. Na Helenino přání začne experimentovat s „duší“ robotů, aby mohli mít city. Patří k vedení továrny, které roboti při vzpouře zabijí. Ukazuje, jak lidé zasahují do vlastního výtvoru.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
         },
         {
           "jmeno": "Radius",
-          "role": "robot, vůdce vzpoury"
+          "role": "robot, vůdce vzpoury",
+          "charakteristika": "Jeden z robotů továrny R.U.R. Patří k robotům, kteří se vzbouří a vyhlásí lidstvu válku. Je příkladem robota, který přestane jen sloužit lidem.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
         },
         {
           "jmeno": "robot Primus a robotka Helena",
-          "role": "roboti, kteří pocítí lásku"
+          "role": "roboti, kteří pocítí lásku",
+          "charakteristika": "Dvojice robotů, kteří jedné noci vzbudí Alquista. Když chce jednoho z nich pitvat, druhý se nabídne místo něj – chrání se navzájem. Alquist pozná, že se mají rádi. Pošle je pryč, aby s láskou začali život znovu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
         }
       ],
       "obsah": "Na ostrově v blíže neurčené budoucnosti vyrábí továrna Rossumovi univerzální roboti umělé dělníky. Přijede sem Helena Gloryová, která chce roboty zrovnoprávnit, a provdá se za ředitele Domina. Roboti mají lidem ulehčit práci a vytvořit ráj na zemi. Čapek varuje před negativním vlivem techniky na lidstvo.",
@@ -714,7 +1100,31 @@
         "https://cs.wikipedia.org/wiki/Robot"
       ],
       "k_overeni": [
-        "Druh: v zadaném seznamu bylo „epika-próza“, R.U.R. je ale divadelní hra – opraveno na drama."
+        "Druh: v zadaném seznamu bylo „epika-próza“, R.U.R. je ale divadelní hra – opraveno na drama.",
+        "Charakteristiky postav: role robota Radia ve vzpouře zdrojové heslo nepopisuje."
+      ],
+      "motivy": [
+        "technika a pokrok",
+        "vzpoura a revoluce",
+        "láska",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj12-z1",
+          "otazka": "Před čím Čapek v R.U.R. varuje?",
+          "body_odpovedi": [
+            "roboti měli lidem ulehčit práci a vytvořit ráj na zemi",
+            "lidé zlenivěli, upadly mravy a roboty začali používat jako vojáky",
+            "roboti se vzbouří a vyhladí lidstvo",
+            "Helena spálí Rossumův výrobní postup, roboti nemohou vznikat",
+            "Alquist přežije, protože pracuje rukama – práce jako smysl života",
+            "robot Primus a robotka Helena – láska jako nový začátek (Adam a Eva)"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        }
       ]
     },
     {
@@ -739,27 +1149,39 @@
       "postavy": [
         {
           "jmeno": "Nick Carraway",
-          "role": "vypravěč, Gatsbyho soused"
+          "role": "vypravěč, Gatsbyho soused",
+          "charakteristika": "Vypravěč příběhu, mladý muž ze Středozápadu a veterán první světové války, který přijede do New Yorku obchodovat na burze. Bydlí na Long Islandu vedle Gatsbyho a stane se jeho přítelem. Zpočátku je optimistický, chování bohaté společnosti ho ale postupně znechutí. Po tragédii ukončí vztah s Jordan Bakerovou a vrátí se domů.",
+          "zdroj": "https://en.wikipedia.org/wiki/The_Great_Gatsby"
         },
         {
           "jmeno": "Jay Gatsby",
-          "role": "tajemný mladý milionář"
+          "role": "tajemný mladý milionář",
+          "charakteristika": "Tajemný mladý milionář, původně chudý James Gatz, který utekl z domova, aby se vypracoval. Bohatství získal zřejmě nelegálním obchodem s alkoholem a pořádá monstrózní večírky. Celý život miluje Daisy, kterou poznal jako voják. Je zastřelen a na pohřeb skoro nikdo nepřijde.",
+          "zdroj": "https://en.wikipedia.org/wiki/The_Great_Gatsby"
         },
         {
           "jmeno": "Daisy Buchananová",
-          "role": "Nickova sestřenice, Gatsbyho láska"
+          "role": "Nickova sestřenice, Gatsbyho láska",
+          "charakteristika": "Nickova sestřenice, povrchní a sebestředná mladá žena z bohaté společnosti, vdaná za Toma. Před svatbou měla vztah s Gatsbym. Volba mezi Gatsbym a Tomem je jedním z hlavních konfliktů románu. Po nehodě, kdy za volantem přejede Myrtle, zůstane s Tomem a odjede s ním.",
+          "zdroj": "https://en.wikipedia.org/wiki/The_Great_Gatsby"
         },
         {
           "jmeno": "Tom Buchanan",
-          "role": "Daisyin bohatý manžel"
+          "role": "Daisyin bohatý manžel",
+          "charakteristika": "Daisyin manžel, milionář, statný muž s hrubým hlasem a pohrdavým chováním. Má milenku Myrtle Wilsonovou. Otevřeně se střetne s Gatsbym o Daisy. Wilsonovi řekne, že auto patří Gatsbymu, a tím nepřímo způsobí jeho smrt.",
+          "zdroj": "https://en.wikipedia.org/wiki/The_Great_Gatsby"
         },
         {
           "jmeno": "Myrtle Wilsonová",
-          "role": "Tomova milenka"
+          "role": "Tomova milenka",
+          "charakteristika": "Manželka majitele autoopravny George Wilsona a Tomova milenka. Nick ji pozná osobně jako důkaz, že manželství Buchananových není šťastné. Zemře, když ji přejede Gatsbyho auto, za jehož volantem sedí Daisy. Její smrt spustí tragický konec.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Velký_Gatsby"
         },
         {
           "jmeno": "George Wilson",
-          "role": "majitel autoopravny, Myrtlin manžel"
+          "role": "majitel autoopravny, Myrtlin manžel",
+          "charakteristika": "Pracovitý majitel autoopravny, manžel Myrtle. Dozví se o manželčině nevěře a chce s ní odjet a začít nový život. Po její smrti je zdrcený a pomýšlí na odplatu. Zastřelí Gatsbyho a pak sám sebe.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Velký_Gatsby"
         }
       ],
       "obsah": "Ve 20. letech 20. století přijíždí Nick Carraway do New Yorku a usadí se na Long Islandu vedle sídla tajemného milionáře Jaye Gatsbyho. Gatsby pořádá velkolepé večírky a o jeho minulosti kolují jen dohady. Nick se s ním spřátelí a postupně odhaluje jeho příběh. Román zachycuje lesk i prázdnotu „jazzového věku“.",
@@ -771,9 +1193,33 @@
       },
       "zdroje": [
         "https://cs.wikipedia.org/wiki/Velký_Gatsby",
-        "https://cs.wikipedia.org/wiki/Francis_Scott_Fitzgerald"
+        "https://cs.wikipedia.org/wiki/Francis_Scott_Fitzgerald",
+        "https://en.wikipedia.org/wiki/The_Great_Gatsby"
       ],
-      "k_overeni": []
+      "k_overeni": [],
+      "motivy": [
+        "láska",
+        "peníze a majetek",
+        "sen a touha",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj13-z1",
+          "otazka": "Proč Gatsbyho příběh končí tragicky?",
+          "body_odpovedi": [
+            "Gatsby (původně chudý Gatz) touží vypracovat se a získat Daisy",
+            "milence rozdělilo společenské postavení a válka, Daisy si vzala Toma",
+            "bohatství má zřejmě z nelegálního obchodu s alkoholem v době prohibice",
+            "Daisy řídí Gatsbyho auto a přejede Myrtle Wilsonovou",
+            "Tom navede Wilsona na Gatsbyho, Wilson ho zastřelí",
+            "na pohřeb nikdo nepřijde – prázdnota „jazzového věku“"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Velký_Gatsby"
+        }
+      ]
     },
     {
       "id": "cj14",
@@ -797,23 +1243,33 @@
       "postavy": [
         {
           "jmeno": "Pavel Bäumer",
-          "role": "vypravěč, mladý německý voják"
+          "role": "vypravěč, mladý německý voják",
+          "charakteristika": "Vypravěč a hlavní postava, devatenáctiletý student, který dobrovolně narukuje. Předtím byl citlivý mladík, psal básně a miloval rodinu. Válka ho zbaví citů a nadějí, stane se z něj cynik a doma si připadá jako cizinec. Padne v říjnu 1918 v den tak klidný, že zpráva velitelství hlásí jen klid na frontě.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
         },
         {
           "jmeno": "Katczinsky (Kat)",
-          "role": "zkušený starší voják, Pavlův přítel"
+          "role": "zkušený starší voják, Pavlův přítel",
+          "charakteristika": "Starší voják, Polák, v civilu švec, vůdce skupiny a Pavlův nejlepší přítel. Umí sehnat cokoli, hlavně jídlo, a na mladé vojáky má dobrý vliv. Je zraněn a Pavel ho nese do lazaretu, cestou ho ale zabije střepina. Jeho smrt Pavla zlomí.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
         },
         {
           "jmeno": "Kropp, Müller, Leer, Kemmerich",
-          "role": "Pavlovi spolužáci a kamarádi"
+          "role": "Pavlovi spolužáci a kamarádi",
+          "charakteristika": "Pavlovi spolužáci, kteří s ním narukovali. Kemmerich umírá jako první a jeho boty zdědí Müller, který je před vlastní smrtí předá Pavlovi. Kropp, nejchytřejší ze skupiny, přijde o nohu. Jejich postupná smrt ukazuje zkázu celé generace.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
         },
         {
           "jmeno": "Kantorek",
-          "role": "třídní profesor, přemluví studenty k narukování"
+          "role": "třídní profesor, přemluví studenty k narukování",
+          "charakteristika": "Učitel a silný zastánce války, který celou třídu přiměje narukovat. Sám je pokrytec – oháněje se vlastenectvím, do bojů nejde. Později je sám povolán a zažije dril od svého bývalého studenta. Představuje dospělé, kteří mladé poslali do války.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
         },
         {
           "jmeno": "Himmelstoss",
-          "role": "desátník, šikanuje rekruty"
+          "role": "desátník, šikanuje rekruty",
+          "charakteristika": "Desátník, který rekruty při výcviku krutě šikanuje a mladí vojáci ho nenávidí. Na frontě odtáhne smrtelně zraněného Westhuse do bezpečí. Tjaden mu nakonec odpustí. Ukazuje rozdíl mezi kasárenskou mocí a skutečnou válkou.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
         }
       ],
       "obsah": "Mladý Pavel Bäumer a jeho spolužáci se pod vlivem profesora Kantorka dobrovolně přihlásí do armády. Na západní frontě první světové války zažívají šikanu, hlad, bombardování a smrt kamarádů. Román ukazuje válku bez hrdinství, z pohledu obyčejného vojáka. Zachycuje tragédii generace, které válka vzala mládí.",
@@ -827,7 +1283,32 @@
         "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid",
         "https://cs.wikipedia.org/wiki/Erich_Maria_Remarque"
       ],
-      "k_overeni": []
+      "k_overeni": [],
+      "motivy": [
+        "válka",
+        "smrt",
+        "přátelství",
+        "odcizení"
+      ],
+      "zkouska": [
+        {
+          "id": "cj14-z1",
+          "otazka": "Jak Remarque zobrazuje válku v románu Na západní frontě klid?",
+          "body_odpovedi": [
+            "pohled obyčejného vojáka Pavla Bäumera, bez hrdinství",
+            "nesmyslnost bojů – smrt mnoha vojáků pro kousek území",
+            "učitel Kantorek přiměje studenty narukovat",
+            "na dovolené se Pavel odcizí civilnímu životu",
+            "kamarádi umírají jeden po druhém, nakonec i Katczinsky",
+            "Pavel padne v den, kdy hlášení uvádí, že na frontě je klid"
+          ],
+          "citace_k_pouziti": [
+            "„Na západní frontě klid.“"
+          ],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
+        }
+      ]
     },
     {
       "id": "cj15",
@@ -851,27 +1332,39 @@
       "postavy": [
         {
           "jmeno": "Josef Švejk",
-          "role": "pražský prodavač psů, úředně uznaný blb a dobrácký šibal"
+          "role": "pražský prodavač psů, úředně uznaný blb a dobrácký šibal",
+          "charakteristika": "Pražský prodavač psů, který do války vstupuje se směšně působícím nadšením a příkazy plní doslova. Spojuje instinktivní statečnost a smysl pro pořádek s životní rezignací a smířením s osudem. Není jasné, zda je opravdu hloupý, nebo hloupost systému vědomě obrací proti němu. Svým „dětským jasným pohledem“ dokáže důstojníky odzbrojit.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války"
         },
         {
           "jmeno": "nadporučík Lukáš",
-          "role": "Švejkův nadřízený, sukničkář"
+          "role": "Švejkův nadřízený, sukničkář",
+          "charakteristika": "Důstojník známý mnoha milostnými aférami, kterému Švejk slouží jako vojenský sluha. Kvůli Švejkovým nápadům, například ukradenému psovi, se dostává do trapných situací. Spolu se Švejkem odjíždí na frontu. Postava má skutečný předobraz v Haškově 91. pěším pluku.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války"
         },
         {
           "jmeno": "polní kurát Katz",
-          "role": "věčně opilý kněz, prohraje Švejka v kartách"
+          "role": "věčně opilý kněz, prohraje Švejka v kartách",
+          "charakteristika": "Věčně opilý polní kurát, u kterého Švejk slouží jako sluha. Kněžský úřad bere velmi lehce. Švejka prohraje v kartách s nadporučíkem Lukášem. Je satirou na církev ve službách armády.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války"
         },
         {
           "jmeno": "paní Müllerová",
-          "role": "Švejkova posluhovačka"
+          "role": "Švejkova posluhovačka",
+          "charakteristika": "Švejkova posluhovačka. Hned na začátku románu mu oznámí, že v Sarajevu zabili arcivévodu Ferdinanda. Když má Švejk jít k odvodu, veze ho tam na kolečkovém křesle. Je obrazem obyčejných pražských lidí.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války"
         },
         {
           "jmeno": "Palivec",
-          "role": "hostinský U Kalicha"
+          "role": "hostinský U Kalicha",
+          "charakteristika": "Sprostý hostinský U Kalicha. Na otázku tajného policisty Bretschneidra, kde je obraz císaře pána, odpoví, že ho dal na půdu, protože na něj sraly mouchy. Za to je zatčen pro velezradu. Ukazuje absurditu rakouské policie.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války"
         },
         {
           "jmeno": "poručík Dub",
-          "role": "přísný a hloupý důstojník"
+          "role": "přísný a hloupý důstojník",
+          "charakteristika": "Přísný důstojník, který neustále opakuje vlastenecké fráze o povinnosti a věrnosti. Švejka podezírá a chce ho přistihnout. Haškův text končí jeho proslovem o patriotismu. Je satirou na rakouské úřední vlastenectví.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války"
         }
       ],
       "obsah": "Román začíná větou paní Müllerové „Tak nám zabili Ferdinanda“. Pražský prodavač psů Josef Švejk se svou zdánlivou hloupostí a horlivostí dostává do jedné absurdní situace za druhou. Hašek zesměšňuje rakousko-uherskou armádu, úřady i válku. Kompozicí připomíná pikareskní román.",
@@ -887,6 +1380,31 @@
       ],
       "k_overeni": [
         "Shrnutí děje: epizoda s ruskou uniformou je z obecné znalosti díla, ve zdrojovém úryvku popsána nebyla."
+      ],
+      "motivy": [
+        "válka",
+        "satira společnosti",
+        "absurdita",
+        "moc"
+      ],
+      "zkouska": [
+        {
+          "id": "cj15-z1",
+          "otazka": "Jak Hašek zobrazuje válku a rakouskou armádu?",
+          "body_odpovedi": [
+            "satira rozkládajícího se Rakouska-Uherska a nesmyslné války",
+            "Švejk obrací hloupost systému proti němu samému",
+            "groteska, fraška a jazyk obyčejného člověka",
+            "karikatury postav – kurát Katz, nadporučík Lukáš, poručík Dub",
+            "pikareskní kompozice – Švejk prochází řadou příhod",
+            "vychází z Haškových zážitků v 91. pluku, užívá skutečná jména"
+          ],
+          "citace_k_pouziti": [
+            "„Tak nám zabili Ferdinanda“"
+          ],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války"
+        }
       ]
     },
     {
@@ -911,23 +1429,33 @@
       "postavy": [
         {
           "jmeno": "Miloš Hrma",
-          "role": "mladý výpravčí-praktikant, vypravěč"
+          "role": "mladý výpravčí-praktikant, vypravěč",
+          "charakteristika": "Mladý výpravčí-praktikant a vypravěč novely. Po sexuálním nezdaru s Mášou se pokusí o sebevraždu, ale je zachráněn. S pomocí Viktorie dospěje a rozhodne se zúčastnit sabotáže. Při útoku na muniční vlak se s německým vojákem navzájem postřelí a umírá.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
         },
         {
           "jmeno": "výpravčí Hubička",
-          "role": "Milošův školitel, bezostyšný sukničkář"
+          "role": "Milošův školitel, bezostyšný sukničkář",
+          "charakteristika": "Výpravčí a Milošův školitel, perverzní a bezostyšný muž. Jeho sebevědomí ve vztazích k ženám kontrastuje s Milošovou nesmělostí. Na stanici zaučuje Miloše do služby. Vnáší do válečného příběhu komiku.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
         },
         {
           "jmeno": "přednosta stanice",
-          "role": "chová holuby a sní o povýšení"
+          "role": "chová holuby a sní o povýšení",
+          "charakteristika": "Přednosta malé stanice, který chová holuby a sní o povýšení. Je Milošovým nadřízeným. Jeho manželka odmítne Milošovi pomoci získat erotickou zkušenost. Představuje maloměšťáka, který chce válku přečkat.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
         },
         {
           "jmeno": "Máša",
-          "role": "průvodčí, Milošova přítelkyně"
+          "role": "průvodčí, Milošova přítelkyně",
+          "charakteristika": "Průvodčí, Milošova přítelkyně. Jejich pokus o první milostný styk skončí nezdarem. Ten Miloše přivede k pokusu o sebevraždu. Stojí na začátku Milošovy cesty k dospělosti.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
         },
         {
           "jmeno": "Viktorie Freie",
-          "role": "partyzánka, přiveze bombu"
+          "role": "partyzánka, přiveze bombu",
+          "charakteristika": "Partyzánka, se kterou se Miloš seznámí. Pomůže mu získat první zdařený sexuální zážitek. Doveze na stanici bombu pro sabotáž. Spojuje téma dospívání s tématem odboje.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
         }
       ],
       "obsah": "Novela se odehrává v roce 1945 na malé železniční stanici v protektorátu, kudy projíždějí ostře sledované německé vlaky. Mladý Miloš Hrma se tu zaučuje na výpravčího. Trápí ho nezdar v lásce a hledá cestu k dospělosti. Ústředním tématem je proměna chlapce v muže v době války.",
@@ -943,6 +1471,30 @@
       ],
       "k_overeni": [
         "Příjmení Viktorie (Freie) je z obecné znalosti díla, zdrojové heslo uvádí jen „Viktorie“."
+      ],
+      "motivy": [
+        "válka",
+        "dospívání",
+        "odvaha a odboj",
+        "láska",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj16-z1",
+          "otazka": "Jak se v Ostře sledovaných vlacích proměňuje Miloš Hrma?",
+          "body_odpovedi": [
+            "po nezdaru s Mášou se pokusí o sebevraždu",
+            "na stanici se zaučuje u výpravčího Hubičky",
+            "partyzánka Viktorie mu pomůže získat první zdařený zážitek",
+            "rozhodne se pro sabotáž a shodí bombu na německý muniční vlak",
+            "při akci umírá",
+            "ústředním tématem je změna chlapce v muže v době války"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
+        }
       ]
     },
     {
@@ -967,23 +1519,33 @@
       "postavy": [
         {
           "jmeno": "tatínek Leo Popper",
-          "role": "obchodník, rybář a bonviván"
+          "role": "obchodník, rybář a bonviván",
+          "charakteristika": "Autorův otec, obchodník, který se u firmy Electrolux stal mistrem v prodeji vysavačů a ledniček. Je podnikavý, má smysl pro humor a miluje ryby a vodu; občas má malá milostná dobrodružství. Za okupace jako Žid přijde o rybník, ale v noci ho vyloví a pro syny přiveze pytláckého srnce. Po válce chová králíky a jednoho dne odejde z domu a už se nevrátí.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)"
         },
         {
           "jmeno": "maminka",
-          "role": "tolerantní k otcovým avantýrám"
+          "role": "tolerantní k otcovým avantýrám",
+          "charakteristika": "Vypravěčova matka, vzácně tolerantní k otcovým avantýrám. Po válce s ním žije u Radotína, chová krocany a slepice a prodává vajíčka. Když se otec ráno vrátí zbědovaný, zavolá sanitku. Představuje klidné zázemí rodiny.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)"
         },
         {
           "jmeno": "strejda Prošek",
-          "role": "pytlák a všeuměl od Berounky"
+          "role": "pytlák a všeuměl od Berounky",
+          "charakteristika": "Pytlák a všeuměl z Luhu pod Branovem, sžitý s přírodou u Křivoklátu a Berounky. Je „králem pytláků“. Za okupace riskuje smrt, když pomáhá otci ulovit srnce. Spolu s otcem ztělesňuje lásku k přírodě.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)"
         },
         {
           "jmeno": "vypravěč (Ota)",
-          "role": "autor vzpomínající na dětství"
+          "role": "autor vzpomínající na dětství",
+          "charakteristika": "Vypravěč, který s láskou a humorem vzpomíná na dětství a otce. Zažije šťastné dětství i okupaci, kdy bratři odcházejí do koncentračního tábora. V povídce Běh Prahou běží ve zmanipulovaném závodě schválně pomalu a dav ho napadne. Ota Pavel byl ve skutečnosti sportovní novinář.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)"
         },
         {
           "jmeno": "Holan",
-          "role": "Proškův vlčák"
+          "role": "Proškův vlčák",
+          "charakteristika": "Proškův divoký vlčák. Pomáhá otci ulovit srnce pro syny před odchodem do koncentračního tábora. Ukazuje sepětí lidí s přírodou.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)"
         }
       ],
       "obsah": "Ota Pavel v povídkách vzpomíná na šťastné dětství před druhou světovou válkou a na svého otce Lea Poppera, obchodníka a vášnivého rybáře. Příběhy se odehrávají hlavně u řek a rybníků na Křivoklátsku. Pak přichází okupace a s ní těžký úděl smíšené židovské rodiny. Kniha je plná humoru, lásky k přírodě i smutku.",
@@ -997,7 +1559,29 @@
         "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)",
         "https://cs.wikipedia.org/wiki/Ota_Pavel"
       ],
-      "k_overeni": []
+      "k_overeni": [],
+      "motivy": [
+        "rodina",
+        "příroda",
+        "válka"
+      ],
+      "zkouska": [
+        {
+          "id": "cj17-z1",
+          "otazka": "Jak Ota Pavel ve Smrti krásných srnců zobrazuje svého tatínka?",
+          "body_odpovedi": [
+            "Leo Popper – obchodník, mistr v prodeji výrobků Electrolux",
+            "humor, láska k rybám a vodě, malá milostná dobrodružství",
+            "podnikavost i nezdary (rybník s jednou rybou, mucholapky)",
+            "odvaha za okupace – srnec pro syny před transportem",
+            "vzdor – tajně vyloví rybník, který mu zabrali",
+            "konec: cedulka „Přijdu hned“ a otcův odchod"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)"
+        }
+      ]
     },
     {
       "id": "cj18",
@@ -1021,23 +1605,33 @@
       "postavy": [
         {
           "jmeno": "Franta Kroupa",
-          "role": "veterán ze Španělska (Němá barikáda)"
+          "role": "veterán ze Španělska (Němá barikáda)",
+          "charakteristika": "Veterán ze Španělska, jeden ze tří mužů, kteří zůstanou na zdánlivě opuštěné barikádě na mostě. S Nederlandem napíše na tramvaj „NO PASSARAN!“. Dá signál k palbě, když se Němci přiblíží. Ztělesňuje zkušeného bojovníka proti fašismu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Němá_barikáda"
         },
         {
           "jmeno": "strážník Brůček",
-          "role": "obránce barikády (Němá barikáda)"
+          "role": "obránce barikády (Němá barikáda)",
+          "charakteristika": "Pražský strážník, který zůstane na barikádě s Kroupou a Nederlandem. Celou noc nehnutě čeká za převrženou tramvají. Na signál spolu s ostatními spustí palbu. Ukazuje, že povstání se účastnili i obyčejní lidé.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Němá_barikáda"
         },
         {
           "jmeno": "Nederland",
-          "role": "holandský dobrovolník (Němá barikáda)"
+          "role": "holandský dobrovolník (Němá barikáda)",
+          "charakteristika": "Holandský dobrovolník, který brání pražskou barikádu. Spolu s Kroupou napíše na tramvaj heslo. Ukazuje mezinárodní rozměr boje proti fašismu. Je jedním ze tří obránců „němé“ barikády.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Němá_barikáda"
         },
         {
           "jmeno": "Pepík Hošek",
-          "role": "sedmnáctiletý chlapec s pancéřovou pěstí"
+          "role": "sedmnáctiletý chlapec s pancéřovou pěstí",
+          "charakteristika": "Sedmnáctiletý chlapec, který prožívá Pražské povstání. Neposlechne otce, běží s davem do ulic a dostane pancéřovou pěst. Na barikádě je ochromený strachem, ale nakonec vystřelí a zasáhne tank. Překoná strach a barikádu zachrání.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Němá_barikáda"
         },
         {
           "jmeno": "profesor „Vyšší princip“",
-          "role": "učitel latiny za heydrichiády"
+          "role": "učitel latiny za heydrichiády",
+          "charakteristika": "Středoškolský profesor latiny a řečtiny, třídní učitel septimy. Po popravě tří studentů za heydrichiády jejich vraždu odmítne a s atentátem souhlasí. Tvrdí, že z hlediska vyššího principu mravního vražda tyrana není zločinem. Třída mu spontánně vzdá čest povstáním.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Němá_barikáda"
         }
       ],
       "obsah": "Soubor jedenácti povídek zachycuje českou společnost za druhé světové války – od protestů roku 1939 přes heydrichiádu až po Pražské květnové povstání. Hrdiny jsou obyčejní lidé, kteří se postaví okupantům. Je to první prozaické zpracování těchto událostí v české literatuře. Povídky ukazují odvahu, strach i nenávist k nacistům.",
@@ -1051,7 +1645,29 @@
         "https://cs.wikipedia.org/wiki/Němá_barikáda",
         "https://cs.wikipedia.org/wiki/Jan_Drda"
       ],
-      "k_overeni": []
+      "k_overeni": [],
+      "motivy": [
+        "válka",
+        "odvaha a odboj",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj18-z1",
+          "otazka": "Jak Drda v Němé barikádě zobrazuje odboj obyčejných lidí?",
+          "body_odpovedi": [
+            "první prozaické zpracování událostí druhé světové války v české literatuře",
+            "titulní povídka: tři muži, léčka na „mrtvé“ barikádě, heslo NO PASSARAN",
+            "Pancéřová pěst: chlapec Pepík překoná strach a zastaví tank",
+            "Včelař: umírající včelař chrání včelí královnu jako symbol naděje",
+            "Vyšší princip: profesor se postaví za popravené studenty",
+            "povídky vycházejí ze skutečných událostí (heydrichiáda, Pražské povstání)"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Němá_barikáda"
+        }
+      ]
     },
     {
       "id": "cj19",
@@ -1075,27 +1691,39 @@
       "postavy": [
         {
           "jmeno": "Napoleon",
-          "role": "prase, diktátor (obraz Stalina)"
+          "role": "prase, diktátor (obraz Stalina)",
+          "charakteristika": "Prase, které se stane diktátorem farmy; bývá vykládáno jako obraz Stalina. Vychová si štěňata jako svou stráž a pomocí psů vyžene Kuliše. Za každý nezdar viní Kuliše a „zrádce“ nechává popravit. Postupně zradí všechny ideály revoluce a nakonec je k nerozeznání od lidí.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
         },
         {
           "jmeno": "Kuliš (Snowball)",
-          "role": "prase, Napoleonův rival (obraz Trockého)"
+          "role": "prase, Napoleonův rival (obraz Trockého)",
+          "charakteristika": "Prase, původní vůdce revoluce a Napoleonův oponent; bývá vykládán jako obraz Trockého. Navrhne stavbu větrného mlýna a zvířata nadchne. Napoleonovi psi ho vyženou z farmy. Pak je obviňován ze všech nezdarů.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
         },
         {
           "jmeno": "Pištík (Squealer)",
-          "role": "prase, propagandista"
+          "role": "prase, propagandista",
+          "charakteristika": "Prase v Napoleonových službách, mistr propagandy. Manipuluje zvířaty, překrucuje pravdu a lže. Postupně přepisuje sedm přikázání. Zvířatům tvrdí, že se pletou a mají špatnou paměť.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
         },
         {
           "jmeno": "Major",
-          "role": "staré prase, ideový vůdce revoluce"
+          "role": "staré prase, ideový vůdce revoluce",
+          "charakteristika": "Staré prase a ideový vůdce revoluce; bývá vykládán jako Marx nebo Lenin. Vypráví zvířatům o revoluci a naučí je píseň „Zvířata Anglie“. Brzy umírá. Diktatura se jeho odkazem zaštiťuje.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
         },
         {
           "jmeno": "Boxer",
-          "role": "pracovitý kůň, oddaný dělník"
+          "role": "pracovitý kůň, oddaný dělník",
+          "charakteristika": "Pracovitý kůň, který představuje poctivé pracující ochotné pro ideu obětovat vlastní život. Je prototypem úderníka a stachanovce. Prasata jeho oddanosti cynicky zneužívají.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
         },
         {
           "jmeno": "osel Benjamin",
-          "role": "skeptik, který tuší pravdu"
+          "role": "skeptik, který tuší pravdu",
+          "charakteristika": "Skeptický osel, představitel pasivního intelektuála. Zná pravdu a tuší důsledky, ale nevidí žádné východisko. Svou aktivitu považuje za zbytečnou. Bývá chápán jako autorova sebereflexe.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
         }
       ],
       "obsah": "Zvířata na farmě pana Jonese se vzbouří proti lidem a farmu převezmou. Vedení se ujmou nejchytřejší zvířata – prasata. Zvířata si dají sedm přikázání, z nichž nejdůležitější zní „Všechna zvířata jsou si rovna“. Formou bajky Orwell ukazuje, jak se revoluce mění v tyranii.",
@@ -1111,6 +1739,32 @@
       ],
       "k_overeni": [
         "Druh: v zadaném seznamu bylo „drama“; Farma zvířat je novela, proto je uvedena epika."
+      ],
+      "motivy": [
+        "totalita",
+        "moc",
+        "vzpoura a revoluce",
+        "satira společnosti"
+      ],
+      "zkouska": [
+        {
+          "id": "cj19-z1",
+          "otazka": "Jak Orwell ve Farmě zvířat ukazuje zrod diktatury?",
+          "body_odpovedi": [
+            "zvířata vyženou pana Jonese podle ideálů prasete Majora",
+            "vedení se ujmou prasata",
+            "Napoleon pomocí psů vyžene Kuliše a vládne sám",
+            "Pištík jako propagandista přepisuje přikázání",
+            "na konci jsou prasata k nerozeznání od lidí – cyklus diktatura, revoluce, diktatura",
+            "alegorie stalinského Sovětského svazu"
+          ],
+          "citace_k_pouziti": [
+            "„Všechna zvířata jsou si rovna“",
+            "„4 nohy dobré, 2 nohy špatné“"
+          ],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
+        }
       ]
     },
     {
@@ -1135,23 +1789,33 @@
       "postavy": [
         {
           "jmeno": "Učitel",
-          "role": "třídní učitel, marně pátrá po knize"
+          "role": "třídní učitel, marně pátrá po knize",
+          "charakteristika": "Třídní učitel, který jako první marně pátrá po třídní knize ztracené před sedmi lety. Podlézá řediteli. Hra končí jeho rozkazem žákovi Veškrnovi.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
         },
         {
           "jmeno": "Ředitel školy",
-          "role": "podlézá inspektorovi"
+          "role": "podlézá inspektorovi",
+          "charakteristika": "Ředitel gymnázia, který podlézá inspektorovi. Sám se pokouší přimět žáky, aby knihu vrátili. Je článkem úřední hierarchie, kterou hra paroduje.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
         },
         {
           "jmeno": "Inspektor",
-          "role": "přiveze „hudební skříň“ žáků z Maletic"
+          "role": "přiveze „hudební skříň“ žáků z Maletic",
+          "charakteristika": "Školní inspektor, který přiveze „hudební skříň“ vyrobenou žáky školy v Maleticích jako ukázku vzorné práce. Marně se z ní snaží pustit úryvek ze Smetanova Dalibora. Podlézá zemskému školnímu radovi.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
         },
         {
           "jmeno": "Zemský školní rada",
-          "role": "nejvyšší autorita, původně „ministr školství“"
+          "role": "nejvyšší autorita, původně „ministr školství“",
+          "charakteristika": "Nejvyšší autorita ve hře. V původní verzi před cenzurní úpravou to byl ministr školství. Všichni ostatní se před ním ponižují, a ukazuje tak vrchol úřední hierarchie.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
         },
         {
           "jmeno": "Jára Cimrman",
-          "role": "fiktivní génius, „spoluautor“ a pedagog"
+          "role": "fiktivní génius, „spoluautor“ a pedagog",
+          "charakteristika": "Fiktivní český génius, vynálezce, filozof a dramatik, uváděný jako spoluautor hry. V semináři před hrou se o něm přednášejí referáty, tentokrát o něm jako o pedagogovi. Je ústřední mystifikací celého divadla.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
         }
       ],
       "obsah": "Představení Divadla Járy Cimrmana má dvě části: nejprve seminář s referáty o Cimrmanovi jako pedagogovi, potom samotnou hru. Ve hře se pedagogický sbor snaží přimět žáky posledního ročníku gymnázia, aby vrátili třídní knihu. Publikum v sále představuje třídu. Hra paroduje podlézavost a ustrašenost v hierarchii úřadů.",
@@ -1169,6 +1833,30 @@
       "k_overeni": [
         "Autorství: Wikipedie uvádí jako autora vlastní hry Ladislava Smoljaka (a fiktivního Cimrmana); Zdeněk Svěrák je spoluautorem semináře a autorské dvojice – ověř, jak autorství uvádí školní seznam.",
         "Shrnutí děje: závěr hry se mezi verzemi liší (cenzurní úpravy v roce 1972); uvedena je poslední replika podle Wikipedie."
+      ],
+      "motivy": [
+        "satira společnosti",
+        "absurdita",
+        "moc"
+      ],
+      "zkouska": [
+        {
+          "id": "cj20-z1",
+          "otazka": "Co zesměšňuje hra Vyšetřování ztráty třídní knihy?",
+          "body_odpovedi": [
+            "podlézavost a ustrašenost v hierarchii: učitel, ředitel, inspektor, zemský školní rada",
+            "absurdní pátrání po knize ztracené před sedmi lety",
+            "publikum hraje třídu – při příchodu postav se rozsvítí hlediště",
+            "představení má seminář o Cimrmanovi a samotnou hru – mystifikace",
+            "hudební skříň z Maletic a marné pouštění Dalibora",
+            "hra byla v normalizaci kvůli cenzuře upravena"
+          ],
+          "citace_k_pouziti": [
+            "„A Veškrna první šup, šup, šup!“"
+          ],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
+        }
       ]
     }
   ],
@@ -1410,5 +2098,33 @@
         "Popis epochy a hlavní směry jsou obecná charakteristika; přehledový zdroj o literatuře 21. století nebyl ověřen."
       ]
     }
-  ]
+  ],
+  "motivy": [
+    "láska",
+    "rodina",
+    "přátelství",
+    "osud",
+    "smrt",
+    "válka",
+    "peníze a majetek",
+    "moc",
+    "totalita",
+    "vzpoura a revoluce",
+    "odvaha a odboj",
+    "postavení ženy",
+    "satira společnosti",
+    "absurdita",
+    "odcizení",
+    "osamělost",
+    "vina a trest",
+    "strach a hrůza",
+    "nadpřirozeno",
+    "lidová tradice",
+    "příroda",
+    "vytrvalost",
+    "sen a touha",
+    "dospívání",
+    "technika a pokrok"
+  ],
+  "poznamka_motivy": "Motivy jsou výběr hlavních témat podle zdrojového hesla díla (pole zdroje); jde o interpretaci – k ověření."
 }

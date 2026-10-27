@@ -39,20 +39,30 @@ Společné:
 Otázky se negenerují ručně: `app.js` je vytvoří z `data/literatura.json` ve stejném formátu jako otázky OSY,
 takže výběr odpovědi, pravda/nepravda, kartičky, otevřená odpověď, seřazení, test na čas a opakování
 běží na stejném kódu. Navíc má čeština:
-- **Přiřazování** – autor × dílo, postava × dílo, dílo × druh, dílo × století (každý typ zvlášť, okamžitá zpětná vazba).
+- **Přiřazování** – autor × dílo, postava × dílo, popis postavy × jméno, dílo × druh, dílo × století
+  (každý typ zvlášť, okamžitá zpětná vazba). V popisu postavy je její jméno skryté.
+- **Filtr Motivy** na úvodní obrazovce – ukáže díla s vybraným motivem a umí je rovnou vybrat.
+- **Srovnání dvou děl** – shody a rozdíly v epoše, druhu, žánru, směru, motivech a postavách, jen z dat.
 - **Třídění** – rozdělení děl do období a seřazení epoch od nejstarší.
-- **Výuka** – autor → epocha → dílo a druh → shrnutí děje → postavy → obsah → zajímavost, na konci shrnutí a „Procvičit toto dílo“.
+- **Výuka** – autor → epocha → dílo a druh → postavy (s charakteristikou) → shrnutí děje → motivy → obsah → zajímavost,
+  na konci shrnutí a „Procvičit toto dílo“.
 - **Losování k projevu** – 7 minut, pak osnova (autor → epocha → dílo → postavy → obsah → shrnutí děje → zajímavost) a „Zvládl/a jsem to?“.
 
-Id generovaných otázek mají tvar `cj<číslo díla>-<typ>`, např. `cj05-autor`, `cj05-postava-2`, `cj05-o-dej`,
+- **Simulace zkoušky** (i v sekci OSY) – náhodná otázka, odpověď nahlas nebo do pole, pak zaškrtnutí bodů odpovědi.
+  Výsledek se ukládá do pole `zkouska` ve statistikách sekce a je vidět v Přehledu.
+  V OSY jsou otázkou název maturitní otázky a body její osnova z `questions.json` (žádná nová data).
+
+Id generovaných otázek mají tvar `cj<číslo díla>-<typ>`, např. `cj05-autor`, `cj05-postava-2`, `cj05-char-2`, `cj05-o-dej`,
 a dále `cj-chrono-1` až `cj-chrono-5`, `cj-epochy-poradi`, `cj-epocha-19-1`.
 Při úpravách `literatura.json` proto neměň pořadí postav ani `id` děl, jinak se statistiky přestanou párovat.
 
 ### Struktura `data/literatura.json`
+- `motivy` – jednotný slovník motivů (každý motiv se píše vždy stejně, aby šlo filtrovat); `poznamka_motivy`.
 - `obdobi` – maturitní období: `18` = do konce 18. století, `19`, `20`, `21`.
 - `dila[]` – `id`, `cislo`, `dilo`, `rok`, `rok_text`, `autor` (`jmeno`, `zkratka`, `zivot`, `zeme`, `zdroj`),
-  `druh` (lyrika / epika / drama), `zanr`, `literarni_smer`, `obdobi`, `stoleti_vzniku`, `postavy[]`,
+  `druh` (lyrika / epika / drama), `zanr`, `literarni_smer`, `obdobi`, `stoleti_vzniku`, `postavy[]` (`jmeno`, `role`, `charakteristika`, `zdroj`), `motivy[]`,
   `obsah` (bez spoilerů), `shrnuti_deje` (včetně konce), `fun_fact` (`text`, `mimo_zdroje: true`, `zdroj`),
+  `zkouska[]` (`id`, `otazka`, `body_odpovedi` 4–6, `citace_k_pouziti` – jen pár slov, `k_overeni`, `zdroj`),
   `zdroje[]` a `k_overeni[]` (co není ověřené nebo se liší od zadaného seznamu).
 - `epochy[]` – `obdobi`, `nazev`, `rozsah`, `popis`, `hlavni_smery`, `dalsi_autori[]`, `zdroje`, `k_overeni`.
 

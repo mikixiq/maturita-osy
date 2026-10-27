@@ -36,7 +36,8 @@ const MODES = [
   { id: 'serazeni', title: 'Seřazení kroků', sub: 'správné pořadí' },
   { id: 'test', title: 'Test na čas', sub: '10 / 20 / 30 otázek' },
   { id: 'opakovani', title: 'Jen ke zopakování', sub: 'chybně zodpovězené' },
-  { id: 'losovani', title: 'Losování k projevu', sub: '7 minut + osnova' }
+  { id: 'losovani', title: 'Losování k projevu', sub: '7 minut + osnova' },
+  { id: 'simulace', title: 'Simulace zkoušky', sub: 'otázka + body odpovědi' }
 ];
 
 // Typy, které lze vyhodnotit automaticky – z nich se skládá „Test na čas“.
@@ -77,9 +78,11 @@ let CJ_QUESTIONS = [];    // otázky vygenerované z děl – stejný formát ja
 let CJ_BY_ID = new Map();
 let cjStats = loadCjStats();
 let cjSelection = loadCjSelection();
-let cjSettings = Object.assign({ mode: 'vyber', cas: '0', delka: '20', match: 'autor' }, storageGet(CJ_SETTINGS_KEY) || {});
+let cjSettings = Object.assign({ mode: 'vyber', cas: '0', delka: '20', match: 'autor', motiv: '', cmpA: '1', cmpB: '9' }, storageGet(CJ_SETTINGS_KEY) || {});
 let cjLearn = null;       // probíhající výuka díla
 let play = null;          // probíhající přiřazování nebo třídění
+let CJ_MOTIFS = [];       // jednotný slovník motivů
+let exam = null;          // probíhající simulace zkoušky (obě sekce)
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -140,7 +143,7 @@ function storageSet(key, value) {
 }
 
 function emptyStats() {
-  return { verze: 2, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {} };
+  return { verze: 2, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {}, zkouska: {} };
 }
 
 function loadStats() {
@@ -352,7 +355,7 @@ function setSection(sec) {
 }
 
 function showView(name) {
-  for (const v of ['home', 'quiz', 'result', 'speech', 'learn', 'overview', 'cj-home', 'cj-learn', 'cj-play', 'cj-overview']) {  // ZMĚNA: + learn, + čeština
+  for (const v of ['home', 'quiz', 'result', 'speech', 'learn', 'overview', 'cj-home', 'cj-learn', 'cj-play', 'cj-overview', 'exam']) {  // ZMĚNA: + learn, + čeština
     $('#view-' + v).hidden = v !== name;
   }
   document.querySelectorAll('.tab').forEach((t) => {
@@ -415,6 +418,7 @@ function buildHome() {
     const s = readSettings();
     storageSet(SETTINGS_KEY, s);
     if (s.mode === 'losovani') startSpeech();
+    else if (s.mode === 'simulace') startExam('osy');
     else startSession(s);
   });
 }
@@ -432,7 +436,7 @@ function updateLengthOptions(preferred) {
   if (!isTest) opts.push(['all', 'Všechny']);
   sel.replaceChildren(...opts.map(([v, t]) => el('option', { value: v }, t)));
   sel.value = opts.some(([v]) => v === preferred) ? preferred : (isTest ? '10' : '20');
-  $('#settings').hidden = currentMode() === 'losovani';
+  $('#settings').hidden = currentMode() === 'losovani' || currentMode() === 'simulace';
 }
 
 function readSettings() {
@@ -461,6 +465,15 @@ function updatePoolInfo() {
     $('#pool-info').textContent = `Vylosuje se jedna z ${plural(selection.size, 'vybrané maturitní otázky', 'vybraných maturitních otázek', 'vybraných maturitních otázek')} a spustí se odpočet 7 minut.`;
     btn.disabled = false;
     btn.textContent = 'Losovat';
+    return;
+  }
+  if (s.mode === 'simulace') {
+    const n = osyExamItems().length;
+    $('#pool-info').textContent = n
+      ? `Vylosuje se otázka z ${plural(n, 'vybrané maturitní otázky', 'vybraných maturitních otázek', 'vybraných maturitních otázek')}. Po odpovědi si zaškrtneš body z osnovy, které jsi zmínil(a).`
+      : 'Vybrané maturitní otázky nemají osnovu.';
+    btn.disabled = n === 0;
+    btn.textContent = 'Spustit';
     return;
   }
   btn.textContent = 'Spustit';
@@ -1258,9 +1271,14 @@ function renderOverview() {
         : el('p', { class: 'hint', text: 'Nic ke zopakování. Otázky sem přibudou po špatné odpovědi.' })
     ),
 
+    examResultsCard(stats, (id) => {
+      const m = MO_BY_NUM.get(Number(id.replace('mo-', '')));
+      return m ? `${m.cislo}. ${m.nazev}` : id;
+    }),
+
     el('div', { class: 'card' },
       el('h2', { text: 'Vynulování' }),
-      el('p', { class: 'hint', text: 'Smaže statistiky, kolonku „Ke zopakování“ i výsledky losování v tomto prohlížeči. Výběr maturitních otázek zůstane. Nejde vrátit zpět.' }),
+      el('p', { class: 'hint', text: 'Smaže statistiky, kolonku „Ke zopakování“, výsledky losování i simulace zkoušky v tomto prohlížeči. Výběr maturitních otázek zůstane. Nejde vrátit zpět.' }),
       el('button', { type: 'button', class: 'btn btn-danger', onclick: resetStats }, 'Vynulovat statistiky')
     )
   );
@@ -1297,12 +1315,15 @@ const CJ_MODES = [
   { id: 'opakovani', title: 'Jen ke zopakování', sub: 'chybně zodpovězené' },
   { id: 'prirazovani', title: 'Přiřazování', sub: 'autor, postava, druh, období' },
   { id: 'trideni', title: 'Třídění', sub: 'díla do období + epochy' },
-  { id: 'losovani', title: 'Losování k projevu', sub: '7 minut + osnova' }
+  { id: 'losovani', title: 'Losování k projevu', sub: '7 minut + osnova' },
+  { id: 'simulace', title: 'Simulace zkoušky', sub: 'otázka + body odpovědi' },
+  { id: 'srovnani', title: 'Srovnání dvou děl', sub: 'shody a rozdíly z dat' }
 ];
 
 const MATCH_TYPES = [
   { id: 'autor', label: 'Autor × dílo' },
   { id: 'postava', label: 'Postava × dílo' },
+  { id: 'charakteristika', label: 'Popis postavy × jméno' },
   { id: 'druh', label: 'Dílo × druh (lyrika / epika / drama)' },
   { id: 'obdobi', label: 'Dílo × století' }
 ];
@@ -1317,7 +1338,7 @@ const GENERIC_ROLES = ['Učitel', 'Ředitel školy', 'Inspektor', 'Zemský škol
 /* ---------- Čeština: localStorage ---------- */
 
 function emptyCjStats() {
-  return { verze: 1, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {}, dila: {}, epochy: {} };
+  return { verze: 1, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {}, dila: {}, epochy: {}, zkouska: {} };
 }
 
 function loadCjStats() {
@@ -1374,6 +1395,7 @@ function setupCj(data) {
   CJ_PERIODS = Array.isArray(data.obdobi) ? data.obdobi : [];
   CJ_EPOCHS = (Array.isArray(data.epochy) ? data.epochy : []).slice().sort((a, b) => Number(a.obdobi) - Number(b.obdobi));
   CJ_WORKS.forEach((w) => CJ_BY_NUM.set(w.cislo, w));
+  CJ_MOTIFS = Array.isArray(data.motivy) ? data.motivy : [];
   CJ_QUESTIONS = buildCjQuestions();
   CJ_QUESTIONS.forEach((q) => CJ_BY_ID.set(q.id, q));
   if (!cjSelection) cjSelection = new Set(CJ_WORKS.map((w) => w.cislo));
@@ -1472,6 +1494,14 @@ function buildCjQuestions() {
       qs.push(choice(`${w.id}-postava-${p.i}`, 'Postavy', `Ve kterém díle vystupuje postava: ${p.jmeno}?`, shortTitle(w),
         pickOthers(titles, shortTitle(w), 3), `${p.jmeno} – ${p.role} (${t}).`, noteFor(w, ['Jméno', 'Příjmení'])));
     }
+
+    // Popis postavy → jméno (jméno v popisu je skryté)
+    w.postavy.forEach((p, i) => {
+      if (!p.charakteristika) return;
+      const others = w.postavy.filter((x) => x !== p).map((x) => x.jmeno);
+      qs.push(choice(`${w.id}-char-${i}`, 'Postavy', `Kterou postavu z díla ${t} popisuje text: „${maskName(p.charakteristika, p.jmeno)}“`,
+        p.jmeno, pickOthers(others, p.jmeno, 3), `${p.jmeno} – ${p.role}.`, noteFor(w, ['Charakteristiky', 'Jméno', 'Příjmení'])));
+    });
 
     // Pravda / nepravda – pravdivost i chyták jsou pevně dané číslem díla, aby se otázka s daným id neměnila.
     const authorTrue = w.cislo % 2 === 1;
@@ -1611,7 +1641,9 @@ function cjPeriodPill(w) {
 
 function renderCjHome() {
   const s = cjSettings;
-  const isEngine = !['prirazovani', 'trideni', 'losovani'].includes(s.mode);
+  const isEngine = !['prirazovani', 'trideni', 'losovani', 'simulace', 'srovnani'].includes(s.mode);
+  const motif = s.motiv && CJ_MOTIFS.includes(s.motiv) ? s.motiv : '';
+  const shown = motif ? CJ_WORKS.filter((w) => (w.motivy || []).includes(motif)) : CJ_WORKS;
 
   const worksCard = el('section', { class: 'card', 'aria-labelledby': 'cj-works-title' },
     el('div', { class: 'card-head' },
@@ -1628,7 +1660,20 @@ function renderCjHome() {
     el('p', { class: 'selected-count', role: 'status', 'aria-live': 'polite',
       text: `Vybráno: ${plural(cjSelection.size, 'dílo', 'díla', 'děl')} · ${plural(CJ_QUESTIONS.filter(cjInSelection).length, 'otázka', 'otázky', 'otázek')} k procvičování` }),
     cjSelection.size ? null : el('p', { class: 'notice warn', text: 'Zatím není vybrané žádné dílo. Zaškrtni ta, která chceš procvičovat.' }),
-    el('ul', { class: 'mo-list' }, ...CJ_WORKS.map((w) => {
+    CJ_MOTIFS.length ? el('div', { class: 'field-grid motif-filter' },
+      el('label', { class: 'field' }, el('span', { text: 'Motivy' }),
+        el('select', { id: 'cj-sel-motiv', onchange: (e) => { s.motiv = e.target.value; saveCjSettings(); rerenderCjHome('#cj-sel-motiv'); } },
+          el('option', { value: '' }, 'Všechny motivy'),
+          ...CJ_MOTIFS.map((m) => el('option', { value: m, selected: m === motif },
+            `${m} (${CJ_WORKS.filter((w) => (w.motivy || []).includes(m)).length})`))))
+    ) : null,
+    motif ? el('p', { class: 'notice', role: 'status' },
+      `Motiv „${motif}“: ${plural(shown.length, 'dílo', 'díla', 'děl')}. `,
+      el('button', { type: 'button', class: 'btn btn-small', onclick: () => {
+        cjSelection = new Set(shown.map((w) => w.cislo)); saveCjSelection(); renderCjHome();
+      } }, 'Vybrat jen tato díla')
+    ) : null,
+    el('ul', { class: 'mo-list' }, ...shown.map((w) => {
       const qs = CJ_QUESTIONS.filter((q) => q.cjWork === w.cislo);
       const mastered = qs.filter((q) => cjMastered(q.id)).length;
       const checked = cjSelection.has(w.cislo);
@@ -1642,7 +1687,8 @@ function renderCjHome() {
           el('span', { class: 'mo-num', text: w.cislo + '.' }),
           el('span', { class: 'mo-name' }, el('strong', { text: shortTitle(w) }), ' – ' + w.autor.zkratka),
           el('span', { class: 'mo-meta', id: `cj-meta-${w.cislo}` },
-            cjPeriodPill(w), `${w.druh} · ${plural(qs.length, 'otázka', 'otázky', 'otázek')} · zvládnuto ${mastered}`)
+            cjPeriodPill(w), `${w.druh} · ${plural(qs.length, 'otázka', 'otázky', 'otázek')} · zvládnuto ${mastered}`,
+            w.motivy && w.motivy.length ? el('span', { class: 'motif-line', text: 'Motivy: ' + w.motivy.join(', ') }) : null)
         )
       );
     }))
@@ -1692,8 +1738,10 @@ function renderCjHome() {
         el('select', { id: 'cj-sel-match', onchange: setField('match') }, ...MATCH_TYPES.map((t) =>
           el('option', { value: t.id, selected: t.id === s.match }, t.label))))
     ) : null,
+    s.mode === 'srovnani' ? compareFields(s) : null,
     el('p', { class: 'hint', text: info.text }),
-    el('button', { type: 'submit', class: 'btn btn-primary btn-block', disabled: !info.ok }, s.mode === 'losovani' ? 'Losovat' : 'Spustit')
+    el('button', { type: 'submit', class: 'btn btn-primary btn-block', disabled: !info.ok },
+      s.mode === 'losovani' ? 'Losovat' : s.mode === 'srovnani' ? 'Porovnat' : 'Spustit')
   );
 
   $('#view-cj-home').replaceChildren(el('div', { class: 'stats-row' }, ...cjStatTiles()), worksCard, reviewCard, form);
@@ -1702,8 +1750,18 @@ function renderCjHome() {
 function cjPoolInfo() {
   const s = cjSettings;
   const works = cjWorksSelected();
+  if (s.mode === 'srovnani') {
+    const a = Number(s.cmpA), b = Number(s.cmpB);
+    if (!CJ_BY_NUM.has(a) || !CJ_BY_NUM.has(b)) return { ok: false, text: 'Vyber dvě díla ke srovnání.' };
+    if (a === b) return { ok: false, text: 'Vyber dvě různá díla.' };
+    return { ok: true, text: 'Srovnání ukáže shody a rozdíly v epoše, druhu, žánru, směru, motivech a postavách – jen podle dat aplikace.' };
+  }
   if (!works.length) return { ok: false, text: 'Nejdřív nahoře vyber aspoň jedno dílo.' };
   if (s.mode === 'losovani') return { ok: true, text: `Vylosuje se jedno z ${plural(works.length, 'vybraného díla', 'vybraných děl', 'vybraných děl')} a spustí se odpočet 7 minut.` };
+  if (s.mode === 'simulace') {
+    const n = cjExamItems().length;
+    return { ok: n > 0, text: `Vylosuje se jedna z ${plural(n, 'zkouškové otázky', 'zkouškových otázek', 'zkouškových otázek')} k vybraným dílům. Po odpovědi si zaškrtneš body, které jsi zmínil(a).` };
+  }
   if (s.mode === 'prirazovani') {
     const n = Math.min(MATCH_ROUND, s.match === 'postava' ? works.filter((w) => namedCharacters(w).length).length : works.length);
     return { ok: n > 0, text: `V jednom kole přiřadíš ${plural(n, 'položku', 'položky', 'položek')}. Výsledek u každé uvidíš hned.` };
@@ -1725,6 +1783,8 @@ function startCjMode() {
   if (s.mode === 'losovani') startCjSpeech();
   else if (s.mode === 'prirazovani') startMatch(s.match);
   else if (s.mode === 'trideni') startSort();
+  else if (s.mode === 'simulace') startExam('cj');
+  else if (s.mode === 'srovnani') renderCompare(Number(s.cmpA), Number(s.cmpB));
   else startSession({ sekce: 'cj', mode: s.mode, cas: s.cas, delka: s.delka });
 }
 
@@ -1746,6 +1806,14 @@ function startMatch(kind) {
     });
     options = items.map((it) => it.answer);
     options.push(...pickOthers(CJ_WORKS.map(shortTitle).filter((t) => !options.includes(t)), null, Math.max(0, 4 - options.length)));
+  } else if (kind === 'charakteristika') {
+    // Popis postavy (bez jména) → jméno; z každého díla jedna postava
+    items = works.filter((w) => w.postavy.some((p) => p.charakteristika)).slice(0, MATCH_ROUND).map((w) => {
+      const i = shuffle(w.postavy.map((_, k) => k).filter((k) => w.postavy[k].charakteristika))[0];
+      const p = w.postavy[i];
+      return { qid: `${w.id}-char-${i}`, prompt: `${quoted(w)}: ${maskName(p.charakteristika, p.jmeno)}`, answer: p.jmeno, detail: `${p.jmeno} – ${p.role}` };
+    });
+    options = [...new Set(items.map((it) => it.answer))];
   } else {
     items = works.slice(0, MATCH_ROUND).map((w) => {
       const answer = kind === 'autor' ? w.autor.zkratka : kind === 'druh' ? w.druh : periodName(w.obdobi);
@@ -1759,7 +1827,7 @@ function startMatch(kind) {
       options = kind === 'druh' ? DRUHY.slice() : CJ_PERIODS.map((p) => p.nazev);
     }
   }
-  if (kind === 'autor' || kind === 'postava') options.sort((x, y) => x.localeCompare(y, 'cs'));
+  if (kind === 'autor' || kind === 'postava' || kind === 'charakteristika') options.sort((x, y) => x.localeCompare(y, 'cs'));
   play = { kind, items, options, done: 0, ok: 0 };
   showView('cj-play');
   renderMatch();
@@ -1977,6 +2045,7 @@ function cjOutline(w) {
     outlineItem('Postavy', el('p', { text: w.postavy.map((p) => `${p.jmeno} – ${p.role}`).join('; ') })),
     outlineItem('Obsah', el('p', { text: w.obsah })),
     outlineItem('Shrnutí děje', el('p', { text: w.shrnuti_deje })),
+    w.motivy && w.motivy.length ? outlineItem('Motivy', el('p', { text: w.motivy.join(', ') })) : null,
     outlineItem('Zajímavost (nad rámec)', el('p', { text: w.fun_fact.text }), el('p', { class: 'src', text: 'Zdroj: ' + srcText(w.fun_fact.zdroj) }))
   );
 }
@@ -2082,7 +2151,7 @@ function renderCjLearnList() {
   }
   view.replaceChildren(el('div', { class: 'card' },
     el('h2', { text: 'Výuka' }),
-    el('p', { class: 'hint', text: 'Krokovaný výklad díla: autor → epocha → dílo a druh → shrnutí děje → postavy → obsah → zajímavost. U každého kroku je zdroj.' }),
+    el('p', { class: 'hint', text: 'Krokovaný výklad díla: autor → epocha → dílo a druh → postavy → shrnutí děje → motivy → obsah → zajímavost. U každého kroku je zdroj.' }),
     el('ul', { class: 'learn-list' }, ...works.map((w) =>
       el('li', { class: 'learn-item' },
         el('div', { class: 'learn-name' },
@@ -2125,9 +2194,21 @@ function cjLearnSteps(w) {
           el('dt', { text: 'Období' }), el('dd', { text: periodName(w.obdobi) })
         )
       ] },
+    { title: 'Postavy', src: w.zdroje[0], notes: noteFor(w, ['Charakteristiky', 'Jméno', 'Příjmení']),
+      body: [el('dl', { class: 'char-list' }, ...w.postavy.flatMap((p) => [
+        el('dt', { text: p.jmeno }),
+        el('dd', null, el('em', { text: p.role }), p.charakteristika ? el('p', { class: 'char-text', text: p.charakteristika }) : null,
+          p.zdroj && p.zdroj !== w.zdroje[0] ? el('span', { class: 'src', text: 'Zdroj: ' + srcText(p.zdroj) }) : null)
+      ]))] },
     { title: 'Shrnutí děje', body: [para(w.shrnuti_deje)], src: w.zdroje[0], notes: noteFor(w, ['Shrnutí']) },
-    { title: 'Postavy', src: w.zdroje[0], notes: noteFor(w, ['Jméno', 'Příjmení']),
-      body: [el('dl', { class: 'char-list' }, ...w.postavy.flatMap((p) => [el('dt', { text: p.jmeno }), el('dd', { text: p.role })]))] },
+    { title: 'Motivy', src: w.zdroje[0], notes: LIT.poznamka_motivy || null,
+      body: [
+        el('ul', { class: 'tag-list' }, ...(w.motivy || []).map((m) => el('li', { class: 'badge', text: m }))),
+        ...(w.motivy || []).map((m) => {
+          const other = CJ_WORKS.filter((x) => x !== w && (x.motivy || []).includes(m)).map(shortTitle);
+          return el('p', { class: 'step-expl' }, el('strong', { text: m + ': ' }), other.length ? 'také v dílech ' + other.join(', ') : 'jen v tomto díle ze seznamu');
+        })
+      ] },
     { title: 'Obsah (úvod k projevu)', body: [para(w.obsah)], src: w.zdroje[0] },
     { title: 'Zajímavost', body: [para(w.fun_fact.text), el('p', { class: 'src', text: 'Informace nad rámec povinné látky.' })],
       src: w.fun_fact.zdroj, notes: noteFor(w, ['Zajímavost']) }
@@ -2248,15 +2329,257 @@ function renderCjOverview() {
         : el('p', { class: 'hint', text: 'Nic ke zopakování. Otázky sem přibudou po špatné odpovědi.' })
     ),
 
+    examResultsCard(cjStats, (id) => {
+      const w = CJ_WORKS.find((x) => (x.zkouska || []).some((z) => z.id === id));
+      const z = w && w.zkouska.find((x) => x.id === id);
+      return z ? `${shortTitle(w)}: ${z.otazka}` : id;
+    }),
+
     el('div', { class: 'card' },
       el('h2', { text: 'Vynulování češtiny' }),
-      el('p', { class: 'hint', text: 'Smaže statistiky, kolonku „Ke zopakování“ a výsledky losování sekce Čeština v tomto prohlížeči. Statistiky OSY ani výběr děl se nezmění. Nejde vrátit zpět.' }),
+      el('p', { class: 'hint', text: 'Smaže statistiky, kolonku „Ke zopakování“ a výsledky losování i simulace zkoušky sekce Čeština v tomto prohlížeči. Statistiky OSY ani výběr děl se nezmění. Nejde vrátit zpět.' }),
       el('button', { type: 'button', class: 'btn btn-danger', onclick: () => {
         if (!confirm('Opravdu vynulovat všechny statistiky sekce Čeština? Tuto akci nejde vrátit.')) return;
         cjStats = emptyCjStats();
         saveCjStats();
         renderCjOverview();
       } }, 'Vynulovat statistiky češtiny')
+    )
+  );
+}
+
+/* ---------- Čeština: skrytí jména v popisu postavy ---------- */
+
+// Vlastní jména (i se skloňováním) se nahradí „…“; obecné role jako „otec“ se skryjí celé.
+function maskName(text, name) {
+  const tokens = name.split(/[^\p{L}]+/u).filter((t) => t.length >= 3);
+  const proper = tokens.filter((t) => UPPER.test(t[0]));
+  let out = text;
+  for (const tok of proper.length ? proper : tokens) {
+    const stem = tok.length > 5 ? tok.slice(0, -2) : tok;
+    out = out.replace(new RegExp(`(?<!\\p{L})${stem}\\p{L}*`, proper.length ? 'gu' : 'giu'), '…');
+  }
+  return out;
+}
+
+/* ---------- Čeština: srovnání dvou děl ---------- */
+
+function compareFields(s) {
+  const sel = (key, label) => el('label', { class: 'field' }, el('span', { text: label }),
+    el('select', { id: `cj-sel-${key}`, onchange: (e) => { s[key] = e.target.value; saveCjSettings(); rerenderCjHome(`#cj-sel-${key}`); } },
+      ...CJ_WORKS.map((w) => el('option', { value: String(w.cislo), selected: String(w.cislo) === String(s[key]) }, `${w.cislo}. ${shortTitle(w)} – ${w.autor.zkratka}`))));
+  return el('div', { class: 'field-grid' }, sel('cmpA', 'První dílo'), sel('cmpB', 'Druhé dílo'));
+}
+
+// Srovnání vychází jen z polí v literatura.json – žádný volný text.
+function renderCompare(na, nb) {
+  const A = CJ_BY_NUM.get(na);
+  const B = CJ_BY_NUM.get(nb);
+  if (!A || !B) return;
+  const eA = epochOf(A.obdobi);
+  const eB = epochOf(B.obdobi);
+  const mA = A.motivy || [];
+  const mB = B.motivy || [];
+  const common = mA.filter((m) => mB.includes(m));
+  const namesB = B.postavy.map((p) => p.jmeno);
+  const commonChars = A.postavy.map((p) => p.jmeno).filter((n) => namesB.includes(n));
+
+  const rows = [
+    ['Autor', A.autor.zkratka, B.autor.zkratka],
+    ['Vznik', A.rok_text, B.rok_text, false],
+    ['Období', periodName(A.obdobi), periodName(B.obdobi)],
+    ['Epocha', eA ? eA.nazev : '–', eB ? eB.nazev : '–'],
+    ['Literární druh', A.druh, B.druh],
+    ['Žánr', A.zanr, B.zanr],
+    ['Literární směr', A.literarni_smer, B.literarni_smer],
+    ['Motivy', mA.join(', '), mB.join(', ')]
+  ];
+  const yes = [];
+  const no = [];
+  if (A.obdobi === B.obdobi) yes.push(`stejné období a epocha: ${eA ? eA.nazev : periodName(A.obdobi)}`);
+  else no.push(`jiné období: ${periodName(A.obdobi)} × ${periodName(B.obdobi)}`);
+  if (A.druh === B.druh) yes.push(`stejný literární druh: ${A.druh}`);
+  else no.push(`jiný literární druh: ${A.druh} × ${B.druh}`);
+  if (A.autor.zkratka === B.autor.zkratka) yes.push(`stejný autor: ${A.autor.zkratka}`);
+  if (common.length) yes.push(`společné motivy: ${common.join(', ')}`);
+  else no.push('žádný společný motiv');
+  const onlyA = mA.filter((m) => !mB.includes(m));
+  const onlyB = mB.filter((m) => !mA.includes(m));
+  if (onlyA.length) no.push(`motivy jen v díle ${quoted(A)}: ${onlyA.join(', ')}`);
+  if (onlyB.length) no.push(`motivy jen v díle ${quoted(B)}: ${onlyB.join(', ')}`);
+  if (commonChars.length) yes.push(`společné postavy: ${commonChars.join(', ')}`);
+  else no.push('díla nemají společné postavy');
+
+  const charList = (w) => el('div', { class: 'compare-col' },
+    el('h3', { text: `Postavy – ${shortTitle(w)}` }),
+    el('ul', { class: 'compare-chars' }, ...w.postavy.map((p) => el('li', null, el('strong', { text: p.jmeno }), ' – ' + p.role))));
+
+  play = { kind: 'srovnani' };
+  showView('cj-play');
+  $('#view-cj-play').replaceChildren(el('div', { class: 'card' },
+    el('div', { class: 'quiz-head' },
+      el('span', { text: 'Srovnání dvou děl' }),
+      el('button', { type: 'button', class: 'btn btn-ghost btn-small', onclick: () => { play = null; showView('cj-home'); } }, 'Zavřít')
+    ),
+    el('h2', { text: `${quoted(A)} × ${quoted(B)}` }),
+    el('div', { class: 'table-wrap' },
+      el('table', { class: 'compare-table' },
+        el('thead', null, el('tr', null, el('th', { text: 'Bod' }), el('th', { text: shortTitle(A) }), el('th', { text: shortTitle(B) }))),
+        el('tbody', null, ...rows.map(([label, va, vb, comparable]) => {
+          const eq = comparable !== false && va === vb;
+          return el('tr', { class: eq ? 'same' : '' },
+            el('th', { scope: 'row' }, label, eq ? el('span', { class: 'same-mark', text: ' ✓ shoda' }) : null),
+            el('td', { text: va }), el('td', { text: vb }));
+        }))
+      )
+    ),
+    el('h3', { text: 'Shody' }),
+    yes.length ? el('ul', null, ...yes.map((t) => el('li', { text: t }))) : el('p', { class: 'hint', text: 'Podle dat nemají díla nic společného.' }),
+    el('h3', { text: 'Rozdíly' }),
+    el('ul', null, ...no.map((t) => el('li', { text: t }))),
+    el('div', { class: 'compare-grid' }, charList(A), charList(B)),
+    el('p', { class: 'src', text: LIT.poznamka_motivy || '' }),
+    el('div', { class: 'btn-row' },
+      el('button', { type: 'button', class: 'btn btn-primary', onclick: () => renderCompare(nb, na) }, 'Prohodit pořadí'),
+      el('button', { type: 'button', class: 'btn btn-ghost', onclick: () => { play = null; showView('cj-home'); } }, 'Porovnat jiná díla')
+    )
+  ));
+}
+
+/* ---------- Simulace zkoušky (obě sekce) ---------- */
+// Čeština: otázky z pole zkouska u každého díla. OSY: název maturitní otázky a body její osnovy.
+
+function cjExamItems() {
+  return cjWorksSelected().flatMap((w) => (w.zkouska || []).map((z) => ({
+    id: z.id, sec: 'cj', nadpis: `${quoted(w)} – ${w.autor.zkratka}`, otazka: z.otazka, body: z.body_odpovedi,
+    citace: z.citace_k_pouziti || [], note: z.k_overeni || null, zdroj: srcText(z.zdroj)
+  })));
+}
+
+function osyExamItems() {
+  if (!DATA) return [];
+  return [...selection].filter(isSelectable).sort((a, b) => a - b).map((n) => MO_BY_NUM.get(n))
+    .filter((m) => Array.isArray(m.osnova) && m.osnova.length)
+    .map((m) => ({
+      id: `mo-${m.cislo}`, sec: 'osy', nadpis: `Maturitní otázka č. ${m.cislo}`, otazka: m.nazev, body: m.osnova,
+      citace: [], note: m.pokryti === 'ano' ? null : (m.poznamka || null), zdroj: 'osnova z prezentací (data/questions.json)'
+    }));
+}
+
+function examStats(sec) {
+  return sec === 'cj' ? cjStats : stats;
+}
+
+function startExam(sec) {
+  const items = sec === 'cj' ? cjExamItems() : osyExamItems();
+  if (!items.length) return;
+  const last = exam && exam.item ? exam.item.id : null;
+  const pool = items.length > 1 ? items.filter((it) => it.id !== last) : items;
+  exam = { sec, item: pool[Math.floor(Math.random() * pool.length)], stage: 'ask', answer: '', checked: [] };
+  showView('exam');
+  renderExam();
+}
+
+function renderExam() {
+  const it = exam.item;
+  const home = homeView(exam.sec);
+  const leave = () => { exam = null; showView(home); };
+  const parts = [
+    el('div', { class: 'quiz-head' },
+      el('span', { text: 'Simulace zkoušky' }),
+      el('button', { type: 'button', class: 'btn btn-ghost btn-small', onclick: leave }, 'Ukončit')
+    ),
+    el('p', { class: 'speech-num', text: it.nadpis }),
+    el('h2', { class: 'speech-title', text: it.otazka }),
+    it.note ? el('p', null, el('span', { class: 'badge warn', text: 'k ověření' })) : null
+  ];
+
+  if (exam.stage === 'ask') {
+    const ta = el('textarea', { placeholder: 'Odpověz nahlas, nebo sem napiš svou odpověď (nepovinné)…', 'aria-label': 'Tvoje odpověď' });
+    ta.value = exam.answer;
+    parts.push(
+      el('p', { class: 'hint', text: 'Odpověz jako u maturity – nahlas, nebo písemně do pole. Pak si zobraz body, které má odpověď obsahovat.' }),
+      ta,
+      el('div', { class: 'btn-row' }, el('button', { type: 'button', class: 'btn btn-primary btn-block', onclick: () => {
+        exam.answer = ta.value;
+        exam.stage = 'check';
+        renderExam();
+        const first = $('#view-exam input[type="checkbox"]');
+        if (first) first.focus({ preventScroll: true });
+      } }, 'Zobrazit body odpovědi'))
+    );
+  } else {
+    const done = exam.stage === 'done';
+    if (exam.answer.trim()) parts.push(el('h3', { text: 'Tvoje odpověď' }), el('div', { class: 'flashcard', text: exam.answer }));
+    parts.push(
+      el('h3', { text: 'Body odpovědi' }),
+      done ? null : el('p', { class: 'hint', text: 'Zaškrtni body, které jsi ve své odpovědi zmínil(a).' }),
+      el('ul', { class: 'check-points' }, ...it.body.map((b, i) => el('li', null,
+        el('label', null,
+          el('input', { type: 'checkbox', checked: exam.checked.includes(i), disabled: done, onchange: (e) => {
+            if (e.target.checked) exam.checked.push(i); else exam.checked = exam.checked.filter((x) => x !== i);
+          } }),
+          el('span', { text: b })
+        )
+      )))
+    );
+    if (it.citace.length) parts.push(el('p', { class: 'hint' }, el('strong', { text: 'Citace k použití: ' }), it.citace.join(' · ')));
+    if (it.note) parts.push(el('p', { class: 'note hint', text: 'K ověření: ' + it.note }));
+    parts.push(el('p', { class: 'src', text: 'Zdroj: ' + it.zdroj }));
+
+    if (!done) {
+      parts.push(el('div', { class: 'btn-row' }, el('button', { type: 'button', class: 'btn btn-primary btn-block', onclick: saveExam }, 'Uložit výsledek')));
+    } else {
+      const r = examStats(exam.sec).zkouska[it.id];
+      const n = exam.checked.length;
+      parts.push(el('div', { class: 'feedback ' + (n === it.body.length ? 'ok' : 'neutral') },
+        el('p', { class: 'feedback-title', role: 'status', text: `Zmínil(a) jsi ${n} z ${it.body.length} bodů (${percent(n, it.body.length)} %).` }),
+        el('p', { text: `Pokusů u této otázky: ${r.pokusy} · nejlepší výsledek ${r.nejlepsi} / ${r.z}.` }),
+        el('div', { class: 'btn-row' },
+          el('button', { type: 'button', class: 'btn btn-primary', id: 'exam-next', onclick: () => startExam(exam.sec) }, 'Další otázka'),
+          el('button', { type: 'button', class: 'btn btn-ghost', onclick: leave }, 'Zpět')
+        )
+      ));
+    }
+  }
+  $('#view-exam').replaceChildren(el('div', { class: 'card' }, ...parts));
+}
+
+function saveExam() {
+  const it = exam.item;
+  const st = examStats(exam.sec);
+  if (!st.zkouska) st.zkouska = {};
+  const r = st.zkouska[it.id] || (st.zkouska[it.id] = { pokusy: 0, posledni: 0, nejlepsi: 0, z: it.body.length });
+  r.pokusy++;
+  r.posledni = exam.checked.length;
+  r.nejlepsi = Math.max(r.nejlepsi, r.posledni);
+  r.z = it.body.length;
+  if (exam.sec === 'cj') saveCjStats(); else saveStats();
+  exam.stage = 'done';
+  renderExam();
+  const next = $('#exam-next');
+  if (next) next.focus({ preventScroll: true });
+}
+
+// Karta do Přehledu; zobrazí se jen tehdy, když už nějaká simulace proběhla.
+function examResultsCard(st, labelFor) {
+  const entries = Object.entries(st.zkouska || {});
+  if (!entries.length) return null;
+  return el('div', { class: 'card' },
+    el('h2', { text: 'Simulace zkoušky' }),
+    el('div', { class: 'table-wrap' },
+      el('table', null,
+        el('thead', null, el('tr', null,
+          el('th', { text: 'Otázka' }), el('th', { class: 'num', text: 'Pokusů' }),
+          el('th', { class: 'num', text: 'Poslední' }), el('th', { class: 'num', text: 'Nejlepší' })
+        )),
+        el('tbody', null, ...entries.map(([id, r]) => el('tr', null,
+          el('td', { text: labelFor(id) }),
+          el('td', { class: 'num', text: String(r.pokusy) }),
+          el('td', { class: 'num', text: `${r.posledni} / ${r.z}` }),
+          el('td', { class: 'num', text: `${r.nejlepsi} / ${r.z}` })
+        )))
+      )
     )
   );
 }

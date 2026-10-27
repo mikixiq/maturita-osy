@@ -343,6 +343,30 @@ tr.uncovered td { color: var(--muted); }
 .char-list dd { margin: 2px 0 0; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; padding: 0; list-style: none; }
 .check-list { margin: 8px 0 0; padding-left: 1.2em; color: var(--warn); font-size: .9rem; }
+.char-text { margin: 4px 0 0; line-height: 1.6; }
+.mo-item .motif-line { flex-basis: 100%; }
+.motif-filter { margin-bottom: 10px; }
+
+/* Srovnání dvou děl */
+.compare-table { table-layout: fixed; }
+.compare-table th { white-space: normal; overflow-wrap: anywhere; }
+.compare-table th[scope="row"] { color: var(--text); width: 28%; }
+.compare-table td { overflow-wrap: anywhere; }
+.compare-table .same-mark { display: block; font-size: .75rem; font-weight: 400; color: var(--ok); }
+.compare-table tr.same td { background: var(--ok-bg); }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.compare-col { min-width: 0; }
+.compare-chars { margin: 0; padding-left: 1.2em; }
+.compare-chars li { margin-bottom: 6px; }
+
+/* Simulace zkoušky */
+.check-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.check-points label {
+  display: flex; gap: 10px; align-items: flex-start; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
+}
+.check-points input { width: 20px; height: 20px; margin: 2px 0 0; flex-shrink: 0; accent-color: var(--accent); }
+.check-points label:has(input:checked) { border-color: var(--ok); background: var(--ok-bg); }
 
 .error { border-color: var(--bad); background: var(--bad-bg); }
 .error code { background: var(--surface); padding: 1px 4px; border-radius: 4px; }
@@ -357,5 +381,6 @@ tr.uncovered td { color: var(--muted); }
   .tab { padding: 8px 8px; font-size: .9rem; }  /* ZMĚNA: tři záložky se vejdou i na úzký displej */
   .brand { font-size: .95rem; }
   .bucket-grid { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
   .q-text { font-size: 1.05rem; }
 }
