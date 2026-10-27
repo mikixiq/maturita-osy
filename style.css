@@ -1,42 +1,29 @@
-/* Maturita OSY a čeština – styly. Bez externích knihoven, světlý i tmavý režim podle systému. */
+/* Maturita OSY a čeština – styly. Bez externích knihoven. */
 
+/* Paleta „Půlnoční indigo + cyan“ – všechny barvy jsou jen tady, zbytek souboru používá proměnné. */
 :root {
-  --bg: #f5f6f8;
-  --surface: #ffffff;
-  --surface-2: #eef0f4;
-  --text: #1c2230;
-  --muted: #5d6578;
-  --border: #d8dce4;
-  --accent: #2f5bd3;
-  --accent-text: #ffffff;
-  --ok: #1d7a46;
-  --ok-bg: #e3f4ea;
-  --bad: #b3261e;
-  --bad-bg: #fbe7e5;
-  --warn: #8a5a00;
-  --warn-bg: #fff3d6;
-  --radius: 12px;
-  --shadow: 0 1px 2px rgba(20, 30, 50, .06), 0 2px 8px rgba(20, 30, 50, .05);
-}
+  color-scheme: dark;
+  --bg: #0b0d1a;
+  --panel: #161a2e;
+  --border: #262c4a;
+  --text: #eef0ff;
+  --muted: #9aa3c7;
+  --accent: #6d7bff;
+  --accent-2: #22d3ee;
+  --on-accent: #0b0d1a;           /* text na hlavních tlačítkách */
+  --ok: #34d399;
+  --bad: #fb7185;
+  --warn: #fbbf24;                /* ke zopakování, k ověření */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #12151c;
-    --surface: #1b2029;
-    --surface-2: #252b36;
-    --text: #e7eaf0;
-    --muted: #9aa3b5;
-    --border: #333a48;
-    --accent: #7c9cff;
-    --accent-text: #0e1320;
-    --ok: #5fd08f;
-    --ok-bg: #173325;
-    --bad: #ff8a80;
-    --bad-bg: #3a1d1b;
-    --warn: #ffcc66;
-    --warn-bg: #3a2f14;
-    --shadow: none;
-  }
+  /* Odvozené odstíny */
+  --panel-2: color-mix(in srgb, var(--border) 60%, var(--panel));
+  --control-border: color-mix(in srgb, var(--muted) 50%, var(--border));  /* ovládací prvky mají kontrast aspoň 3 : 1 */
+  --ok-bg: color-mix(in srgb, var(--ok) 16%, var(--panel));
+  --bad-bg: color-mix(in srgb, var(--bad) 16%, var(--panel));
+  --warn-bg: color-mix(in srgb, var(--warn) 16%, var(--panel));
+  --gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
+  --radius: 12px;
+  --shadow: 0 6px 20px color-mix(in srgb, var(--bg) 70%, transparent);
 }
 
 * { box-sizing: border-box; }
@@ -60,7 +47,7 @@ h3 { font-size: 1.05rem; margin: 20px 0 8px; }
 /* Horní lišta */
 .topbar {
   position: sticky; top: 0; z-index: 10;
-  background: var(--surface);
+  background: var(--panel);
   border-bottom: 1px solid var(--border);
 }
 .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; }
@@ -70,12 +57,12 @@ h3 { font-size: 1.05rem; margin: 20px 0 8px; }
   border: 0; background: none; color: var(--muted);
   padding: 8px 12px; border-radius: 8px; font: inherit; cursor: pointer;
 }
-.tab.active { background: var(--surface-2); color: var(--text); font-weight: 600; }
+.tab.active { background: var(--panel-2); color: var(--text); font-weight: 600; }
 
 main { padding-top: 16px; padding-bottom: 24px; }
 
 .card {
-  background: var(--surface);
+  background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
@@ -86,7 +73,7 @@ main { padding-top: 16px; padding-bottom: 24px; }
 /* Statistické dlaždice */
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
 .stat {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 10px 12px; box-shadow: var(--shadow);
 }
 .stat-value { font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -105,20 +92,20 @@ legend { font-weight: 600; margin-bottom: 8px; padding: 0; }
 .mode {
   position: relative; display: block; cursor: pointer;
   border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
-  background: var(--surface);
+  background: var(--panel);
 }
 .mode input { position: absolute; opacity: 0; pointer-events: none; }
 .mode-title { font-weight: 600; display: block; }
 .mode-sub { font-size: .8rem; color: var(--muted); }
 .mode:has(input:checked) { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-.mode:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mode:has(input:focus-visible) { outline: 2px solid var(--accent-2); outline-offset: 2px; }
 .mode.disabled { opacity: .5; cursor: not-allowed; }
 
 .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .field { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; color: var(--muted); min-width: 0; }
 select, textarea {
-  font: inherit; color: var(--text); background: var(--surface);
-  border: 1px solid var(--border); border-radius: 8px; padding: 10px; width: 100%;
+  font: inherit; color: var(--text); background: var(--panel);
+  border: 1px solid var(--control-border); border-radius: 8px; padding: 10px; width: 100%;
 }
 textarea { min-height: 120px; resize: vertical; }
 
@@ -127,11 +114,13 @@ textarea { min-height: 120px; resize: vertical; }
 /* Tlačítka */
 .btn {
   font: inherit; font-weight: 600; cursor: pointer;
-  border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+  border: 1px solid var(--border); background: var(--panel-2); color: var(--text);
   padding: 10px 16px; border-radius: 10px; min-height: 44px;
 }
 .btn:disabled { opacity: .5; cursor: not-allowed; }
-.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+.btn:focus-visible, .option:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.btn-primary { background: var(--gradient); border-color: transparent; color: var(--on-accent); }
+.btn-primary:hover:not(:disabled) { filter: brightness(1.08); }
 .btn-danger { color: var(--bad); }
 .btn-ghost { background: none; }
 .btn-small { min-height: 36px; padding: 6px 12px; font-size: .9rem; }
@@ -141,18 +130,18 @@ textarea { min-height: 120px; resize: vertical; }
 
 /* Test */
 .quiz-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; color: var(--muted); }
-.progress { height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
-.progress-bar { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.progress { height: 6px; background: var(--panel-2); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
+.progress-bar { height: 100%; width: 0; background: var(--gradient); transition: width .2s; }
 
-.timer { position: relative; height: 24px; background: var(--surface-2); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
-.timer-bar { height: 100%; background: var(--accent); opacity: .35; transition: width 1s linear; }
+.timer { position: relative; height: 24px; background: var(--panel-2); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+.timer-bar { height: 100%; background: var(--gradient); opacity: .45; transition: width 1s linear; }
 .timer.low .timer-bar { background: var(--bad); }
 .timer-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 
 .q-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
 .badge {
   display: inline-block; font-size: .75rem; padding: 2px 8px; border-radius: 999px;
-  background: var(--surface-2); color: var(--muted);
+  background: var(--panel-2); color: var(--muted);
 }
 .badge.warn { background: var(--warn-bg); color: var(--warn); }
 .q-text { font-size: 1.1rem; font-weight: 600; margin: 0 0 16px; }
@@ -160,10 +149,10 @@ textarea { min-height: 120px; resize: vertical; }
 .options { display: grid; gap: 8px; }
 .option {
   text-align: left; font: inherit; color: var(--text); cursor: pointer;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  background: var(--panel); border: 1px solid var(--control-border); border-radius: 10px;
   padding: 12px 14px; min-height: 48px;
 }
-.option:hover:not(:disabled) { border-color: var(--accent); }
+.option:hover:not(:disabled) { border-color: var(--accent-2); }
 .option:disabled { cursor: default; }
 .option.correct { background: var(--ok-bg); border-color: var(--ok); }
 .option.wrong { background: var(--bad-bg); border-color: var(--bad); }
@@ -173,14 +162,14 @@ textarea { min-height: 120px; resize: vertical; }
 /* Kartička */
 .flashcard {
   border: 1px dashed var(--border); border-radius: 10px; padding: 16px;
-  background: var(--surface-2); white-space: pre-line;
+  background: var(--panel-2); white-space: pre-line;
 }
 
 /* Seřazení */
 .order-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .order-item {
   display: flex; align-items: center; gap: 8px;
-  border: 1px solid var(--border); border-radius: 10px; padding: 8px 8px 8px 12px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px; padding: 8px 8px 8px 12px; background: var(--panel);
 }
 .order-item.correct { background: var(--ok-bg); border-color: var(--ok); }
 .order-item.wrong { background: var(--bad-bg); border-color: var(--bad); }
@@ -189,7 +178,7 @@ textarea { min-height: 120px; resize: vertical; }
 .order-btns { display: flex; gap: 4px; }
 .order-btns button {
   width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--border);
-  background: var(--surface-2); color: var(--text); font-size: 1rem; cursor: pointer;
+  background: var(--panel-2); color: var(--text); font-size: 1rem; cursor: pointer;
 }
 .order-btns button:disabled { opacity: .35; cursor: default; }
 
@@ -197,7 +186,7 @@ textarea { min-height: 120px; resize: vertical; }
 .feedback { margin-top: 16px; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border); }
 .feedback.ok { background: var(--ok-bg); border-color: var(--ok); }
 .feedback.bad { background: var(--bad-bg); border-color: var(--bad); }
-.feedback.neutral { background: var(--surface-2); }
+.feedback.neutral { background: var(--panel-2); }
 .feedback-title { font-weight: 700; margin: 0 0 6px; }
 .feedback p { margin: 6px 0 0; }
 .feedback .source { font-size: .85rem; color: var(--muted); }
@@ -219,9 +208,9 @@ tr.uncovered td { color: var(--muted); }
 .pill { font-size: .75rem; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
 .pill.ano { background: var(--ok-bg); color: var(--ok); }
 .pill.castecne { background: var(--warn-bg); color: var(--warn); }
-.pill.ne { background: var(--surface-2); color: var(--muted); }
+.pill.ne { background: var(--panel-2); color: var(--muted); }
 
-.meter { height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; margin-top: 4px; min-width: 60px; }
+.meter { height: 6px; background: var(--panel-2); border-radius: 3px; overflow: hidden; margin-top: 4px; min-width: 60px; }
 .meter > div { height: 100%; background: var(--ok); }
 
 /* Výběr maturitních otázek */
@@ -241,10 +230,10 @@ tr.uncovered td { color: var(--muted); }
 .mo-item .mo-name { min-width: 0; overflow-wrap: anywhere; }
 .mo-item .mo-meta { grid-column: 3; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: .8rem; color: var(--muted); }
 .mo-item.checked label { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-.mo-item.disabled label { cursor: not-allowed; opacity: .6; background: var(--surface-2); }
+.mo-item.disabled label { cursor: not-allowed; opacity: .6; background: var(--panel-2); }
 
 /* Štítek prezentace v záhlaví otázky */
-.badge.source { background: var(--accent); color: var(--accent-text); font-weight: 700; }
+.badge.source { background: var(--gradient); color: var(--on-accent); font-weight: 700; }
 .badge.mo { background: var(--ok-bg); color: var(--ok); }
 
 /* Něco navíc */
@@ -298,12 +287,12 @@ tr.uncovered td { color: var(--muted); }
 /* Přepínač sekcí OSY | Čeština */
 .section-switch { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; flex-shrink: 0; }
 .section-btn {
-  font: inherit; border: 0; background: var(--surface); color: var(--muted);
+  font: inherit; border: 0; background: var(--panel); color: var(--muted);
   padding: 8px 14px; min-height: 40px; cursor: pointer;
 }
 .section-btn + .section-btn { border-left: 1px solid var(--border); }
-.section-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); font-weight: 600; }
-.section-btn:focus-visible, .tab:focus-visible, .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.section-btn[aria-pressed="true"] { background: var(--gradient); color: var(--on-accent); font-weight: 600; }
+.section-btn:focus-visible, .tab:focus-visible, .chip:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
 .topbar .tabs { padding-bottom: 8px; flex-wrap: wrap; }
 
 /* Čeština: přiřazování */
@@ -318,10 +307,10 @@ tr.uncovered td { color: var(--muted); }
 
 /* Čeština: třídění do období */
 .chip-pool, .bucket-items { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip-pool { min-height: 40px; padding: 8px; border-radius: 10px; background: var(--surface-2); }
+.chip-pool { min-height: 40px; padding: 8px; border-radius: 10px; background: var(--panel-2); }
 .chip {
   font: inherit; font-size: .9rem; text-align: left; color: var(--text); cursor: pointer;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 999px;
   padding: 6px 12px; min-height: 36px; max-width: 100%; overflow-wrap: anywhere;
 }
 .chip:disabled { cursor: default; }
@@ -369,7 +358,7 @@ tr.uncovered td { color: var(--muted); }
 .check-points label:has(input:checked) { border-color: var(--ok); background: var(--ok-bg); }
 
 .error { border-color: var(--bad); background: var(--bad-bg); }
-.error code { background: var(--surface); padding: 1px 4px; border-radius: 4px; }
+.error code { background: var(--panel); padding: 1px 4px; border-radius: 4px; }
 
 .footer { color: var(--muted); font-size: .8rem; padding-bottom: 24px; }
 
