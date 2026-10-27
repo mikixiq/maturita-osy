@@ -373,3 +373,28 @@ tr.uncovered td { color: var(--muted); }
   .compare-grid { grid-template-columns: 1fr; }
   .q-text { font-size: 1.05rem; }
 }
+
+/* Čtení nahlas */
+.head-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.head-row > :first-child { flex: 1 1 auto; min-width: 0; }
+.q-head .q-text { margin-bottom: 12px; }
+.btn-read { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; }
+.btn-read[aria-pressed="true"] { border-color: var(--accent-2); color: var(--accent-2); }
+.read-icon { font-size: 1rem; line-height: 1; }
+.reader-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  margin: 8px 0 12px; padding: 8px 10px; border-radius: 10px; background: var(--panel-2);
+  font-size: .85rem; color: var(--muted);
+}
+.reader-field { display: flex; align-items: center; gap: 6px; }
+.reader-field select { width: auto; padding: 6px 8px; }
+.reader-check { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.reader-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent-2); }
+.reading {
+  outline: 2px solid var(--accent-2); outline-offset: 4px; border-radius: 8px;
+  background: color-mix(in srgb, var(--accent-2) 8%, transparent);
+}
+
+/* Ověření znalostí na konci výuky */
+.quiz-q { border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px; }
+.quiz-q:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }

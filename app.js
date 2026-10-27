@@ -143,7 +143,7 @@ function storageSet(key, value) {
 }
 
 function emptyStats() {
-  return { verze: 2, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {}, zkouska: {} };
+  return { verze: 2, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {}, zkouska: {}, kviz: {} };
 }
 
 function loadStats() {
@@ -276,6 +276,7 @@ function setupOsy() {
   // Z uloženého výběru vyhodíme otázky, které mezitím přestaly být dostupné.
   for (const n of [...selection]) if (!isSelectable(n)) selection.delete(n);
 
+  buildOsyQuizBank();
   buildHome();
 }
 
@@ -355,6 +356,7 @@ function setSection(sec) {
 }
 
 function showView(name) {
+  stopSpeaking();
   for (const v of ['home', 'quiz', 'result', 'speech', 'learn', 'overview', 'cj-home', 'cj-learn', 'cj-play', 'cj-overview', 'exam']) {  // ZMĚNA: + learn, + čeština
     $('#view-' + v).hidden = v !== name;
   }
@@ -627,7 +629,9 @@ function renderQuestion() {
       el('span', { class: 'badge', text: q.tema }),
       q.poznamka ? el('span', { class: 'badge warn', text: 'k ověření' }) : null
     ),
-    el('p', { class: 'q-text', text: q.zneni }),
+    el('div', { class: 'head-row q-head' },
+      el('p', { class: 'q-text', 'data-read': `q-${q.id}`, text: q.zneni }),
+      readButton(() => questionReadText(q), `q-${q.id}`)),
     el('div', { id: 'answer-area' }),
     el('div', { id: 'feedback-area' })
   );
@@ -1142,12 +1146,23 @@ function renderLearnStep() {
     return;
   }
 
-  if (learn.step >= total) {
+  if (learn.step === total) {
+    renderTopicQuiz(view, {
+      sec: 'osy', topic: `mo-${m.cislo}`, header: title, state: learn,
+      make: () => osyQuizFor(m),
+      onBack: () => { learn.step = total - 1; renderLearnStep(); },
+      onContinue: () => { learn.step = total + 1; renderLearnStep(); window.scrollTo(0, 0); }
+    });
+    return;
+  }
+
+  if (learn.step > total) {
     const v = m.vyuka;
+    stopSpeaking();
     view.replaceChildren(el('div', { class: 'card' },
       title,
-      el('h2', { text: 'Celý výklad' }),
-      el('p', { class: 'vyklad', text: v.vyklad }),
+      el('div', { class: 'head-row' }, el('h2', { text: 'Celý výklad' }), readButton(() => v.vyklad, 'osy-vyklad')),
+      el('p', { class: 'vyklad', 'data-read': 'osy-vyklad', text: v.vyklad }),
       el('p', { class: 'src', text: 'Výklad je sestaven z bodů výuky – jejich zdroje jsou uvedené u jednotlivých kroků.' }),
       el('h3', { text: 'Doporučené pořadí výkladu' }),
       el('ol', { class: 'osnova' }, ...v.poradi_vykladu.map((t) => el('li', { text: t }))),
@@ -1175,15 +1190,20 @@ function renderLearnStep() {
     renderLearnStep();
   };
   const state = learnMarks[b.id];
-  const go = (step) => { learn.step = step; renderLearnStep(); window.scrollTo(0, 0); };
+  const go = (step) => { stopSpeaking(); learn.step = step; renderLearnStep(); window.scrollTo(0, 0); };
+  const readKey = `osy-${b.id}`;
+  const readText = joinSentences([b.text, b.vysvetleni]);
 
   view.replaceChildren(el('div', { class: 'card' },
     title,
+    ttsControls(),
     el('p', { class: 'step-count', text: `Krok ${learn.step + 1} z ${total}` }),
     el('div', { class: 'progress', 'aria-hidden': 'true' }, el('div', { class: 'progress-bar', style: `width:${percent(learn.step + 1, total)}%` })),
-    el('span', { class: 'badge source', text: srcLabel(b) }),
-    el('h2', { class: 'step-text', text: b.text }),
-    el('p', { class: 'step-expl', text: b.vysvetleni }),
+    el('div', { class: 'head-row' }, el('span', { class: 'badge source', text: srcLabel(b) }), readButton(() => readText, readKey)),
+    el('div', { class: 'read-block', 'data-read': readKey },
+      el('h2', { class: 'step-text', text: b.text }),
+      el('p', { class: 'step-expl', text: b.vysvetleni })
+    ),
     srcLine(b),
     el('div', { class: 'mark-row', role: 'group', 'aria-label': 'Jak tomuto bodu rozumíš' },
       el('button', { type: 'button', class: 'btn ok-mark', 'aria-pressed': String(state === 'rozumim'), onclick: () => mark('rozumim') }, 'Rozumím'),
@@ -1192,9 +1212,11 @@ function renderLearnStep() {
     el('div', { class: 'nav-row' },
       el('button', { type: 'button', class: 'btn', disabled: learn.step === 0 && !repeatBodies(m).length, onclick: () => go(learn.step - 1) }, 'Zpět'),
       el('button', { type: 'button', class: 'btn btn-primary', onclick: () => go(learn.step + 1) }, learn.step === total - 1 ? 'Dokončit' : 'Další'),
-      el('button', { type: 'button', class: 'btn btn-ghost', onclick: () => go(total) }, 'Přeskočit na konec')
+      el('button', { type: 'button', class: 'btn btn-ghost', onclick: () => go(total + 1) }, 'Přeskočit na konec')
     )
   ));
+  autoRead(readKey, readText);
+  reapplyReading();
 }
 
 // „Přejít na procvičení“: výběr se nastaví jen na tuto otázku; původní výběr jde na úvodní obrazovce obnovit.
@@ -1275,6 +1297,10 @@ function renderOverview() {
       const m = MO_BY_NUM.get(Number(id.replace('mo-', '')));
       return m ? `${m.cislo}. ${m.nazev}` : id;
     }),
+    examResultsCard(stats, (id) => {
+      const m = MO_BY_NUM.get(Number(id.replace('mo-', '')));
+      return m ? `${m.cislo}. ${m.nazev}` : id;
+    }, 'kviz', 'Kvízy z výuky'),
 
     el('div', { class: 'card' },
       el('h2', { text: 'Vynulování' }),
@@ -1338,7 +1364,7 @@ const GENERIC_ROLES = ['Učitel', 'Ředitel školy', 'Inspektor', 'Zemský škol
 /* ---------- Čeština: localStorage ---------- */
 
 function emptyCjStats() {
-  return { verze: 1, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {}, dila: {}, epochy: {}, zkouska: {} };
+  return { verze: 1, answered: 0, correct: 0, wrong: 0, q: {}, review: [], los: {}, dila: {}, epochy: {}, zkouska: {}, kviz: {} };
 }
 
 function loadCjStats() {
@@ -1398,6 +1424,7 @@ function setupCj(data) {
   CJ_MOTIFS = Array.isArray(data.motivy) ? data.motivy : [];
   CJ_QUESTIONS = buildCjQuestions();
   CJ_QUESTIONS.forEach((q) => CJ_BY_ID.set(q.id, q));
+  buildCjQuizBank();
   if (!cjSelection) cjSelection = new Set(CJ_WORKS.map((w) => w.cislo));
   for (const n of [...cjSelection]) if (!CJ_BY_NUM.has(n)) cjSelection.delete(n);
 }
@@ -2175,8 +2202,11 @@ function cjLearnSteps(w) {
   const e = epochOf(w.obdobi);
   const para = (text) => el('p', { class: 'step-expl', text });
   return [
-    { title: 'Autor', body: [para(a.jmeno), para(`${a.zivot} · ${a.zeme}`)], src: a.zdroj, notes: noteFor(w, ['Autorství']) },
+    { title: 'Autor', body: [para(a.jmeno), para(`${a.zivot} · ${a.zeme}`)], src: a.zdroj, notes: noteFor(w, ['Autorství']),
+      read: joinSentences([a.jmeno, a.zivot, a.zeme]) },
     { title: 'Epocha', src: e && e.zdroje[0], notes: e && e.k_overeni.length ? e.k_overeni.join(' ') : null,
+      read: e ? joinSentences([e.nazev, e.rozsah, e.popis, e.hlavni_smery.join(', '),
+        ...e.dalsi_autori.map((d) => `${d.autor}: ${d.dila.map((x) => `${x.nazev}, ${x.rok}`).join(', ')}`)]) : periodName(w.obdobi),
       body: e ? [
         el('p', { class: 'step-expl' }, el('strong', { text: `${e.nazev} (${e.rozsah})` })),
         para(e.popis),
@@ -2185,6 +2215,7 @@ function cjLearnSteps(w) {
           e.dalsi_autori.map((d) => `${d.autor} – ${d.dila.map((x) => `„${x.nazev}“ (${x.rok})`).join(', ')}`).join('; '))
       ] : [para(periodName(w.obdobi))] },
     { title: 'Dílo a druh', src: w.zdroje[0], notes: noteFor(w, ['Druh', 'Období', 'Literární směr']),
+      read: joinSentences([w.dilo, w.rok_text, w.druh, w.zanr, w.literarni_smer, periodName(w.obdobi)]),
       body: [
         para(`${w.dilo} (${w.rok_text})`),
         el('dl', { class: 'char-list' },
@@ -2195,13 +2226,14 @@ function cjLearnSteps(w) {
         )
       ] },
     { title: 'Postavy', src: w.zdroje[0], notes: noteFor(w, ['Charakteristiky', 'Jméno', 'Příjmení']),
+      read: joinSentences(w.postavy.flatMap((p) => [`${p.jmeno}, ${p.role}`, p.charakteristika || ''])),
       body: [el('dl', { class: 'char-list' }, ...w.postavy.flatMap((p) => [
         el('dt', { text: p.jmeno }),
         el('dd', null, el('em', { text: p.role }), p.charakteristika ? el('p', { class: 'char-text', text: p.charakteristika }) : null,
           p.zdroj && p.zdroj !== w.zdroje[0] ? el('span', { class: 'src', text: 'Zdroj: ' + srcText(p.zdroj) }) : null)
       ]))] },
-    { title: 'Shrnutí děje', body: [para(w.shrnuti_deje)], src: w.zdroje[0], notes: noteFor(w, ['Shrnutí']) },
-    { title: 'Motivy', src: w.zdroje[0], notes: LIT.poznamka_motivy || null,
+    { title: 'Shrnutí děje', body: [para(w.shrnuti_deje)], src: w.zdroje[0], notes: noteFor(w, ['Shrnutí']), read: w.shrnuti_deje },
+    { title: 'Motivy', src: w.zdroje[0], notes: LIT.poznamka_motivy || null, read: joinSentences([(w.motivy || []).join(', ')]),
       body: [
         el('ul', { class: 'tag-list' }, ...(w.motivy || []).map((m) => el('li', { class: 'badge', text: m }))),
         ...(w.motivy || []).map((m) => {
@@ -2209,9 +2241,9 @@ function cjLearnSteps(w) {
           return el('p', { class: 'step-expl' }, el('strong', { text: m + ': ' }), other.length ? 'také v dílech ' + other.join(', ') : 'jen v tomto díle ze seznamu');
         })
       ] },
-    { title: 'Obsah (úvod k projevu)', body: [para(w.obsah)], src: w.zdroje[0] },
+    { title: 'Obsah (úvod k projevu)', body: [para(w.obsah)], src: w.zdroje[0], read: w.obsah },
     { title: 'Zajímavost', body: [para(w.fun_fact.text), el('p', { class: 'src', text: 'Informace nad rámec povinné látky.' })],
-      src: w.fun_fact.zdroj, notes: noteFor(w, ['Zajímavost']) }
+      src: w.fun_fact.zdroj, notes: noteFor(w, ['Zajímavost']), read: w.fun_fact.text }
   ];
 }
 
@@ -2222,9 +2254,20 @@ function renderCjLearnStep() {
   const view = $('#view-cj-learn');
   const title = el('p', { class: 'speech-num', text: `Výuka · dílo č. ${w.cislo}: ${shortTitle(w)} – ${w.autor.zkratka}` });
   const backToList = el('button', { type: 'button', class: 'btn btn-ghost', onclick: () => { cjLearn = null; renderCjLearnList(); } }, 'Zpět na seznam');
-  const go = (step) => { cjLearn.step = step; renderCjLearnStep(); window.scrollTo(0, 0); };
+  const go = (step) => { stopSpeaking(); cjLearn.step = step; renderCjLearnStep(); window.scrollTo(0, 0); };
 
-  if (cjLearn.step >= total) {
+  // Krok total = ověření znalostí, total + 1 = shrnutí
+  if (cjLearn.step === total) {
+    renderTopicQuiz(view, {
+      sec: 'cj', topic: w.id, header: title, state: cjLearn,
+      make: () => cjQuizFor(w),
+      onBack: () => go(total - 1),
+      onContinue: () => go(total + 1)
+    });
+    return;
+  }
+
+  if (cjLearn.step > total) {
     view.replaceChildren(el('div', { class: 'card' },
       title,
       el('h2', { text: 'Shrnutí' }),
@@ -2243,20 +2286,24 @@ function renderCjLearnStep() {
   }
 
   const st = steps[cjLearn.step];
+  const readKey = `cj-${w.id}-${cjLearn.step}`;
   view.replaceChildren(el('div', { class: 'card' },
     title,
+    ttsControls(),
     el('p', { class: 'step-count', text: `Krok ${cjLearn.step + 1} z ${total}` }),
     el('div', { class: 'progress', 'aria-hidden': 'true' }, el('div', { class: 'progress-bar', style: `width:${percent(cjLearn.step + 1, total)}%` })),
-    el('h2', { class: 'step-text', text: st.title }),
-    ...st.body,
+    el('div', { class: 'head-row' }, el('h2', { class: 'step-text', text: st.title }), readButton(() => st.read, readKey)),
+    el('div', { class: 'read-block', 'data-read': readKey }, ...st.body),
     st.src ? el('p', { class: 'src', text: 'Zdroj: ' + srcText(st.src) }) : null,
     st.notes ? el('p', { class: 'note hint', text: 'K ověření: ' + st.notes }) : null,
     el('div', { class: 'nav-row' },
       el('button', { type: 'button', class: 'btn', disabled: cjLearn.step === 0, onclick: () => go(cjLearn.step - 1) }, 'Zpět'),
       el('button', { type: 'button', class: 'btn btn-primary', onclick: () => go(cjLearn.step + 1) }, cjLearn.step === total - 1 ? 'Dokončit' : 'Další'),
-      el('button', { type: 'button', class: 'btn btn-ghost', onclick: () => go(total) }, 'Přeskočit na konec')
+      el('button', { type: 'button', class: 'btn btn-ghost', onclick: () => go(total + 1) }, 'Přeskočit na konec')
     )
   ));
+  autoRead(readKey, st.read);
+  reapplyReading();
 }
 
 /* ---------- Čeština: přehled ---------- */
@@ -2334,6 +2381,10 @@ function renderCjOverview() {
       const z = w && w.zkouska.find((x) => x.id === id);
       return z ? `${shortTitle(w)}: ${z.otazka}` : id;
     }),
+    examResultsCard(cjStats, (id) => {
+      const w = CJ_WORKS.find((x) => x.id === id);
+      return w ? `${w.cislo}. ${shortTitle(w)}` : id;
+    }, 'kviz', 'Kvízy z výuky'),
 
     el('div', { class: 'card' },
       el('h2', { text: 'Vynulování češtiny' }),
@@ -2490,7 +2541,9 @@ function renderExam() {
       el('button', { type: 'button', class: 'btn btn-ghost btn-small', onclick: leave }, 'Ukončit')
     ),
     el('p', { class: 'speech-num', text: it.nadpis }),
-    el('h2', { class: 'speech-title', text: it.otazka }),
+    el('div', { class: 'head-row' },
+      el('h2', { class: 'speech-title', 'data-read': `exam-${it.id}`, text: it.otazka }),
+      readButton(() => it.otazka, `exam-${it.id}`)),
     it.note ? el('p', null, el('span', { class: 'badge warn', text: 'k ověření' })) : null
   ];
 
@@ -2562,11 +2615,11 @@ function saveExam() {
 }
 
 // Karta do Přehledu; zobrazí se jen tehdy, když už nějaká simulace proběhla.
-function examResultsCard(st, labelFor) {
-  const entries = Object.entries(st.zkouska || {});
+function examResultsCard(st, labelFor, field = 'zkouska', heading = 'Simulace zkoušky') {
+  const entries = Object.entries(st[field] || {});
   if (!entries.length) return null;
   return el('div', { class: 'card' },
-    el('h2', { text: 'Simulace zkoušky' }),
+    el('h2', { text: heading }),
     el('div', { class: 'table-wrap' },
       el('table', null,
         el('thead', null, el('tr', null,
@@ -2582,6 +2635,409 @@ function examResultsCard(st, labelFor) {
       )
     )
   );
+}
+
+/* ==========================================================================
+ * Ověření znalostí na konci výuky (obě sekce)
+ * Otázky se generují jen z dat výuky: u OSY z bodů výuky (vysvětlení) a klíčových pojmů,
+ * u češtiny z postav, motivů, obsahu a shrnutí děje. Nesprávné možnosti se vybírají
+ * z téhož tématu a s co nejpodobnější délkou, aby správná odpověď nešla poznat podle délky.
+ * Otázky mají stálá id a jsou v BY_ID / CJ_BY_ID, takže špatné odpovědi jdou do „Ke zopakování“.
+ * ========================================================================== */
+
+let OSY_QUIZ = new Map();   // číslo maturitní otázky -> { bod: [], pojem: [], tf: [[pravda, nepravda]] }
+let CJ_QUIZ = new Map();    // číslo díla -> { role: [], motiv: [], dej: [[pravda, nepravda]] }
+
+// Vybere `count` nesprávných možností s délkou co nejbližší správné odpovědi. Když to jde,
+// správná odpověď nesmí být ze všech nejdelší ani nejkratší.
+// `extra` jsou náhradní možnosti z jiného tématu téže sekce: použije se nejvýš jedna,
+// a jen když by jinak byla správná odpověď v tématu nejdelší nebo nejkratší.
+function nearestByLength(values, correct, count, extra = []) {
+  const others = shuffle([...new Set(values)].filter((v) => v && v !== correct));
+  let picks = others;
+  if (others.length > count) {
+    const all = [correct, ...others].sort((a, b) => a.length - b.length);
+    const idx = all.indexOf(correct);
+    let best = null;
+    for (let s = Math.max(0, idx - count); s <= Math.min(idx, all.length - count - 1); s++) {
+      const edge = idx === s || idx === s + count;
+      const score = (edge ? 1000 : 0) + all[s + count].length - all[s].length;
+      if (!best || score < best.score) best = { s, score };
+    }
+    picks = all.slice(best.s, best.s + count + 1).filter((v) => v !== correct);
+  }
+  if (!picks.length) return picks;
+  const longest = picks.every((v) => v.length < correct.length);
+  const shortest = picks.every((v) => v.length > correct.length);
+  if (!longest && !shortest) return picks;
+  const side = [...new Set(extra)].filter((v) => v && v !== correct && !picks.includes(v)
+    && (longest ? v.length > correct.length : v.length < correct.length));
+  if (!side.length) return picks;
+  side.sort((a, b) => Math.abs(a.length - correct.length) - Math.abs(b.length - correct.length));
+  // nahradí se možnost délkou nejvzdálenější od správné odpovědi
+  const far = picks.reduce((a, b) => (Math.abs(b.length - correct.length) > Math.abs(a.length - correct.length) ? b : a));
+  return picks.map((v) => (v === far ? side[0] : v));
+}
+
+function splitSentences(text) {
+  return String(text || '').split(/(?<=[.!?…])\s+/).map((t) => t.trim()).filter(Boolean);
+}
+
+function firstSentences(text, max) {
+  let out = '';
+  for (const s of splitSentences(text)) {
+    if (out && (out + ' ' + s).length > max) break;
+    out = out ? out + ' ' + s : s;
+  }
+  return out;
+}
+
+// Spojí části textu z dat do vět pro čtení nahlas (bez přidaných slov).
+function joinSentences(parts) {
+  return parts.filter(Boolean).map((p) => String(p).trim()).filter(Boolean)
+    .map((p) => (/[.!?…“”"]$/.test(p) ? p : p + '.')).join(' ');
+}
+
+// Skryje pojem v jeho definici (i skloňované tvary), aby otázka neprozradila odpověď.
+function maskTerm(text, term) {
+  let out = text;
+  for (const tok of term.split(/[^\p{L}]+/u).filter((t) => t.length >= 4)) {
+    const stem = tok.length > 5 ? tok.slice(0, -2) : tok;
+    out = out.replace(new RegExp(`(?<!\\p{L})${stem}\\p{L}*`, 'giu'), '…');
+  }
+  return out;
+}
+
+function buildOsyQuizBank() {
+  OSY_QUIZ = new Map();
+  const withVyuka = MO.filter((m) => m.vyuka && Array.isArray(m.vyuka.body));
+  const osyAll = {
+    body: withVyuka.flatMap((m) => m.vyuka.body.map((b) => b.text)),
+    pojmy: withVyuka.flatMap((m) => (m.vyuka.klicove_pojmy || []).map((k) => k.pojem))
+  };
+  for (const m of MO) {
+    const v = m.vyuka;
+    if (!v || !Array.isArray(v.body)) continue;
+    const body = v.body;
+    const pojmy = Array.isArray(v.klicove_pojmy) ? v.klicove_pojmy : [];
+    const make = (id, src, fields) => Object.assign({
+      id, tema: 'Kvíz z výuky', zdroj: src.zdroj, prezentace: src.prezentace, maturitni_otazky: [m.cislo]
+    }, fields);
+    const bank = { bod: [], pojem: [], tf: [] };
+    if (body.length >= 4) {
+      bank.bod = body.map((b) => make(`kviz-osy-${m.cislo}-${b.id}`, b, {
+        typ: 'vyber',
+        zneni: `Ke kterému bodu výuky patří toto vysvětlení? „${firstSentences(b.vysvetleni, 240)}“`,
+        moznosti: [b.text, ...nearestByLength(body.map((x) => x.text), b.text, 3, osyAll.body)], spravna_odpoved: 0,
+        vysvetleni: `${b.text} ${b.vysvetleni}`
+      }));
+    }
+    if (pojmy.length >= 4) {
+      bank.pojem = pojmy.map((k, j) => make(`kviz-osy-${m.cislo}-pojem-${j + 1}`, k, {
+        typ: 'vyber',
+        zneni: `Který pojem odpovídá definici: „${maskTerm(k.definice, k.pojem)}“?`,
+        moznosti: [k.pojem, ...nearestByLength(pojmy.map((x) => x.pojem), k.pojem, 3, osyAll.pojmy)], spravna_odpoved: 0,
+        vysvetleni: `${k.pojem}: ${k.definice}`
+      }));
+      bank.tf = pojmy.map((k, j) => {
+        const other = pojmy[(j + 1) % pojmy.length];
+        const fields = (definice, truth) => ({
+          typ: 'pravda_nepravda', zneni: `Pojem „${k.pojem}“ znamená: ${definice}`, spravna_odpoved: truth,
+          vysvetleni: `${k.pojem}: ${k.definice}`
+        });
+        return [
+          make(`kviz-osy-${m.cislo}-tf-${j + 1}-p`, k, fields(k.definice, true)),
+          make(`kviz-osy-${m.cislo}-tf-${j + 1}-n`, k, fields(other.definice, false))
+        ];
+      });
+    }
+    OSY_QUIZ.set(m.cislo, bank);
+    [...bank.bod, ...bank.pojem, ...bank.tf.flat()].forEach((q) => { if (!BY_ID.has(q.id)) BY_ID.set(q.id, q); });
+  }
+}
+
+function osyQuizFor(m) {
+  const bank = OSY_QUIZ.get(m.cislo);
+  if (!bank || !bank.bod.length || bank.pojem.length < 2 || !bank.tf.length) return null;
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  const [j, k] = shuffle(bank.pojem.map((_, i) => i)).slice(0, 2);
+  return [pick(bank.bod), bank.pojem[j], pick(bank.tf[k])];
+}
+
+// Nepravdivý výrok o ději vznikne záměnou jména postavy za jinou postavu z téhož díla.
+function buildCjQuizBank() {
+  CJ_QUIZ = new Map();
+  const allRoles = CJ_WORKS.flatMap((w) => w.postavy.map((p) => p.role));
+  for (const w of CJ_WORKS) {
+    const t = quoted(w);
+    const bank = { role: [], motiv: [], dej: [] };
+    const extra = { tema: 'Kvíz z výuky' };
+    if (w.postavy.length >= 4) {
+      bank.role = w.postavy.map((p, i) => cjQuestion(`kviz-${w.id}-role-${i}`, w, Object.assign({
+        typ: 'vyber', zneni: `Jakou roli má v díle ${t} postava ${p.jmeno}?`,
+        moznosti: [p.role, ...nearestByLength(w.postavy.map((x) => x.role), p.role, 3, allRoles)], spravna_odpoved: 0,
+        vysvetleni: p.charakteristika || `${p.jmeno} – ${p.role}`, zdroj: srcText(p.zdroj || w.zdroje[0])
+      }, extra)));
+    }
+    const motifs = w.motivy || [];
+    bank.motiv = motifs.map((mot, j) => cjQuestion(`kviz-${w.id}-motiv-${j}`, w, Object.assign({
+      typ: 'vyber', zneni: `Který z těchto motivů patří k dílu ${t}?`,
+      moznosti: [mot, ...nearestByLength(CJ_MOTIFS.filter((x) => !motifs.includes(x)), mot, 3)], spravna_odpoved: 0,
+      vysvetleni: `Motivy díla ${t}: ${motifs.join(', ')}.`
+    }, extra)));
+
+    const names = [...new Set(w.postavy.map((p) => p.jmeno.split(/[^\p{L}]+/u).find((tok) => tok.length >= 3 && UPPER.test(tok[0]))).filter(Boolean))];
+    const word = (n, flags = 'u') => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, flags);
+    [...splitSentences(w.obsah), ...splitSentences(w.shrnuti_deje)].forEach((sentence, k) => {
+      const present = names.filter((n) => word(n).test(sentence));
+      const swap = names.find((n) => !present.includes(n));
+      if (!present.length || !swap) return;
+      const wrong = sentence.replace(word(present[0], 'gu'), swap);
+      const fields = (text, truth) => Object.assign({
+        typ: 'pravda_nepravda', zneni: `Dílo ${t}: ${text}`, spravna_odpoved: truth,
+        vysvetleni: truth ? sentence : `Ve skutečnosti: ${sentence}`
+      }, extra);
+      bank.dej.push([
+        cjQuestion(`kviz-${w.id}-dej-${k + 1}-p`, w, fields(sentence, true)),
+        cjQuestion(`kviz-${w.id}-dej-${k + 1}-n`, w, fields(wrong, false))
+      ]);
+    });
+    CJ_QUIZ.set(w.cislo, bank);
+    [...bank.role, ...bank.motiv, ...bank.dej.flat()].forEach((q) => { if (!CJ_BY_ID.has(q.id)) CJ_BY_ID.set(q.id, q); });
+  }
+}
+
+function cjQuizFor(w) {
+  const bank = CJ_QUIZ.get(w.cislo);
+  if (!bank || bank.role.length < 2 || !bank.motiv.length) return null;
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  const roles = shuffle(bank.role);
+  return [roles[0], bank.dej.length ? pick(pick(bank.dej)) : roles[1], pick(bank.motiv)];
+}
+
+// cfg: { sec, topic, header, state (objekt výuky – kvíz se v něm drží), make, onBack, onContinue }
+function renderTopicQuiz(view, cfg) {
+  const st = cfg.state;
+  if (!st.quiz) {
+    const questions = cfg.make();
+    st.quiz = questions
+      ? { questions, answers: [], saved: false, order: questions.map((q) => (q.typ === 'vyber' ? shuffle(q.moznosti.map((_, i) => i)) : null)) }
+      : { questions: null };
+  }
+  const quiz = st.quiz;
+  const head = [cfg.header, ttsControls(), el('h2', { text: 'Ověření znalostí' })];
+
+  if (!quiz.questions) {
+    view.replaceChildren(el('div', { class: 'card' }, ...head,
+      el('p', { class: 'notice', role: 'status', text: 'Pro toto téma zatím není kvíz.' }),
+      el('div', { class: 'nav-row' },
+        el('button', { type: 'button', class: 'btn', onclick: cfg.onBack }, 'Zpět'),
+        el('button', { type: 'button', class: 'btn btn-primary', onclick: cfg.onContinue }, 'Pokračovat')
+      )
+    ));
+    return;
+  }
+
+  const total = quiz.questions.length;
+  const answeredCount = quiz.answers.filter(Boolean).length;
+  const done = answeredCount === total;
+  const rerender = (focusSel) => {
+    renderTopicQuiz(view, cfg);
+    reapplyReading();
+    const node = focusSel && view.querySelector(focusSel);
+    if (node) node.focus({ preventScroll: true });
+  };
+
+  const blocks = quiz.questions.map((q, i) => {
+    const ans = quiz.answers[i];
+    const keys = q.typ === 'vyber' ? quiz.order[i].map(String) : ['true', 'false'];
+    const labelOf = (key) => (q.typ === 'vyber' ? q.moznosti[Number(key)] : key === 'true' ? 'Pravda' : 'Nepravda');
+    const correctKey = String(q.spravna_odpoved);
+    const readKey = `kviz-${q.id}`;
+    const options = el('div', { class: 'options' + (q.typ === 'vyber' ? '' : ' tf'), role: 'group', 'aria-label': `Otázka ${i + 1}` },
+      ...keys.map((key) => el('button', {
+        type: 'button', class: 'option' + (ans ? (key === correctKey ? ' correct' : key === ans.key ? ' wrong' : '') : ''),
+        'data-q': String(i), disabled: !!ans,
+        onclick: () => {
+          if (quiz.answers[i]) return;
+          const correct = key === correctKey;
+          quiz.answers[i] = { key, correct };
+          recordAnswer(q, correct);
+          if (quiz.answers.filter(Boolean).length === total && !quiz.saved) saveQuizResult(cfg.sec, cfg.topic, quiz);
+          const nextIdx = quiz.questions.findIndex((_, k) => !quiz.answers[k]);
+          rerender(nextIdx === -1 ? '#quiz-continue' : `.option[data-q="${nextIdx}"]`);
+        }
+      }, labelOf(key)))
+    );
+    return el('div', { class: 'quiz-q' },
+      el('p', { class: 'step-count', text: `Otázka ${i + 1} z ${total} · ${q.typ === 'vyber' ? 'výběr odpovědi' : 'pravda / nepravda'}` }),
+      el('div', { class: 'head-row q-head' },
+        el('p', { class: 'q-text', 'data-read': readKey, text: q.zneni }),
+        readButton(() => questionReadText(q), readKey)),
+      options,
+      ans ? el('div', { class: 'feedback ' + (ans.correct ? 'ok' : 'bad'), role: 'status' },
+        el('p', { class: 'feedback-title', text: ans.correct ? 'Správně!' : 'Špatně' }),
+        ans.correct ? null : el('p', null, el('strong', { text: 'Správná odpověď: ' }), labelOf(correctKey)),
+        el('p', { text: q.vysvetleni }),
+        el('p', { class: 'source', text: 'Zdroj: ' + q.zdroj }),
+        ans.correct ? null : el('p', { class: 'source', text: 'Otázka je v kolonce „Ke zopakování“.' })
+      ) : null
+    );
+  });
+
+  const ok = quiz.answers.filter((a) => a && a.correct).length;
+  const footer = done
+    ? el('div', { class: 'feedback ' + (ok === total ? 'ok' : 'neutral') },
+        el('p', { class: 'feedback-title', role: 'status', text: `Výsledek kvízu: ${ok} / ${total}` }),
+        el('div', { class: 'btn-row' },
+          el('button', { type: 'button', class: 'btn', onclick: () => { st.quiz = null; rerender('.option[data-q="0"]'); } }, 'Znovu'),
+          el('button', { type: 'button', class: 'btn btn-primary', id: 'quiz-continue', onclick: cfg.onContinue }, 'Pokračovat ke shrnutí')
+        ))
+    : el('div', { class: 'nav-row' },
+        el('button', { type: 'button', class: 'btn', onclick: cfg.onBack }, 'Zpět'),
+        el('button', { type: 'button', class: 'btn btn-ghost', onclick: cfg.onContinue }, 'Přeskočit')
+      );
+
+  view.replaceChildren(el('div', { class: 'card' }, ...head,
+    el('p', { class: 'hint', text: `${total} otázky k právě probranému tématu. Kvíz je nepovinný.` }),
+    ...blocks, footer));
+}
+
+function saveQuizResult(sec, topic, quiz) {
+  const st = sec === 'cj' ? cjStats : stats;
+  if (!st.kviz) st.kviz = {};
+  const ok = quiz.answers.filter((a) => a && a.correct).length;
+  const r = st.kviz[topic] || (st.kviz[topic] = { pokusy: 0, posledni: 0, nejlepsi: 0, z: quiz.questions.length });
+  r.pokusy++;
+  r.posledni = ok;
+  r.nejlepsi = Math.max(r.nejlepsi, ok);
+  r.z = quiz.questions.length;
+  quiz.saved = true;
+  if (sec === 'cj') saveCjStats(); else saveStats();
+}
+
+/* ==========================================================================
+ * Čtení nahlas přes window.speechSynthesis (bez knihoven a síťových volání)
+ * Čte se jen text z dat. Aktivní blok dostane třídu .reading.
+ * ========================================================================== */
+
+const TTS_KEY = 'maturita-cteni-v1';
+const TTS_OK = typeof window !== 'undefined' && 'speechSynthesis' in window && typeof window.SpeechSynthesisUtterance === 'function';
+const TTS_RATES = [['0.8', '0,8×'], ['1', '1,0×'], ['1.2', '1,2×']];
+let ttsPrefs = Object.assign({ rate: 1, auto: false }, storageGet(TTS_KEY) || {});
+let ttsRun = 0;           // číslo aktuálního čtení – zrušená čtení se poznají podle starého čísla
+let ttsKey = null;        // data-read klíč právě čteného bloku
+let ttsLastAuto = null;   // poslední automaticky přečtený krok
+
+if (TTS_OK) {
+  try {
+    speechSynthesis.getVoices();
+    speechSynthesis.addEventListener('voiceschanged', () => speechSynthesis.getVoices());
+  } catch (e) { /* starší prohlížeč – použije se výchozí hlas */ }
+}
+
+function czechVoice() {
+  try {
+    return speechSynthesis.getVoices().find((v) => /^cs([-_]|$)/i.test(v.lang)) || null;
+  } catch (e) {
+    return null;
+  }
+}
+
+// Dlouhý text se čte po větách – některé prohlížeče dlouhé promluvy uprostřed utnou.
+function ttsChunks(text) {
+  const out = [];
+  for (const s of splitSentences(text)) {
+    if (s.length <= 220) { out.push(s); continue; }
+    let buf = '';
+    for (const part of s.split(/(?<=,)\s+/)) {
+      if (buf && (buf + ' ' + part).length > 220) { out.push(buf); buf = part; } else buf = buf ? buf + ' ' + part : part;
+    }
+    if (buf) out.push(buf);
+  }
+  return out;
+}
+
+function speak(text, key) {
+  if (!TTS_OK || !text) return;
+  stopSpeaking();
+  const run = ++ttsRun;
+  ttsKey = key;
+  reapplyReading();
+  const voice = czechVoice();
+  const parts = ttsChunks(text);
+  parts.forEach((part, i) => {
+    const u = new SpeechSynthesisUtterance(part);
+    u.lang = 'cs-CZ';
+    if (voice) u.voice = voice;
+    u.rate = Number(ttsPrefs.rate) || 1;
+    if (i === parts.length - 1) u.onend = () => { if (run === ttsRun) clearReading(); };
+    u.onerror = () => { if (run === ttsRun) clearReading(); };
+    speechSynthesis.speak(u);
+  });
+}
+
+function stopSpeaking() {
+  if (!TTS_OK) return;
+  ttsRun++;
+  try { speechSynthesis.cancel(); } catch (e) { /* nic */ }
+  clearReading();
+}
+
+function clearReading() {
+  ttsKey = null;
+  document.querySelectorAll('.reading').forEach((n) => n.classList.remove('reading'));
+  document.querySelectorAll('.btn-read[aria-pressed="true"]').forEach((b) => setReadButton(b, false));
+}
+
+function setReadButton(b, active) {
+  b.setAttribute('aria-pressed', String(active));
+  b.setAttribute('aria-label', active ? 'Zastavit čtení' : 'Přečíst nahlas');
+  b.lastChild.textContent = active ? 'Zastavit' : 'Přečíst';
+}
+
+// Po překreslení obrazovky znovu označí právě čtený blok.
+function reapplyReading() {
+  if (!ttsKey) return;
+  document.querySelectorAll('[data-read]').forEach((n) => { if (n.dataset.read === ttsKey) n.classList.add('reading'); });
+  document.querySelectorAll('.btn-read').forEach((b) => { if (b.dataset.key === ttsKey) setReadButton(b, true); });
+}
+
+function readButton(getText, key) {
+  if (!TTS_OK) return null;
+  return el('button', {
+    type: 'button', class: 'btn btn-small btn-read', 'data-key': key, 'aria-pressed': 'false', 'aria-label': 'Přečíst nahlas',
+    onclick: () => { if (ttsKey === key) stopSpeaking(); else speak(getText(), key); }
+  }, el('span', { class: 'read-icon', 'aria-hidden': 'true', text: '🔊' }), el('span', { text: 'Přečíst' }));
+}
+
+function autoRead(key, text) {
+  if (!TTS_OK || !ttsPrefs.auto || ttsLastAuto === key) return;
+  ttsLastAuto = key;
+  speak(text, key);
+}
+
+function saveTtsPrefs() {
+  storageSet(TTS_KEY, ttsPrefs);
+}
+
+function ttsControls() {
+  if (!TTS_OK) return null;
+  return el('div', { class: 'reader-bar', role: 'group', 'aria-label': 'Čtení nahlas' },
+    el('label', { class: 'reader-field' }, el('span', { text: 'Rychlost čtení' }),
+      el('select', { onchange: (e) => { ttsPrefs.rate = Number(e.target.value); saveTtsPrefs(); } },
+        ...TTS_RATES.map(([v, label]) => el('option', { value: v, selected: Number(v) === Number(ttsPrefs.rate) }, label)))),
+    el('button', { type: 'button', class: 'btn btn-small', onclick: stopSpeaking }, 'Stop'),
+    el('label', { class: 'reader-check' },
+      el('input', { type: 'checkbox', checked: !!ttsPrefs.auto, onchange: (e) => { ttsPrefs.auto = e.target.checked; saveTtsPrefs(); } }),
+      el('span', { text: 'Číst automaticky po kroku' }))
+  );
+}
+
+function questionReadText(q) {
+  return Array.isArray(q.moznosti) && (q.typ === 'vyber' || q.typ === 'serazeni')
+    ? joinSentences([q.zneni, ...q.moznosti])
+    : q.zneni;
 }
 
 /* ---------- Klávesnice a tlačítko Ukončit ---------- */
