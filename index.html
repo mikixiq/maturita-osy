@@ -3,19 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maturita OSY a PSI</title>
-  <meta name="description" content="Procvičování k ústní maturitě z operačních systémů a počítačových sítí podle prezentací z výuky.">
+  <title>Maturita OSY a čeština</title>
+  <meta name="description" content="Procvičování k ústní maturitě z operačních systémů a počítačových sítí a z české literatury (20 děl).">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="brand" href="#" data-nav="home">Maturita OSY</a>
+      <a class="brand" href="#" data-nav="@home">Maturita</a>
+      <!-- Přepínač sekcí OSY | Čeština -->
+      <div class="section-switch" role="group" aria-label="Sekce">
+        <button type="button" class="section-btn" data-section="osy" aria-pressed="true">OSY</button>
+        <button type="button" class="section-btn" data-section="cj" aria-pressed="false">Čeština</button>
+      </div>
+    </div>
+    <div class="wrap">
       <nav class="tabs" aria-label="Hlavní navigace">
-        <button type="button" class="tab" data-nav="home">Procvičování</button>
+        <button type="button" class="tab" data-nav="home" data-section="osy">Procvičování</button>
         <!-- NOVÉ: sekce Výuka -->
-        <button type="button" class="tab" data-nav="learn">Výuka</button>
-        <button type="button" class="tab" data-nav="overview">Přehled</button>
+        <button type="button" class="tab" data-nav="learn" data-section="osy">Výuka</button>
+        <button type="button" class="tab" data-nav="overview" data-section="osy">Přehled</button>
+        <button type="button" class="tab" data-nav="cj-home" data-section="cj" hidden>Procvičování</button>
+        <button type="button" class="tab" data-nav="cj-learn" data-section="cj" hidden>Výuka</button>
+        <button type="button" class="tab" data-nav="cj-overview" data-section="cj" hidden>Přehled</button>
       </nav>
     </div>
   </header>
@@ -100,10 +110,18 @@
 
     <!-- Přehled statistik -->
     <section id="view-overview" class="view" hidden></section>
+
+    <!-- Čeština: výběr děl a režimu, výuka, přiřazování a třídění, přehled -->
+    <section id="view-cj-home" class="view" hidden></section>
+    <section id="view-cj-learn" class="view" hidden></section>
+    <section id="view-cj-play" class="view" hidden></section>
+    <section id="view-cj-overview" class="view" hidden></section>
   </main>
 
   <footer class="wrap footer">
-    Otázky vycházejí pouze z prezentací z výuky; sekce „Něco navíc“ je nad jejich rámec. Statistiky se ukládají jen v tomto prohlížeči.
+    <span data-section="osy">Otázky vycházejí pouze z prezentací z výuky; sekce „Něco navíc“ je nad jejich rámec.</span>
+    <span data-section="cj" hidden>Údaje o dílech vycházejí z uvedených zdrojů (hlavně Wikipedie); „Zajímavost“ je nad rámec povinné látky.</span>
+    Statistiky se ukládají jen v tomto prohlížeči.
   </footer>
 
   <script src="app.js"></script>

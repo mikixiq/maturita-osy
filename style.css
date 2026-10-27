@@ -1,4 +1,4 @@
-/* Maturita OSY – styly. Bez externích knihoven, světlý i tmavý režim podle systému. */
+/* Maturita OSY a čeština – styly. Bez externích knihoven, světlý i tmavý režim podle systému. */
 
 :root {
   --bg: #f5f6f8;
@@ -295,6 +295,55 @@ tr.uncovered td { color: var(--muted); }
 .pojmy dd { margin: 2px 0 0; }
 .src { font-size: .8rem; color: var(--muted); }
 
+/* Přepínač sekcí OSY | Čeština */
+.section-switch { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+.section-btn {
+  font: inherit; border: 0; background: var(--surface); color: var(--muted);
+  padding: 8px 14px; min-height: 40px; cursor: pointer;
+}
+.section-btn + .section-btn { border-left: 1px solid var(--border); }
+.section-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); font-weight: 600; }
+.section-btn:focus-visible, .tab:focus-visible, .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.topbar .tabs { padding-bottom: 8px; flex-wrap: wrap; }
+
+/* Čeština: přiřazování */
+.match-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.match-row { display: grid; gap: 6px; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.match-row.correct { background: var(--ok-bg); border-color: var(--ok); }
+.match-row.wrong { background: var(--bad-bg); border-color: var(--bad); }
+.match-prompt { font-weight: 600; overflow-wrap: anywhere; }
+.match-fb { font-size: .9rem; margin: 0; }
+.match-row.correct .match-fb { color: var(--ok); }
+.match-row.wrong .match-fb { color: var(--bad); }
+
+/* Čeština: třídění do období */
+.chip-pool, .bucket-items { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-pool { min-height: 40px; padding: 8px; border-radius: 10px; background: var(--surface-2); }
+.chip {
+  font: inherit; font-size: .9rem; text-align: left; color: var(--text); cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  padding: 6px 12px; min-height: 36px; max-width: 100%; overflow-wrap: anywhere;
+}
+.chip:disabled { cursor: default; }
+.chip[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.chip.correct { background: var(--ok-bg); border-color: var(--ok); }
+.chip.wrong { background: var(--bad-bg); border-color: var(--bad); }
+.bucket-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 12px; }
+.bucket { border: 1px dashed var(--border); border-radius: 10px; padding: 10px; min-width: 0; }
+.bucket-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.bucket-head h3 { margin: 0; font-size: .95rem; }
+
+/* Čeština: osnova, výuka a seznam děl */
+.outline { margin: 8px 0 0; padding-left: 1.3em; }
+.outline li { margin-bottom: 10px; }
+.outline .outline-label { display: block; font-weight: 700; }
+.outline p { margin: 2px 0 0; }
+.char-list { margin: 0; }
+.char-list dt { font-weight: 700; margin-top: 8px; }
+.char-list dd { margin: 2px 0 0; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; padding: 0; list-style: none; }
+.check-list { margin: 8px 0 0; padding-left: 1.2em; color: var(--warn); font-size: .9rem; }
+
 .error { border-color: var(--bad); background: var(--bad-bg); }
 .error code { background: var(--surface); padding: 1px 4px; border-radius: 4px; }
 
@@ -307,5 +356,6 @@ tr.uncovered td { color: var(--muted); }
   .field-grid { grid-template-columns: 1fr; }
   .tab { padding: 8px 8px; font-size: .9rem; }  /* ZMĚNA: tři záložky se vejdou i na úzký displej */
   .brand { font-size: .95rem; }
+  .bucket-grid { grid-template-columns: 1fr; }
   .q-text { font-size: 1.05rem; }
 }

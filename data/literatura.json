@@ -1,0 +1,1414 @@
+{
+  "verze": 1,
+  "predmet": "Český jazyk a literatura – ústní maturita, seznam 20 děl",
+  "poznamka": "Údaje vycházejí z uvedených zdrojů (hlavně česká a anglická Wikipedie, ověřeno 27. 10. 2026). Pole „obdobi“ odpovídá maturitním obdobím: „18“ = do konce 18. století. Skutečné století vzniku je v poli „stoleti_vzniku“.",
+  "obdobi": [
+    {
+      "id": "18",
+      "nazev": "do konce 18. století"
+    },
+    {
+      "id": "19",
+      "nazev": "19. století"
+    },
+    {
+      "id": "20",
+      "nazev": "20. století"
+    },
+    {
+      "id": "21",
+      "nazev": "21. století"
+    }
+  ],
+  "dila": [
+    {
+      "id": "cj01",
+      "slug": "romeo-a-julie",
+      "cislo": 1,
+      "dilo": "Romeo a Julie",
+      "rok": 1595,
+      "rok_text": "premiéra 1595",
+      "autor": {
+        "jmeno": "William Shakespeare",
+        "zkratka": "W. Shakespeare",
+        "zivot": "1564–1616",
+        "zeme": "Anglie",
+        "zdroj": "https://cs.wikipedia.org/wiki/William_Shakespeare"
+      },
+      "druh": "drama",
+      "zanr": "tragédie",
+      "literarni_smer": "renesance",
+      "obdobi": "18",
+      "stoleti_vzniku": 16,
+      "postavy": [
+        {
+          "jmeno": "Romeo",
+          "role": "syn Montekův, mladý milenec"
+        },
+        {
+          "jmeno": "Julie",
+          "role": "třináctiletá dcera Kapuletova"
+        },
+        {
+          "jmeno": "otec Vavřinec",
+          "role": "františkán, tajně oddá milence a chce usmířit rody"
+        },
+        {
+          "jmeno": "Merkucio",
+          "role": "Romeův přítel, příbuzný vévody"
+        },
+        {
+          "jmeno": "Tybalt",
+          "role": "Juliin bratranec, nenávidí Romea"
+        },
+        {
+          "jmeno": "chůva",
+          "role": "Juliina důvěrnice"
+        }
+      ],
+      "obsah": "Ve Veroně se dlouhá léta svářejí dva mocné rody, Monteky a Kapuleti. Romeo z rodu Monteků se na maškarním plese u Kapuletů zamiluje do Julie, dcery nepřátelského rodu. Mladí milenci se tajně vezmou s pomocí otce Vavřince. Hra ukazuje, jak nenávist dospělých ničí lásku mladých.",
+      "shrnuti_deje": "Romeo a Julie se tajně vezmou, ale ještě týž den Tybalt zabije Romeova přítele Merkucia a Romeo pak zabije Tybalta, za což je vyhoštěn do Mantovy. Otec chce Julii provdat za Parise, a tak jí otec Vavřinec dá nápoj, po kterém vypadá jako mrtvá. Posel s vysvětlením k Romeovi nedorazí, Romeo se vrátí do hrobky, zabije Parise, a když spatří Julii zdánlivě mrtvou, vypije jed. Julie se probudí, najde Romea mrtvého a probodne se jeho dýkou. Smrt dětí nakonec oba rody usmíří.",
+      "fun_fact": {
+        "text": "Shakespeare příběh nevymyslel: čerpal z veršovaného Tragického příběhu o Romeusovi a Juliettě Arthura Brooka z roku 1562, který vycházel z novely Mattea Bandella.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Romeo_a_Julie",
+        "https://cs.wikipedia.org/wiki/William_Shakespeare",
+        "https://cs.wikipedia.org/wiki/Renesanční_literatura"
+      ],
+      "k_overeni": [
+        "Období: hra vznikla v 16. století; v seznamu je zařazena do období „do konce 18. století“."
+      ]
+    },
+    {
+      "id": "cj02",
+      "slug": "lakomec",
+      "cislo": 2,
+      "dilo": "Lakomec",
+      "rok": 1668,
+      "rok_text": "1668",
+      "autor": {
+        "jmeno": "Molière (vlastním jménem Jean-Baptiste Poquelin)",
+        "zkratka": "Molière",
+        "zivot": "1622–1673",
+        "zeme": "Francie",
+        "zdroj": "https://cs.wikipedia.org/wiki/Molière"
+      },
+      "druh": "drama",
+      "zanr": "komedie (o pěti dějstvích)",
+      "literarni_smer": "klasicismus",
+      "obdobi": "18",
+      "stoleti_vzniku": 17,
+      "postavy": [
+        {
+          "jmeno": "Harpagon",
+          "role": "bohatý lakomý vdovec a lichvář"
+        },
+        {
+          "jmeno": "Kleantes",
+          "role": "Harpagonův syn, miluje Marianu"
+        },
+        {
+          "jmeno": "Eliška",
+          "role": "Harpagonova dcera, miluje Valéra"
+        },
+        {
+          "jmeno": "Valér",
+          "role": "Harpagonův správce, miluje Elišku"
+        },
+        {
+          "jmeno": "Mariana",
+          "role": "chudá dívka, o kterou se uchází otec i syn"
+        },
+        {
+          "jmeno": "Čipera",
+          "role": "Kleantův sluha, ukradne truhlici s penězi"
+        }
+      ],
+      "obsah": "Komedie se odehrává v Paříži v domě bohatého vdovce Harpagona, který žije v neustálém strachu o své peníze. Kvůli penězům chce rozhodovat o sňatcích svých dětí, Kleanta a Elišky, a sám se chce oženit s mladou Marianou. Jeho lakota vede k řadě komických situací. Hra ukazuje, jak peníze deformují charakter a vztahy v rodině.",
+      "shrnuti_deje": "Harpagon si chce vzít Marianu, kterou miluje jeho syn Kleantes, a dceru Elišku chce provdat za starého boháče Anselma, ačkoli ona miluje Valéra. Kleantův sluha Čipera najde a ukradne Harpagonovu zakopanou truhlici s penězi a Harpagon propadne zoufalství. Při vyšetřování se ukáže, že Valér a Mariana jsou ztracené děti Anselma. Kleantes vrátí otci peníze výměnou za svolení ke sňatku s Marianou, Valér si vezme Elišku a Anselm zaplatí všechny výlohy. Harpagon zůstává sám, ale spokojený se svými penězi.",
+      "fun_fact": {
+        "text": "Předlohou Lakomce byla hra Aulularia (Komedie o hrnci) římského dramatika Plauta a podle hlavní postavy se slovo „harpagon“ vžilo jako označení pro velkého lakomce.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Lakomec",
+        "https://cs.wikipedia.org/wiki/Molière",
+        "https://cs.wikipedia.org/wiki/Klasicismus_(literatura)"
+      ],
+      "k_overeni": [
+        "Období: hra vznikla v 17. století; v seznamu je zařazena do období „do konce 18. století“."
+      ]
+    },
+    {
+      "id": "cj03",
+      "slug": "zkroceni-zle-zeny",
+      "cislo": 3,
+      "dilo": "Zkrocení zlé ženy",
+      "rok": 1591,
+      "rok_text": "1590–1591",
+      "autor": {
+        "jmeno": "William Shakespeare",
+        "zkratka": "W. Shakespeare",
+        "zivot": "1564–1616",
+        "zeme": "Anglie",
+        "zdroj": "https://cs.wikipedia.org/wiki/William_Shakespeare"
+      },
+      "druh": "drama",
+      "zanr": "komedie",
+      "literarni_smer": "renesance",
+      "obdobi": "18",
+      "stoleti_vzniku": 16,
+      "postavy": [
+        {
+          "jmeno": "Kateřina",
+          "role": "starší, hádavá dcera kupce Baptisty"
+        },
+        {
+          "jmeno": "Petruchio",
+          "role": "veronský šlechtic, chce Kateřinu „zkrotit“"
+        },
+        {
+          "jmeno": "Bianca",
+          "role": "mladší, něžná sestra Kateřiny"
+        },
+        {
+          "jmeno": "Baptista Minola",
+          "role": "bohatý padovský kupec, otec obou dcer"
+        },
+        {
+          "jmeno": "Lucentio",
+          "role": "syn pisanského šlechtice, uchází se o Biancu"
+        }
+      ],
+      "obsah": "Bohatý padovský kupec Baptista má dvě dcery: hádavou Kateřinu a něžnou Biancu. Mladší Bianca se smí vdát až po starší sestře, o kterou ale nikdo nestojí. Do Padovy přijíždí veronský šlechtic Petruchio a rozhodne se, že si Kateřinu vezme a udělá z ní poslušnou ženu. Komedie stojí na hádkách, převlecích a slovních hříčkách.",
+      "shrnuti_deje": "Petruchio si Kateřinu vezme a schválně jí dělá ze života peklo, až pochopí, že se musí zklidnit. Protože je starší sestra provdána, vezme si Bianca Lucentia, který se k ní dostal převlečený za učitele. Na konci se muži vsadí, kdo má nejposlušnější ženu: na zavolání přijde jen Kateřina. Petruchio vyhraje sázku a od Baptisty dostane navíc 20 000 zlatých.",
+      "fun_fact": {
+        "text": "Hra začíná rámcovým příběhem: šlechtic namluví opilému dráteníkovi Kryštofu Slyovi, že je pán, a hru mu nechá zahrát; podle komedie vznikl také muzikál Cole Portera Kiss Me, Kate.",
+        "mimo_zdroje": true,
+        "zdroj": "https://en.wikipedia.org/wiki/The_Taming_of_the_Shrew"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy",
+        "https://en.wikipedia.org/wiki/The_Taming_of_the_Shrew",
+        "https://cs.wikipedia.org/wiki/William_Shakespeare"
+      ],
+      "k_overeni": [
+        "Období: hra vznikla v 16. století; v seznamu je zařazena do období „do konce 18. století“."
+      ]
+    },
+    {
+      "id": "cj04",
+      "slug": "strakonicky-dudak",
+      "cislo": 4,
+      "dilo": "Strakonický dudák aneb Hody divých žen",
+      "rok": 1847,
+      "rok_text": "premiéra 21. listopadu 1847",
+      "autor": {
+        "jmeno": "Josef Kajetán Tyl",
+        "zkratka": "J. K. Tyl",
+        "zivot": "1808–1856",
+        "zeme": "Čechy, Rakouské císařství",
+        "zdroj": "https://cs.wikipedia.org/wiki/Josef_Kajetán_Tyl"
+      },
+      "druh": "drama",
+      "zanr": "dramatická báchorka („národní pohádka ve třech jednáních“)",
+      "literarni_smer": "romantismus (národní obrození)",
+      "obdobi": "19",
+      "stoleti_vzniku": 19,
+      "postavy": [
+        {
+          "jmeno": "Švanda",
+          "role": "chudý dudák ze Strakonic"
+        },
+        {
+          "jmeno": "Dorotka",
+          "role": "Švandova milá, dcera Trnky"
+        },
+        {
+          "jmeno": "Kalafuna",
+          "role": "Švandův věrný přítel, muzikant"
+        },
+        {
+          "jmeno": "Vocilka",
+          "role": "vychytralý podvodník, Švandův „sekretář“"
+        },
+        {
+          "jmeno": "Rosava",
+          "role": "víla, Švandova matka"
+        },
+        {
+          "jmeno": "Zulika",
+          "role": "smutná princezna v cizině"
+        }
+      ],
+      "obsah": "Chudý dudák Švanda miluje Dorotku, ale její otec Trnka ho jako ženicha odmítá. Švanda se proto vydá do světa vydělat peníze. Jeho matka, víla Rosava, mu očaruje dudy, takže všechny okouzlí. Hra spojuje českou vesnici se světem pohádkových bytostí.",
+      "shrnuti_deje": "Se začarovanými dudami má Švanda v cizině velký úspěch, rozesměje princeznu Zuliku a zapomene na Dorotku; jeho „sekretář“ Vocilka ho přitom šidí. Dorotka s Kalafunou ho přijdou hledat, ale Švanda se jich na hradě nezastane, a když se vrátí Zulikin snoubenec Alamir, je Švanda uvězněn. Rosava mu prozradí, že je jeho matka, a pomůže mu na útěk, za což je potrestána. Vocilka vláká Švandu do lesa k reji divých žen, které ho chtějí zabít, ale Dorotka ho zachrání. Švanda slíbí, že se změní, a oba se vrátí domů; královna víl odpustí i Rosavě.",
+      "fun_fact": {
+        "text": "Tyl je autorem textu písně „Kde domov můj“, která poprvé zazněla v jeho hře Fidlovačka (1834) a stala se českou hymnou.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Josef_Kajetán_Tyl"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Strakonický_dudák_aneb_Hody_divých_žen",
+        "https://cs.wikipedia.org/wiki/Josef_Kajetán_Tyl",
+        "https://cs.wikipedia.org/wiki/Romantismus_(literatura)"
+      ],
+      "k_overeni": []
+    },
+    {
+      "id": "cj05",
+      "slug": "kytice",
+      "cislo": 5,
+      "dilo": "Kytice (Kytice z pověstí národních)",
+      "rok": 1853,
+      "rok_text": "1853 (rozšířeno 1861)",
+      "autor": {
+        "jmeno": "Karel Jaromír Erben",
+        "zkratka": "K. J. Erben",
+        "zivot": "1811–1870",
+        "zeme": "Čechy, Rakouské císařství",
+        "zdroj": "https://cs.wikipedia.org/wiki/Karel_Jaromír_Erben"
+      },
+      "druh": "lyrika",
+      "zanr": "sbírka balad (lyricko-epická poezie)",
+      "literarni_smer": "romantismus (ohlasová, folkloristicky orientovaná poezie)",
+      "obdobi": "19",
+      "stoleti_vzniku": 19,
+      "postavy": [
+        {
+          "jmeno": "matka (Poklad, Polednice)",
+          "role": "častá hlavní postava, provinění vůči dítěti"
+        },
+        {
+          "jmeno": "dívka (Svatební košile)",
+          "role": "čeká na milého, kterého vyvolá z mrtvých"
+        },
+        {
+          "jmeno": "Vodník (Vodník)",
+          "role": "nadpřirozená bytost, unese dívku pod vodu"
+        },
+        {
+          "jmeno": "Polednice (Polednice)",
+          "role": "nadpřirozená bytost, trestá matku"
+        },
+        {
+          "jmeno": "Dora a král (Zlatý kolovrat)",
+          "role": "pohádková dvojice, vina a vykoupení"
+        }
+      ],
+      "obsah": "Kytice je sbírka balad inspirovaných lidovými pověstmi a pohádkami. Hlavní roli v nich často hrají ženy, nejčastěji matky. Básně se zabývají lidskými vztahy, vinou a trestem a střetem člověka s nadpřirozenými silami. Prostředí je symbolické a neurčité: les, chalupa, jezero.",
+      "shrnuti_deje": "Sbírka nemá jeden souvislý děj, tvoří ji 13 básní; první (Kytice) a poslední (Věštkyně) jsou vlastenecký rámec. V baladách se opakuje schéma vina – trest: v Pokladu matka kvůli zlatu nechá dítě v jeskyni a dostane ho zpět až po roce pokání, v Polednici matka přivolá Polednici na zlobivé dítě a to zemře, ve Vodníku dívka neposlechne matku, Vodník ji odnese a za porušení slibu zabije jejich dítě. Ve Svatební košili dívka vyvolá mrtvého milého a zachrání se jen modlitbou. Trest za vinu bývá krutý a často nepřiměřený.",
+      "fun_fact": {
+        "text": "První vydání z roku 1853 mělo jen 12 básní; balada Lilie přibyla až ve druhém vydání z roku 1861.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Kytice_(sbírka)",
+        "https://cs.wikipedia.org/wiki/Karel_Jaromír_Erben",
+        "https://cs.wikipedia.org/wiki/Romantismus_(literatura)"
+      ],
+      "k_overeni": [
+        "Druh: balady jsou lyricko-epické; zařazení jen do „lyriky“ je zjednodušení podle zadaného seznamu.",
+        "Shrnutí děje: jednotlivé balady jsou shrnuty podle obecné znalosti díla, zdrojový článek je podrobně nepopisuje."
+      ]
+    },
+    {
+      "id": "cj06",
+      "slug": "marysa",
+      "cislo": 6,
+      "dilo": "Maryša",
+      "rok": 1894,
+      "rok_text": "premiéra 9. května 1894",
+      "autor": {
+        "jmeno": "Alois Mrštík a Vilém Mrštík (bratři Mrštíkové)",
+        "zkratka": "A. a V. Mrštíkové",
+        "zivot": "Alois 1861–1925, Vilém 1863–1912",
+        "zeme": "Morava, Rakousko-Uhersko",
+        "zdroj": "https://cs.wikipedia.org/wiki/Vilém_Mrštík"
+      },
+      "druh": "drama",
+      "zanr": "realistické drama, tragédie (pět jednání)",
+      "literarni_smer": "realismus",
+      "obdobi": "19",
+      "stoleti_vzniku": 19,
+      "postavy": [
+        {
+          "jmeno": "Maryša",
+          "role": "selská dívka, provdaná proti své vůli"
+        },
+        {
+          "jmeno": "Francek",
+          "role": "chudý chasník a rekrut, Maryšina láska"
+        },
+        {
+          "jmeno": "Vávra",
+          "role": "bohatý mlynář, vdovec se třemi dětmi"
+        },
+        {
+          "jmeno": "Lízal",
+          "role": "Maryšin otec, bohatý sedlák"
+        },
+        {
+          "jmeno": "Lízalka",
+          "role": "Maryšina matka"
+        }
+      ],
+      "obsah": "Drama se odehrává na moravské vesnici. Maryša, dcera bohatého sedláka Lízala, miluje chudého Francka, který odchází na vojnu. Rodiče ji kvůli majetku nutí provdat se za bohatého mlynáře Vávru. Hra ostře kritizuje majetkové poměry a postavení ženy na vesnici.",
+      "shrnuti_deje": "Rodiče Maryšu přinutí vzít si vdovce Vávru. Manželství je nešťastné: Vávra pije, Maryšu bije a s jejím otcem se soudí o věno; Lízal svou chybu pozná, ale Maryša mu neodpustí. Po třech letech se z vojny vrátí Francek a přemlouvá ji, aby s ním utekla, ona však odmítá ze strachu z hanby. Když se Vávra pokusí Francka zastřelit, Maryša ho otráví jedem nasypaným do kávy.",
+      "fun_fact": {
+        "text": "Hra volně vychází z osudu Mariany Horákové z Těšan, která si také vzala staršího vdovce, ale neotrávila ho – prožila s ním 39 let a na jejich hrobě stojí: „Napsáno drama, prožito větší.“",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Maryša"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Maryša",
+        "https://cs.wikipedia.org/wiki/Alois_Mrštík",
+        "https://cs.wikipedia.org/wiki/Vilém_Mrštík",
+        "https://cs.wikipedia.org/wiki/Realismus_(literatura)"
+      ],
+      "k_overeni": []
+    },
+    {
+      "id": "cj07",
+      "slug": "jama-a-kyvadlo",
+      "cislo": 7,
+      "dilo": "Jáma a kyvadlo",
+      "rok": 1842,
+      "rok_text": "1842",
+      "autor": {
+        "jmeno": "Edgar Allan Poe",
+        "zkratka": "E. A. Poe",
+        "zivot": "1809–1849",
+        "zeme": "USA",
+        "zdroj": "https://cs.wikipedia.org/wiki/Edgar_Allan_Poe"
+      },
+      "druh": "epika",
+      "zanr": "hororová povídka",
+      "literarni_smer": "romantismus (americký)",
+      "obdobi": "19",
+      "stoleti_vzniku": 19,
+      "postavy": [
+        {
+          "jmeno": "vypravěč",
+          "role": "bezejmenný muž odsouzený inkvizicí k smrti"
+        },
+        {
+          "jmeno": "inkvizitoři",
+          "role": "soudci a trýznitelé v Toledu"
+        },
+        {
+          "jmeno": "krysy",
+          "role": "nechtěně pomohou vězni z pout"
+        },
+        {
+          "jmeno": "generál Lasalle",
+          "role": "velitel francouzské armády"
+        }
+      ],
+      "obsah": "Povídka se odehrává ve španělském Toledu v době inkvizice. Vypravěč, jehož jméno se nedozvíme, je odsouzen k smrti za kacířství. Probudí se v temné kobce a snaží se zjistit, co ho v ní čeká. Poe mistrně líčí strach, beznaděj a pocity člověka na hranici smrti.",
+      "shrnuti_deje": "Vězeň v temné kobce náhodou objeví hlubokou jámu, do které měl spadnout. Pak se probudí připoutaný k lavici a nad ním se pomalu snáší ostré kyvadlo. Potře si pouta zbytky jídla, krysy je přehryžou a on se vysvobodí na poslední chvíli. Rozžhavené železné stěny ho pak tlačí k jámě, ale ve chvíli, kdy do ní padá, ho zachytí ruka generála Lasalla – francouzská armáda vstoupila do Toleda.",
+      "fun_fact": {
+        "text": "Skutečný generál Lasalle francouzskou okupaci Toleda nevedl a podobné propracované mučení nemá v činnosti španělské inkvizice historickou obdobu.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo",
+        "https://cs.wikipedia.org/wiki/Edgar_Allan_Poe"
+      ],
+      "k_overeni": []
+    },
+    {
+      "id": "cj08",
+      "slug": "revizor",
+      "cislo": 8,
+      "dilo": "Revizor",
+      "rok": 1836,
+      "rok_text": "1836",
+      "autor": {
+        "jmeno": "Nikolaj Vasiljevič Gogol",
+        "zkratka": "N. V. Gogol",
+        "zivot": "1809–1852",
+        "zeme": "Rusko, ukrajinského původu",
+        "zdroj": "https://cs.wikipedia.org/wiki/Nikolaj_Vasiljevič_Gogol"
+      },
+      "druh": "drama",
+      "zanr": "satirická komedie (pět aktů)",
+      "literarni_smer": "kritický realismus (s prvky romantismu)",
+      "obdobi": "19",
+      "stoleti_vzniku": 19,
+      "postavy": [
+        {
+          "jmeno": "Chlestakov",
+          "role": "bezvýznamný úředník, kterého považují za revizora"
+        },
+        {
+          "jmeno": "Osip",
+          "role": "Chlestakovův sluha"
+        },
+        {
+          "jmeno": "hejtman",
+          "role": "představený města, úplatkář"
+        },
+        {
+          "jmeno": "Anna Andrejevna a Marja Antonovna",
+          "role": "hejtmanova žena a dcera"
+        },
+        {
+          "jmeno": "Bobčinskij a Dobčinskij",
+          "role": "statkáři, šiřitelé klepů"
+        },
+        {
+          "jmeno": "poštmistr",
+          "role": "otevírá cizí dopisy"
+        }
+      ],
+      "obsah": "Hra se odehrává v malém ruském městečku, jehož úředníci kradou, berou úplatky a nestarají se o pořádek. Hejtman dostane zprávu, že do města inkognito přijede revizor. Úředníci propadnou panice a za revizora omylem považují mladého úředníka Chlestakova, který v hostinci prohrál všechny peníze. Gogol tím nastavuje zrcadlo úplatkářství a podlézavosti.",
+      "shrnuti_deje": "Úředníci Chlestakova podplácejí a hejtman ho ubytuje u sebe; Chlestakov pochopí omyl a naplno ho využije – bere „půjčky“ a dary, vychloubá se, svádí hejtmanovu ženu a zasnoubí se s jeho dcerou. Sluha Osip ho přiměje včas zmizet pod záminkou cesty za strýcem. Poštmistr otevře Chlestakovův dopis příteli, v němž se úředníkům vysmívá, a podvod vyjde najevo. Ve chvíli, kdy všichni zuří, strážník oznámí, že přijel skutečný revizor.",
+      "fun_fact": {
+        "text": "Námět k Revizorovi podle tradice poskytl Gogolovi Alexandr Sergejevič Puškin, který mu vyprávěl, jak ho na cestách považovali za tajného vládního úředníka.",
+        "mimo_zdroje": true,
+        "zdroj": "https://en.wikipedia.org/wiki/The_Government_Inspector"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Revizor_(Gogol)",
+        "https://en.wikipedia.org/wiki/The_Government_Inspector",
+        "https://cs.wikipedia.org/wiki/Nikolaj_Vasiljevič_Gogol"
+      ],
+      "k_overeni": [
+        "Druh a období: v zadaném seznamu bylo „epika-próza“ a „20. a 21. století“, ale Revizor je divadelní hra z roku 1836 – opraveno na drama a 19. století.",
+        "Zajímavost: česká Wikipedie u tvrzení o Puškinovi uvádí „[zdroj?]“, anglická jej uvádí jako údajné („allegedly“)."
+      ]
+    },
+    {
+      "id": "cj09",
+      "slug": "promena",
+      "cislo": 9,
+      "dilo": "Proměna",
+      "rok": 1915,
+      "rok_text": "1915",
+      "autor": {
+        "jmeno": "Franz Kafka",
+        "zkratka": "F. Kafka",
+        "zivot": "1883–1924",
+        "zeme": "Rakousko-Uhersko, Praha; psal německy",
+        "zdroj": "https://cs.wikipedia.org/wiki/Franz_Kafka"
+      },
+      "druh": "epika",
+      "zanr": "povídka (novela)",
+      "literarni_smer": "moderní próza, expresionismus",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Řehoř Samsa",
+          "role": "obchodní cestující, promění se v hmyz"
+        },
+        {
+          "jmeno": "Markétka (Grete)",
+          "role": "Řehořova mladší sestra"
+        },
+        {
+          "jmeno": "otec",
+          "role": "po Řehořově proměně se vrací do práce"
+        },
+        {
+          "jmeno": "matka",
+          "role": "bojí se Řehoře vidět"
+        },
+        {
+          "jmeno": "posluhovačka",
+          "role": "jediná se s situací smíří"
+        }
+      ],
+      "obsah": "Obchodní cestující Řehoř Samsa se jednoho rána probudí a zjistí, že se proměnil v obří hmyz. Jeho první starostí je, jak se dostane do práce. Rodina, kterou dosud živil, ho zavře v jeho pokoji. Povídka je plná absurdity, pocitu bezvýchodnosti i černého humoru.",
+      "shrnuti_deje": "Řehoř nemůže s rodinou mluvit, stará se o něj jen sestra Markétka; rodiče i sestra musí jít do práce. Když se otec lekne, hází po Řehořovi jablka a jedno ho trvale zraní. Rodina si nastěhuje podnájemníky, a když Řehoře spatří, dají výpověď; sestra pak prohlásí, že hmyz už není Řehoř a musí pryč. Řehoř se vrátí do pokoje a nad ránem opuštěný umírá. Rodině se uleví – vyrazí na výlet za město a plánují budoucnost.",
+      "fun_fact": {
+        "text": "Kafka v závěti nařídil příteli Maxi Brodovi, aby všechna jeho díla zničil; Brod to neudělal a vydal i jeho romány Proces, Zámek a Amerika.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Franz_Kafka"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Proměna_(povídka)",
+        "https://cs.wikipedia.org/wiki/Franz_Kafka",
+        "https://en.wikipedia.org/wiki/The_Metamorphosis"
+      ],
+      "k_overeni": [
+        "Literární směr: zdroj uvádí jen, že povídka poprvé vyšla v expresionistickém měsíčníku Die Weißen Blätter; zařazení k expresionismu ověř v učebnici."
+      ]
+    },
+    {
+      "id": "cj10",
+      "slug": "starec-a-more",
+      "cislo": 10,
+      "dilo": "Stařec a moře",
+      "rok": 1952,
+      "rok_text": "1952",
+      "autor": {
+        "jmeno": "Ernest Hemingway",
+        "zkratka": "E. Hemingway",
+        "zivot": "1899–1961",
+        "zeme": "USA",
+        "zdroj": "https://cs.wikipedia.org/wiki/Ernest_Hemingway"
+      },
+      "druh": "epika",
+      "zanr": "novela",
+      "literarni_smer": "moderní americká próza (ztracená generace)",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Santiago",
+          "role": "starý kubánský rybář"
+        },
+        {
+          "jmeno": "chlapec (Manolin)",
+          "role": "Santiagův mladý přítel"
+        },
+        {
+          "jmeno": "marlín",
+          "role": "obrovská ryba, se kterou Santiago bojuje"
+        },
+        {
+          "jmeno": "žraloci",
+          "role": "připraví Santiaga o úlovek"
+        }
+      ],
+      "obsah": "Starý kubánský rybář Santiago už 84 dní nechytil žádnou rybu. Chlapec, který s ním jezdil, musel na přání otce přejít k úspěšnějším rybářům. Santiago se jednoho dne vydá daleko na moře, aby smolné období prolomil. Novela je příběhem vytrvalosti a vztahu člověka a přírody.",
+      "shrnuti_deje": "Na moři se Santiagovi chytí obrovský marlín, který ho několik dní táhne od pobřeží. Po vysilujícím boji ho stařec harpunou zabije a přiváže k boku loďky, protože je příliš velký. Cestou domů rybu napadají žraloci; Santiago je zabíjí harpunou, nožem i kyjem, ale nakonec z ryby zbude jen kostra. Vyčerpaný dorazí do přístavu a usne v chatrči, chlapec se o něj stará a lidé na pláži obdivují obří kostru.",
+      "fun_fact": {
+        "text": "Při prvním vydání v září 1952 se během dvou dnů prodalo 5,2 milionu výtisků; za novelu dostal Hemingway v roce 1953 Pulitzerovu cenu a roku 1954 Nobelovu cenu za literaturu.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Stařec_a_moře"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Stařec_a_moře",
+        "https://cs.wikipedia.org/wiki/Ernest_Hemingway"
+      ],
+      "k_overeni": [
+        "Jméno chlapce (Manolin) české heslo neuvádí, je z obecné znalosti díla."
+      ]
+    },
+    {
+      "id": "cj11",
+      "slug": "o-mysich-a-lidech",
+      "cislo": 11,
+      "dilo": "O myších a lidech",
+      "rok": 1937,
+      "rok_text": "1937",
+      "autor": {
+        "jmeno": "John Steinbeck",
+        "zkratka": "J. Steinbeck",
+        "zivot": "1902–1968",
+        "zeme": "USA",
+        "zdroj": "https://cs.wikipedia.org/wiki/John_Steinbeck"
+      },
+      "druh": "epika",
+      "zanr": "novela",
+      "literarni_smer": "moderní americký realistický román",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "George Milton",
+          "role": "drobný a bystrý, stará se o Lennieho"
+        },
+        {
+          "jmeno": "Lennie Small",
+          "role": "silný, mentálně postižený hromotluk"
+        },
+        {
+          "jmeno": "Candy",
+          "role": "starý dělník bez ruky"
+        },
+        {
+          "jmeno": "Curley",
+          "role": "agresivní syn majitele ranče"
+        },
+        {
+          "jmeno": "Curleyho žena",
+          "role": "osamělá, koketuje s dělníky"
+        },
+        {
+          "jmeno": "Slim",
+          "role": "respektovaný dělník"
+        }
+      ],
+      "obsah": "Děj se odehrává ve 30. letech 20. století na kalifornském ranči. Kamarádi George a Lennie putují za prací od ranče k ranči. Sní o tom, že si jednou koupí vlastní domek s hospodářstvím, kde bude Lennie chovat králíky. Kniha ukazuje osamělost, chudobu a krutost doby hospodářské krize.",
+      "shrnuti_deje": "Na ranči se k jejich snu přidá starý Candy, který chce přispět penězi. Lennie v rvačce zlomí ruku provokujícímu Curleymu. Curleyho žena se Lenniemu vnucuje a nechá ho hladit své vlasy; když začne křičet, Lennie ji chce utišit a nechtěně jí zlomí vaz. Uteče na smluvené místo u řeky. George ho najde dřív než pronásledovatelé a s těžkým srdcem ho zastřelí, aby ho ušetřil lynčování.",
+      "fun_fact": {
+        "text": "Název novely odkazuje na báseň skotského básníka Roberta Burnse Polní myšce.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/O_myších_a_lidech",
+        "https://cs.wikipedia.org/wiki/John_Steinbeck",
+        "https://en.wikipedia.org/wiki/Of_Mice_and_Men"
+      ],
+      "k_overeni": [
+        "Druh: v zadaném seznamu bylo „drama“; kniha je novela (Steinbeck podle ní napsal i divadelní verzi), proto je uvedena epika.",
+        "Literární směr: zařazení k realismu ověř v učebnici."
+      ]
+    },
+    {
+      "id": "cj12",
+      "slug": "rur",
+      "cislo": 12,
+      "dilo": "R.U.R.",
+      "rok": 1920,
+      "rok_text": "1920",
+      "autor": {
+        "jmeno": "Karel Čapek",
+        "zkratka": "K. Čapek",
+        "zivot": "1890–1938",
+        "zeme": "Československo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Karel_Čapek"
+      },
+      "druh": "drama",
+      "zanr": "vědeckofantastické drama (vstupní komedie a tři dějství)",
+      "literarni_smer": "meziválečná česká literatura",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Harry Domin",
+          "role": "centrální ředitel továrny R.U.R."
+        },
+        {
+          "jmeno": "Helena Gloryová",
+          "role": "dcera prezidenta, chce roboty zrovnoprávnit"
+        },
+        {
+          "jmeno": "stavitel Alquist",
+          "role": "šéf staveb, pracuje rukama, přežije"
+        },
+        {
+          "jmeno": "Dr. Gall",
+          "role": "vědec, experimentuje s „duší“ robotů"
+        },
+        {
+          "jmeno": "Radius",
+          "role": "robot, vůdce vzpoury"
+        },
+        {
+          "jmeno": "robot Primus a robotka Helena",
+          "role": "roboti, kteří pocítí lásku"
+        }
+      ],
+      "obsah": "Na ostrově v blíže neurčené budoucnosti vyrábí továrna Rossumovi univerzální roboti umělé dělníky. Přijede sem Helena Gloryová, která chce roboty zrovnoprávnit, a provdá se za ředitele Domina. Roboti mají lidem ulehčit práci a vytvořit ráj na zemi. Čapek varuje před negativním vlivem techniky na lidstvo.",
+      "shrnuti_deje": "Po deseti letech jsou roboti rozšířeni po celém světě a lidé je zneužívají i jako vojáky. Roboti se vzbouří, vyhlásí lidstvu válku a vyhubí ho; na ostrově ušetří jen stavitele Alquista, protože pracuje rukama. Helena předtím spálila Rossumův výrobní postup, a roboti se tak nemohou dál vyrábět a umírají. Na konci Alquist zjistí, že robot Primus a robotka Helena se mají rádi, a pošle je do světa jako nové Adama a Evu.",
+      "fun_fact": {
+        "text": "Slovo „robot“ Karlovi poradil jeho bratr Josef Čapek – původně zamýšlené slovo „labor“ znělo autorovi příliš papírově.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Robot"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/R.U.R.",
+        "https://cs.wikipedia.org/wiki/Karel_Čapek",
+        "https://cs.wikipedia.org/wiki/Robot"
+      ],
+      "k_overeni": [
+        "Druh: v zadaném seznamu bylo „epika-próza“, R.U.R. je ale divadelní hra – opraveno na drama."
+      ]
+    },
+    {
+      "id": "cj13",
+      "slug": "velky-gatsby",
+      "cislo": 13,
+      "dilo": "Velký Gatsby",
+      "rok": 1925,
+      "rok_text": "1925",
+      "autor": {
+        "jmeno": "Francis Scott Fitzgerald",
+        "zkratka": "F. S. Fitzgerald",
+        "zivot": "1896–1940",
+        "zeme": "USA",
+        "zdroj": "https://cs.wikipedia.org/wiki/Francis_Scott_Fitzgerald"
+      },
+      "druh": "epika",
+      "zanr": "společenský román",
+      "literarni_smer": "ztracená generace, „jazzový věk“",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Nick Carraway",
+          "role": "vypravěč, Gatsbyho soused"
+        },
+        {
+          "jmeno": "Jay Gatsby",
+          "role": "tajemný mladý milionář"
+        },
+        {
+          "jmeno": "Daisy Buchananová",
+          "role": "Nickova sestřenice, Gatsbyho láska"
+        },
+        {
+          "jmeno": "Tom Buchanan",
+          "role": "Daisyin bohatý manžel"
+        },
+        {
+          "jmeno": "Myrtle Wilsonová",
+          "role": "Tomova milenka"
+        },
+        {
+          "jmeno": "George Wilson",
+          "role": "majitel autoopravny, Myrtlin manžel"
+        }
+      ],
+      "obsah": "Ve 20. letech 20. století přijíždí Nick Carraway do New Yorku a usadí se na Long Islandu vedle sídla tajemného milionáře Jaye Gatsbyho. Gatsby pořádá velkolepé večírky a o jeho minulosti kolují jen dohady. Nick se s ním spřátelí a postupně odhaluje jeho příběh. Román zachycuje lesk i prázdnotu „jazzového věku“.",
+      "shrnuti_deje": "Ukáže se, že Gatsby (původně chudý Gatz) celý život miluje Daisy, která se mezitím provdala za Toma Buchanana. Gatsby se s ní znovu sejde a vztah rozvrátí její manželství. Po hádce s Tomem řídí Daisy Gatsbyho auto a přejede Myrtle Wilsonovou. Tom řekne zdrcenému Wilsonovi, že auto patří Gatsbymu, a Wilson Gatsbyho zastřelí a pak i sebe. Na pohřeb skoro nikdo nepřijde, Daisy s Tomem odjedou a znechucený Nick se vrací domů.",
+      "fun_fact": {
+        "text": "Za autorova života nebyl román úspěšný – prodalo se ho méně než 24 000 výtisků a slavným se stal až po novém vydání v 50. letech.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Velký_Gatsby"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Velký_Gatsby",
+        "https://cs.wikipedia.org/wiki/Francis_Scott_Fitzgerald"
+      ],
+      "k_overeni": []
+    },
+    {
+      "id": "cj14",
+      "slug": "na-zapadni-fronte-klid",
+      "cislo": 14,
+      "dilo": "Na západní frontě klid",
+      "rok": 1928,
+      "rok_text": "1928 (knižně), česky 1929",
+      "autor": {
+        "jmeno": "Erich Maria Remarque",
+        "zkratka": "E. M. Remarque",
+        "zivot": "1898–1970",
+        "zeme": "Německo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Erich_Maria_Remarque"
+      },
+      "druh": "epika",
+      "zanr": "protiválečný román",
+      "literarni_smer": "realistická meziválečná próza (ztracená generace)",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Pavel Bäumer",
+          "role": "vypravěč, mladý německý voják"
+        },
+        {
+          "jmeno": "Katczinsky (Kat)",
+          "role": "zkušený starší voják, Pavlův přítel"
+        },
+        {
+          "jmeno": "Kropp, Müller, Leer, Kemmerich",
+          "role": "Pavlovi spolužáci a kamarádi"
+        },
+        {
+          "jmeno": "Kantorek",
+          "role": "třídní profesor, přemluví studenty k narukování"
+        },
+        {
+          "jmeno": "Himmelstoss",
+          "role": "desátník, šikanuje rekruty"
+        }
+      ],
+      "obsah": "Mladý Pavel Bäumer a jeho spolužáci se pod vlivem profesora Kantorka dobrovolně přihlásí do armády. Na západní frontě první světové války zažívají šikanu, hlad, bombardování a smrt kamarádů. Román ukazuje válku bez hrdinství, z pohledu obyčejného vojáka. Zachycuje tragédii generace, které válka vzala mládí.",
+      "shrnuti_deje": "Pavlovi kamarádi jeden po druhém umírají, počínaje Kemmerichem. Na dovolené doma zjistí, že se civilnímu životu úplně odcizil. Po zranění a pobytu v nemocnici se vrací na frontu, kde je zraněn jeho poslední přítel Katczinsky; Pavel ho nese do lazaretu, ale Kat cestou zemře. Pavel padne v říjnu 1918, v den tak klidný, že zpráva velitelství hlásila jen: „Na západní frontě klid.“",
+      "fun_fact": {
+        "text": "Třetí filmová adaptace z roku 2022 (režie Edward Berger) získala čtyři Oscary, včetně Oscara za nejlepší mezinárodní film.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid",
+        "https://cs.wikipedia.org/wiki/Erich_Maria_Remarque"
+      ],
+      "k_overeni": []
+    },
+    {
+      "id": "cj15",
+      "slug": "svejk",
+      "cislo": 15,
+      "dilo": "Osudy dobrého vojáka Švejka za světové války",
+      "rok": 1921,
+      "rok_text": "1921–1923",
+      "autor": {
+        "jmeno": "Jaroslav Hašek",
+        "zkratka": "J. Hašek",
+        "zivot": "1883–1923",
+        "zeme": "Čechy, Československo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Jaroslav_Hašek"
+      },
+      "druh": "epika",
+      "zanr": "humoristický protiválečný román (satira)",
+      "literarni_smer": "meziválečná česká literatura",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Josef Švejk",
+          "role": "pražský prodavač psů, úředně uznaný blb a dobrácký šibal"
+        },
+        {
+          "jmeno": "nadporučík Lukáš",
+          "role": "Švejkův nadřízený, sukničkář"
+        },
+        {
+          "jmeno": "polní kurát Katz",
+          "role": "věčně opilý kněz, prohraje Švejka v kartách"
+        },
+        {
+          "jmeno": "paní Müllerová",
+          "role": "Švejkova posluhovačka"
+        },
+        {
+          "jmeno": "Palivec",
+          "role": "hostinský U Kalicha"
+        },
+        {
+          "jmeno": "poručík Dub",
+          "role": "přísný a hloupý důstojník"
+        }
+      ],
+      "obsah": "Román začíná větou paní Müllerové „Tak nám zabili Ferdinanda“. Pražský prodavač psů Josef Švejk se svou zdánlivou hloupostí a horlivostí dostává do jedné absurdní situace za druhou. Hašek zesměšňuje rakousko-uherskou armádu, úřady i válku. Kompozicí připomíná pikareskní román.",
+      "shrnuti_deje": "Švejk je zatčen, projde policejním ředitelstvím, blázincem i nemocnicí pro simulanty; na odvod jede na vozíku a volá „Na Bělehrad!“. Slouží u kuráta Katze, který ho prohraje v kartách, a pak jako sluha nadporučíka Lukáše, s nímž odjíždí na frontu. Cestou vede „budějovickou anabázi“, v Haliči si obleče ruskou uniformu, je zajat vlastními jako zběh a odsouzen, ale vše se vysvětlí. Román zůstal nedokončený – Hašek zemřel; jeho text končí proslovem poručíka Duba.",
+      "fun_fact": {
+        "text": "Švejk je nejpřekládanější český román – v roce 2013 byl přeložen do 58 jazyků.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Jaroslav_Hašek"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Osudy_dobrého_vojáka_Švejka_za_světové_války",
+        "https://cs.wikipedia.org/wiki/Jaroslav_Hašek"
+      ],
+      "k_overeni": [
+        "Shrnutí děje: epizoda s ruskou uniformou je z obecné znalosti díla, ve zdrojovém úryvku popsána nebyla."
+      ]
+    },
+    {
+      "id": "cj16",
+      "slug": "ostre-sledovane-vlaky",
+      "cislo": 16,
+      "dilo": "Ostře sledované vlaky",
+      "rok": 1965,
+      "rok_text": "1965",
+      "autor": {
+        "jmeno": "Bohumil Hrabal",
+        "zkratka": "B. Hrabal",
+        "zivot": "1914–1997",
+        "zeme": "Československo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Bohumil_Hrabal"
+      },
+      "druh": "epika",
+      "zanr": "novela",
+      "literarni_smer": "druhá vlna válečné prózy",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Miloš Hrma",
+          "role": "mladý výpravčí-praktikant, vypravěč"
+        },
+        {
+          "jmeno": "výpravčí Hubička",
+          "role": "Milošův školitel, bezostyšný sukničkář"
+        },
+        {
+          "jmeno": "přednosta stanice",
+          "role": "chová holuby a sní o povýšení"
+        },
+        {
+          "jmeno": "Máša",
+          "role": "průvodčí, Milošova přítelkyně"
+        },
+        {
+          "jmeno": "Viktorie Freie",
+          "role": "partyzánka, přiveze bombu"
+        }
+      ],
+      "obsah": "Novela se odehrává v roce 1945 na malé železniční stanici v protektorátu, kudy projíždějí ostře sledované německé vlaky. Mladý Miloš Hrma se tu zaučuje na výpravčího. Trápí ho nezdar v lásce a hledá cestu k dospělosti. Ústředním tématem je proměna chlapce v muže v době války.",
+      "shrnuti_deje": "Po sexuálním nezdaru s přítelkyní Mášou se Miloš pokusí o sebevraždu, ale je zachráněn. Na stanici se zaučuje u výpravčího Hubičky. Partyzánka Viktorie mu pomůže získat první zdařený sexuální zážitek a doveze na stanici bombu. Miloš ji shodí z návěstidla na projíždějící německý muniční vlak, při akci se ale navzájem postřelí s německým vojákem a umírá.",
+      "fun_fact": {
+        "text": "Hrabal se inspiroval skutečným odpálením německého muničního vlaku u stanice Stratov a vlastní službou výpravčího v Kostomlatech nad Labem; film Jiřího Menzela podle novely získal Oscara.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)",
+        "https://cs.wikipedia.org/wiki/Bohumil_Hrabal"
+      ],
+      "k_overeni": [
+        "Příjmení Viktorie (Freie) je z obecné znalosti díla, zdrojové heslo uvádí jen „Viktorie“."
+      ]
+    },
+    {
+      "id": "cj17",
+      "slug": "smrt-krasnych-srncu",
+      "cislo": 17,
+      "dilo": "Smrt krásných srnců",
+      "rok": 1971,
+      "rok_text": "1971",
+      "autor": {
+        "jmeno": "Ota Pavel (vlastním jménem Otto Popper)",
+        "zkratka": "O. Pavel",
+        "zivot": "1930–1973",
+        "zeme": "Československo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Ota_Pavel"
+      },
+      "druh": "epika",
+      "zanr": "soubor autobiografických povídek",
+      "literarni_smer": "česká próza 70. let (autobiografická próza)",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "tatínek Leo Popper",
+          "role": "obchodník, rybář a bonviván"
+        },
+        {
+          "jmeno": "maminka",
+          "role": "tolerantní k otcovým avantýrám"
+        },
+        {
+          "jmeno": "strejda Prošek",
+          "role": "pytlák a všeuměl od Berounky"
+        },
+        {
+          "jmeno": "vypravěč (Ota)",
+          "role": "autor vzpomínající na dětství"
+        },
+        {
+          "jmeno": "Holan",
+          "role": "Proškův vlčák"
+        }
+      ],
+      "obsah": "Ota Pavel v povídkách vzpomíná na šťastné dětství před druhou světovou válkou a na svého otce Lea Poppera, obchodníka a vášnivého rybáře. Příběhy se odehrávají hlavně u řek a rybníků na Křivoklátsku. Pak přichází okupace a s ní těžký úděl smíšené židovské rodiny. Kniha je plná humoru, lásky k přírodě i smutku.",
+      "shrnuti_deje": "Tatínek koupí rybník s jedinou rybou, prodává ledničky Electrolux a za války mu Němci zaberou milovaný rybník – v noci ho tajně vyloví, takže rybáři z wehrmachtu nic nechytí. V titulní povídce si s odpáranou Davidovou hvězdou dojede k strejdovi Proškovi pro pytláckého srnce, aby nasytil syny před odchodem do koncentračního tábora. Po válce zkouší další podnikání, které mu nevyjde. V poslední povídce chová s maminkou u Radotína králíky; jednou odejde z domu s cedulkou „Přijdu hned“ a už se nevrátí.",
+      "fun_fact": {
+        "text": "Hlavní postavou je skutečný autorův otec Leo Popper a Ota Pavel byl původně sportovní novinář a reportér.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Ota_Pavel"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)",
+        "https://cs.wikipedia.org/wiki/Ota_Pavel"
+      ],
+      "k_overeni": []
+    },
+    {
+      "id": "cj18",
+      "slug": "nema-barikada",
+      "cislo": 18,
+      "dilo": "Němá barikáda",
+      "rok": 1946,
+      "rok_text": "1946",
+      "autor": {
+        "jmeno": "Jan Drda",
+        "zkratka": "J. Drda",
+        "zivot": "1915–1970",
+        "zeme": "Československo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Jan_Drda"
+      },
+      "druh": "epika",
+      "zanr": "soubor 11 povídek",
+      "literarni_smer": "česká válečná próza",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Franta Kroupa",
+          "role": "veterán ze Španělska (Němá barikáda)"
+        },
+        {
+          "jmeno": "strážník Brůček",
+          "role": "obránce barikády (Němá barikáda)"
+        },
+        {
+          "jmeno": "Nederland",
+          "role": "holandský dobrovolník (Němá barikáda)"
+        },
+        {
+          "jmeno": "Pepík Hošek",
+          "role": "sedmnáctiletý chlapec s pancéřovou pěstí"
+        },
+        {
+          "jmeno": "profesor „Vyšší princip“",
+          "role": "učitel latiny za heydrichiády"
+        }
+      ],
+      "obsah": "Soubor jedenácti povídek zachycuje českou společnost za druhé světové války – od protestů roku 1939 přes heydrichiádu až po Pražské květnové povstání. Hrdiny jsou obyčejní lidé, kteří se postaví okupantům. Je to první prozaické zpracování těchto událostí v české literatuře. Povídky ukazují odvahu, strach i nenávist k nacistům.",
+      "shrnuti_deje": "V titulní povídce na konci Pražského povstání zůstanou na zdánlivě opuštěné barikádě na mostě jen tři muži: strážník Brůček, Holanďan Nederland a veterán ze Španělska Franta Kroupa. Celou noc nehnutě čekají za převrženou tramvají a na její střechu napíšou křídou „NO PASSARAN!“. Když se Němci uklidnění „mrtvou“ barikádou přiblíží na pár desítek kroků, všichni tři vyskočí a spustí palbu, čímž dají obráncům čas udržet břeh. V povídce Pancéřová pěst zase chlapec Pepík poslední pancéřovou pěstí zastaví německý tank a zachrání barikádu.",
+      "fun_fact": {
+        "text": "Děj povídky Pancéřová pěst a filmu Němá barikáda (1949) se zčásti odehrává na Trojském mostě v Praze, který byl po válce na počest obránců přejmenován na most Barikádníků.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Němá_barikáda"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Němá_barikáda",
+        "https://cs.wikipedia.org/wiki/Jan_Drda"
+      ],
+      "k_overeni": []
+    },
+    {
+      "id": "cj19",
+      "slug": "farma-zvirat",
+      "cislo": 19,
+      "dilo": "Farma zvířat",
+      "rok": 1945,
+      "rok_text": "1945",
+      "autor": {
+        "jmeno": "George Orwell (vlastním jménem Eric Arthur Blair)",
+        "zkratka": "G. Orwell",
+        "zivot": "1903–1950",
+        "zeme": "Velká Británie",
+        "zdroj": "https://cs.wikipedia.org/wiki/George_Orwell"
+      },
+      "druh": "epika",
+      "zanr": "alegorická satirická novela (bajka)",
+      "literarni_smer": "antiutopie, alegorie totalitarismu",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Napoleon",
+          "role": "prase, diktátor (obraz Stalina)"
+        },
+        {
+          "jmeno": "Kuliš (Snowball)",
+          "role": "prase, Napoleonův rival (obraz Trockého)"
+        },
+        {
+          "jmeno": "Pištík (Squealer)",
+          "role": "prase, propagandista"
+        },
+        {
+          "jmeno": "Major",
+          "role": "staré prase, ideový vůdce revoluce"
+        },
+        {
+          "jmeno": "Boxer",
+          "role": "pracovitý kůň, oddaný dělník"
+        },
+        {
+          "jmeno": "osel Benjamin",
+          "role": "skeptik, který tuší pravdu"
+        }
+      ],
+      "obsah": "Zvířata na farmě pana Jonese se vzbouří proti lidem a farmu převezmou. Vedení se ujmou nejchytřejší zvířata – prasata. Zvířata si dají sedm přikázání, z nichž nejdůležitější zní „Všechna zvířata jsou si rovna“. Formou bajky Orwell ukazuje, jak se revoluce mění v tyranii.",
+      "shrnuti_deje": "Po smrti prasete Majora zvířata vyženou pana Jonese a farmu přejmenují na Farmu zvířat. Napoleon pomocí vycvičených psů vyžene svého rivala Kuliše a začne vládnout sám; za každý nezdar pak viní Kuliše a „zrádce“ nechává popravovat. Pištík postupně přepisuje přikázání, až zbude jediné: „Všechna zvířata jsou si rovna, ale některá jsou si rovnější.“ Prasata začnou chodit po dvou a obchodovat s lidmi. Na závěrečné hostině s farmáři přejmenuje Napoleon farmu zpět na Panskou a zvířata za oknem už nedokážou rozlišit prasata od lidí.",
+      "fun_fact": {
+        "text": "Česky Farma zvířat poprvé vyšla už v roce 1946, ale po únoru 1948 byl Orwell zakázaným autorem a kniha pak vycházela jen v exilu a v samizdatu.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Farma_zvířat",
+        "https://cs.wikipedia.org/wiki/George_Orwell"
+      ],
+      "k_overeni": [
+        "Druh: v zadaném seznamu bylo „drama“; Farma zvířat je novela, proto je uvedena epika."
+      ]
+    },
+    {
+      "id": "cj20",
+      "slug": "vysetrovani-ztraty-tridni-knihy",
+      "cislo": 20,
+      "dilo": "Vyšetřování ztráty třídní knihy",
+      "rok": 1967,
+      "rok_text": "premiéra 8. listopadu 1967",
+      "autor": {
+        "jmeno": "Ladislav Smoljak a Zdeněk Svěrák (Divadlo Járy Cimrmana)",
+        "zkratka": "L. Smoljak – Z. Svěrák",
+        "zivot": "Smoljak 1931–2010, Svěrák * 1936",
+        "zeme": "Československo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Ladislav_Smoljak"
+      },
+      "druh": "drama",
+      "zanr": "komedie s prvky absurdního divadla (seminář + hra)",
+      "literarni_smer": "divadla malých forem 60. let, cimrmanovská mystifikace",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Učitel",
+          "role": "třídní učitel, marně pátrá po knize"
+        },
+        {
+          "jmeno": "Ředitel školy",
+          "role": "podlézá inspektorovi"
+        },
+        {
+          "jmeno": "Inspektor",
+          "role": "přiveze „hudební skříň“ žáků z Maletic"
+        },
+        {
+          "jmeno": "Zemský školní rada",
+          "role": "nejvyšší autorita, původně „ministr školství“"
+        },
+        {
+          "jmeno": "Jára Cimrman",
+          "role": "fiktivní génius, „spoluautor“ a pedagog"
+        }
+      ],
+      "obsah": "Představení Divadla Járy Cimrmana má dvě části: nejprve seminář s referáty o Cimrmanovi jako pedagogovi, potom samotnou hru. Ve hře se pedagogický sbor snaží přimět žáky posledního ročníku gymnázia, aby vrátili třídní knihu. Publikum v sále představuje třídu. Hra paroduje podlézavost a ustrašenost v hierarchii úřadů.",
+      "shrnuti_deje": "Třídní kniha zmizela už před sedmi lety a postupně se ji snaží vypátrat Učitel, Ředitel, Inspektor a nakonec Zemský školní rada – každý podlézá tomu, kdo stojí nad ním. Při každém příchodu postavy žáci (publikum) vstávají, což ukazuje rozsvícení světel v hledišti. Inspektor předvádí „hudební skříň“ ze školy v Maleticích, z níž se marně snaží pustit Smetanova Dalibora. Kniha se nenajde; hra končí rozkazem Učitele „A Veškrna první šup, šup, šup!“.",
+      "fun_fact": {
+        "text": "Hra se hraje od roku 1967 a do října 2022 měla 1 149 repríz; je jednou z herecky nejúspornějších cimrmanovských her se čtyřmi postavami, z nichž jedna je němá.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy",
+        "https://cs.wikipedia.org/wiki/Ladislav_Smoljak",
+        "https://cs.wikipedia.org/wiki/Zdeněk_Svěrák"
+      ],
+      "k_overeni": [
+        "Autorství: Wikipedie uvádí jako autora vlastní hry Ladislava Smoljaka (a fiktivního Cimrmana); Zdeněk Svěrák je spoluautorem semináře a autorské dvojice – ověř, jak autorství uvádí školní seznam.",
+        "Shrnutí děje: závěr hry se mezi verzemi liší (cenzurní úpravy v roce 1972); uvedena je poslední replika podle Wikipedie."
+      ]
+    }
+  ],
+  "epochy": [
+    {
+      "obdobi": "18",
+      "nazev": "Renesance, klasicismus a osvícenství",
+      "rozsah": "do konce 18. století",
+      "popis": "Renesance (zhruba 14. až počátek 17. století) se obrací od středověkého zaměření na Boha k člověku a navazuje na antiku; v Anglii vrcholí divadlem Williama Shakespeara. V 17. století se ve Francii prosazuje klasicismus, který žádá řád, uměřenost a pravidlo tří jednot (děje, času a místa). Přísně odděluje vysoké žánry (tragédie) od nízkých (komedie), mistrem komedie je Molière. V 18. století osvícenství zdůrazňuje rozum, vzdělání a kritiku společnosti.",
+      "hlavni_smery": [
+        "renesance a humanismus",
+        "baroko",
+        "klasicismus",
+        "osvícenství"
+      ],
+      "dalsi_autori": [
+        {
+          "autor": "Miguel de Cervantes y Saavedra",
+          "dila": [
+            {
+              "nazev": "Důmyslný rytíř don Quijote de la Mancha",
+              "rok": "1605"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Důmyslný_rytíř_Don_Quijote_de_la_Mancha"
+        },
+        {
+          "autor": "Jan Amos Komenský",
+          "dila": [
+            {
+              "nazev": "Labyrint světa a ráj srdce",
+              "rok": "1631 (rukopis 1623)"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Labyrint_světa_a_ráj_srdce"
+        },
+        {
+          "autor": "Daniel Defoe",
+          "dila": [
+            {
+              "nazev": "Robinson Crusoe",
+              "rok": "1719"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Robinson_Crusoe"
+        },
+        {
+          "autor": "Voltaire",
+          "dila": [
+            {
+              "nazev": "Candide čili Optimismus",
+              "rok": "1759"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Candide"
+        }
+      ],
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Renesanční_literatura",
+        "https://cs.wikipedia.org/wiki/Klasicismus_(literatura)"
+      ],
+      "k_overeni": []
+    },
+    {
+      "obdobi": "19",
+      "nazev": "Romantismus a realismus",
+      "rozsah": "19. století",
+      "popis": "Romantismus v první polovině 19. století vzniká jako protiklad klasicismu a reakce na rozpor mezi skutečností a ideály Velké francouzské revoluce; staví cit a fantazii nad rozum. Romantici se obracejí k lidové slovesnosti, tajemnu a hrůze (Erben, Poe). V českých zemích probíhá národní obrození a divadlo pomáhá šířit češtinu (Tyl). Od poloviny století se prosazuje realismus, který věrně zobrazuje skutečnost a kritizuje společenské poměry (Gogol, bratři Mrštíkové).",
+      "hlavni_smery": [
+        "romantismus",
+        "národní obrození",
+        "realismus (kritický realismus)",
+        "naturalismus"
+      ],
+      "dalsi_autori": [
+        {
+          "autor": "Karel Hynek Mácha",
+          "dila": [
+            {
+              "nazev": "Máj",
+              "rok": "1836"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Máj_(Karel_Hynek_Mácha)"
+        },
+        {
+          "autor": "Božena Němcová",
+          "dila": [
+            {
+              "nazev": "Babička",
+              "rok": "1855"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Babička_(kniha)"
+        },
+        {
+          "autor": "Victor Hugo",
+          "dila": [
+            {
+              "nazev": "Chrám Matky Boží v Paříži",
+              "rok": "1831"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Chrám_Matky_Boží_v_Paříži_(román)"
+        },
+        {
+          "autor": "Gustave Flaubert",
+          "dila": [
+            {
+              "nazev": "Paní Bovaryová",
+              "rok": "1857"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Paní_Bovaryová"
+        }
+      ],
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Romantismus_(literatura)",
+        "https://cs.wikipedia.org/wiki/Realismus_(literatura)"
+      ],
+      "k_overeni": [
+        "Naturalismus jako směr je uveden z obecné znalosti, zdrojové články ho podrobně nepopisují."
+      ]
+    },
+    {
+      "obdobi": "20",
+      "nazev": "Moderní literatura, světové války a totalita",
+      "rozsah": "20. století",
+      "popis": "Literaturu 20. století zásadně ovlivnily obě světové války. Po první válce píše „ztracená generace“ a vzniká protiválečná próza (Remarque, Hašek, Hemingway), moderní próza zachycuje absurditu a odcizení člověka (Kafka). Meziválečná česká literatura varuje před zneužitím techniky (Čapek). Po druhé válce vzniká válečná próza (Drda, Hrabal) a antiutopie kritizující totalitu (Orwell); v 60. letech vzkvétají malá divadla (Divadlo Járy Cimrmana).",
+      "hlavni_smery": [
+        "ztracená generace",
+        "moderní próza a expresionismus",
+        "meziválečná literatura",
+        "válečná próza",
+        "antiutopie",
+        "divadla malých forem"
+      ],
+      "dalsi_autori": [
+        {
+          "autor": "Vladislav Vančura",
+          "dila": [
+            {
+              "nazev": "Markéta Lazarová",
+              "rok": "1931"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Markéta_Lazarová_(kniha)"
+        },
+        {
+          "autor": "Arnošt Lustig",
+          "dila": [
+            {
+              "nazev": "Modlitba pro Kateřinu Horovitzovou",
+              "rok": "1964"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Modlitba_pro_Kateřinu_Horovitzovou"
+        },
+        {
+          "autor": "Jerome David Salinger",
+          "dila": [
+            {
+              "nazev": "Kdo chytá v žitě",
+              "rok": "1951"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Kdo_chytá_v_žitě"
+        }
+      ],
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid",
+        "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)",
+        "https://cs.wikipedia.org/wiki/Farma_zvířat",
+        "https://cs.wikipedia.org/wiki/Vyšetřování_ztráty_třídní_knihy"
+      ],
+      "k_overeni": [
+        "Popis epochy je sestaven ze zdrojů k jednotlivým dílům, ne z jednoho přehledového článku."
+      ]
+    },
+    {
+      "obdobi": "21",
+      "nazev": "Současná literatura",
+      "rozsah": "21. století",
+      "popis": "Žádné dílo ze seznamu nevzniklo v 21. století, epocha slouží jako navazující kontext. Řada úspěšných současných románů se vrací k dějinám 20. století – například Hana Aleny Mornštajnové k holokaustu a poválečné době. Žítkovské bohyně Kateřiny Tučkové zpracovávají osudy lidových léčitelek. Ve světové literatuře vznikají mimo jiné postapokalyptické romány (Cesta) a příběhy z cizích kultur (Lovec draků).",
+      "hlavni_smery": [
+        "současná próza",
+        "návrat k dějinám 20. století",
+        "postapokalyptická próza"
+      ],
+      "dalsi_autori": [
+        {
+          "autor": "Khaled Hosseini",
+          "dila": [
+            {
+              "nazev": "Lovec draků",
+              "rok": "2003"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Lovec_draků"
+        },
+        {
+          "autor": "Cormac McCarthy",
+          "dila": [
+            {
+              "nazev": "Cesta",
+              "rok": "2006"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Cesta_(Cormac_McCarthy)"
+        },
+        {
+          "autor": "Kateřina Tučková",
+          "dila": [
+            {
+              "nazev": "Žítkovské bohyně",
+              "rok": "2012"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Žítkovské_bohyně"
+        },
+        {
+          "autor": "Alena Mornštajnová",
+          "dila": [
+            {
+              "nazev": "Hana",
+              "rok": "2017"
+            }
+          ],
+          "zdroj": "https://cs.wikipedia.org/wiki/Hana_(kniha)"
+        }
+      ],
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Hana_(kniha)",
+        "https://cs.wikipedia.org/wiki/Žítkovské_bohyně",
+        "https://cs.wikipedia.org/wiki/Cesta_(Cormac_McCarthy)",
+        "https://cs.wikipedia.org/wiki/Lovec_draků"
+      ],
+      "k_overeni": [
+        "Popis epochy a hlavní směry jsou obecná charakteristika; přehledový zdroj o literatuře 21. století nebyl ověřen."
+      ]
+    }
+  ]
+}
