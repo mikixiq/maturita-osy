@@ -1340,7 +1340,7 @@ const CJ_MODES = [
   { id: 'serazeni', title: 'Seřazení', sub: 'díla a epochy podle doby' },
   { id: 'test', title: 'Test na čas', sub: '10 / 20 / 30 otázek' },
   { id: 'opakovani', title: 'Jen ke zopakování', sub: 'chybně zodpovězené' },
-  { id: 'prirazovani', title: 'Přiřazování', sub: 'autor, postava, druh, období' },
+  { id: 'prirazovani', title: 'Přiřazování', sub: 'autor, postava, směr, druh, období' },
   { id: 'trideni', title: 'Třídění', sub: 'díla do období + epochy' },
   { id: 'losovani', title: 'Losování k projevu', sub: '7 minut + osnova' },
   { id: 'simulace', title: 'Simulace zkoušky', sub: 'otázka + body odpovědi' },
@@ -1351,6 +1351,7 @@ const MATCH_TYPES = [
   { id: 'autor', label: 'Autor × dílo' },
   { id: 'postava', label: 'Postava × dílo' },
   { id: 'charakteristika', label: 'Popis postavy × jméno' },
+  { id: 'styl', label: 'Dílo × literární směr' },  // NOVÉ: např. Romeo a Julie (Shakespeare) → renesance a humanismus
   { id: 'druh', label: 'Dílo × druh (lyrika / epika / drama)' },
   { id: 'obdobi', label: 'Dílo × století' }
 ];
@@ -1554,6 +1555,12 @@ function buildCjQuestions() {
     qs.push(choice(`${w.id}-smer`, 'Směr', `Ke kterému směru nebo proudu se řadí dílo ${t}?`, w.literarni_smer,
       pickOthers(CJ_WORKS.map((x) => x.literarni_smer).filter((s) => firstWord(s) !== firstWord(w.literarni_smer)), w.literarni_smer, 3),
       `Dílo ${t}: ${w.literarni_smer}.`, noteFor(w, ['Literární směr'])));
+    // NOVÉ: dílo → literární směr (krátký „styl“ podle PDF); stejný údaj se procvičuje i v přiřazování
+    if (w.styl) {
+      qs.push(choice(`${w.id}-styl`, 'Směr', `Ke kterému literárnímu směru patří dílo ${t} (${a.zkratka})?`, w.styl,
+        pickOthers(CJ_WORKS.map((x) => x.styl).filter(Boolean), w.styl, 3),
+        `Dílo ${t} (${a.zkratka}): ${w.styl}. Podrobně: ${w.literarni_smer}.`, noteFor(w, ['Literární směr'])));
+    }
     for (const p of namedCharacters(w)) {
       qs.push(choice(`${w.id}-postava-${p.i}`, 'Postavy', `Ve kterém díle vystupuje postava: ${p.jmeno}?`, shortTitle(w),
         pickOthers(titles, shortTitle(w), 3), `${p.jmeno} – ${p.role} (${t}).`, noteFor(w, ['Jméno', 'Příjmení'])));
@@ -1890,6 +1897,14 @@ function startMatch(kind) {
       return { qid: `${w.id}-char-${i}`, prompt: `${quoted(w)}: ${maskName(p.charakteristika, p.jmeno)}`, answer: p.jmeno, detail: `${p.jmeno} – ${p.role}` };
     });
     options = [...new Set(items.map((it) => it.answer))];
+  } else if (kind === 'styl') {
+    // Dílo a autor → literární směr. Nabídka obsahuje všechny směry ze seznamu v pořadí děl (zhruba chronologicky),
+    // takže se nedá hádat jen z toho, které směry v kole jsou.
+    items = works.filter((w) => w.styl).slice(0, MATCH_ROUND).map((w) => ({
+      qid: `${w.id}-styl`, prompt: `${quoted(w)} – ${w.autor.zkratka}`, answer: w.styl,
+      detail: `${w.autor.zkratka}: ${w.literarni_smer}`
+    }));
+    options = [...new Set(CJ_WORKS.map((w) => w.styl).filter(Boolean))];
   } else {
     items = works.slice(0, MATCH_ROUND).map((w) => {
       const answer = kind === 'autor' ? w.autor.zkratka : kind === 'druh' ? w.druh : periodName(w.obdobi);

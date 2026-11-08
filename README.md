@@ -41,8 +41,10 @@ Společné:
 Otázky se negenerují ručně: `app.js` je vytvoří z `data/literatura.json` ve stejném formátu jako otázky OSY,
 takže výběr odpovědi, pravda/nepravda, kartičky, otevřená odpověď, seřazení, test na čas a opakování
 běží na stejném kódu. Navíc má čeština:
-- **Přiřazování** – autor × dílo, postava × dílo, popis postavy × jméno, dílo × druh, dílo × století
+- **Přiřazování** – autor × dílo, postava × dílo, popis postavy × jméno, dílo × literární směr, dílo × druh, dílo × století
   (každý typ zvlášť, okamžitá zpětná vazba). V popisu postavy je její jméno skryté.
+  Dílo × literární směr používá krátký směr z pole `styl` (např. Romeo a Julie – W. Shakespeare → renesance a humanismus);
+  ze stejného pole jsou i otázky `<id díla>-styl` ve výběru odpovědi.
 - **Filtr Motivy** na úvodní obrazovce – ukáže díla s vybraným motivem a umí je rovnou vybrat.
 - **Srovnání dvou děl** – shody a rozdíly v epoše, druhu, žánru, směru, motivech a postavách, jen z dat.
 - **Třídění** – rozdělení děl do období a seřazení epoch od nejstarší.
@@ -79,7 +81,7 @@ Id `cj04`, `cj06`, `cj15`, `cj18`, `cj20` (díla z dřívějšího seznamu) se u
 - `obdobi` – období podle školního seznamu: `18` = do konce 18. století, `19` = 19. století, `20` = 20. a 21. století.
 - `skupiny` – oddíly školního seznamu (`id`, `nazev`); dílo odkazuje polem `skupina`.
 - `dila[]` – `id`, `cislo`, `cislo_skolni`, `skupina`, `predchozi_cisla`, `dilo`, `rok`, `rok_text`, `autor` (`jmeno`, `zkratka`, `zivot`, `zeme`, `zdroj`),
-  `druh` (lyrika / epika / drama), `zanr`, `literarni_smer`, `obdobi`, `stoleti_vzniku`, `postavy[]` (`jmeno`, `role`, `charakteristika`, `zdroj`), `motivy[]`,
+  `druh` (lyrika / epika / drama), `zanr`, `literarni_smer`, `styl` (krátký směr pro přiřazování), `obdobi`, `stoleti_vzniku`, `postavy[]` (`jmeno`, `role`, `charakteristika`, `zdroj`), `motivy[]`,
   `obsah` (bez spoilerů), `shrnuti_deje` (včetně konce), `fun_fact` (`text`, `mimo_zdroje: true`, `zdroj`),
   `zkouska[]` (`id`, `otazka`, `body_odpovedi` 4–6, `citace_k_pouziti` – jen pár slov, `k_overeni`, `zdroj`),
   `zdroje[]` a `k_overeni[]` (co není ověřené nebo se liší od zadaného seznamu).

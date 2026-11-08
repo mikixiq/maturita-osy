@@ -34,6 +34,7 @@
       "druh": "drama",
       "zanr": "tragédie",
       "literarni_smer": "renesance",
+      "styl": "renesance a humanismus",
       "obdobi": "18",
       "stoleti_vzniku": 16,
       "postavy": [
@@ -138,6 +139,7 @@
       "druh": "drama",
       "zanr": "komedie (o pěti dějstvích)",
       "literarni_smer": "klasicismus",
+      "styl": "klasicismus",
       "obdobi": "18",
       "stoleti_vzniku": 17,
       "postavy": [
@@ -241,6 +243,7 @@
       "druh": "lyrika",
       "zanr": "sbírka balad (lyricko-epická poezie)",
       "literarni_smer": "romantismus (ohlasová, folkloristicky orientovaná poezie)",
+      "styl": "romantismus",
       "obdobi": "19",
       "stoleti_vzniku": 19,
       "postavy": [
@@ -341,6 +344,7 @@
       "druh": "drama",
       "zanr": "satirická komedie (pět aktů)",
       "literarni_smer": "kritický realismus (s prvky romantismu)",
+      "styl": "kritický realismus",
       "obdobi": "19",
       "stoleti_vzniku": 19,
       "postavy": [
@@ -444,6 +448,7 @@
       "druh": "epika",
       "zanr": "hororová povídka",
       "literarni_smer": "romantismus (americký)",
+      "styl": "romantismus",
       "obdobi": "19",
       "stoleti_vzniku": 19,
       "postavy": [
@@ -531,6 +536,7 @@
       "druh": "epika",
       "zanr": "povídka (novela)",
       "literarni_smer": "moderní próza, expresionismus",
+      "styl": "existencialismus (modernismus)",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -632,6 +638,7 @@
       "druh": "epika",
       "zanr": "protiválečný román",
       "literarni_smer": "realistická meziválečná próza (ztracená generace)",
+      "styl": "ztracená generace",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -730,6 +737,7 @@
       "druh": "epika",
       "zanr": "novela",
       "literarni_smer": "moderní americká próza (ztracená generace)",
+      "styl": "americká moderní próza",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -819,6 +827,7 @@
       "druh": "epika",
       "zanr": "alegorická satirická novela (bajka)",
       "literarni_smer": "antiutopie, alegorie totalitarismu",
+      "styl": "antiutopie (dystopie)",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -924,6 +933,7 @@
       "druh": "lyrika",
       "zanr": "lyrická sbírka (sociální a národní poezie)",
       "literarni_smer": "česká moderna (sociální a národní poezie)",
+      "styl": "česká moderna",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1012,6 +1022,7 @@
       "druh": "epika",
       "zanr": "novela",
       "literarni_smer": "generace anarchistických buřičů, novoromantismus",
+      "styl": "generace anarchistických buřičů",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1106,6 +1117,7 @@
       "druh": "drama",
       "zanr": "vědeckofantastické drama (vstupní komedie a tři dějství)",
       "literarni_smer": "meziválečná česká literatura",
+      "styl": "meziválečná česká literatura",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1210,6 +1222,7 @@
       "druh": "epika",
       "zanr": "psychologická a groteskní próza",
       "literarni_smer": "česká próza 2. poloviny 20. století (psychologická próza)",
+      "styl": "psychologická próza",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1304,6 +1317,7 @@
       "druh": "epika",
       "zanr": "novela",
       "literarni_smer": "druhá vlna válečné prózy",
+      "styl": "válečná próza (pábitelství)",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1401,6 +1415,7 @@
       "druh": "epika",
       "zanr": "novela",
       "literarni_smer": "moderní americký realistický román",
+      "styl": "americký realismus",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1506,6 +1521,7 @@
       "druh": "epika",
       "zanr": "společensko-kritická utopie (román)",
       "literarni_smer": "meziválečná česká literatura (protifašistická utopie)",
+      "styl": "meziválečná česká literatura",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1595,6 +1611,7 @@
       "druh": "epika",
       "zanr": "filozofická pohádka, alegorický román",
       "literarni_smer": "francouzská literatura 20. století (filozofická pohádka)",
+      "styl": "filozofická pohádka",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1694,6 +1711,7 @@
       "druh": "epika",
       "zanr": "soubor autobiografických povídek",
       "literarni_smer": "česká próza 70. let (autobiografická próza)",
+      "styl": "autobiografická próza",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -1787,6 +1805,7 @@
       "druh": "drama",
       "zanr": "komedie",
       "literarni_smer": "renesance",
+      "styl": "renesance a humanismus",
       "obdobi": "18",
       "stoleti_vzniku": 16,
       "postavy": [
@@ -1884,6 +1903,7 @@
       "druh": "epika",
       "zanr": "společenský román",
       "literarni_smer": "ztracená generace, „jazzový věk“",
+      "styl": "ztracená generace",
       "obdobi": "20",
       "stoleti_vzniku": 20,
       "postavy": [
@@ -2083,5 +2103,6 @@
       "id": "dalsi",
       "nazev": "Další četba"
     }
-  ]
+  ],
+  "poznamka_styl": "Pole „styl“ je krátký literární směr pro přiřazování (dílo × směr), sestavený podle směrů uvedených u děl v PDF „Maturitní četba – Rozbor 20 děl“."
 }
