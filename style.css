@@ -334,6 +334,9 @@ tr.uncovered td { color: var(--muted); }
 .check-list { margin: 8px 0 0; padding-left: 1.2em; color: var(--warn); font-size: .9rem; }
 .char-text { margin: 4px 0 0; line-height: 1.6; }
 .mo-item .motif-line { flex-basis: 100%; }
+/* Nadpis oddílu školního seznamu děl (sekce Čeština) */
+.mo-group { margin: 10px 0 2px; font-weight: 700; font-size: .9rem; color: var(--muted); }
+.mo-group:first-child { margin-top: 0; }
 .motif-filter { margin-bottom: 10px; }
 
 /* Srovnání dvou děl */

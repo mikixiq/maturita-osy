@@ -1431,14 +1431,16 @@ function setupCj(data) {
   for (const n of [...cjSelection]) if (!CJ_BY_NUM.has(n)) cjSelection.delete(n);
 }
 
-// Seznam děl se změnil (verze_seznamu 2 = podle PDF „Maturitní četba – Rozbor 20 děl“) a díla se přečíslovala.
-// Výběr děl, úspěšnost u děl a losování jsou uložené podle čísla díla, proto se jednou převedou
-// podle pole puvodni_cislo. Odebraná díla se zahodí, nová díla se rovnou zaškrtnou.
-// Statistiky otázek jsou uložené podle id díla, ty se nemění.
+// Když se změní seznam děl (verze_seznamu), díla se přečíslují: 2 = podle PDF „Maturitní četba – Rozbor 20 děl“,
+// 3 = pořadí a skupiny podle školního seznamu literárních děl. Výběr děl, úspěšnost u děl a losování jsou uložené
+// podle čísla díla, proto se jednou převedou podle pole predchozi_cisla[uložená verze]. Odebraná díla se zahodí,
+// díla, která v uložené verzi nebyla, se rovnou zaškrtnou. Statistiky otázek jsou uložené podle id díla, ty se nemění.
 function migrateCjNumbers(data) {
   const version = data.verze_seznamu || 1;
-  if ((storageGet(CJ_LIST_KEY) || 1) >= version) return;
-  const map = new Map(CJ_WORKS.filter((w) => w.puvodni_cislo).map((w) => [w.puvodni_cislo, w.cislo]));
+  const saved = storageGet(CJ_LIST_KEY) || 1;
+  if (saved >= version) return;
+  const oldNum = (w) => (w.predchozi_cisla || {})[String(saved)];
+  const map = new Map(CJ_WORKS.filter(oldNum).map((w) => [oldNum(w), w.cislo]));
   const remap = (obj) => {
     const out = {};
     for (const [k, v] of Object.entries(obj || {})) {
@@ -1451,7 +1453,7 @@ function migrateCjNumbers(data) {
   cjStats.los = remap(cjStats.los);
   if (cjSelection) {
     const next = new Set([...cjSelection].map((n) => map.get(n)).filter(Boolean));
-    CJ_WORKS.filter((w) => !w.puvodni_cislo).forEach((w) => next.add(w.cislo));
+    CJ_WORKS.filter((w) => !oldNum(w)).forEach((w) => next.add(w.cislo));
     cjSelection = next;
     saveCjSelection();
   }
@@ -1699,6 +1701,12 @@ function rerenderCjHome(focusSelector) {
   if (node) node.focus({ preventScroll: true });
 }
 
+// Oddíl školního seznamu, do kterého dílo patří (pole skupina v literatura.json).
+function cjGroupName(w) {
+  const g = (LIT.skupiny || []).find((x) => x.id === w.skupina);
+  return g ? g.nazev : null;
+}
+
 function cjPeriodPill(w) {
   return el('span', { class: 'pill castecne', text: periodName(w.obdobi) });
 }
@@ -1737,11 +1745,15 @@ function renderCjHome() {
         cjSelection = new Set(shown.map((w) => w.cislo)); saveCjSelection(); renderCjHome();
       } }, 'Vybrat jen tato díla')
     ) : null,
-    el('ul', { class: 'mo-list' }, ...shown.map((w) => {
+    el('ul', { class: 'mo-list' }, ...shown.flatMap((w, idx) => {
       const qs = CJ_QUESTIONS.filter((q) => q.cjWork === w.cislo);
       const mastered = qs.filter((q) => cjMastered(q.id)).length;
       const checked = cjSelection.has(w.cislo);
-      return el('li', { class: 'mo-item' + (checked ? ' checked' : '') },
+      // Nadpis oddílu školního seznamu (Světová a česká literatura do konce 18. století, …, Další četba)
+      const group = cjGroupName(w);
+      const heading = group && (idx === 0 || cjGroupName(shown[idx - 1]) !== group)
+        ? el('li', { class: 'mo-group', text: group }) : null;
+      return [heading, el('li', { class: 'mo-item' + (checked ? ' checked' : '') },
         el('label', null,
           el('input', { type: 'checkbox', value: String(w.cislo), checked, 'aria-describedby': `cj-meta-${w.cislo}`, onchange: (e) => {
             if (e.target.checked) cjSelection.add(w.cislo); else cjSelection.delete(w.cislo);
@@ -1751,10 +1763,10 @@ function renderCjHome() {
           el('span', { class: 'mo-num', text: w.cislo + '.' }),
           el('span', { class: 'mo-name' }, el('strong', { text: shortTitle(w) }), ' – ' + w.autor.zkratka),
           el('span', { class: 'mo-meta', id: `cj-meta-${w.cislo}` },
-            cjPeriodPill(w), `${w.druh} · ${plural(qs.length, 'otázka', 'otázky', 'otázek')} · zvládnuto ${mastered}`,
+            cjPeriodPill(w), `${w.cislo_skolni ? `č. s. ${w.cislo_skolni} · ` : ''}${w.druh} · ${plural(qs.length, 'otázka', 'otázky', 'otázek')} · zvládnuto ${mastered}`,
             w.motivy && w.motivy.length ? el('span', { class: 'motif-line', text: 'Motivy: ' + w.motivy.join(', ') }) : null)
         )
-      );
+      )];
     }))
   );
 
@@ -2248,8 +2260,9 @@ function cjLearnSteps(w) {
         el('p', { class: 'step-expl' }, el('strong', { text: `${e.nazev} (${e.rozsah})` })),
         para(e.popis),
         el('p', { class: 'step-expl' }, el('strong', { text: 'Hlavní směry: ' }), e.hlavni_smery.join(', ')),
-        el('p', { class: 'step-expl' }, el('strong', { text: 'Další autoři: ' }),
-          e.dalsi_autori.map((d) => `${d.autor} – ${d.dila.map((x) => `„${x.nazev}“ (${x.rok})`).join(', ')}`).join('; '))
+        // Další autoři se zobrazí jen tehdy, když jsou v datech (seznam děl je teď jen 20 děl ze školního seznamu).
+        e.dalsi_autori.length ? el('p', { class: 'step-expl' }, el('strong', { text: 'Další autoři: ' }),
+          e.dalsi_autori.map((d) => `${d.autor} – ${d.dila.map((x) => `„${x.nazev}“ (${x.rok})`).join(', ')}`).join('; ')) : null
       ] : [para(periodName(w.obdobi))] },
     { title: 'Dílo a druh', src: w.zdroje[0], notes: noteFor(w, ['Druh', 'Období', 'Literární směr']),
       read: joinSentences([w.dilo, w.rok_text, w.druh, w.zanr, w.literarni_smer, periodName(w.obdobi)]),

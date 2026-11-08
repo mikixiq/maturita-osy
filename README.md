@@ -29,7 +29,7 @@ OSY (klíče se nemění):
 - `maturita-cj-stats-v1` – zodpovězeno, správně, špatně, „Ke zopakování“, počítadla u děl (`dila`) a epoch (`epochy`), losování.
 - `maturita-cj-vyber-v1` – vybraná díla (výchozí: všech 20), `maturita-cj-nastaveni-v1` – režim a nastavení.
 - `maturita-cj-seznam-v1` – verze seznamu děl. Když se zvýší `verze_seznamu` v `literatura.json`, výběr děl,
-  počítadla u děl a losování (uložené podle čísla díla) se jednou převedou podle pole `puvodni_cislo`.
+  počítadla u děl a losování (uložené podle čísla díla) se jednou převedou podle pole `predchozi_cisla[<uložená verze>]`.
 
 Společné:
 - `maturita-sekce-v1` – naposledy otevřená sekce.
@@ -57,22 +57,28 @@ běží na stejném kódu. Navíc má čeština:
 Id generovaných otázek mají tvar `<id díla>-<typ>`, např. `cj05-autor`, `cj05-postava-2`, `cj05-char-2`, `cj05-o-dej`,
 a dále `cj-chrono-1` až `cj-chrono-5`, `cj-epochy-poradi`, `cj-epocha-19-1`.
 Při úpravách `literatura.json` proto neměň pořadí postav ani `id` děl, jinak se statistiky přestanou párovat.
-`id` díla se nemění ani při přečíslování seznamu; `cislo` je pořadí v seznamu (podle PDF), takže se nemusí shodovat s číslem v `id`.
+`id` díla se nemění ani při přečíslování seznamu; `cislo` je pořadí ve školním seznamu, takže se nemusí shodovat s číslem v `id`.
 
-### Seznam děl (verze 2, podle PDF „Maturitní četba – Rozbor 20 děl“)
-1. Romeo a Julie · 2. Kytice · 3. Slezské písně · 4. Krysař · 5. R.U.R. · 6. Proměna · 7. Na západní frontě klid ·
-8. Stařec a moře · 9. Spalovač mrtvol · 10. Farma zvířat · 11. Ostře sledované vlaky · 12. Lakomec · 13. Revizor ·
-14. Jáma a kyvadlo · 15. O myších a lidech · 16. Válka s mloky · 17. Malý princ · 18. Smrt krásných srnců ·
-19. Zkrocení zlé ženy · 20. Velký Gatsby.
+### Seznam děl (verze 3, podle školního „Seznamu literárních děl – maturitní zkouška z ČJL“, 2026/2027)
+Sekce obsahuje jen těchto 20 děl – žádné další autory ani díla mimo seznam (u epoch je `dalsi_autori` prázdné,
+epocha 21. století byla zrušena a 20. a 21. století tvoří jedno období jako ve školním seznamu).
+Číslo v závorce je „č. s.“ ze školního seznamu (pole `cislo_skolni`), oddíly jsou v poli `skupina`.
 
-Nová díla (Slezské písně, Krysař, Spalovač mrtvol, Válka s mloky, Malý princ, id `cj21`–`cj25`) vycházejí z PDF;
-co v PDF není (životní data autorů, zajímavosti), je uvedeno v `k_overeni`. Z předchozího seznamu byla odebrána
-díla Strakonický dudák, Maryša, Osudy dobrého vojáka Švejka, Němá barikáda a Vyšetřování ztráty třídní knihy (id `cj04`, `cj06`, `cj15`, `cj18`, `cj20` se už znovu nepoužijí).
+- **Světová a česká literatura do konce 18. století:** 1. Romeo a Julie (2) · 2. Lakomec (23)
+- **Světová a česká literatura 19. století:** 3. Kytice (3) · 4. Revizor (24) · 5. Jáma a kyvadlo (26)
+- **Světová literatura 20. a 21. století:** 6. Proměna (11) · 7. Na západní frontě klid (12) · 8. Stařec a moře (13) · 9. Farma zvířat (18)
+- **Česká literatura 20. a 21. století:** 10. Slezské písně (7) · 11. Krysař (8) · 12. R.U.R. (9) · 13. Spalovač mrtvol (14) · 14. Ostře sledované vlaky (19)
+- **Další četba:** 15. O myších a lidech (27) · 16. Válka s mloky (29) · 17. Malý princ (37) · 18. Smrt krásných srnců (39) · 19. Zkrocení zlé ženy (45) · 20. Velký Gatsby (65)
+
+Díla Slezské písně, Krysař, Spalovač mrtvol, Válka s mloky a Malý princ (id `cj21`–`cj25`) vycházejí z PDF
+„Maturitní četba – Rozbor 20 děl“; co v PDF není (životní data autorů, zajímavosti), je uvedeno v `k_overeni`.
+Id `cj04`, `cj06`, `cj15`, `cj18`, `cj20` (díla z dřívějšího seznamu) se už znovu nepoužijí.
 
 ### Struktura `data/literatura.json`
 - `motivy` – jednotný slovník motivů (každý motiv se píše vždy stejně, aby šlo filtrovat); `poznamka_motivy`.
-- `obdobi` – maturitní období: `18` = do konce 18. století, `19`, `20`, `21`.
-- `dila[]` – `id`, `cislo`, `dilo`, `rok`, `rok_text`, `autor` (`jmeno`, `zkratka`, `zivot`, `zeme`, `zdroj`),
+- `obdobi` – období podle školního seznamu: `18` = do konce 18. století, `19` = 19. století, `20` = 20. a 21. století.
+- `skupiny` – oddíly školního seznamu (`id`, `nazev`); dílo odkazuje polem `skupina`.
+- `dila[]` – `id`, `cislo`, `cislo_skolni`, `skupina`, `predchozi_cisla`, `dilo`, `rok`, `rok_text`, `autor` (`jmeno`, `zkratka`, `zivot`, `zeme`, `zdroj`),
   `druh` (lyrika / epika / drama), `zanr`, `literarni_smer`, `obdobi`, `stoleti_vzniku`, `postavy[]` (`jmeno`, `role`, `charakteristika`, `zdroj`), `motivy[]`,
   `obsah` (bez spoilerů), `shrnuti_deje` (včetně konce), `fun_fact` (`text`, `mimo_zdroje: true`, `zdroj`),
   `zkouska[]` (`id`, `otazka`, `body_odpovedi` 4–6, `citace_k_pouziti` – jen pár slov, `k_overeni`, `zdroj`),

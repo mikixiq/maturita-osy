@@ -1,7 +1,7 @@
 {
   "verze": 1,
-  "predmet": "Český jazyk a literatura – ústní maturita, seznam 20 děl podle PDF „Maturitní četba – Rozbor 20 děl“",
-  "poznamka": "Seznam a pořadí děl odpovídá PDF „Maturitní četba – Rozbor 20 děl“. U zachovaných děl údaje vycházejí z uvedených zdrojů (hlavně česká a anglická Wikipedie, ověřeno 27. 10. 2026), u děl přidaných 8. 11. 2026 (Slezské písně, Krysař, Spalovač mrtvol, Válka s mloky, Malý princ) z PDF. Co se liší nebo není ověřené, je v k_overeni. Pole „obdobi“ odpovídá maturitním obdobím: „18“ = do konce 18. století. Skutečné století vzniku je v poli „stoleti_vzniku“. Pole „puvodni_cislo“ je číslo díla v předchozím seznamu (kvůli převodu uložených statistik).",
+  "predmet": "Český jazyk a literatura – ústní maturita, seznam 20 literárních děl (SPŠ a VOŠ Příbram II, 2026/2027)",
+  "poznamka": "Seznam, pořadí, skupiny a školní čísla (č. s.) odpovídají školnímu „Seznamu literárních děl – maturitní zkouška z ČJL“ (2026/2027); rozbory nových děl vycházejí z PDF „Maturitní četba – Rozbor 20 děl“. U zachovaných děl údaje vycházejí z uvedených zdrojů (hlavně česká a anglická Wikipedie, ověřeno 27. 10. 2026), u děl přidaných 8. 11. 2026 (Slezské písně, Krysař, Spalovač mrtvol, Válka s mloky, Malý princ) z PDF. Co se liší nebo není ověřené, je v k_overeni. Pole „obdobi“ odpovídá obdobím ze seznamu: „18“ = do konce 18. století, „19“ = 19. století, „20“ = 20. a 21. století. Skutečné století vzniku je v poli „stoleti_vzniku“. Pole „predchozi_cisla“ obsahuje čísla díla v dřívějších verzích seznamu (kvůli převodu uložených statistik), „skupina“ je oddíl školního seznamu.",
   "obdobi": [
     {
       "id": "18",
@@ -13,11 +13,7 @@
     },
     {
       "id": "20",
-      "nazev": "20. století"
-    },
-    {
-      "id": "21",
-      "nazev": "21. století"
+      "nazev": "20. a 21. století"
     }
   ],
   "dila": [
@@ -118,12 +114,120 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Romeo_a_Julie"
         }
       ],
-      "puvodni_cislo": 1
+      "cislo_skolni": 2,
+      "skupina": "do18",
+      "predchozi_cisla": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    {
+      "id": "cj02",
+      "slug": "lakomec",
+      "cislo": 2,
+      "dilo": "Lakomec",
+      "rok": 1668,
+      "rok_text": "1668",
+      "autor": {
+        "jmeno": "Molière (vlastním jménem Jean-Baptiste Poquelin)",
+        "zkratka": "Molière",
+        "zivot": "1622–1673",
+        "zeme": "Francie",
+        "zdroj": "https://cs.wikipedia.org/wiki/Molière"
+      },
+      "druh": "drama",
+      "zanr": "komedie (o pěti dějstvích)",
+      "literarni_smer": "klasicismus",
+      "obdobi": "18",
+      "stoleti_vzniku": 17,
+      "postavy": [
+        {
+          "jmeno": "Harpagon",
+          "role": "bohatý lakomý vdovec a lichvář",
+          "charakteristika": "Šedesátiletý bohatý vdovec a lichvář, který žije ve stálém strachu o zakopanou truhlici s penězi. Podezírá všechny včetně vlastních dětí a o jejich sňatcích rozhoduje podle peněz. Sám se chce oženit s mladou Marianou, kterou miluje jeho syn. Ztráta pokladu pro něj znamená ztrátu rozumu; na konci zůstává sám, ale spokojený se svými penězi.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        },
+        {
+          "jmeno": "Kleantes",
+          "role": "Harpagonův syn, miluje Marianu",
+          "charakteristika": "Harpagonův syn, který miluje chudou Marianu. Aby si ji mohl vzít, potřebuje peníze, a zjistí, že lichvářem nabízejícím půjčku je jeho vlastní otec. S otcem se otevřeně střetne, otec ho proklíná. Díky ukradené truhlici nakonec otce přiměje svolit ke sňatku.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        },
+        {
+          "jmeno": "Eliška",
+          "role": "Harpagonova dcera, miluje Valéra",
+          "charakteristika": "Harpagonova dcera, zamilovaná do správce Valéra. Otec ji chce provdat za starého boháče Anselma, protože ten nepožaduje věno. Ona to rozhodně odmítá. Na konci si smí vzít Valéra.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        },
+        {
+          "jmeno": "Valér",
+          "role": "Harpagonův správce, miluje Elišku",
+          "charakteristika": "Harpagonův správce, který Harpagonovi podlézá, aby se mohl oženit s Eliškou. Při vyšetřování krádeže je obviněn a myslí si, že vyšel najevo jeho vztah k Elišce. Ukáže se, že je ztraceným synem Anselma. Jeho přetvářka komicky zrcadlí Harpagonovu lakotu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        },
+        {
+          "jmeno": "Mariana",
+          "role": "chudá dívka, o kterou se uchází otec i syn",
+          "charakteristika": "Chudá dívka, která se stará o nemocnou matku. Miluje Kleanta pro jeho povahu, ne pro peníze, a Harpagon se jí nelíbí. Nakonec se ukáže, že je dcerou Anselma. Smí si vzít Kleanta.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        },
+        {
+          "jmeno": "Čipera",
+          "role": "Kleantův sluha, ukradne truhlici s penězi",
+          "charakteristika": "Kleantův mazaný sluha a přítel. Domlouvá pro Kleanta lichvářskou půjčku. Najde na zahradě Harpagonovu zakopanou truhlici a ukradne ji, aby pánovi pomohl. Krádež rozpoutá vyvrcholení komedie.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        }
+      ],
+      "obsah": "Komedie se odehrává v Paříži v domě bohatého vdovce Harpagona, který žije v neustálém strachu o své peníze. Kvůli penězům chce rozhodovat o sňatcích svých dětí, Kleanta a Elišky, a sám se chce oženit s mladou Marianou. Jeho lakota vede k řadě komických situací. Hra ukazuje, jak peníze deformují charakter a vztahy v rodině.",
+      "shrnuti_deje": "Harpagon si chce vzít Marianu, kterou miluje jeho syn Kleantes, a dceru Elišku chce provdat za starého boháče Anselma, ačkoli ona miluje Valéra. Kleantův sluha Čipera najde a ukradne Harpagonovu zakopanou truhlici s penězi a Harpagon propadne zoufalství. Při vyšetřování se ukáže, že Valér a Mariana jsou ztracené děti Anselma. Kleantes vrátí otci peníze výměnou za svolení ke sňatku s Marianou, Valér si vezme Elišku a Anselm zaplatí všechny výlohy. Harpagon zůstává sám, ale spokojený se svými penězi.",
+      "fun_fact": {
+        "text": "Předlohou Lakomce byla hra Aulularia (Komedie o hrnci) římského dramatika Plauta a podle hlavní postavy se slovo „harpagon“ vžilo jako označení pro velkého lakomce.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Lakomec",
+        "https://cs.wikipedia.org/wiki/Molière",
+        "https://cs.wikipedia.org/wiki/Klasicismus_(literatura)",
+        "Maturitní četba – Rozbor 20 děl.pdf – seznam a rozbor díla"
+      ],
+      "k_overeni": [
+        "Období: hra vznikla v 17. století; v seznamu je zařazena do období „do konce 18. století“."
+      ],
+      "motivy": [
+        "peníze a majetek",
+        "rodina",
+        "láska",
+        "satira společnosti"
+      ],
+      "zkouska": [
+        {
+          "id": "cj02-z1",
+          "otazka": "Jak Molière zobrazuje lakotu na postavě Harpagona?",
+          "body_odpovedi": [
+            "Harpagon – vdovec a lichvář, který se neustále bojí o zakopanou truhlici",
+            "pro peníze obětuje rodinu i lásku – chce si vzít Marianu, kterou miluje jeho syn",
+            "lichvářem, od kterého si chce půjčit Kleantes, je jeho vlastní otec",
+            "ztráta pokladu pro něj znamená ztrátu smyslu bytí",
+            "na konci zůstává sám, ale spokojený se svými penězi",
+            "jméno harpagon se vžilo jako označení lakomce"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
+        }
+      ],
+      "cislo_skolni": 23,
+      "skupina": "do18",
+      "predchozi_cisla": {
+        "1": 2,
+        "2": 12
+      }
     },
     {
       "id": "cj05",
       "slug": "kytice",
-      "cislo": 2,
+      "cislo": 3,
       "dilo": "Kytice (Kytice z pověstí národních)",
       "rok": 1853,
       "rok_text": "1853 (rozšířeno 1861)",
@@ -213,278 +317,202 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Kytice_(sbírka)"
         }
       ],
-      "puvodni_cislo": 5
+      "cislo_skolni": 3,
+      "skupina": "19",
+      "predchozi_cisla": {
+        "1": 5,
+        "2": 2
+      }
     },
     {
-      "id": "cj21",
-      "slug": "slezske-pisne",
-      "cislo": 3,
-      "dilo": "Slezské písně",
-      "rok": 1909,
-      "rok_text": "1909",
-      "autor": {
-        "jmeno": "Petr Bezruč (vlastním jménem Vladimír Vašek)",
-        "zkratka": "P. Bezruč",
-        "zivot": "1867–1958",
-        "zeme": "Rakousko-Uhersko, Slezsko",
-        "zdroj": "obecná znalost – mimo PDF (k ověření)"
-      },
-      "druh": "lyrika",
-      "zanr": "lyrická sbírka (sociální a národní poezie)",
-      "literarni_smer": "česká moderna (sociální a národní poezie)",
-      "obdobi": "20",
-      "stoleti_vzniku": 20,
-      "postavy": [
-        {
-          "jmeno": "Lyrický mluvčí",
-          "role": "bard, mstitel slezského lidu",
-          "charakteristika": "Vystupuje jako mluvčí umlčovaného lidu Těšínska a Ostravska. Spojuje sociální vzdor s bojem za národní svébytnost utlačovaného slezského lidu.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        },
-        {
-          "jmeno": "Maryčka Magdónova",
-          "role": "sirotek z básně Maryčka Magdónova",
-          "charakteristika": "Po smrti rodičů sbírá v panském lese dříví pro hladovějící sourozence. Po zatčení četníkem ze zoufalství skočí do řeky Ostravice.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        },
-        {
-          "jmeno": "Markýz Géro",
-          "role": "symbol německého utiskovatele",
-          "charakteristika": "Ztělesňuje národnostní útlak a poněmčování slezského lidu.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        },
-        {
-          "jmeno": "horník",
-          "role": "lyrický subjekt básně Ostrava",
-          "charakteristika": "V básni Ostrava zaznívá jeho hrozba sociální revoltou za staletí vykořisťování.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        }
-      ],
-      "obsah": "Lyrická sbírka zachycuje těžký úděl horníků a hutníků na Těšínsku a Ostravsku. Autor vystupuje jako mluvčí umlčovaného lidu a odsuzuje sociální a národnostní útlak – poněmčování a popolšťování.",
-      "shrnuti_deje": "Lyrická sbírka zachycuje těžký úděl horníků a hutníků na Těšínsku a Ostravsku. Autor vystupuje jako mluvčí umlčovaného lidu. Báseň Maryčka Magdónova vypráví o sirotku, který po smrti rodičů sbírá v panském lese dříví pro hladovějící sourozence; po zatčení četníkem volí ze zoufalství skok do řeky Ostravice. V básni Ostrava zní hrozba sociální revoltou za staletí vykořisťování.",
-      "fun_fact": {
-        "text": "Část básní vyšla už v roce 1903 jako příloha časopisu Čas pod názvem Slezské číslo.",
-        "mimo_zdroje": true,
-        "zdroj": "obecná znalost – mimo PDF (k ověření)"
-      },
-      "zdroje": [
-        "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-      ],
-      "k_overeni": [
-        "Autorství: životní data a země autora nejsou v PDF, jsou doplněna z obecné znalosti.",
-        "Charakteristiky postav: PDF uvádí mezi postavami „horník Ostrava“; Ostrava je název básně, proto „horník – lyrický subjekt básně Ostrava“.",
-        "Zajímavost: není z PDF, je z obecné znalosti."
-      ],
-      "motivy": [
-        "vzpoura a revoluce",
-        "moc",
-        "smrt"
-      ],
-      "zkouska": [
-        {
-          "id": "cj21-z1",
-          "otazka": "Co Bezruč ve Slezských písních odsuzuje a jak to vyjadřuje?",
-          "body_odpovedi": [
-            "těžký úděl horníků a hutníků na Těšínsku a Ostravsku",
-            "sociální a národnostní útlak – poněmčování a popolšťování",
-            "autor jako bard, mluvčí umlčovaného lidu",
-            "Maryčka Magdónova – sirotek, který skončí v řece Ostravici",
-            "báseň Ostrava – hrozba sociální revoltou",
-            "česká moderna – vliv symbolismu, expresivity a realismu"
-          ],
-          "citace_k_pouziti": [],
-          "k_overeni": null,
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        }
-      ]
-    },
-    {
-      "id": "cj22",
-      "slug": "krysar",
+      "id": "cj08",
+      "slug": "revizor",
       "cislo": 4,
-      "dilo": "Krysař",
-      "rok": 1915,
-      "rok_text": "1915",
+      "dilo": "Revizor",
+      "rok": 1836,
+      "rok_text": "1836",
       "autor": {
-        "jmeno": "Viktor Dyk",
-        "zkratka": "V. Dyk",
-        "zivot": "1877–1931",
-        "zeme": "Rakousko-Uhersko, Čechy",
-        "zdroj": "obecná znalost – mimo PDF (k ověření)"
-      },
-      "druh": "epika",
-      "zanr": "novela",
-      "literarni_smer": "generace anarchistických buřičů, novoromantismus",
-      "obdobi": "20",
-      "stoleti_vzniku": 20,
-      "postavy": [
-        {
-          "jmeno": "Krysař",
-          "role": "tajemný tulák s kouzelnou píšťalou",
-          "charakteristika": "Přichází zbavit město Hammeln krys. Zamiluje se do Agnes a město ušetří, i když mu konšelé nevyplatí slíbenou odměnu. Po smrti Agnes ztratí smysl života a píšťalou odvede obyvatele do propasti.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        },
-        {
-          "jmeno": "Agnes",
-          "role": "dívka, do které se Krysař zamiluje",
-          "charakteristika": "Otěhotní se svým bývalým milencem Kristiánem a ze zoufalství skočí do propasti na hoře Koppel.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        },
-        {
-          "jmeno": "Kristián",
-          "role": "bývalý milenec Agnes",
-          "charakteristika": "Agnes s ním otěhotní, což ji dožene k zoufalství.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        },
-        {
-          "jmeno": "Sepp Jörgen",
-          "role": "chudý prostomyslný rybář",
-          "charakteristika": "Jako jediný přežije, najde opuštěné nemluvně a zachrání ho – nese naději na nový život.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        },
-        {
-          "jmeno": "konšelé Frosch a Stumme",
-          "role": "lakomí radní města",
-          "charakteristika": "Odmítnou Krysaři vyplatit slíbenou odměnu.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        }
-      ],
-      "obsah": "Tajemný krysař přichází do města Hammeln, aby ho kouzelnou píšťalou zbavil krys. Novela spojuje lásku, lakotu měšťanů a osud vyděděnce, který odmítá kompromisy s pokryteckou společností.",
-      "shrnuti_deje": "Tajemný krysař přichází svou kouzelnou píšťalou zbavit město Hammeln krys. Zamiluje se do dívky Agnes a město ušetří, ačkoliv mu lakomí konšelé odmítnou vyplatit slíbenou odměnu. Když však Agnes otěhotní se svým bývalým milencem Kristiánem a ze zoufalství skočí do propasti na hoře Koppel, Krysař ztratí veškerý smysl života. Z plných plic zaduje na píšťalu a odvede všechny obyvatele města do záhuby na dně propasti. Přežije pouze prostomyslný rybář Sepp Jörgen, který najde opuštěné nemluvně a zachrání jej.",
-      "fun_fact": {
-        "text": "Námětem je středověká německá pověst o krysaři z Hamelnu.",
-        "mimo_zdroje": true,
-        "zdroj": "obecná znalost – mimo PDF (k ověření)"
-      },
-      "zdroje": [
-        "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-      ],
-      "k_overeni": [
-        "Autorství: životní data a země autora nejsou v PDF, jsou doplněna z obecné znalosti.",
-        "Druh: literární druh a žánr (novela) PDF neuvádí, jsou doplněny z obecné znalosti.",
-        "Zajímavost: není z PDF, je z obecné znalosti."
-      ],
-      "motivy": [
-        "láska",
-        "peníze a majetek",
-        "osamělost",
-        "smrt"
-      ],
-      "zkouska": [
-        {
-          "id": "cj22-z1",
-          "otazka": "Proč Krysař nakonec odvede obyvatele Hammelnu do propasti?",
-          "body_odpovedi": [
-            "Krysař zbaví město krys, lakomí konšelé mu nevyplatí odměnu",
-            "kvůli lásce k Agnes město nejdřív ušetří",
-            "Agnes otěhotní s Kristiánem a skočí do propasti na hoře Koppel",
-            "Krysař ztratí smysl života a píšťalou odvede město do záhuby",
-            "přežije jen rybář Sepp Jörgen s nemluvnětem – naděje"
-          ],
-          "citace_k_pouziti": [],
-          "k_overeni": null,
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
-        }
-      ]
-    },
-    {
-      "id": "cj12",
-      "slug": "rur",
-      "cislo": 5,
-      "dilo": "R.U.R.",
-      "rok": 1920,
-      "rok_text": "1920",
-      "autor": {
-        "jmeno": "Karel Čapek",
-        "zkratka": "K. Čapek",
-        "zivot": "1890–1938",
-        "zeme": "Československo",
-        "zdroj": "https://cs.wikipedia.org/wiki/Karel_Čapek"
+        "jmeno": "Nikolaj Vasiljevič Gogol",
+        "zkratka": "N. V. Gogol",
+        "zivot": "1809–1852",
+        "zeme": "Rusko, ukrajinského původu",
+        "zdroj": "https://cs.wikipedia.org/wiki/Nikolaj_Vasiljevič_Gogol"
       },
       "druh": "drama",
-      "zanr": "vědeckofantastické drama (vstupní komedie a tři dějství)",
-      "literarni_smer": "meziválečná česká literatura",
-      "obdobi": "20",
-      "stoleti_vzniku": 20,
+      "zanr": "satirická komedie (pět aktů)",
+      "literarni_smer": "kritický realismus (s prvky romantismu)",
+      "obdobi": "19",
+      "stoleti_vzniku": 19,
       "postavy": [
         {
-          "jmeno": "Harry Domin",
-          "role": "centrální ředitel továrny R.U.R.",
-          "charakteristika": "Centrální ředitel továrny Rossumovi univerzální roboti. Ožení se s Helenou Gloryovou. Věří, že roboti vytvoří pro člověka ráj na zemi a lidé už nebudou trpět hladem. Jeho víra v pokrok se obrátí proti lidstvu.",
-          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+          "jmeno": "Chlestakov",
+          "role": "bezvýznamný úředník, kterého považují za revizora",
+          "charakteristika": "Mladý bezvýznamný úředník, který v kartách prohraje všechny peníze a nemá na útratu v hostinci. Úředníci ho mylně považují za revizora. Když omyl pochopí, plně ho využije – bere „půjčky“ a dary, svádí hejtmanovu ženu a nechá si nabídnout ruku jeho dcery. Při vychloubání se do role tak vžije, že jí téměř uvěří.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
-          "jmeno": "Helena Gloryová",
-          "role": "dcera prezidenta, chce roboty zrovnoprávnit",
-          "charakteristika": "Pěkná dcera prezidenta, která připluje na ostrov s cílem roboty zrovnoprávnit. Všichni se do ní zamilují a ona si vezme ředitele Domina. Ze soucitu přiměje Dr. Galla, aby experimentoval s „duší“ robotů. Před smrtí spálí Rossumův výrobní postup.",
-          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+          "jmeno": "Osip",
+          "role": "Chlestakovův sluha",
+          "charakteristika": "Sluha, se kterým Chlestakov přijel do městečka. Je střízlivější než jeho pán. Včas mu vysvětlí, že takový podvod se dlouho neudrží v tajnosti. Díky němu Chlestakov z města zmizí dřív, než je odhalen.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
-          "jmeno": "stavitel Alquist",
-          "role": "šéf staveb, pracuje rukama, přežije",
-          "charakteristika": "Šéf staveb R.U.R., který stále pracuje rukama, protože věří, že práce je smyslem života. Roboti ho jako jediného člověka ušetří. Marně se snaží znovu objevit výrobní postup. Na konci pozná lásku mezi dvěma roboty a pošle je do světa jako nové Adama a Evu.",
-          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+          "jmeno": "hejtman",
+          "role": "představený města, úplatkář",
+          "charakteristika": "Představený městečka, který s ostatními úředníky bere úplatky a nestará se o pořádek. Ze strachu z revize ubytuje Chlestakova ve svém domě a nabídne mu ruku své dcery. Sní o životě tchána významného muže. Po odhalení podvodu zuří a vzápětí se dozví o příjezdu skutečného revizora.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
-          "jmeno": "Dr. Gall",
-          "role": "vědec, experimentuje s „duší“ robotů",
-          "charakteristika": "Přednosta fyziologického a výzkumného oddělení R.U.R. Na Helenino přání začne experimentovat s „duší“ robotů, aby mohli mít city. Patří k vedení továrny, které roboti při vzpouře zabijí. Ukazuje, jak lidé zasahují do vlastního výtvoru.",
-          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+          "jmeno": "Anna Andrejevna a Marja Antonovna",
+          "role": "hejtmanova žena a dcera",
+          "charakteristika": "Hejtmanova manželka a dcera. Chlestakov svádí hejtmanovu ženu a hejtman mu nabídne ruku dcery. Obě se nechají oslnit domnělým významným mužem z Petrohradu. Dokreslují satiru na maloměstskou společnost.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
-          "jmeno": "Radius",
-          "role": "robot, vůdce vzpoury",
-          "charakteristika": "Jeden z robotů továrny R.U.R. Patří k robotům, kteří se vzbouří a vyhlásí lidstvu válku. Je příkladem robota, který přestane jen sloužit lidem.",
-          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+          "jmeno": "Bobčinskij a Dobčinskij",
+          "role": "statkáři, šiřitelé klepů",
+          "charakteristika": "Dva statkáři, jejichž jedinou životní náplní je běhat po městě a šířit jakékoli zprávy. Právě oni prohlásí Chlestakova za revizora a rychle to rozšíří. Jsou spouštěčem celé komedie omylů. Představují maloměstské klepaření.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         },
         {
-          "jmeno": "robot Primus a robotka Helena",
-          "role": "roboti, kteří pocítí lásku",
-          "charakteristika": "Dvojice robotů, kteří jedné noci vzbudí Alquista. Když chce jednoho z nich pitvat, druhý se nabídne místo něj – chrání se navzájem. Alquist pozná, že se mají rádi. Pošle je pryč, aby s láskou začali život znovu.",
-          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+          "jmeno": "poštmistr",
+          "role": "otevírá cizí dopisy",
+          "charakteristika": "Městský úředník, který pro své rozptýlení otevírá cizí dopisy. Díky tomu se úředníci hned dozvědí o revizorovi. Na konci otevře i Chlestakovův dopis příteli. Tím odhalí celý podvod.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         }
       ],
-      "obsah": "Na ostrově v blíže neurčené budoucnosti vyrábí továrna Rossumovi univerzální roboti umělé dělníky. Přijede sem Helena Gloryová, která chce roboty zrovnoprávnit, a provdá se za ředitele Domina. Roboti mají lidem ulehčit práci a vytvořit ráj na zemi. Čapek varuje před negativním vlivem techniky na lidstvo.",
-      "shrnuti_deje": "Po deseti letech jsou roboti rozšířeni po celém světě a lidé je zneužívají i jako vojáky. Roboti se vzbouří, vyhlásí lidstvu válku a vyhubí ho; na ostrově ušetří jen stavitele Alquista, protože pracuje rukama. Helena předtím spálila Rossumův výrobní postup, a roboti se tak nemohou dál vyrábět a umírají. Na konci Alquist zjistí, že robot Primus a robotka Helena se mají rádi, a pošle je do světa jako nové Adama a Evu.",
+      "obsah": "Hra se odehrává v malém ruském městečku, jehož úředníci kradou, berou úplatky a nestarají se o pořádek. Hejtman dostane zprávu, že do města inkognito přijede revizor. Úředníci propadnou panice a za revizora omylem považují mladého úředníka Chlestakova, který v hostinci prohrál všechny peníze. Gogol tím nastavuje zrcadlo úplatkářství a podlézavosti.",
+      "shrnuti_deje": "Úředníci Chlestakova podplácejí a hejtman ho ubytuje u sebe; Chlestakov pochopí omyl a naplno ho využije – bere „půjčky“ a dary, vychloubá se, svádí hejtmanovu ženu a zasnoubí se s jeho dcerou. Sluha Osip ho přiměje včas zmizet pod záminkou cesty za strýcem. Poštmistr otevře Chlestakovův dopis příteli, v němž se úředníkům vysmívá, a podvod vyjde najevo. Ve chvíli, kdy všichni zuří, strážník oznámí, že přijel skutečný revizor.",
       "fun_fact": {
-        "text": "Slovo „robot“ Karlovi poradil jeho bratr Josef Čapek – původně zamýšlené slovo „labor“ znělo autorovi příliš papírově.",
+        "text": "Námět k Revizorovi podle tradice poskytl Gogolovi Alexandr Sergejevič Puškin, který mu vyprávěl, jak ho na cestách považovali za tajného vládního úředníka.",
         "mimo_zdroje": true,
-        "zdroj": "https://cs.wikipedia.org/wiki/Robot"
+        "zdroj": "https://en.wikipedia.org/wiki/The_Government_Inspector"
       },
       "zdroje": [
-        "https://cs.wikipedia.org/wiki/R.U.R.",
-        "https://cs.wikipedia.org/wiki/Karel_Čapek",
-        "https://cs.wikipedia.org/wiki/Robot",
+        "https://cs.wikipedia.org/wiki/Revizor_(Gogol)",
+        "https://en.wikipedia.org/wiki/The_Government_Inspector",
+        "https://cs.wikipedia.org/wiki/Nikolaj_Vasiljevič_Gogol",
         "Maturitní četba – Rozbor 20 děl.pdf – seznam a rozbor díla"
       ],
       "k_overeni": [
-        "Druh: v zadaném seznamu bylo „epika-próza“, R.U.R. je ale divadelní hra – opraveno na drama.",
-        "Charakteristiky postav: role robota Radia ve vzpouře zdrojové heslo nepopisuje."
+        "Druh a období: v zadaném seznamu bylo „epika-próza“ a „20. a 21. století“, ale Revizor je divadelní hra z roku 1836 – opraveno na drama a 19. století.",
+        "Zajímavost: česká Wikipedie u tvrzení o Puškinovi uvádí „[zdroj?]“, anglická jej uvádí jako údajné („allegedly“)."
       ],
       "motivy": [
-        "technika a pokrok",
-        "vzpoura a revoluce",
-        "láska",
-        "smrt"
+        "satira společnosti",
+        "moc",
+        "peníze a majetek"
       ],
       "zkouska": [
         {
-          "id": "cj12-z1",
-          "otazka": "Před čím Čapek v R.U.R. varuje?",
+          "id": "cj08-z1",
+          "otazka": "Jak Gogol v Revizorovi zesměšňuje úředníky?",
           "body_odpovedi": [
-            "roboti měli lidem ulehčit práci a vytvořit ráj na zemi",
-            "lidé zlenivěli, upadly mravy a roboty začali používat jako vojáky",
-            "roboti se vzbouří a vyhladí lidstvo",
-            "Helena spálí Rossumův výrobní postup, roboti nemohou vznikat",
-            "Alquist přežije, protože pracuje rukama – práce jako smysl života",
-            "robot Primus a robotka Helena – láska jako nový začátek (Adam a Eva)"
+            "úředníci městečka kradou, berou úplatky a všude je nepořádek",
+            "ze strachu z revize považují za revizora bezvýznamného Chlestakova",
+            "podplácejí ho „půjčkami“ a dary, hejtman mu nabídne dceru",
+            "Chlestakov se do role vžije a vychloubá se",
+            "poštmistr otevře jeho dopis a podvod vyjde najevo",
+            "na konci přijede skutečný revizor"
           ],
           "citace_k_pouziti": [],
           "k_overeni": null,
-          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
         }
       ],
-      "puvodni_cislo": 12
+      "cislo_skolni": 24,
+      "skupina": "19",
+      "predchozi_cisla": {
+        "1": 8,
+        "2": 13
+      }
+    },
+    {
+      "id": "cj07",
+      "slug": "jama-a-kyvadlo",
+      "cislo": 5,
+      "dilo": "Jáma a kyvadlo",
+      "rok": 1842,
+      "rok_text": "1842",
+      "autor": {
+        "jmeno": "Edgar Allan Poe",
+        "zkratka": "E. A. Poe",
+        "zivot": "1809–1849",
+        "zeme": "USA",
+        "zdroj": "https://cs.wikipedia.org/wiki/Edgar_Allan_Poe"
+      },
+      "druh": "epika",
+      "zanr": "hororová povídka",
+      "literarni_smer": "romantismus (americký)",
+      "obdobi": "19",
+      "stoleti_vzniku": 19,
+      "postavy": [
+        {
+          "jmeno": "vypravěč",
+          "role": "bezejmenný muž odsouzený inkvizicí k smrti",
+          "charakteristika": "Bezejmenný muž odsouzený inkvizicí v Toledu k smrti za kacířství. Povídku vypráví sám a zachycuje své pocity v temné kobce. Střídavě propadá bláznění, zoufalství a střízlivé úvaze. Díky duchapřítomnosti se vysvobodí z pout pod kyvadlem a nakonec je zachráněn.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+        },
+        {
+          "jmeno": "inkvizitoři",
+          "role": "soudci a trýznitelé v Toledu",
+          "charakteristika": "Soudci, kteří vypravěče odsoudí k smrti. Přímo téměř nevystupují, jejich moc se projevuje jen pastmi v kobce – jámou, kyvadlem a rozpálenými stěnami. Představují neviditelnou a krutou moc. Jejich vláda končí příchodem francouzské armády.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+        },
+        {
+          "jmeno": "krysy",
+          "role": "nechtěně pomohou vězni z pout",
+          "charakteristika": "Zvířata, která se hemží v kobce kolem vězně. Vypravěč potře pouta zbytky jídla a ona je přehryžou. Díky tomu se vysvobodí právě včas, když kyvadlo začne přeřezávat jeho oděv. Nechtěně mu tak zachrání život.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+        },
+        {
+          "jmeno": "generál Lasalle",
+          "role": "velitel francouzské armády",
+          "charakteristika": "Napoleonův generál, s nímž francouzská armáda vstoupí do Toleda. Na poslední chvíli zachytí ruku vypravěče padajícího do jámy. Jeho příchod znamená konec moci inkvizice. Skutečný Lasalle ale francouzskou okupaci Toleda nevedl.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+        }
+      ],
+      "obsah": "Povídka se odehrává ve španělském Toledu v době inkvizice. Vypravěč, jehož jméno se nedozvíme, je odsouzen k smrti za kacířství. Probudí se v temné kobce a snaží se zjistit, co ho v ní čeká. Poe mistrně líčí strach, beznaděj a pocity člověka na hranici smrti.",
+      "shrnuti_deje": "Vězeň v temné kobce náhodou objeví hlubokou jámu, do které měl spadnout. Pak se probudí připoutaný k lavici a nad ním se pomalu snáší ostré kyvadlo. Potře si pouta zbytky jídla, krysy je přehryžou a on se vysvobodí na poslední chvíli. Rozžhavené železné stěny ho pak tlačí k jámě, ale ve chvíli, kdy do ní padá, ho zachytí ruka generála Lasalla – francouzská armáda vstoupila do Toleda.",
+      "fun_fact": {
+        "text": "Skutečný generál Lasalle francouzskou okupaci Toleda nevedl a podobné propracované mučení nemá v činnosti španělské inkvizice historickou obdobu.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo",
+        "https://cs.wikipedia.org/wiki/Edgar_Allan_Poe",
+        "Maturitní četba – Rozbor 20 děl.pdf – seznam a rozbor díla"
+      ],
+      "k_overeni": [],
+      "motivy": [
+        "smrt",
+        "strach a hrůza",
+        "moc"
+      ],
+      "zkouska": [
+        {
+          "id": "cj07-z1",
+          "otazka": "Jak Poe v Jámě a kyvadle buduje napětí a hrůzu?",
+          "body_odpovedi": [
+            "vypravěčem je bezejmenný odsouzenec, sledujeme jeho pocity",
+            "tma a nejistota v kobce – vězeň neví, co ho čeká",
+            "hrozby se stupňují: jáma, klesající kyvadlo, rozpálené stěny",
+            "vězeň střídavě propadá bláznění, zoufalství a střízlivosti",
+            "záchrana na poslední chvíli – generál Lasalle vstoupí do Toleda",
+            "Poe je považován za zakladatele hororového a detektivního žánru"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
+          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
+        }
+      ],
+      "cislo_skolni": 26,
+      "skupina": "19",
+      "predchozi_cisla": {
+        "1": 7,
+        "2": 14
+      }
     },
     {
       "id": "cj09",
@@ -580,7 +608,12 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Proměna_(povídka)"
         }
       ],
-      "puvodni_cislo": 9
+      "cislo_skolni": 11,
+      "skupina": "svet20",
+      "predchozi_cisla": {
+        "1": 9,
+        "2": 6
+      }
     },
     {
       "id": "cj14",
@@ -673,7 +706,12 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid"
         }
       ],
-      "puvodni_cislo": 14
+      "cislo_skolni": 12,
+      "skupina": "svet20",
+      "predchozi_cisla": {
+        "1": 14,
+        "2": 7
+      }
     },
     {
       "id": "cj10",
@@ -757,101 +795,17 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Stařec_a_moře"
         }
       ],
-      "puvodni_cislo": 10
-    },
-    {
-      "id": "cj23",
-      "slug": "spalovac-mrtvol",
-      "cislo": 9,
-      "dilo": "Spalovač mrtvol",
-      "rok": 1967,
-      "rok_text": "1967",
-      "autor": {
-        "jmeno": "Ladislav Fuks",
-        "zkratka": "L. Fuks",
-        "zivot": "1923–1994",
-        "zeme": "Československo",
-        "zdroj": "obecná znalost – mimo PDF (k ověření)"
-      },
-      "druh": "epika",
-      "zanr": "psychologická a groteskní próza",
-      "literarni_smer": "česká próza 2. poloviny 20. století (psychologická próza)",
-      "obdobi": "20",
-      "stoleti_vzniku": 20,
-      "postavy": [
-        {
-          "jmeno": "Karel Kopfrkingl",
-          "role": "zaměstnanec pražského krematoria",
-          "charakteristika": "Pedantický abstinent, milující manžel a otec, posedlý tibetskou myšlenkou převtělování a spasení lidí žehem. Pod vlivem nacistické ideologie zavraždí manželku a syna a nakonec propadne šílenství.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
-        },
-        {
-          "jmeno": "Lakmé (Marie)",
-          "role": "Kopfrkinglova manželka",
-          "charakteristika": "Kvůli jejímu židovskému původu ji Kopfrkingl oběsí v koupelně.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
-        },
-        {
-          "jmeno": "Mili (Milivoj)",
-          "role": "syn",
-          "charakteristika": "Otec ho ubije v krematoriu.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
-        },
-        {
-          "jmeno": "Zina",
-          "role": "dcera",
-          "charakteristika": "Když se ji otec chystá zavraždit, zhroutí se do šílenství.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
-        },
-        {
-          "jmeno": "Willi Reinke",
-          "role": "nacistický přítel",
-          "charakteristika": "Zmanipuluje Kopfrkingla, aby uvěřil v nadřazenost árijské krve.",
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
-        }
-      ],
-      "obsah": "Karel Kopfrkingl, zaměstnanec pražského krematoria, se před válkou nechá zmanipulovat nacistickou ideologií. Kniha ukazuje, jak se zdánlivě slušný maloměšťák mění v chladnokrevného vraha.",
-      "shrnuti_deje": "Karel Kopfrkingl je pedantický zaměstnanec pražského krematoria, abstinent a milující manžel i otec, posedlý tibetskou myšlenkou převtělování a spasení lidí žehem. Před válkou se nechá zmanipulovat nacistickým přítelem Willim Reinkem a uvěří v nadřazenost árijské krve. Aby neohrozil svou kariéru a „spasil“ své blízké od židovského původu po matce, oběsí v koupelně svou ženu Lakmé a v krematoriu ubije syna Miliho. Když se chystá zavraždit i dceru, zhroutí se do šílenství s vizí, že spasí celý svět řízením obřích spalovacích pecí.",
-      "fun_fact": {
-        "text": "V roce 1968 knihu zfilmoval Juraj Herz, Kopfrkingla hrál Rudolf Hrušínský.",
-        "mimo_zdroje": true,
-        "zdroj": "obecná znalost – mimo PDF (k ověření)"
-      },
-      "zdroje": [
-        "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
-      ],
-      "k_overeni": [
-        "Autorství: životní data a země autora nejsou v PDF, jsou doplněna z obecné znalosti.",
-        "Druh: PDF uvádí „psychologická a groteskní próza“; zařazení do epiky je podle toho.",
-        "Zajímavost: není z PDF, je z obecné znalosti."
-      ],
-      "motivy": [
-        "totalita",
-        "smrt",
-        "rodina",
-        "strach a hrůza"
-      ],
-      "zkouska": [
-        {
-          "id": "cj23-z1",
-          "otazka": "Jak se z Karla Kopfrkingla stane vrah?",
-          "body_odpovedi": [
-            "pedantický zaměstnanec krematoria, abstinent a milující otec",
-            "posedlý tibetskou myšlenkou převtělování a „spasení“ žehem",
-            "nacistický přítel Willi Reinke ho zmanipuluje – nadřazenost árijské krve",
-            "kvůli kariéře a židovskému původu rodiny zabije ženu Lakmé a syna Miliho",
-            "u dcery Ziny se zhroutí do šílenství – vize obřích spalovacích pecí"
-          ],
-          "citace_k_pouziti": [],
-          "k_overeni": null,
-          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
-        }
-      ]
+      "cislo_skolni": 13,
+      "skupina": "svet20",
+      "predchozi_cisla": {
+        "1": 10,
+        "2": 8
+      }
     },
     {
       "id": "cj19",
       "slug": "farma-zvirat",
-      "cislo": 10,
+      "cislo": 9,
       "dilo": "Farma zvířat",
       "rok": 1945,
       "rok_text": "1945",
@@ -946,12 +900,397 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Farma_zvířat"
         }
       ],
-      "puvodni_cislo": 19
+      "cislo_skolni": 18,
+      "skupina": "svet20",
+      "predchozi_cisla": {
+        "1": 19,
+        "2": 10
+      }
+    },
+    {
+      "id": "cj21",
+      "slug": "slezske-pisne",
+      "cislo": 10,
+      "dilo": "Slezské písně",
+      "rok": 1909,
+      "rok_text": "1909",
+      "autor": {
+        "jmeno": "Petr Bezruč (vlastním jménem Vladimír Vašek)",
+        "zkratka": "P. Bezruč",
+        "zivot": "1867–1958",
+        "zeme": "Rakousko-Uhersko, Slezsko",
+        "zdroj": "obecná znalost – mimo PDF (k ověření)"
+      },
+      "druh": "lyrika",
+      "zanr": "lyrická sbírka (sociální a národní poezie)",
+      "literarni_smer": "česká moderna (sociální a národní poezie)",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Lyrický mluvčí",
+          "role": "bard, mstitel slezského lidu",
+          "charakteristika": "Vystupuje jako mluvčí umlčovaného lidu Těšínska a Ostravska. Spojuje sociální vzdor s bojem za národní svébytnost utlačovaného slezského lidu.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        },
+        {
+          "jmeno": "Maryčka Magdónova",
+          "role": "sirotek z básně Maryčka Magdónova",
+          "charakteristika": "Po smrti rodičů sbírá v panském lese dříví pro hladovějící sourozence. Po zatčení četníkem ze zoufalství skočí do řeky Ostravice.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        },
+        {
+          "jmeno": "Markýz Géro",
+          "role": "symbol německého utiskovatele",
+          "charakteristika": "Ztělesňuje národnostní útlak a poněmčování slezského lidu.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        },
+        {
+          "jmeno": "horník",
+          "role": "lyrický subjekt básně Ostrava",
+          "charakteristika": "V básni Ostrava zaznívá jeho hrozba sociální revoltou za staletí vykořisťování.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        }
+      ],
+      "obsah": "Lyrická sbírka zachycuje těžký úděl horníků a hutníků na Těšínsku a Ostravsku. Autor vystupuje jako mluvčí umlčovaného lidu a odsuzuje sociální a národnostní útlak – poněmčování a popolšťování.",
+      "shrnuti_deje": "Lyrická sbírka zachycuje těžký úděl horníků a hutníků na Těšínsku a Ostravsku. Autor vystupuje jako mluvčí umlčovaného lidu. Báseň Maryčka Magdónova vypráví o sirotku, který po smrti rodičů sbírá v panském lese dříví pro hladovějící sourozence; po zatčení četníkem volí ze zoufalství skok do řeky Ostravice. V básni Ostrava zní hrozba sociální revoltou za staletí vykořisťování.",
+      "fun_fact": {
+        "text": "Část básní vyšla už v roce 1903 jako příloha časopisu Čas pod názvem Slezské číslo.",
+        "mimo_zdroje": true,
+        "zdroj": "obecná znalost – mimo PDF (k ověření)"
+      },
+      "zdroje": [
+        "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+      ],
+      "k_overeni": [
+        "Autorství: životní data a země autora nejsou v PDF, jsou doplněna z obecné znalosti.",
+        "Charakteristiky postav: PDF uvádí mezi postavami „horník Ostrava“; Ostrava je název básně, proto „horník – lyrický subjekt básně Ostrava“.",
+        "Zajímavost: není z PDF, je z obecné znalosti."
+      ],
+      "motivy": [
+        "vzpoura a revoluce",
+        "moc",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj21-z1",
+          "otazka": "Co Bezruč ve Slezských písních odsuzuje a jak to vyjadřuje?",
+          "body_odpovedi": [
+            "těžký úděl horníků a hutníků na Těšínsku a Ostravsku",
+            "sociální a národnostní útlak – poněmčování a popolšťování",
+            "autor jako bard, mluvčí umlčovaného lidu",
+            "Maryčka Magdónova – sirotek, který skončí v řece Ostravici",
+            "báseň Ostrava – hrozba sociální revoltou",
+            "česká moderna – vliv symbolismu, expresivity a realismu"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        }
+      ],
+      "cislo_skolni": 7,
+      "skupina": "cz20",
+      "predchozi_cisla": {
+        "2": 3
+      }
+    },
+    {
+      "id": "cj22",
+      "slug": "krysar",
+      "cislo": 11,
+      "dilo": "Krysař",
+      "rok": 1915,
+      "rok_text": "1915",
+      "autor": {
+        "jmeno": "Viktor Dyk",
+        "zkratka": "V. Dyk",
+        "zivot": "1877–1931",
+        "zeme": "Rakousko-Uhersko, Čechy",
+        "zdroj": "obecná znalost – mimo PDF (k ověření)"
+      },
+      "druh": "epika",
+      "zanr": "novela",
+      "literarni_smer": "generace anarchistických buřičů, novoromantismus",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Krysař",
+          "role": "tajemný tulák s kouzelnou píšťalou",
+          "charakteristika": "Přichází zbavit město Hammeln krys. Zamiluje se do Agnes a město ušetří, i když mu konšelé nevyplatí slíbenou odměnu. Po smrti Agnes ztratí smysl života a píšťalou odvede obyvatele do propasti.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        },
+        {
+          "jmeno": "Agnes",
+          "role": "dívka, do které se Krysař zamiluje",
+          "charakteristika": "Otěhotní se svým bývalým milencem Kristiánem a ze zoufalství skočí do propasti na hoře Koppel.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        },
+        {
+          "jmeno": "Kristián",
+          "role": "bývalý milenec Agnes",
+          "charakteristika": "Agnes s ním otěhotní, což ji dožene k zoufalství.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        },
+        {
+          "jmeno": "Sepp Jörgen",
+          "role": "chudý prostomyslný rybář",
+          "charakteristika": "Jako jediný přežije, najde opuštěné nemluvně a zachrání ho – nese naději na nový život.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        },
+        {
+          "jmeno": "konšelé Frosch a Stumme",
+          "role": "lakomí radní města",
+          "charakteristika": "Odmítnou Krysaři vyplatit slíbenou odměnu.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        }
+      ],
+      "obsah": "Tajemný krysař přichází do města Hammeln, aby ho kouzelnou píšťalou zbavil krys. Novela spojuje lásku, lakotu měšťanů a osud vyděděnce, který odmítá kompromisy s pokryteckou společností.",
+      "shrnuti_deje": "Tajemný krysař přichází svou kouzelnou píšťalou zbavit město Hammeln krys. Zamiluje se do dívky Agnes a město ušetří, ačkoliv mu lakomí konšelé odmítnou vyplatit slíbenou odměnu. Když však Agnes otěhotní se svým bývalým milencem Kristiánem a ze zoufalství skočí do propasti na hoře Koppel, Krysař ztratí veškerý smysl života. Z plných plic zaduje na píšťalu a odvede všechny obyvatele města do záhuby na dně propasti. Přežije pouze prostomyslný rybář Sepp Jörgen, který najde opuštěné nemluvně a zachrání jej.",
+      "fun_fact": {
+        "text": "Námětem je středověká německá pověst o krysaři z Hamelnu.",
+        "mimo_zdroje": true,
+        "zdroj": "obecná znalost – mimo PDF (k ověření)"
+      },
+      "zdroje": [
+        "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+      ],
+      "k_overeni": [
+        "Autorství: životní data a země autora nejsou v PDF, jsou doplněna z obecné znalosti.",
+        "Druh: literární druh a žánr (novela) PDF neuvádí, jsou doplněny z obecné znalosti.",
+        "Zajímavost: není z PDF, je z obecné znalosti."
+      ],
+      "motivy": [
+        "láska",
+        "peníze a majetek",
+        "osamělost",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj22-z1",
+          "otazka": "Proč Krysař nakonec odvede obyvatele Hammelnu do propasti?",
+          "body_odpovedi": [
+            "Krysař zbaví město krys, lakomí konšelé mu nevyplatí odměnu",
+            "kvůli lásce k Agnes město nejdřív ušetří",
+            "Agnes otěhotní s Kristiánem a skočí do propasti na hoře Koppel",
+            "Krysař ztratí smysl života a píšťalou odvede město do záhuby",
+            "přežije jen rybář Sepp Jörgen s nemluvnětem – naděje"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 2"
+        }
+      ],
+      "cislo_skolni": 8,
+      "skupina": "cz20",
+      "predchozi_cisla": {
+        "2": 4
+      }
+    },
+    {
+      "id": "cj12",
+      "slug": "rur",
+      "cislo": 12,
+      "dilo": "R.U.R.",
+      "rok": 1920,
+      "rok_text": "1920",
+      "autor": {
+        "jmeno": "Karel Čapek",
+        "zkratka": "K. Čapek",
+        "zivot": "1890–1938",
+        "zeme": "Československo",
+        "zdroj": "https://cs.wikipedia.org/wiki/Karel_Čapek"
+      },
+      "druh": "drama",
+      "zanr": "vědeckofantastické drama (vstupní komedie a tři dějství)",
+      "literarni_smer": "meziválečná česká literatura",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Harry Domin",
+          "role": "centrální ředitel továrny R.U.R.",
+          "charakteristika": "Centrální ředitel továrny Rossumovi univerzální roboti. Ožení se s Helenou Gloryovou. Věří, že roboti vytvoří pro člověka ráj na zemi a lidé už nebudou trpět hladem. Jeho víra v pokrok se obrátí proti lidstvu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        },
+        {
+          "jmeno": "Helena Gloryová",
+          "role": "dcera prezidenta, chce roboty zrovnoprávnit",
+          "charakteristika": "Pěkná dcera prezidenta, která připluje na ostrov s cílem roboty zrovnoprávnit. Všichni se do ní zamilují a ona si vezme ředitele Domina. Ze soucitu přiměje Dr. Galla, aby experimentoval s „duší“ robotů. Před smrtí spálí Rossumův výrobní postup.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        },
+        {
+          "jmeno": "stavitel Alquist",
+          "role": "šéf staveb, pracuje rukama, přežije",
+          "charakteristika": "Šéf staveb R.U.R., který stále pracuje rukama, protože věří, že práce je smyslem života. Roboti ho jako jediného člověka ušetří. Marně se snaží znovu objevit výrobní postup. Na konci pozná lásku mezi dvěma roboty a pošle je do světa jako nové Adama a Evu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        },
+        {
+          "jmeno": "Dr. Gall",
+          "role": "vědec, experimentuje s „duší“ robotů",
+          "charakteristika": "Přednosta fyziologického a výzkumného oddělení R.U.R. Na Helenino přání začne experimentovat s „duší“ robotů, aby mohli mít city. Patří k vedení továrny, které roboti při vzpouře zabijí. Ukazuje, jak lidé zasahují do vlastního výtvoru.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        },
+        {
+          "jmeno": "Radius",
+          "role": "robot, vůdce vzpoury",
+          "charakteristika": "Jeden z robotů továrny R.U.R. Patří k robotům, kteří se vzbouří a vyhlásí lidstvu válku. Je příkladem robota, který přestane jen sloužit lidem.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        },
+        {
+          "jmeno": "robot Primus a robotka Helena",
+          "role": "roboti, kteří pocítí lásku",
+          "charakteristika": "Dvojice robotů, kteří jedné noci vzbudí Alquista. Když chce jednoho z nich pitvat, druhý se nabídne místo něj – chrání se navzájem. Alquist pozná, že se mají rádi. Pošle je pryč, aby s láskou začali život znovu.",
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        }
+      ],
+      "obsah": "Na ostrově v blíže neurčené budoucnosti vyrábí továrna Rossumovi univerzální roboti umělé dělníky. Přijede sem Helena Gloryová, která chce roboty zrovnoprávnit, a provdá se za ředitele Domina. Roboti mají lidem ulehčit práci a vytvořit ráj na zemi. Čapek varuje před negativním vlivem techniky na lidstvo.",
+      "shrnuti_deje": "Po deseti letech jsou roboti rozšířeni po celém světě a lidé je zneužívají i jako vojáky. Roboti se vzbouří, vyhlásí lidstvu válku a vyhubí ho; na ostrově ušetří jen stavitele Alquista, protože pracuje rukama. Helena předtím spálila Rossumův výrobní postup, a roboti se tak nemohou dál vyrábět a umírají. Na konci Alquist zjistí, že robot Primus a robotka Helena se mají rádi, a pošle je do světa jako nové Adama a Evu.",
+      "fun_fact": {
+        "text": "Slovo „robot“ Karlovi poradil jeho bratr Josef Čapek – původně zamýšlené slovo „labor“ znělo autorovi příliš papírově.",
+        "mimo_zdroje": true,
+        "zdroj": "https://cs.wikipedia.org/wiki/Robot"
+      },
+      "zdroje": [
+        "https://cs.wikipedia.org/wiki/R.U.R.",
+        "https://cs.wikipedia.org/wiki/Karel_Čapek",
+        "https://cs.wikipedia.org/wiki/Robot",
+        "Maturitní četba – Rozbor 20 děl.pdf – seznam a rozbor díla"
+      ],
+      "k_overeni": [
+        "Druh: v zadaném seznamu bylo „epika-próza“, R.U.R. je ale divadelní hra – opraveno na drama.",
+        "Charakteristiky postav: role robota Radia ve vzpouře zdrojové heslo nepopisuje."
+      ],
+      "motivy": [
+        "technika a pokrok",
+        "vzpoura a revoluce",
+        "láska",
+        "smrt"
+      ],
+      "zkouska": [
+        {
+          "id": "cj12-z1",
+          "otazka": "Před čím Čapek v R.U.R. varuje?",
+          "body_odpovedi": [
+            "roboti měli lidem ulehčit práci a vytvořit ráj na zemi",
+            "lidé zlenivěli, upadly mravy a roboty začali používat jako vojáky",
+            "roboti se vzbouří a vyhladí lidstvo",
+            "Helena spálí Rossumův výrobní postup, roboti nemohou vznikat",
+            "Alquist přežije, protože pracuje rukama – práce jako smysl života",
+            "robot Primus a robotka Helena – láska jako nový začátek (Adam a Eva)"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "https://cs.wikipedia.org/wiki/R.U.R."
+        }
+      ],
+      "cislo_skolni": 9,
+      "skupina": "cz20",
+      "predchozi_cisla": {
+        "1": 12,
+        "2": 5
+      }
+    },
+    {
+      "id": "cj23",
+      "slug": "spalovac-mrtvol",
+      "cislo": 13,
+      "dilo": "Spalovač mrtvol",
+      "rok": 1967,
+      "rok_text": "1967",
+      "autor": {
+        "jmeno": "Ladislav Fuks",
+        "zkratka": "L. Fuks",
+        "zivot": "1923–1994",
+        "zeme": "Československo",
+        "zdroj": "obecná znalost – mimo PDF (k ověření)"
+      },
+      "druh": "epika",
+      "zanr": "psychologická a groteskní próza",
+      "literarni_smer": "česká próza 2. poloviny 20. století (psychologická próza)",
+      "obdobi": "20",
+      "stoleti_vzniku": 20,
+      "postavy": [
+        {
+          "jmeno": "Karel Kopfrkingl",
+          "role": "zaměstnanec pražského krematoria",
+          "charakteristika": "Pedantický abstinent, milující manžel a otec, posedlý tibetskou myšlenkou převtělování a spasení lidí žehem. Pod vlivem nacistické ideologie zavraždí manželku a syna a nakonec propadne šílenství.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
+        },
+        {
+          "jmeno": "Lakmé (Marie)",
+          "role": "Kopfrkinglova manželka",
+          "charakteristika": "Kvůli jejímu židovskému původu ji Kopfrkingl oběsí v koupelně.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
+        },
+        {
+          "jmeno": "Mili (Milivoj)",
+          "role": "syn",
+          "charakteristika": "Otec ho ubije v krematoriu.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
+        },
+        {
+          "jmeno": "Zina",
+          "role": "dcera",
+          "charakteristika": "Když se ji otec chystá zavraždit, zhroutí se do šílenství.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
+        },
+        {
+          "jmeno": "Willi Reinke",
+          "role": "nacistický přítel",
+          "charakteristika": "Zmanipuluje Kopfrkingla, aby uvěřil v nadřazenost árijské krve.",
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
+        }
+      ],
+      "obsah": "Karel Kopfrkingl, zaměstnanec pražského krematoria, se před válkou nechá zmanipulovat nacistickou ideologií. Kniha ukazuje, jak se zdánlivě slušný maloměšťák mění v chladnokrevného vraha.",
+      "shrnuti_deje": "Karel Kopfrkingl je pedantický zaměstnanec pražského krematoria, abstinent a milující manžel i otec, posedlý tibetskou myšlenkou převtělování a spasení lidí žehem. Před válkou se nechá zmanipulovat nacistickým přítelem Willim Reinkem a uvěří v nadřazenost árijské krve. Aby neohrozil svou kariéru a „spasil“ své blízké od židovského původu po matce, oběsí v koupelně svou ženu Lakmé a v krematoriu ubije syna Miliho. Když se chystá zavraždit i dceru, zhroutí se do šílenství s vizí, že spasí celý svět řízením obřích spalovacích pecí.",
+      "fun_fact": {
+        "text": "V roce 1968 knihu zfilmoval Juraj Herz, Kopfrkingla hrál Rudolf Hrušínský.",
+        "mimo_zdroje": true,
+        "zdroj": "obecná znalost – mimo PDF (k ověření)"
+      },
+      "zdroje": [
+        "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
+      ],
+      "k_overeni": [
+        "Autorství: životní data a země autora nejsou v PDF, jsou doplněna z obecné znalosti.",
+        "Druh: PDF uvádí „psychologická a groteskní próza“; zařazení do epiky je podle toho.",
+        "Zajímavost: není z PDF, je z obecné znalosti."
+      ],
+      "motivy": [
+        "totalita",
+        "smrt",
+        "rodina",
+        "strach a hrůza"
+      ],
+      "zkouska": [
+        {
+          "id": "cj23-z1",
+          "otazka": "Jak se z Karla Kopfrkingla stane vrah?",
+          "body_odpovedi": [
+            "pedantický zaměstnanec krematoria, abstinent a milující otec",
+            "posedlý tibetskou myšlenkou převtělování a „spasení“ žehem",
+            "nacistický přítel Willi Reinke ho zmanipuluje – nadřazenost árijské krve",
+            "kvůli kariéře a židovskému původu rodiny zabije ženu Lakmé a syna Miliho",
+            "u dcery Ziny se zhroutí do šílenství – vize obřích spalovacích pecí"
+          ],
+          "citace_k_pouziti": [],
+          "k_overeni": null,
+          "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 4"
+        }
+      ],
+      "cislo_skolni": 14,
+      "skupina": "cz20",
+      "predchozi_cisla": {
+        "2": 9
+      }
     },
     {
       "id": "cj16",
       "slug": "ostre-sledovane-vlaky",
-      "cislo": 11,
+      "cislo": 14,
       "dilo": "Ostře sledované vlaky",
       "rok": 1965,
       "rok_text": "1965",
@@ -1038,285 +1377,12 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)"
         }
       ],
-      "puvodni_cislo": 16
-    },
-    {
-      "id": "cj02",
-      "slug": "lakomec",
-      "cislo": 12,
-      "dilo": "Lakomec",
-      "rok": 1668,
-      "rok_text": "1668",
-      "autor": {
-        "jmeno": "Molière (vlastním jménem Jean-Baptiste Poquelin)",
-        "zkratka": "Molière",
-        "zivot": "1622–1673",
-        "zeme": "Francie",
-        "zdroj": "https://cs.wikipedia.org/wiki/Molière"
-      },
-      "druh": "drama",
-      "zanr": "komedie (o pěti dějstvích)",
-      "literarni_smer": "klasicismus",
-      "obdobi": "18",
-      "stoleti_vzniku": 17,
-      "postavy": [
-        {
-          "jmeno": "Harpagon",
-          "role": "bohatý lakomý vdovec a lichvář",
-          "charakteristika": "Šedesátiletý bohatý vdovec a lichvář, který žije ve stálém strachu o zakopanou truhlici s penězi. Podezírá všechny včetně vlastních dětí a o jejich sňatcích rozhoduje podle peněz. Sám se chce oženit s mladou Marianou, kterou miluje jeho syn. Ztráta pokladu pro něj znamená ztrátu rozumu; na konci zůstává sám, ale spokojený se svými penězi.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-        },
-        {
-          "jmeno": "Kleantes",
-          "role": "Harpagonův syn, miluje Marianu",
-          "charakteristika": "Harpagonův syn, který miluje chudou Marianu. Aby si ji mohl vzít, potřebuje peníze, a zjistí, že lichvářem nabízejícím půjčku je jeho vlastní otec. S otcem se otevřeně střetne, otec ho proklíná. Díky ukradené truhlici nakonec otce přiměje svolit ke sňatku.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-        },
-        {
-          "jmeno": "Eliška",
-          "role": "Harpagonova dcera, miluje Valéra",
-          "charakteristika": "Harpagonova dcera, zamilovaná do správce Valéra. Otec ji chce provdat za starého boháče Anselma, protože ten nepožaduje věno. Ona to rozhodně odmítá. Na konci si smí vzít Valéra.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-        },
-        {
-          "jmeno": "Valér",
-          "role": "Harpagonův správce, miluje Elišku",
-          "charakteristika": "Harpagonův správce, který Harpagonovi podlézá, aby se mohl oženit s Eliškou. Při vyšetřování krádeže je obviněn a myslí si, že vyšel najevo jeho vztah k Elišce. Ukáže se, že je ztraceným synem Anselma. Jeho přetvářka komicky zrcadlí Harpagonovu lakotu.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-        },
-        {
-          "jmeno": "Mariana",
-          "role": "chudá dívka, o kterou se uchází otec i syn",
-          "charakteristika": "Chudá dívka, která se stará o nemocnou matku. Miluje Kleanta pro jeho povahu, ne pro peníze, a Harpagon se jí nelíbí. Nakonec se ukáže, že je dcerou Anselma. Smí si vzít Kleanta.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-        },
-        {
-          "jmeno": "Čipera",
-          "role": "Kleantův sluha, ukradne truhlici s penězi",
-          "charakteristika": "Kleantův mazaný sluha a přítel. Domlouvá pro Kleanta lichvářskou půjčku. Najde na zahradě Harpagonovu zakopanou truhlici a ukradne ji, aby pánovi pomohl. Krádež rozpoutá vyvrcholení komedie.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-        }
-      ],
-      "obsah": "Komedie se odehrává v Paříži v domě bohatého vdovce Harpagona, který žije v neustálém strachu o své peníze. Kvůli penězům chce rozhodovat o sňatcích svých dětí, Kleanta a Elišky, a sám se chce oženit s mladou Marianou. Jeho lakota vede k řadě komických situací. Hra ukazuje, jak peníze deformují charakter a vztahy v rodině.",
-      "shrnuti_deje": "Harpagon si chce vzít Marianu, kterou miluje jeho syn Kleantes, a dceru Elišku chce provdat za starého boháče Anselma, ačkoli ona miluje Valéra. Kleantův sluha Čipera najde a ukradne Harpagonovu zakopanou truhlici s penězi a Harpagon propadne zoufalství. Při vyšetřování se ukáže, že Valér a Mariana jsou ztracené děti Anselma. Kleantes vrátí otci peníze výměnou za svolení ke sňatku s Marianou, Valér si vezme Elišku a Anselm zaplatí všechny výlohy. Harpagon zůstává sám, ale spokojený se svými penězi.",
-      "fun_fact": {
-        "text": "Předlohou Lakomce byla hra Aulularia (Komedie o hrnci) římského dramatika Plauta a podle hlavní postavy se slovo „harpagon“ vžilo jako označení pro velkého lakomce.",
-        "mimo_zdroje": true,
-        "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-      },
-      "zdroje": [
-        "https://cs.wikipedia.org/wiki/Lakomec",
-        "https://cs.wikipedia.org/wiki/Molière",
-        "https://cs.wikipedia.org/wiki/Klasicismus_(literatura)",
-        "Maturitní četba – Rozbor 20 děl.pdf – seznam a rozbor díla"
-      ],
-      "k_overeni": [
-        "Období: hra vznikla v 17. století; v seznamu je zařazena do období „do konce 18. století“."
-      ],
-      "motivy": [
-        "peníze a majetek",
-        "rodina",
-        "láska",
-        "satira společnosti"
-      ],
-      "zkouska": [
-        {
-          "id": "cj02-z1",
-          "otazka": "Jak Molière zobrazuje lakotu na postavě Harpagona?",
-          "body_odpovedi": [
-            "Harpagon – vdovec a lichvář, který se neustále bojí o zakopanou truhlici",
-            "pro peníze obětuje rodinu i lásku – chce si vzít Marianu, kterou miluje jeho syn",
-            "lichvářem, od kterého si chce půjčit Kleantes, je jeho vlastní otec",
-            "ztráta pokladu pro něj znamená ztrátu smyslu bytí",
-            "na konci zůstává sám, ale spokojený se svými penězi",
-            "jméno harpagon se vžilo jako označení lakomce"
-          ],
-          "citace_k_pouziti": [],
-          "k_overeni": null,
-          "zdroj": "https://cs.wikipedia.org/wiki/Lakomec"
-        }
-      ],
-      "puvodni_cislo": 2
-    },
-    {
-      "id": "cj08",
-      "slug": "revizor",
-      "cislo": 13,
-      "dilo": "Revizor",
-      "rok": 1836,
-      "rok_text": "1836",
-      "autor": {
-        "jmeno": "Nikolaj Vasiljevič Gogol",
-        "zkratka": "N. V. Gogol",
-        "zivot": "1809–1852",
-        "zeme": "Rusko, ukrajinského původu",
-        "zdroj": "https://cs.wikipedia.org/wiki/Nikolaj_Vasiljevič_Gogol"
-      },
-      "druh": "drama",
-      "zanr": "satirická komedie (pět aktů)",
-      "literarni_smer": "kritický realismus (s prvky romantismu)",
-      "obdobi": "19",
-      "stoleti_vzniku": 19,
-      "postavy": [
-        {
-          "jmeno": "Chlestakov",
-          "role": "bezvýznamný úředník, kterého považují za revizora",
-          "charakteristika": "Mladý bezvýznamný úředník, který v kartách prohraje všechny peníze a nemá na útratu v hostinci. Úředníci ho mylně považují za revizora. Když omyl pochopí, plně ho využije – bere „půjčky“ a dary, svádí hejtmanovu ženu a nechá si nabídnout ruku jeho dcery. Při vychloubání se do role tak vžije, že jí téměř uvěří.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
-        },
-        {
-          "jmeno": "Osip",
-          "role": "Chlestakovův sluha",
-          "charakteristika": "Sluha, se kterým Chlestakov přijel do městečka. Je střízlivější než jeho pán. Včas mu vysvětlí, že takový podvod se dlouho neudrží v tajnosti. Díky němu Chlestakov z města zmizí dřív, než je odhalen.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
-        },
-        {
-          "jmeno": "hejtman",
-          "role": "představený města, úplatkář",
-          "charakteristika": "Představený městečka, který s ostatními úředníky bere úplatky a nestará se o pořádek. Ze strachu z revize ubytuje Chlestakova ve svém domě a nabídne mu ruku své dcery. Sní o životě tchána významného muže. Po odhalení podvodu zuří a vzápětí se dozví o příjezdu skutečného revizora.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
-        },
-        {
-          "jmeno": "Anna Andrejevna a Marja Antonovna",
-          "role": "hejtmanova žena a dcera",
-          "charakteristika": "Hejtmanova manželka a dcera. Chlestakov svádí hejtmanovu ženu a hejtman mu nabídne ruku dcery. Obě se nechají oslnit domnělým významným mužem z Petrohradu. Dokreslují satiru na maloměstskou společnost.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
-        },
-        {
-          "jmeno": "Bobčinskij a Dobčinskij",
-          "role": "statkáři, šiřitelé klepů",
-          "charakteristika": "Dva statkáři, jejichž jedinou životní náplní je běhat po městě a šířit jakékoli zprávy. Právě oni prohlásí Chlestakova za revizora a rychle to rozšíří. Jsou spouštěčem celé komedie omylů. Představují maloměstské klepaření.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
-        },
-        {
-          "jmeno": "poštmistr",
-          "role": "otevírá cizí dopisy",
-          "charakteristika": "Městský úředník, který pro své rozptýlení otevírá cizí dopisy. Díky tomu se úředníci hned dozvědí o revizorovi. Na konci otevře i Chlestakovův dopis příteli. Tím odhalí celý podvod.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
-        }
-      ],
-      "obsah": "Hra se odehrává v malém ruském městečku, jehož úředníci kradou, berou úplatky a nestarají se o pořádek. Hejtman dostane zprávu, že do města inkognito přijede revizor. Úředníci propadnou panice a za revizora omylem považují mladého úředníka Chlestakova, který v hostinci prohrál všechny peníze. Gogol tím nastavuje zrcadlo úplatkářství a podlézavosti.",
-      "shrnuti_deje": "Úředníci Chlestakova podplácejí a hejtman ho ubytuje u sebe; Chlestakov pochopí omyl a naplno ho využije – bere „půjčky“ a dary, vychloubá se, svádí hejtmanovu ženu a zasnoubí se s jeho dcerou. Sluha Osip ho přiměje včas zmizet pod záminkou cesty za strýcem. Poštmistr otevře Chlestakovův dopis příteli, v němž se úředníkům vysmívá, a podvod vyjde najevo. Ve chvíli, kdy všichni zuří, strážník oznámí, že přijel skutečný revizor.",
-      "fun_fact": {
-        "text": "Námět k Revizorovi podle tradice poskytl Gogolovi Alexandr Sergejevič Puškin, který mu vyprávěl, jak ho na cestách považovali za tajného vládního úředníka.",
-        "mimo_zdroje": true,
-        "zdroj": "https://en.wikipedia.org/wiki/The_Government_Inspector"
-      },
-      "zdroje": [
-        "https://cs.wikipedia.org/wiki/Revizor_(Gogol)",
-        "https://en.wikipedia.org/wiki/The_Government_Inspector",
-        "https://cs.wikipedia.org/wiki/Nikolaj_Vasiljevič_Gogol",
-        "Maturitní četba – Rozbor 20 děl.pdf – seznam a rozbor díla"
-      ],
-      "k_overeni": [
-        "Druh a období: v zadaném seznamu bylo „epika-próza“ a „20. a 21. století“, ale Revizor je divadelní hra z roku 1836 – opraveno na drama a 19. století.",
-        "Zajímavost: česká Wikipedie u tvrzení o Puškinovi uvádí „[zdroj?]“, anglická jej uvádí jako údajné („allegedly“)."
-      ],
-      "motivy": [
-        "satira společnosti",
-        "moc",
-        "peníze a majetek"
-      ],
-      "zkouska": [
-        {
-          "id": "cj08-z1",
-          "otazka": "Jak Gogol v Revizorovi zesměšňuje úředníky?",
-          "body_odpovedi": [
-            "úředníci městečka kradou, berou úplatky a všude je nepořádek",
-            "ze strachu z revize považují za revizora bezvýznamného Chlestakova",
-            "podplácejí ho „půjčkami“ a dary, hejtman mu nabídne dceru",
-            "Chlestakov se do role vžije a vychloubá se",
-            "poštmistr otevře jeho dopis a podvod vyjde najevo",
-            "na konci přijede skutečný revizor"
-          ],
-          "citace_k_pouziti": [],
-          "k_overeni": null,
-          "zdroj": "https://cs.wikipedia.org/wiki/Revizor_(Gogol)"
-        }
-      ],
-      "puvodni_cislo": 8
-    },
-    {
-      "id": "cj07",
-      "slug": "jama-a-kyvadlo",
-      "cislo": 14,
-      "dilo": "Jáma a kyvadlo",
-      "rok": 1842,
-      "rok_text": "1842",
-      "autor": {
-        "jmeno": "Edgar Allan Poe",
-        "zkratka": "E. A. Poe",
-        "zivot": "1809–1849",
-        "zeme": "USA",
-        "zdroj": "https://cs.wikipedia.org/wiki/Edgar_Allan_Poe"
-      },
-      "druh": "epika",
-      "zanr": "hororová povídka",
-      "literarni_smer": "romantismus (americký)",
-      "obdobi": "19",
-      "stoleti_vzniku": 19,
-      "postavy": [
-        {
-          "jmeno": "vypravěč",
-          "role": "bezejmenný muž odsouzený inkvizicí k smrti",
-          "charakteristika": "Bezejmenný muž odsouzený inkvizicí v Toledu k smrti za kacířství. Povídku vypráví sám a zachycuje své pocity v temné kobce. Střídavě propadá bláznění, zoufalství a střízlivé úvaze. Díky duchapřítomnosti se vysvobodí z pout pod kyvadlem a nakonec je zachráněn.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
-        },
-        {
-          "jmeno": "inkvizitoři",
-          "role": "soudci a trýznitelé v Toledu",
-          "charakteristika": "Soudci, kteří vypravěče odsoudí k smrti. Přímo téměř nevystupují, jejich moc se projevuje jen pastmi v kobce – jámou, kyvadlem a rozpálenými stěnami. Představují neviditelnou a krutou moc. Jejich vláda končí příchodem francouzské armády.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
-        },
-        {
-          "jmeno": "krysy",
-          "role": "nechtěně pomohou vězni z pout",
-          "charakteristika": "Zvířata, která se hemží v kobce kolem vězně. Vypravěč potře pouta zbytky jídla a ona je přehryžou. Díky tomu se vysvobodí právě včas, když kyvadlo začne přeřezávat jeho oděv. Nechtěně mu tak zachrání život.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
-        },
-        {
-          "jmeno": "generál Lasalle",
-          "role": "velitel francouzské armády",
-          "charakteristika": "Napoleonův generál, s nímž francouzská armáda vstoupí do Toleda. Na poslední chvíli zachytí ruku vypravěče padajícího do jámy. Jeho příchod znamená konec moci inkvizice. Skutečný Lasalle ale francouzskou okupaci Toleda nevedl.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
-        }
-      ],
-      "obsah": "Povídka se odehrává ve španělském Toledu v době inkvizice. Vypravěč, jehož jméno se nedozvíme, je odsouzen k smrti za kacířství. Probudí se v temné kobce a snaží se zjistit, co ho v ní čeká. Poe mistrně líčí strach, beznaděj a pocity člověka na hranici smrti.",
-      "shrnuti_deje": "Vězeň v temné kobce náhodou objeví hlubokou jámu, do které měl spadnout. Pak se probudí připoutaný k lavici a nad ním se pomalu snáší ostré kyvadlo. Potře si pouta zbytky jídla, krysy je přehryžou a on se vysvobodí na poslední chvíli. Rozžhavené železné stěny ho pak tlačí k jámě, ale ve chvíli, kdy do ní padá, ho zachytí ruka generála Lasalla – francouzská armáda vstoupila do Toleda.",
-      "fun_fact": {
-        "text": "Skutečný generál Lasalle francouzskou okupaci Toleda nevedl a podobné propracované mučení nemá v činnosti španělské inkvizice historickou obdobu.",
-        "mimo_zdroje": true,
-        "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
-      },
-      "zdroje": [
-        "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo",
-        "https://cs.wikipedia.org/wiki/Edgar_Allan_Poe",
-        "Maturitní četba – Rozbor 20 děl.pdf – seznam a rozbor díla"
-      ],
-      "k_overeni": [],
-      "motivy": [
-        "smrt",
-        "strach a hrůza",
-        "moc"
-      ],
-      "zkouska": [
-        {
-          "id": "cj07-z1",
-          "otazka": "Jak Poe v Jámě a kyvadle buduje napětí a hrůzu?",
-          "body_odpovedi": [
-            "vypravěčem je bezejmenný odsouzenec, sledujeme jeho pocity",
-            "tma a nejistota v kobce – vězeň neví, co ho čeká",
-            "hrozby se stupňují: jáma, klesající kyvadlo, rozpálené stěny",
-            "vězeň střídavě propadá bláznění, zoufalství a střízlivosti",
-            "záchrana na poslední chvíli – generál Lasalle vstoupí do Toleda",
-            "Poe je považován za zakladatele hororového a detektivního žánru"
-          ],
-          "citace_k_pouziti": [],
-          "k_overeni": "Otázka je závislá na interpretaci – body odpovědi ověř v učebnici nebo u učitele.",
-          "zdroj": "https://cs.wikipedia.org/wiki/Jáma_a_kyvadlo"
-        }
-      ],
-      "puvodni_cislo": 7
+      "cislo_skolni": 19,
+      "skupina": "cz20",
+      "predchozi_cisla": {
+        "1": 16,
+        "2": 11
+      }
     },
     {
       "id": "cj11",
@@ -1416,7 +1482,12 @@
           "zdroj": "https://cs.wikipedia.org/wiki/O_myších_a_lidech"
         }
       ],
-      "puvodni_cislo": 11
+      "cislo_skolni": 27,
+      "skupina": "dalsi",
+      "predchozi_cisla": {
+        "1": 11,
+        "2": 15
+      }
     },
     {
       "id": "cj24",
@@ -1500,7 +1571,12 @@
           "k_overeni": null,
           "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 7–8"
         }
-      ]
+      ],
+      "cislo_skolni": 29,
+      "skupina": "dalsi",
+      "predchozi_cisla": {
+        "2": 16
+      }
     },
     {
       "id": "cj25",
@@ -1594,7 +1670,12 @@
           "k_overeni": null,
           "zdroj": "Maturitní četba – Rozbor 20 děl.pdf, str. 8"
         }
-      ]
+      ],
+      "cislo_skolni": 37,
+      "skupina": "dalsi",
+      "predchozi_cisla": {
+        "2": 17
+      }
     },
     {
       "id": "cj17",
@@ -1682,7 +1763,12 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Smrt_krásných_srnců_(kniha)"
         }
       ],
-      "puvodni_cislo": 17
+      "cislo_skolni": 39,
+      "skupina": "dalsi",
+      "predchozi_cisla": {
+        "1": 17,
+        "2": 18
+      }
     },
     {
       "id": "cj03",
@@ -1774,7 +1860,12 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Zkrocení_zlé_ženy"
         }
       ],
-      "puvodni_cislo": 3
+      "cislo_skolni": 45,
+      "skupina": "dalsi",
+      "predchozi_cisla": {
+        "1": 3,
+        "2": 19
+      }
     },
     {
       "id": "cj13",
@@ -1870,7 +1961,12 @@
           "zdroj": "https://cs.wikipedia.org/wiki/Velký_Gatsby"
         }
       ],
-      "puvodni_cislo": 13
+      "cislo_skolni": 65,
+      "skupina": "dalsi",
+      "predchozi_cisla": {
+        "1": 13,
+        "2": 20
+      }
     }
   ],
   "epochy": [
@@ -1885,48 +1981,7 @@
         "klasicismus",
         "osvícenství"
       ],
-      "dalsi_autori": [
-        {
-          "autor": "Miguel de Cervantes y Saavedra",
-          "dila": [
-            {
-              "nazev": "Důmyslný rytíř don Quijote de la Mancha",
-              "rok": "1605"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Důmyslný_rytíř_Don_Quijote_de_la_Mancha"
-        },
-        {
-          "autor": "Jan Amos Komenský",
-          "dila": [
-            {
-              "nazev": "Labyrint světa a ráj srdce",
-              "rok": "1631 (rukopis 1623)"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Labyrint_světa_a_ráj_srdce"
-        },
-        {
-          "autor": "Daniel Defoe",
-          "dila": [
-            {
-              "nazev": "Robinson Crusoe",
-              "rok": "1719"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Robinson_Crusoe"
-        },
-        {
-          "autor": "Voltaire",
-          "dila": [
-            {
-              "nazev": "Candide čili Optimismus",
-              "rok": "1759"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Candide"
-        }
-      ],
+      "dalsi_autori": [],
       "zdroje": [
         "https://cs.wikipedia.org/wiki/Renesanční_literatura",
         "https://cs.wikipedia.org/wiki/Klasicismus_(literatura)"
@@ -1944,48 +1999,7 @@
         "realismus (kritický realismus)",
         "naturalismus"
       ],
-      "dalsi_autori": [
-        {
-          "autor": "Karel Hynek Mácha",
-          "dila": [
-            {
-              "nazev": "Máj",
-              "rok": "1836"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Máj_(Karel_Hynek_Mácha)"
-        },
-        {
-          "autor": "Božena Němcová",
-          "dila": [
-            {
-              "nazev": "Babička",
-              "rok": "1855"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Babička_(kniha)"
-        },
-        {
-          "autor": "Victor Hugo",
-          "dila": [
-            {
-              "nazev": "Chrám Matky Boží v Paříži",
-              "rok": "1831"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Chrám_Matky_Boží_v_Paříži_(román)"
-        },
-        {
-          "autor": "Gustave Flaubert",
-          "dila": [
-            {
-              "nazev": "Paní Bovaryová",
-              "rok": "1857"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Paní_Bovaryová"
-        }
-      ],
+      "dalsi_autori": [],
       "zdroje": [
         "https://cs.wikipedia.org/wiki/Romantismus_(literatura)",
         "https://cs.wikipedia.org/wiki/Realismus_(literatura)"
@@ -1996,8 +2010,8 @@
     },
     {
       "obdobi": "20",
-      "nazev": "Moderní literatura, světové války a totalita",
-      "rozsah": "20. století",
+      "nazev": "Literatura 20. a 21. století",
+      "rozsah": "20. a 21. století",
       "popis": "Na přelomu 19. a 20. století vzniká česká moderna se sociální a národní poezií (Bezruč) a nastupuje generace anarchistických buřičů (Dyk). Literaturu 20. století zásadně ovlivnily obě světové války. Po první válce píše „ztracená generace“ a vzniká protiválečná próza (Remarque, Hemingway, Fitzgerald), moderní próza zachycuje absurditu a odcizení člověka (Kafka). Meziválečná česká literatura varuje před zneužitím techniky a před fašismem (Čapek). Po druhé válce vzniká válečná a psychologická próza (Hrabal, Fuks, Ota Pavel), antiutopie kritizující totalitu (Orwell) a filozofická pohádka (Saint-Exupéry).",
       "hlavni_smery": [
         "česká moderna a generace buřičů",
@@ -2007,38 +2021,7 @@
         "válečná a psychologická próza",
         "antiutopie"
       ],
-      "dalsi_autori": [
-        {
-          "autor": "Vladislav Vančura",
-          "dila": [
-            {
-              "nazev": "Markéta Lazarová",
-              "rok": "1931"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Markéta_Lazarová_(kniha)"
-        },
-        {
-          "autor": "Arnošt Lustig",
-          "dila": [
-            {
-              "nazev": "Modlitba pro Kateřinu Horovitzovou",
-              "rok": "1964"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Modlitba_pro_Kateřinu_Horovitzovou"
-        },
-        {
-          "autor": "Jerome David Salinger",
-          "dila": [
-            {
-              "nazev": "Kdo chytá v žitě",
-              "rok": "1951"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Kdo_chytá_v_žitě"
-        }
-      ],
+      "dalsi_autori": [],
       "zdroje": [
         "Maturitní četba – Rozbor 20 děl.pdf – směry a charakteristika u jednotlivých děl",
         "https://cs.wikipedia.org/wiki/Na_západní_frontě_klid",
@@ -2047,68 +2030,6 @@
       ],
       "k_overeni": [
         "Popis epochy je sestaven z charakteristik jednotlivých děl (PDF a Wikipedie), ne z jednoho přehledového článku."
-      ]
-    },
-    {
-      "obdobi": "21",
-      "nazev": "Současná literatura",
-      "rozsah": "21. století",
-      "popis": "Žádné dílo ze seznamu nevzniklo v 21. století, epocha slouží jako navazující kontext. Řada úspěšných současných románů se vrací k dějinám 20. století – například Hana Aleny Mornštajnové k holokaustu a poválečné době. Žítkovské bohyně Kateřiny Tučkové zpracovávají osudy lidových léčitelek. Ve světové literatuře vznikají mimo jiné postapokalyptické romány (Cesta) a příběhy z cizích kultur (Lovec draků).",
-      "hlavni_smery": [
-        "současná próza",
-        "návrat k dějinám 20. století",
-        "postapokalyptická próza"
-      ],
-      "dalsi_autori": [
-        {
-          "autor": "Khaled Hosseini",
-          "dila": [
-            {
-              "nazev": "Lovec draků",
-              "rok": "2003"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Lovec_draků"
-        },
-        {
-          "autor": "Cormac McCarthy",
-          "dila": [
-            {
-              "nazev": "Cesta",
-              "rok": "2006"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Cesta_(Cormac_McCarthy)"
-        },
-        {
-          "autor": "Kateřina Tučková",
-          "dila": [
-            {
-              "nazev": "Žítkovské bohyně",
-              "rok": "2012"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Žítkovské_bohyně"
-        },
-        {
-          "autor": "Alena Mornštajnová",
-          "dila": [
-            {
-              "nazev": "Hana",
-              "rok": "2017"
-            }
-          ],
-          "zdroj": "https://cs.wikipedia.org/wiki/Hana_(kniha)"
-        }
-      ],
-      "zdroje": [
-        "https://cs.wikipedia.org/wiki/Hana_(kniha)",
-        "https://cs.wikipedia.org/wiki/Žítkovské_bohyně",
-        "https://cs.wikipedia.org/wiki/Cesta_(Cormac_McCarthy)",
-        "https://cs.wikipedia.org/wiki/Lovec_draků"
-      ],
-      "k_overeni": [
-        "Popis epochy a hlavní směry jsou obecná charakteristika; přehledový zdroj o literatuře 21. století nebyl ověřen."
       ]
     }
   ],
@@ -2140,5 +2061,27 @@
     "technika a pokrok"
   ],
   "poznamka_motivy": "Motivy jsou výběr hlavních témat podle zdrojového hesla díla (pole zdroje); jde o interpretaci – k ověření.",
-  "verze_seznamu": 2
+  "verze_seznamu": 3,
+  "skupiny": [
+    {
+      "id": "do18",
+      "nazev": "Světová a česká literatura do konce 18. století"
+    },
+    {
+      "id": "19",
+      "nazev": "Světová a česká literatura 19. století"
+    },
+    {
+      "id": "svet20",
+      "nazev": "Světová literatura 20. a 21. století"
+    },
+    {
+      "id": "cz20",
+      "nazev": "Česká literatura 20. a 21. století"
+    },
+    {
+      "id": "dalsi",
+      "nazev": "Další četba"
+    }
+  ]
 }
