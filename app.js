@@ -20,6 +20,7 @@ const SECTION_KEY = 'maturita-sekce-v1';
 const CJ_STATS_KEY = 'maturita-cj-stats-v1';
 const CJ_SELECTION_KEY = 'maturita-cj-vyber-v1';
 const CJ_SETTINGS_KEY = 'maturita-cj-nastaveni-v1';
+const CJ_LIST_KEY = 'maturita-cj-seznam-v1';  // verze seznamu děl, podle které se převádějí čísla děl (migrateCjNumbers)
 
 // NOVÉ: „Moje otázky“ – výchozí výběr a jediné otázky, pro které je výuka.
 const MY_MO = [1, 2, 3, 17, 18];
@@ -1425,8 +1426,42 @@ function setupCj(data) {
   CJ_QUESTIONS = buildCjQuestions();
   CJ_QUESTIONS.forEach((q) => CJ_BY_ID.set(q.id, q));
   buildCjQuizBank();
+  migrateCjNumbers(data);
   if (!cjSelection) cjSelection = new Set(CJ_WORKS.map((w) => w.cislo));
   for (const n of [...cjSelection]) if (!CJ_BY_NUM.has(n)) cjSelection.delete(n);
+}
+
+// Seznam děl se změnil (verze_seznamu 2 = podle PDF „Maturitní četba – Rozbor 20 děl“) a díla se přečíslovala.
+// Výběr děl, úspěšnost u děl a losování jsou uložené podle čísla díla, proto se jednou převedou
+// podle pole puvodni_cislo. Odebraná díla se zahodí, nová díla se rovnou zaškrtnou.
+// Statistiky otázek jsou uložené podle id díla, ty se nemění.
+function migrateCjNumbers(data) {
+  const version = data.verze_seznamu || 1;
+  if ((storageGet(CJ_LIST_KEY) || 1) >= version) return;
+  const map = new Map(CJ_WORKS.filter((w) => w.puvodni_cislo).map((w) => [w.puvodni_cislo, w.cislo]));
+  const remap = (obj) => {
+    const out = {};
+    for (const [k, v] of Object.entries(obj || {})) {
+      const n = map.get(Number(k));
+      if (n) out[n] = v;
+    }
+    return out;
+  };
+  cjStats.dila = remap(cjStats.dila);
+  cjStats.los = remap(cjStats.los);
+  if (cjSelection) {
+    const next = new Set([...cjSelection].map((n) => map.get(n)).filter(Boolean));
+    CJ_WORKS.filter((w) => !w.puvodni_cislo).forEach((w) => next.add(w.cislo));
+    cjSelection = next;
+    saveCjSelection();
+  }
+  for (const k of ['cmpA', 'cmpB']) {
+    const n = map.get(Number(cjSettings[k]));
+    cjSettings[k] = n ? String(n) : (k === 'cmpA' ? '1' : '9');
+  }
+  saveCjStats();
+  saveCjSettings();
+  storageSet(CJ_LIST_KEY, version);
 }
 
 function shortTitle(w) {
@@ -1530,22 +1565,24 @@ function buildCjQuestions() {
         p.jmeno, pickOthers(others, p.jmeno, 3), `${p.jmeno} – ${p.role}.`, noteFor(w, ['Charakteristiky', 'Jméno', 'Příjmení'])));
     });
 
-    // Pravda / nepravda – pravdivost i chyták jsou pevně dané číslem díla, aby se otázka s daným id neměnila.
-    const authorTrue = w.cislo % 2 === 1;
-    const fakeAuthor = rotateFind(authors, w.cislo + 6, (z) => z !== a.zkratka);
+    // Pravda / nepravda – pravdivost i chyták jsou pevně dané id díla (ne pořadím v seznamu),
+    // aby otázka s daným id měla stále stejnou správnou odpověď i po přečíslování seznamu.
+    const wn = Number(w.id.replace(/\D/g, '')) || w.cislo;
+    const authorTrue = wn % 2 === 1;
+    const fakeAuthor = rotateFind(authors, wn + 6, (z) => z !== a.zkratka);
     qs.push(cjQuestion(`${w.id}-tf-autor`, w, {
       typ: 'pravda_nepravda', tema: 'Autor',
       zneni: `Autorem díla ${t} je ${authorTrue ? a.zkratka : fakeAuthor}.`,
       spravna_odpoved: authorTrue, vysvetleni: base, poznamka: noteFor(w, ['Autorství'])
     }));
-    const druhTrue = w.cislo % 3 !== 0;
+    const druhTrue = wn % 3 !== 0;
     const fakeDruh = DRUHY[(DRUHY.indexOf(w.druh) + 1) % DRUHY.length];
     qs.push(cjQuestion(`${w.id}-tf-druh`, w, {
       typ: 'pravda_nepravda', tema: 'Druh',
       zneni: `Dílo ${t} patří do literárního druhu: ${druhTrue ? w.druh : fakeDruh}.`,
       spravna_odpoved: druhTrue, vysvetleni: `Dílo ${t} je ${w.druh}: ${w.zanr}.`, poznamka: noteFor(w, ['Druh'])
     }));
-    const periodTrue = w.cislo % 2 === 0;
+    const periodTrue = wn % 2 === 0;
     const fakePeriod = periodIds[(periodIds.indexOf(w.obdobi) + 1) % periodIds.length];
     qs.push(cjQuestion(`${w.id}-tf-obdobi`, w, {
       typ: 'pravda_nepravda', tema: 'Období',

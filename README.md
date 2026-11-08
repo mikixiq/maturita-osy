@@ -28,6 +28,8 @@ OSY (klíče se nemění):
 Čeština:
 - `maturita-cj-stats-v1` – zodpovězeno, správně, špatně, „Ke zopakování“, počítadla u děl (`dila`) a epoch (`epochy`), losování.
 - `maturita-cj-vyber-v1` – vybraná díla (výchozí: všech 20), `maturita-cj-nastaveni-v1` – režim a nastavení.
+- `maturita-cj-seznam-v1` – verze seznamu děl. Když se zvýší `verze_seznamu` v `literatura.json`, výběr děl,
+  počítadla u děl a losování (uložené podle čísla díla) se jednou převedou podle pole `puvodni_cislo`.
 
 Společné:
 - `maturita-sekce-v1` – naposledy otevřená sekce.
@@ -52,9 +54,20 @@ běží na stejném kódu. Navíc má čeština:
   Výsledek se ukládá do pole `zkouska` ve statistikách sekce a je vidět v Přehledu.
   V OSY jsou otázkou název maturitní otázky a body její osnova z `questions.json` (žádná nová data).
 
-Id generovaných otázek mají tvar `cj<číslo díla>-<typ>`, např. `cj05-autor`, `cj05-postava-2`, `cj05-char-2`, `cj05-o-dej`,
+Id generovaných otázek mají tvar `<id díla>-<typ>`, např. `cj05-autor`, `cj05-postava-2`, `cj05-char-2`, `cj05-o-dej`,
 a dále `cj-chrono-1` až `cj-chrono-5`, `cj-epochy-poradi`, `cj-epocha-19-1`.
 Při úpravách `literatura.json` proto neměň pořadí postav ani `id` děl, jinak se statistiky přestanou párovat.
+`id` díla se nemění ani při přečíslování seznamu; `cislo` je pořadí v seznamu (podle PDF), takže se nemusí shodovat s číslem v `id`.
+
+### Seznam děl (verze 2, podle PDF „Maturitní četba – Rozbor 20 děl“)
+1. Romeo a Julie · 2. Kytice · 3. Slezské písně · 4. Krysař · 5. R.U.R. · 6. Proměna · 7. Na západní frontě klid ·
+8. Stařec a moře · 9. Spalovač mrtvol · 10. Farma zvířat · 11. Ostře sledované vlaky · 12. Lakomec · 13. Revizor ·
+14. Jáma a kyvadlo · 15. O myších a lidech · 16. Válka s mloky · 17. Malý princ · 18. Smrt krásných srnců ·
+19. Zkrocení zlé ženy · 20. Velký Gatsby.
+
+Nová díla (Slezské písně, Krysař, Spalovač mrtvol, Válka s mloky, Malý princ, id `cj21`–`cj25`) vycházejí z PDF;
+co v PDF není (životní data autorů, zajímavosti), je uvedeno v `k_overeni`. Z předchozího seznamu byla odebrána
+díla Strakonický dudák, Maryša, Osudy dobrého vojáka Švejka, Němá barikáda a Vyšetřování ztráty třídní knihy (id `cj04`, `cj06`, `cj15`, `cj18`, `cj20` se už znovu nepoužijí).
 
 ### Struktura `data/literatura.json`
 - `motivy` – jednotný slovník motivů (každý motiv se píše vždy stejně, aby šlo filtrovat); `poznamka_motivy`.
@@ -66,7 +79,7 @@ Při úpravách `literatura.json` proto neměň pořadí postav ani `id` děl, j
   `zdroje[]` a `k_overeni[]` (co není ověřené nebo se liší od zadaného seznamu).
 - `epochy[]` – `obdobi`, `nazev`, `rozsah`, `popis`, `hlavni_smery`, `dalsi_autori[]`, `zdroje`, `k_overeni`.
 
-Údaje byly ověřeny podle české (a u některých zajímavostí anglické) Wikipedie. Položky v `k_overeni`
+U zachovaných děl byly údaje ověřeny podle české (a u některých zajímavostí anglické) Wikipedie, u nových děl podle PDF. Položky v `k_overeni`
 se zobrazují v aplikaci u příslušných otázek (štítek „k ověření“), ve výuce i v osnově losování.
 
 ## Přidání dalších prezentací OSY (nový zip)
