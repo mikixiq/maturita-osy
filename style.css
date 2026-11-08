@@ -268,6 +268,12 @@ tr.uncovered td { color: var(--muted); }
 }
 .learn-item .learn-name { flex: 1 1 220px; min-width: 0; }
 .learn-item .learn-meta { display: block; font-size: .8rem; color: var(--muted); margin-top: 2px; }
+/* NOVÉ: označení „Procvičeno“ ve Výuce (Čeština) */
+.done-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; cursor: pointer; font-size: .9rem; }
+.done-toggle input { width: 20px; height: 20px; margin: 0; accent-color: var(--ok); }
+.learn-item.done { border-color: var(--ok); }
+.learn-item.done .learn-name strong { color: var(--ok); }
+.done-btn[aria-pressed="true"] { border-color: var(--ok); color: var(--ok); }
 .step-count { color: var(--muted); font-size: .9rem; margin: 0 0 6px; }
 .step-text { font-size: 1.15rem; font-weight: 700; margin: 6px 0 10px; }
 .step-expl { margin: 0 0 12px; line-height: 1.6; }

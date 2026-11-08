@@ -30,6 +30,8 @@ OSY (klíče se nemění):
 - `maturita-cj-vyber-v1` – vybraná díla (výchozí: všech 20), `maturita-cj-nastaveni-v1` – režim a nastavení.
 - `maturita-cj-seznam-v1` – verze seznamu děl. Když se zvýší `verze_seznamu` v `literatura.json`, výběr děl,
   počítadla u děl a losování (uložené podle čísla díla) se jednou převedou podle pole `predchozi_cisla[<uložená verze>]`.
+- `maturita-cj-procviceno-v1` – id děl, která si uživatel ve Výuce ručně označil jako „Procvičeno“
+  (zaškrtávátko v seznamu nebo tlačítko na konci výuky). „Vynulovat statistiky“ je nemaže.
 
 Společné:
 - `maturita-sekce-v1` – naposledy otevřená sekce.

@@ -21,6 +21,7 @@ const CJ_STATS_KEY = 'maturita-cj-stats-v1';
 const CJ_SELECTION_KEY = 'maturita-cj-vyber-v1';
 const CJ_SETTINGS_KEY = 'maturita-cj-nastaveni-v1';
 const CJ_LIST_KEY = 'maturita-cj-seznam-v1';  // verze seznamu děl, podle které se převádějí čísla děl (migrateCjNumbers)
+const CJ_DONE_KEY = 'maturita-cj-procviceno-v1';  // NOVÉ: díla ručně označená ve Výuce jako procvičená (podle id díla)
 
 // NOVÉ: „Moje otázky“ – výchozí výběr a jediné otázky, pro které je výuka.
 const MY_MO = [1, 2, 3, 17, 18];
@@ -79,6 +80,7 @@ let CJ_QUESTIONS = [];    // otázky vygenerované z děl – stejný formát ja
 let CJ_BY_ID = new Map();
 let cjStats = loadCjStats();
 let cjSelection = loadCjSelection();
+let cjDone = loadCjDone();  // NOVÉ: id děl označených ve Výuce jako procvičená
 let cjSettings = Object.assign({ mode: 'vyber', cas: '0', delka: '20', match: 'autor', motiv: '', cmpA: '1', cmpB: '9' }, storageGet(CJ_SETTINGS_KEY) || {});
 let cjLearn = null;       // probíhající výuka díla
 let play = null;          // probíhající přiřazování nebo třídění
@@ -2240,19 +2242,49 @@ function renderCjLearnList() {
     ));
     return;
   }
+  const doneCount = works.filter(isCjDone).length;
   view.replaceChildren(el('div', { class: 'card' },
     el('h2', { text: 'Výuka' }),
     el('p', { class: 'hint', text: 'Krokovaný výklad díla: autor → epocha → dílo a druh → postavy → shrnutí děje → motivy → obsah → zajímavost. U každého kroku je zdroj.' }),
+    // NOVÉ: přehled ručně označených děl
+    el('p', { class: 'selected-count', role: 'status', 'aria-live': 'polite', text: `Procvičeno: ${doneCount} z ${works.length}` }),
+    el('div', { class: 'progress', 'aria-hidden': 'true' }, el('div', { class: 'progress-bar', style: `width:${percent(doneCount, works.length)}%` })),
     el('ul', { class: 'learn-list' }, ...works.map((w) =>
-      el('li', { class: 'learn-item' },
+      el('li', { class: 'learn-item' + (isCjDone(w) ? ' done' : '') },
         el('div', { class: 'learn-name' },
           el('strong', { text: `${w.cislo}. ` }), shortTitle(w),
           el('span', { class: 'learn-meta', text: `${w.autor.zkratka} · ${w.druh} · ${periodName(w.obdobi)}` })
+        ),
+        // NOVÉ: zaškrtávátko „Procvičeno“
+        el('label', { class: 'done-toggle' },
+          el('input', { type: 'checkbox', checked: isCjDone(w), 'data-work': w.id, onchange: (e) => {
+            setCjDone(w, e.target.checked);
+            renderCjLearnList();
+            const again = document.querySelector(`#view-cj-learn input[data-work="${w.id}"]`);
+            if (again) again.focus({ preventScroll: true });
+          } }),
+          el('span', { text: 'Procvičeno' })
         ),
         el('button', { type: 'button', class: 'btn btn-primary', 'aria-label': `Začít výuku: ${shortTitle(w)}`, onclick: () => startCjLearn(w.cislo) }, 'Začít výuku')
       )
     ))
   ));
+}
+
+// NOVÉ: ruční označení „Procvičeno“ ve Výuce. Ukládá se podle id díla, takže přečíslování seznamu mu nevadí.
+// Nevynuluje ho ani „Vynulovat statistiky“ – je to vlastní poznámka uživatele.
+function loadCjDone() {
+  const saved = storageGet(CJ_DONE_KEY);
+  return new Set(Array.isArray(saved) ? saved : []);
+}
+
+function isCjDone(w) {
+  return cjDone.has(w.id);
+}
+
+function setCjDone(w, done) {
+  if (done) cjDone.add(w.id); else cjDone.delete(w.id);
+  storageSet(CJ_DONE_KEY, [...cjDone].sort());
 }
 
 function startCjLearn(n) {
@@ -2345,7 +2377,14 @@ function renderCjLearnStep() {
         el('button', { type: 'button', class: 'btn', onclick: () => go(0) }, 'Projít znovu'),
         el('button', { type: 'button', class: 'btn btn-primary', onclick: () => cjPracticeWork(w.cislo) }, 'Procvičit toto dílo')
       ),
-      el('div', { class: 'btn-row' }, backToList)
+      el('div', { class: 'btn-row' },
+        // NOVÉ: označení díla jako procvičeného přímo na konci výuky
+        el('button', { type: 'button', class: 'btn done-btn', 'aria-pressed': String(isCjDone(w)), onclick: (e) => {
+          setCjDone(w, !isCjDone(w));
+          e.currentTarget.setAttribute('aria-pressed', String(isCjDone(w)));
+          e.currentTarget.textContent = isCjDone(w) ? '✓ Procvičeno (zrušit)' : 'Označit jako procvičené';
+        } }, isCjDone(w) ? '✓ Procvičeno (zrušit)' : 'Označit jako procvičené'),
+        backToList)
     ));
     return;
   }
