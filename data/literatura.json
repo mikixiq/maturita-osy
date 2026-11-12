@@ -120,7 +120,8 @@
       "predchozi_cisla": {
         "1": 1,
         "2": 1
-      }
+      },
+      "smer_id": "renesance"
     },
     {
       "id": "cj02",
@@ -224,7 +225,8 @@
       "predchozi_cisla": {
         "1": 2,
         "2": 12
-      }
+      },
+      "smer_id": "klasicismus"
     },
     {
       "id": "cj05",
@@ -325,7 +327,8 @@
       "predchozi_cisla": {
         "1": 5,
         "2": 2
-      }
+      },
+      "smer_id": "romantismus"
     },
     {
       "id": "cj08",
@@ -429,7 +432,8 @@
       "predchozi_cisla": {
         "1": 8,
         "2": 13
-      }
+      },
+      "smer_id": "realismus"
     },
     {
       "id": "cj07",
@@ -517,7 +521,8 @@
       "predchozi_cisla": {
         "1": 7,
         "2": 14
-      }
+      },
+      "smer_id": "romantismus"
     },
     {
       "id": "cj09",
@@ -619,7 +624,8 @@
       "predchozi_cisla": {
         "1": 9,
         "2": 6
-      }
+      },
+      "smer_id": "existencialismus"
     },
     {
       "id": "cj14",
@@ -718,7 +724,8 @@
       "predchozi_cisla": {
         "1": 14,
         "2": 7
-      }
+      },
+      "smer_id": "ztracena-generace"
     },
     {
       "id": "cj10",
@@ -808,7 +815,8 @@
       "predchozi_cisla": {
         "1": 10,
         "2": 8
-      }
+      },
+      "smer_id": "ztracena-generace"
     },
     {
       "id": "cj19",
@@ -914,7 +922,8 @@
       "predchozi_cisla": {
         "1": 19,
         "2": 10
-      }
+      },
+      "smer_id": "antiutopie"
     },
     {
       "id": "cj21",
@@ -1003,7 +1012,8 @@
       "skupina": "cz20",
       "predchozi_cisla": {
         "2": 3
-      }
+      },
+      "smer_id": "ceska-moderna"
     },
     {
       "id": "cj22",
@@ -1098,7 +1108,8 @@
       "skupina": "cz20",
       "predchozi_cisla": {
         "2": 4
-      }
+      },
+      "smer_id": "anarchisticti-burici"
     },
     {
       "id": "cj12",
@@ -1203,7 +1214,8 @@
       "predchozi_cisla": {
         "1": 12,
         "2": 5
-      }
+      },
+      "smer_id": "mezivalecna"
     },
     {
       "id": "cj23",
@@ -1298,7 +1310,8 @@
       "skupina": "cz20",
       "predchozi_cisla": {
         "2": 9
-      }
+      },
+      "smer_id": "psychologicka-proza"
     },
     {
       "id": "cj16",
@@ -1396,7 +1409,8 @@
       "predchozi_cisla": {
         "1": 16,
         "2": 11
-      }
+      },
+      "smer_id": "valecna-proza"
     },
     {
       "id": "cj11",
@@ -1502,7 +1516,8 @@
       "predchozi_cisla": {
         "1": 11,
         "2": 15
-      }
+      },
+      "smer_id": "realismus"
     },
     {
       "id": "cj24",
@@ -1592,7 +1607,8 @@
       "skupina": "dalsi",
       "predchozi_cisla": {
         "2": 16
-      }
+      },
+      "smer_id": "mezivalecna"
     },
     {
       "id": "cj25",
@@ -1692,7 +1708,8 @@
       "skupina": "dalsi",
       "predchozi_cisla": {
         "2": 17
-      }
+      },
+      "smer_id": "filozoficka-pohadka"
     },
     {
       "id": "cj17",
@@ -1786,7 +1803,8 @@
       "predchozi_cisla": {
         "1": 17,
         "2": 18
-      }
+      },
+      "smer_id": "autobiograficka-proza"
     },
     {
       "id": "cj03",
@@ -1884,7 +1902,8 @@
       "predchozi_cisla": {
         "1": 3,
         "2": 19
-      }
+      },
+      "smer_id": "renesance"
     },
     {
       "id": "cj13",
@@ -1986,7 +2005,8 @@
       "predchozi_cisla": {
         "1": 13,
         "2": 20
-      }
+      },
+      "smer_id": "ztracena-generace"
     }
   ],
   "epochy": [
@@ -2104,5 +2124,213 @@
       "nazev": "Další četba"
     }
   ],
-  "poznamka_styl": "Pole „styl“ je krátký literární směr pro přiřazování (dílo × směr), sestavený podle směrů uvedených u děl v PDF „Maturitní četba – Rozbor 20 děl“."
+  "poznamka_styl": "Pole „styl“ je krátký literární směr pro přiřazování (dílo × směr), sestavený podle směrů uvedených u děl v PDF „Maturitní četba – Rozbor 20 děl“.",
+  "smery": [
+    {
+      "id": "renesance",
+      "nazev": "Renesance",
+      "popis": "Renesance je kulturní a umělecká epocha zhruba 14. až počátku 17. století, která navazuje na antiku. Jejím myšlenkovým základem je humanismus, který staví do středu pozornosti člověka, jeho rozum, vzdělání a pozemský život.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Renesanční_literatura",
+      "k_overeni": null
+    },
+    {
+      "id": "klasicismus",
+      "nazev": "Klasicismus",
+      "popis": "Klasicismus je literární směr především francouzské literatury 17. století, který obdivuje antiku a autoritu a usiluje o uměleckou dokonalost a formální přesnost. V dramatu vyžaduje uměřenost a zásadu tří jednot – děje, času a místa.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Klasicismus_(literatura)",
+      "k_overeni": null
+    },
+    {
+      "id": "romantismus",
+      "nazev": "Romantismus",
+      "popis": "Romantismus je umělecké hnutí hlavně první poloviny 19. století, které vzniklo jako protiklad klasicismu a reakce na rozpor mezi skutečností a ideály Velké francouzské revoluce. Obraznost a cit staví nad rozum a vyhrocuje rozpor mezi jedincem a společností.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Romantismus_(literatura)",
+      "k_overeni": null
+    },
+    {
+      "id": "realismus",
+      "nazev": "Realismus",
+      "popis": "Realismus je směr, který se prosadil od poloviny 19. století jako protiromantický program. Usiluje o věrné zobrazení skutečnosti, často i jejích společenských problémů.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Realismus_(literatura)",
+      "k_overeni": null
+    },
+    {
+      "id": "existencialismus",
+      "nazev": "Existencialismus",
+      "popis": "Existencialismus je široký proud filozofie a literatury, který vychází z lidské existence a subjektivního prožitku jednotlivce. Zabývá se osamělostí, úzkostí a hledáním smyslu ve světě, který se člověku jeví jako cizí.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Existencialismus",
+      "k_overeni": "Druhá věta (osamělost, úzkost, hledání smyslu) je z obecné znalosti; zdrojový úvod hesla popisuje jen východisko v lidské existenci a subjektivitě."
+    },
+    {
+      "id": "ztracena-generace",
+      "nazev": "Ztracená generace",
+      "popis": "Ztracená generace je označení spisovatelů narozených kolem roku 1900, kteří prožili první světovou válku a často v ní i bojovali. Pojem použila Gertrude Steinová a zpopularizoval ho Ernest Hemingway.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Ztracená_generace",
+      "k_overeni": null
+    },
+    {
+      "id": "ceska-moderna",
+      "nazev": "Česká moderna",
+      "popis": "Česká moderna je generace básníků, kritiků a novinářů 90. let 19. a počátku 20. století, spjatá s manifestem z roku 1895. Do české literatury přinesla moderní směry jako symbolismus, dekadenci a impresionismus.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Česká_moderna",
+      "k_overeni": null
+    },
+    {
+      "id": "anarchisticti-burici",
+      "nazev": "Anarchističtí buřiči",
+      "popis": "Anarchističtí buřiči jsou generace českých spisovatelů, která začala tvořit na počátku 20. století. Po krátkém okouzlení symbolismem a dekadencí se s nimi rozešla a obrátila se k životu a vzdoru – odtud označení „básníci života a vzdoru“.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Anarchističtí_buřiči",
+      "k_overeni": null
+    },
+    {
+      "id": "mezivalecna",
+      "nazev": "Meziválečná česká literatura",
+      "popis": "Česká literatura první poloviny 20. století zachycuje otřes první světové války, rozpad Rakouska-Uherska a vznik Československa. Za první republiky zažila kulturní rozkvět, ve 30. letech ji poznamenala hospodářská krize.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Česká_literatura_v_letech_1900–1945",
+      "k_overeni": null
+    },
+    {
+      "id": "psychologicka-proza",
+      "nazev": "Psychologická próza",
+      "popis": "Psychologická próza se soustředí na vnitřní, duševní stav hlavních postav. Čtenář postupně poznává příčiny jejich myšlenek a jednání, které bývají velmi složité.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Psychologický_román",
+      "k_overeni": null
+    },
+    {
+      "id": "valecna-proza",
+      "nazev": "Česká válečná próza",
+      "popis": "Česká válečná próza zachycuje druhou světovou válku, okupaci a odboj. První vlna po roce 1945 vyzdvihovala hrdinství a boj, druhá vlna v 60. letech ukazuje válku spíš očima obyčejného, často nehrdinského člověka.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Ostře_sledované_vlaky_(novela)",
+      "k_overeni": "Rozdělení na první a druhou vlnu je z obecné znalosti; zdrojové heslo uvádí jen zařazení Ostře sledovaných vlaků do druhé vlny válečné prózy."
+    },
+    {
+      "id": "filozoficka-pohadka",
+      "nazev": "Filozofická pohádka",
+      "popis": "Filozofická pohádka vypráví pohádkový příběh, který nese hlubší myšlenky o životě a mezilidských vztazích. Malý princ patří k nejznámějším pohádkovým příběhům moderní světové literatury a je plný metafor a přirovnání.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Malý_princ",
+      "k_overeni": "Označení „filozofická pohádka“ je podle PDF se školním rozborem; zdrojové heslo mluví o pohádkovém příběhu s mnoha metaforami."
+    },
+    {
+      "id": "autobiograficka-proza",
+      "nazev": "Autobiografická próza",
+      "popis": "Autobiografie je epický žánr, v němž autor líčí vlastní život nebo jeho část. Opírá se hlavně o vlastní paměť pisatele, ne o dokumenty.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Autobiografie",
+      "k_overeni": null
+    },
+    {
+      "id": "antiutopie",
+      "nazev": "Antiutopie",
+      "popis": "Antiutopie (dystopie) je opak utopie: zobrazuje fiktivní společnost, která se vyvinula špatným směrem, typicky s totalitní vládou a omezováním svobody. Občané v ní bývají utlačováni politickým systémem.",
+      "zdroj": "https://cs.wikipedia.org/wiki/Antiutopie",
+      "k_overeni": null
+    }
+  ],
+  "autori_obdobi": [
+    {
+      "obdobi": "18",
+      "autor": "Miguel de Cervantes y Saavedra",
+      "dilo": "Důmyslný rytíř don Quijote de la Mancha",
+      "rok": "1605",
+      "zdroj": "https://cs.wikipedia.org/wiki/Důmyslný_rytíř_Don_Quijote_de_la_Mancha"
+    },
+    {
+      "obdobi": "18",
+      "autor": "Jan Amos Komenský",
+      "dilo": "Labyrint světa a ráj srdce",
+      "rok": "1631",
+      "zdroj": "https://cs.wikipedia.org/wiki/Labyrint_světa_a_ráj_srdce"
+    },
+    {
+      "obdobi": "18",
+      "autor": "Daniel Defoe",
+      "dilo": "Robinson Crusoe",
+      "rok": "1719",
+      "zdroj": "https://cs.wikipedia.org/wiki/Robinson_Crusoe"
+    },
+    {
+      "obdobi": "18",
+      "autor": "Voltaire",
+      "dilo": "Candide čili Optimismus",
+      "rok": "1759",
+      "zdroj": "https://cs.wikipedia.org/wiki/Candide"
+    },
+    {
+      "obdobi": "19",
+      "autor": "Victor Hugo",
+      "dilo": "Chrám Matky Boží v Paříži",
+      "rok": "1831",
+      "zdroj": "https://cs.wikipedia.org/wiki/Chrám_Matky_Boží_v_Paříži_(román)"
+    },
+    {
+      "obdobi": "19",
+      "autor": "Karel Hynek Mácha",
+      "dilo": "Máj",
+      "rok": "1836",
+      "zdroj": "https://cs.wikipedia.org/wiki/Máj_(Karel_Hynek_Mácha)"
+    },
+    {
+      "obdobi": "19",
+      "autor": "Božena Němcová",
+      "dilo": "Babička",
+      "rok": "1855",
+      "zdroj": "https://cs.wikipedia.org/wiki/Babička_(kniha)"
+    },
+    {
+      "obdobi": "19",
+      "autor": "Gustave Flaubert",
+      "dilo": "Paní Bovaryová",
+      "rok": "1857",
+      "zdroj": "https://cs.wikipedia.org/wiki/Paní_Bovaryová"
+    },
+    {
+      "obdobi": "20",
+      "autor": "Vladislav Vančura",
+      "dilo": "Markéta Lazarová",
+      "rok": "1931",
+      "zdroj": "https://cs.wikipedia.org/wiki/Markéta_Lazarová_(kniha)"
+    },
+    {
+      "obdobi": "20",
+      "autor": "Jerome David Salinger",
+      "dilo": "Kdo chytá v žitě",
+      "rok": "1951",
+      "zdroj": "https://cs.wikipedia.org/wiki/Kdo_chytá_v_žitě"
+    },
+    {
+      "obdobi": "20",
+      "autor": "Arnošt Lustig",
+      "dilo": "Modlitba pro Kateřinu Horovitzovou",
+      "rok": "1964",
+      "zdroj": "https://cs.wikipedia.org/wiki/Modlitba_pro_Kateřinu_Horovitzovou"
+    },
+    {
+      "obdobi": "20",
+      "autor": "Khaled Hosseini",
+      "dilo": "Lovec draků",
+      "rok": "2003",
+      "zdroj": "https://cs.wikipedia.org/wiki/Lovec_draků"
+    },
+    {
+      "obdobi": "20",
+      "autor": "Cormac McCarthy",
+      "dilo": "Cesta",
+      "rok": "2006",
+      "zdroj": "https://cs.wikipedia.org/wiki/Cesta_(Cormac_McCarthy)"
+    },
+    {
+      "obdobi": "20",
+      "autor": "Kateřina Tučková",
+      "dilo": "Žítkovské bohyně",
+      "rok": "2012",
+      "zdroj": "https://cs.wikipedia.org/wiki/Žítkovské_bohyně"
+    },
+    {
+      "obdobi": "20",
+      "autor": "Alena Mornštajnová",
+      "dilo": "Hana",
+      "rok": "2017",
+      "zdroj": "https://cs.wikipedia.org/wiki/Hana_(kniha)"
+    }
+  ],
+  "poznamka_autori_obdobi": "Autoři mimo seznam 20 děl jen pro přehled v záložce Díla (tři nejbližší rokem vydání); netvoří se z nich otázky."
 }

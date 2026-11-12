@@ -54,6 +54,9 @@ běží na stejném kódu. Navíc má čeština:
   na konci shrnutí a „Procvičit toto dílo“.
 - **Losování k projevu** – 7 minut, pak osnova (autor → epocha → dílo → postavy → obsah → shrnutí děje → zajímavost) a „Zvládl/a jsem to?“.
 
+- **Záložka Díla** – karta každého díla: název a autor, století vzniku, literární směr s krátkým popisem
+  (pole `smery` a `smer_id` v `literatura.json`) a tři autoři ze stejného období (pole `autori_obdobi`,
+  nejbližší rokem vydání; jen pro přehled, otázky se z nich netvoří).
 - **Simulace zkoušky** (i v sekci OSY) – náhodná otázka, odpověď nahlas nebo do pole, pak zaškrtnutí bodů odpovědi.
   Výsledek se ukládá do pole `zkouska` ve statistikách sekce a je vidět v Přehledu.
   V OSY jsou otázkou název maturitní otázky a body její osnova z `questions.json` (žádná nová data).
@@ -79,6 +82,7 @@ Díla Slezské písně, Krysař, Spalovač mrtvol, Válka s mloky a Malý princ 
 Id `cj04`, `cj06`, `cj15`, `cj18`, `cj20` (díla z dřívějšího seznamu) se už znovu nepoužijí.
 
 ### Struktura `data/literatura.json`
+- `smery` – literární směry (`id`, `nazev`, `popis`, `zdroj`, `k_overeni`); dílo na směr odkazuje polem `smer_id`.
 - `motivy` – jednotný slovník motivů (každý motiv se píše vždy stejně, aby šlo filtrovat); `poznamka_motivy`.
 - `obdobi` – období podle školního seznamu: `18` = do konce 18. století, `19` = 19. století, `20` = 20. a 21. století.
 - `skupiny` – oddíly školního seznamu (`id`, `nazev`); dílo odkazuje polem `skupina`.

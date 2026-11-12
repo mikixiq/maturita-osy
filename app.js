@@ -85,6 +85,8 @@ let cjSettings = Object.assign({ mode: 'vyber', cas: '0', delka: '20', match: 'a
 let cjLearn = null;       // probíhající výuka díla
 let play = null;          // probíhající přiřazování nebo třídění
 let CJ_MOTIFS = [];       // jednotný slovník motivů
+let CJ_SMERY = new Map(); // id literárního směru -> { nazev, popis, zdroj }
+let cjDilaFilter = '';    // filtr období v záložce Díla
 let exam = null;          // probíhající simulace zkoušky (obě sekce)
 
 const $ = (sel) => document.querySelector(sel);
@@ -360,7 +362,7 @@ function setSection(sec) {
 
 function showView(name) {
   stopSpeaking();
-  for (const v of ['home', 'quiz', 'result', 'speech', 'learn', 'overview', 'cj-home', 'cj-learn', 'cj-play', 'cj-overview', 'exam']) {  // ZMĚNA: + learn, + čeština
+  for (const v of ['home', 'quiz', 'result', 'speech', 'learn', 'overview', 'cj-home', 'cj-learn', 'cj-play', 'cj-overview', 'cj-dila', 'exam']) {  // ZMĚNA: + learn, + čeština
     $('#view-' + v).hidden = v !== name;
   }
   document.querySelectorAll('.tab').forEach((t) => {
@@ -373,6 +375,7 @@ function showView(name) {
   if (name === 'cj-home') renderCjHome();
   if (name === 'cj-learn') { cjLearn = null; renderCjLearnList(); }
   if (name === 'cj-overview') renderCjOverview();
+  if (name === 'cj-dila') renderCjDila();
   window.scrollTo(0, 0);
 }
 
@@ -1426,6 +1429,7 @@ function setupCj(data) {
   CJ_EPOCHS = (Array.isArray(data.epochy) ? data.epochy : []).slice().sort((a, b) => Number(a.obdobi) - Number(b.obdobi));
   CJ_WORKS.forEach((w) => CJ_BY_NUM.set(w.cislo, w));
   CJ_MOTIFS = Array.isArray(data.motivy) ? data.motivy : [];
+  CJ_SMERY = new Map((Array.isArray(data.smery) ? data.smery : []).map((x) => [x.id, x]));
   CJ_QUESTIONS = buildCjQuestions();
   CJ_QUESTIONS.forEach((q) => CJ_BY_ID.set(q.id, q));
   buildCjQuizBank();
@@ -2407,6 +2411,66 @@ function renderCjLearnStep() {
     )
   ));
   autoRead(readKey, st.read);
+  reapplyReading();
+}
+
+/* ---------- Čeština: záložka Díla ---------- */
+// Přehledová karta každého díla: název a autor, století vzniku, literární směr s krátkým popisem
+// a tři autoři ze stejného období (z epochy, nejbližší rokem vydání).
+
+// Autoři mimo seznam 20 děl jsou v poli autori_obdobi jen pro tento přehled – otázky se z nich netvoří.
+function sameEraAuthors(w, count = 3) {
+  const pool = (Array.isArray(LIT.autori_obdobi) ? LIT.autori_obdobi : []).filter((x) => x.obdobi === w.obdobi);
+  return pool.slice().sort((a, b) => Math.abs(Number(a.rok) - w.rok) - Math.abs(Number(b.rok) - w.rok)).slice(0, count)
+    .sort((a, b) => Number(a.rok) - Number(b.rok));
+}
+
+function renderCjDila() {
+  const works = cjDilaFilter ? CJ_WORKS.filter((w) => w.obdobi === cjDilaFilter) : CJ_WORKS;
+  const filters = [['', 'Vše'], ...CJ_PERIODS.filter((p) => CJ_WORKS.some((w) => w.obdobi === p.id)).map((p) => [p.id, p.nazev])];
+  const cards = works.map((w) => {
+    const smer = CJ_SMERY.get(w.smer_id);
+    const authors = sameEraAuthors(w);
+    const century = `${w.stoleti_vzniku}. stol.`;
+    const readKey = `dila-${w.id}`;
+    const readText = joinSentences([
+      w.dilo, w.autor.jmeno, `${w.stoleti_vzniku}. století`,
+      smer ? `${smer.nazev}. ${smer.popis}` : w.literarni_smer,
+      ...authors.map((da) => `${da.autor}: ${da.dilo}, ${da.rok}`)
+    ]);
+    return el('article', { class: 'card work-card', 'data-read': readKey },
+      el('div', { class: 'head-row' },
+        el('h2', null, el('span', { class: 'work-num', text: `${w.cislo}.` }), ' ', w.dilo),
+        readButton(() => readText, readKey)),
+      el('p', { class: 'work-author', text: `${w.autor.jmeno}, ${w.autor.zivot}` }),
+      el('p', { class: 'work-meta' },
+        el('span', { class: 'pill castecne', text: century }),
+        ` · ${w.rok_text} · ${w.druh}`,
+        w.obdobi !== String(w.stoleti_vzniku) ? el('span', { class: 'src', text: ` · maturitní období: ${periodName(w.obdobi)}` }) : null),
+      el('h3', null, 'Literární směr: ', el('span', { class: 'work-smer', text: smer ? smer.nazev : w.literarni_smer })),
+      smer && smer.nazev.toLowerCase() !== w.literarni_smer.toLowerCase() ? el('p', { class: 'src', text: `U díla: ${w.literarni_smer}` }) : null,
+      smer ? el('p', { class: 'step-expl', text: smer.popis }) : null,
+      smer && smer.k_overeni ? el('p', { class: 'note hint', text: 'K ověření: ' + smer.k_overeni }) : null,
+      smer ? el('p', { class: 'src', text: 'Zdroj: ' + srcText(smer.zdroj) }) : null,
+      el('h3', { text: 'Autoři ze stejného období' }),
+      authors.length
+        ? el('ul', { class: 'era-authors' }, ...authors.map((da) => el('li', null,
+            el('strong', { text: da.autor }), ` – „${da.dilo}“, ${da.rok}`)))
+        : el('p', { class: 'hint', text: 'Pro toto období nejsou v datech další autoři.' })
+    );
+  });
+
+  $('#view-cj-dila').replaceChildren(
+    el('div', { class: 'card' },
+      el('h2', { text: 'Díla' }),
+      el('p', { class: 'hint', text: 'Přehled všech 20 děl: autor, století vzniku, literární směr a autoři ze stejného období.' }),
+      LIT.poznamka_autori_obdobi ? el('p', { class: 'src', text: LIT.poznamka_autori_obdobi }) : null,
+      ttsControls(),
+      el('div', { class: 'filter-row', role: 'group', 'aria-label': 'Filtr podle období' }, ...filters.map(([id, label]) =>
+        el('button', { type: 'button', class: 'chip', 'aria-pressed': String(cjDilaFilter === id), onclick: () => { cjDilaFilter = id; stopSpeaking(); renderCjDila(); } }, label)))
+    ),
+    ...cards
+  );
   reapplyReading();
 }
 

@@ -407,3 +407,13 @@ tr.uncovered td { color: var(--muted); }
 /* Ověření znalostí na konci výuky */
 .quiz-q { border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px; }
 .quiz-q:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
+
+/* Čeština: záložka Díla */
+.filter-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.work-card h2 { overflow-wrap: anywhere; }
+.work-num { color: var(--muted); }
+.work-author { margin: 0 0 6px; font-weight: 600; }
+.work-meta { margin: 0; color: var(--muted); font-size: .9rem; }
+.work-smer { color: var(--accent-2); }
+.era-authors { margin: 0; padding-left: 1.2em; }
+.era-authors li { margin-bottom: 4px; }
