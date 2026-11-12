@@ -55,8 +55,9 @@ běží na stejném kódu. Navíc má čeština:
 - **Losování k projevu** – 7 minut, pak osnova (autor → epocha → dílo → postavy → obsah → shrnutí děje → zajímavost) a „Zvládl/a jsem to?“.
 
 - **Záložka Díla** – karta každého díla: název a autor, století vzniku, literární směr s krátkým popisem
-  (pole `smery` a `smer_id` v `literatura.json`) a tři autoři ze stejného období (pole `autori_obdobi`,
-  nejbližší rokem vydání; jen pro přehled, otázky se z nich netvoří).
+  (pole `smery` a `smer_id` v `literatura.json`) a tři autoři ze stejného období – přednostně (až dva) autoři
+  jiných děl ze seznamu, doplnění z pole `autori_obdobi` (mimo seznam, jen pro přehled, otázky se z nich netvoří);
+  vždy nejbližší rokem vydání.
 - **Simulace zkoušky** (i v sekci OSY) – náhodná otázka, odpověď nahlas nebo do pole, pak zaškrtnutí bodů odpovědi.
   Výsledek se ukládá do pole `zkouska` ve statistikách sekce a je vidět v Přehledu.
   V OSY jsou otázkou název maturitní otázky a body její osnova z `questions.json` (žádná nová data).

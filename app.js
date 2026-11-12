@@ -2418,11 +2418,23 @@ function renderCjLearnStep() {
 // Přehledová karta každého díla: název a autor, století vzniku, literární směr s krátkým popisem
 // a tři autoři ze stejného období (z epochy, nejbližší rokem vydání).
 
-// Autoři mimo seznam 20 děl jsou v poli autori_obdobi jen pro tento přehled – otázky se z nich netvoří.
+// Přednostně (až 2) autoři jiných děl ze seznamu ze stejného období – lépe se pamatují souvislosti.
+// Zbytek doplní autoři z pole autori_obdobi (mimo seznam, jen pro tento přehled – otázky se z nich netvoří).
+// Vždy se berou ti nejbližší rokem vydání; výsledek je seřazený podle roku.
+const ERA_FROM_LIST = 2;
+
 function sameEraAuthors(w, count = 3) {
-  const pool = (Array.isArray(LIT.autori_obdobi) ? LIT.autori_obdobi : []).filter((x) => x.obdobi === w.obdobi);
-  return pool.slice().sort((a, b) => Math.abs(Number(a.rok) - w.rok) - Math.abs(Number(b.rok) - w.rok)).slice(0, count)
-    .sort((a, b) => Number(a.rok) - Number(b.rok));
+  const byDistance = (a, b) => Math.abs(Number(a.rok) - w.rok) - Math.abs(Number(b.rok) - w.rok);
+  const seen = new Set([w.autor.jmeno]);
+  const fromList = CJ_WORKS.filter((x) => x.obdobi === w.obdobi && x !== w)
+    .map((x) => ({ autor: x.autor.jmeno.replace(/ \(.*\)$/, ''), klic: x.autor.jmeno, dilo: shortTitle(x), rok: x.rok, cislo: x.cislo }))
+    .sort(byDistance)
+    .filter((x) => !seen.has(x.klic) && seen.add(x.klic))
+    .slice(0, ERA_FROM_LIST);
+  const outside = (Array.isArray(LIT.autori_obdobi) ? LIT.autori_obdobi : [])
+    .filter((x) => x.obdobi === w.obdobi).slice().sort(byDistance)
+    .slice(0, count - fromList.length);
+  return [...fromList, ...outside].sort((a, b) => Number(a.rok) - Number(b.rok));
 }
 
 function renderCjDila() {
@@ -2455,7 +2467,8 @@ function renderCjDila() {
       el('h3', { text: 'Autoři ze stejného období' }),
       authors.length
         ? el('ul', { class: 'era-authors' }, ...authors.map((da) => el('li', null,
-            el('strong', { text: da.autor }), ` – „${da.dilo}“, ${da.rok}`)))
+            el('strong', { text: da.autor }), ` – „${da.dilo}“, ${da.rok} `,
+            da.cislo ? el('span', { class: 'badge mo', text: `ze seznamu, č. ${da.cislo}` }) : null)))
         : el('p', { class: 'hint', text: 'Pro toto období nejsou v datech další autoři.' })
     );
   });
@@ -2463,7 +2476,7 @@ function renderCjDila() {
   $('#view-cj-dila').replaceChildren(
     el('div', { class: 'card' },
       el('h2', { text: 'Díla' }),
-      el('p', { class: 'hint', text: 'Přehled všech 20 děl: autor, století vzniku, literární směr a autoři ze stejného období.' }),
+      el('p', { class: 'hint', text: 'Přehled všech 20 děl: autor, století vzniku, literární směr a autoři ze stejného období. Autoři děl ze seznamu jsou označení štítkem „ze seznamu“.' }),
       LIT.poznamka_autori_obdobi ? el('p', { class: 'src', text: LIT.poznamka_autori_obdobi }) : null,
       ttsControls(),
       el('div', { class: 'filter-row', role: 'group', 'aria-label': 'Filtr podle období' }, ...filters.map(([id, label]) =>
