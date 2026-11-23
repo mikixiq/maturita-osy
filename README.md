@@ -50,7 +50,7 @@ běží na stejném kódu. Navíc má čeština:
 - **Filtr Motivy** na úvodní obrazovce – ukáže díla s vybraným motivem a umí je rovnou vybrat.
 - **Srovnání dvou děl** – shody a rozdíly v epoše, druhu, žánru, směru, motivech a postavách, jen z dat.
 - **Třídění** – rozdělení děl do období a seřazení epoch od nejstarší.
-- **Výuka** – autor → epocha → dílo a druh → postavy (s charakteristikou) → shrnutí děje → motivy → obsah → zajímavost,
+- **Výuka** – autor → epocha → dílo a druh → další autoři (4 ze stejného období) → postavy (s charakteristikou) → shrnutí děje → motivy → obsah → zajímavost,
   na konci shrnutí a „Procvičit toto dílo“.
 - **Losování k projevu** – 7 minut, pak osnova (autor → epocha → dílo → postavy → obsah → shrnutí děje → zajímavost) a „Zvládl/a jsem to?“.
 

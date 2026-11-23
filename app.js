@@ -2249,7 +2249,7 @@ function renderCjLearnList() {
   const doneCount = works.filter(isCjDone).length;
   view.replaceChildren(el('div', { class: 'card' },
     el('h2', { text: 'Výuka' }),
-    el('p', { class: 'hint', text: 'Krokovaný výklad díla: autor → epocha → dílo a druh → postavy → shrnutí děje → motivy → obsah → zajímavost. U každého kroku je zdroj.' }),
+    el('p', { class: 'hint', text: 'Krokovaný výklad díla: autor → epocha → dílo a druh → další autoři → postavy → shrnutí děje → motivy → obsah → zajímavost. U každého kroku je zdroj.' }),
     // NOVÉ: přehled ručně označených děl
     el('p', { class: 'selected-count', role: 'status', 'aria-live': 'polite', text: `Procvičeno: ${doneCount} z ${works.length}` }),
     el('div', { class: 'progress', 'aria-hidden': 'true' }, el('div', { class: 'progress-bar', style: `width:${percent(doneCount, works.length)}%` })),
@@ -2326,6 +2326,15 @@ function cjLearnSteps(w) {
           el('dt', { text: 'Období' }), el('dd', { text: periodName(w.obdobi) })
         )
       ] },
+    (() => {
+      const authors = sameEraAuthors(w, 4);
+      return { title: 'Další autoři', src: null, notes: null,
+        read: joinSentences(authors.map((da) => `${da.autor}: ${da.dilo}, ${da.rok}`)),
+        body: [
+          el('p', { class: 'hint', text: `Autoři ze stejného období (${periodName(w.obdobi)}), nejbližší rokem vydání.` }),
+          eraAuthorsList(authors)
+        ] };
+    })(),
     { title: 'Postavy', src: w.zdroje[0], notes: noteFor(w, ['Charakteristiky', 'Jméno', 'Příjmení']),
       read: joinSentences(w.postavy.flatMap((p) => [`${p.jmeno}, ${p.role}`, p.charakteristika || ''])),
       body: [el('dl', { class: 'char-list' }, ...w.postavy.flatMap((p) => [
@@ -2437,6 +2446,14 @@ function sameEraAuthors(w, count = 3) {
   return [...fromList, ...outside].sort((a, b) => Number(a.rok) - Number(b.rok));
 }
 
+function eraAuthorsList(authors) {
+  return authors.length
+    ? el('ul', { class: 'era-authors' }, ...authors.map((da) => el('li', null,
+        el('strong', { text: da.autor }), ` – „${da.dilo}“, ${da.rok} `,
+        da.cislo ? el('span', { class: 'badge mo', text: `ze seznamu, č. ${da.cislo}` }) : null)))
+    : el('p', { class: 'hint', text: 'Pro toto období nejsou v datech další autoři.' });
+}
+
 function renderCjDila() {
   const works = cjDilaFilter ? CJ_WORKS.filter((w) => w.obdobi === cjDilaFilter) : CJ_WORKS;
   const filters = [['', 'Vše'], ...CJ_PERIODS.filter((p) => CJ_WORKS.some((w) => w.obdobi === p.id)).map((p) => [p.id, p.nazev])];
@@ -2448,6 +2465,7 @@ function renderCjDila() {
     const readText = joinSentences([
       w.dilo, w.autor.jmeno, `${w.stoleti_vzniku}. století`,
       smer ? `${smer.nazev}. ${smer.popis}` : w.literarni_smer,
+      w.shrnuti_deje,
       ...authors.map((da) => `${da.autor}: ${da.dilo}, ${da.rok}`)
     ]);
     return el('article', { class: 'card work-card', 'data-read': readKey },
@@ -2464,19 +2482,18 @@ function renderCjDila() {
       smer ? el('p', { class: 'step-expl', text: smer.popis }) : null,
       smer && smer.k_overeni ? el('p', { class: 'note hint', text: 'K ověření: ' + smer.k_overeni }) : null,
       smer ? el('p', { class: 'src', text: 'Zdroj: ' + srcText(smer.zdroj) }) : null,
+      el('h3', { text: 'Stručný děj' }),
+      el('p', { class: 'step-expl', text: w.shrnuti_deje }),
+      noteFor(w, ['Shrnutí']) ? el('p', { class: 'note hint', text: 'K ověření: ' + noteFor(w, ['Shrnutí']) }) : null,
       el('h3', { text: 'Autoři ze stejného období' }),
-      authors.length
-        ? el('ul', { class: 'era-authors' }, ...authors.map((da) => el('li', null,
-            el('strong', { text: da.autor }), ` – „${da.dilo}“, ${da.rok} `,
-            da.cislo ? el('span', { class: 'badge mo', text: `ze seznamu, č. ${da.cislo}` }) : null)))
-        : el('p', { class: 'hint', text: 'Pro toto období nejsou v datech další autoři.' })
+      eraAuthorsList(authors)
     );
   });
 
   $('#view-cj-dila').replaceChildren(
     el('div', { class: 'card' },
       el('h2', { text: 'Díla' }),
-      el('p', { class: 'hint', text: 'Přehled všech 20 děl: autor, století vzniku, literární směr a autoři ze stejného období. Autoři děl ze seznamu jsou označení štítkem „ze seznamu“.' }),
+      el('p', { class: 'hint', text: 'Přehled všech 20 děl: autor, století vzniku, literární směr, stručný děj a autoři ze stejného období. Autoři děl ze seznamu jsou označení štítkem „ze seznamu“.' }),
       LIT.poznamka_autori_obdobi ? el('p', { class: 'src', text: LIT.poznamka_autori_obdobi }) : null,
       ttsControls(),
       el('div', { class: 'filter-row', role: 'group', 'aria-label': 'Filtr podle období' }, ...filters.map(([id, label]) =>
